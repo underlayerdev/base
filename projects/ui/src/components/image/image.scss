@@ -1,0 +1,8 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}image {
+  height: 100%;
+  &--not-found {
+    @include placeholder-icon-overlay('image_dashed');
+  }
+}

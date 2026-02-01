@@ -1,0 +1,29 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}price-button {
+  display: flex;
+  align-items: center;
+  gap: $spacing-spacing-3;
+
+  &--sale-left {
+    flex-direction: row-reverse;
+  }
+
+  &__sale {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__discount {
+    @include typography('body-m', 'extrabold');
+    color: $color-text-yellow;
+  }
+
+  &__original-price {
+    @include typography('caption-l');
+    color: $color-text-tertiary;
+    text-decoration: line-through;
+  }
+}

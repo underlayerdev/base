@@ -1,0 +1,22 @@
+<pe-button [size]="size()" [theme]="theme()" [disabled]="disabled()" (click)="handleClick($event)">
+  @if (label()) {
+    {{ label() }}
+  } @else if (price() > 0) {
+    {{ price() | peCurrency: currency() }}
+  } @else {
+    Free
+  }
+</pe-button>
+@if (price() !== originalPrice() && discountBasis() > 0) {
+  <div class="pe-price-button__sale">
+    <div
+      class="pe-price-button__discount"
+      [attr.aria-label]="'Discount ' + discountBasis() + '% off original price'"
+    >
+      -{{ discountBasis() }}%
+    </div>
+    <div class="pe-price-button__original-price" aria-hidden="true">
+      {{ originalPrice() | peCurrency: currency() }}
+    </div>
+  </div>
+}

@@ -1,0 +1,102 @@
+@use '../../foundations/toolkit' as *;
+
+@include generate-scrollbar-styles;
+
+.#{$prefix}sidebar {
+  position: relative;
+  height: 100%;
+
+  &__overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: $color-background-black-strong;
+    z-index: $elevation-overlay;
+    opacity: 0;
+    pointer-events: none;
+    @include transition-property(opacity, $transition-duration-normal);
+
+    @include down('md') {
+      display: block;
+    }
+
+    &--visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &__drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $spacing-spacing-60;
+    max-width: 85vw;
+    height: 100%;
+    background-color: $color-background-main;
+    border-right: 1px solid $color-border-white-light;
+    z-index: $elevation-drawer;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    @include transition-property(transform, $transition-duration-normal);
+
+    @include down('md') {
+      transform: translateX(-100%);
+    }
+
+    &--open {
+      @include down('md') {
+        transform: translateX(0);
+      }
+    }
+
+    @include up('md') {
+      position: relative;
+      transform: none;
+      flex-shrink: 0;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: $spacing-spacing-4;
+    gap: $spacing-spacing-4;
+  }
+
+  &__header {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: $spacing-spacing-2;
+
+    .#{$prefix}sidebar__close {
+      @include up('md') {
+        display: none;
+      }
+
+      .#{$prefix}icon,
+      .#{$prefix}icon::before {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__nav {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-spacing-1;
+  }
+
+  &__footer {
+    flex-shrink: 0;
+    border-top: 1px solid $color-border-white-light;
+    padding-top: $spacing-spacing-4;
+  }
+}

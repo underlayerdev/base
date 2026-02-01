@@ -1,0 +1,28 @@
+<div
+  class="pe-skeleton"
+  [class.pe-skeleton--active]="show()"
+  [class.pe-skeleton--rect]="variant() === 'rect'"
+  [class.pe-skeleton--text]="variant() === 'text'"
+  [class]="radiusClass() || ''"
+  [style.width]="hostStyles().width"
+  [style.height]="hostStyles().height"
+>
+  <div class="pe-skeleton__content">
+    <ng-content />
+  </div>
+
+  @if (show()) {
+    @if (variant() === 'text') {
+      <div class="pe-skeleton__overlay pe-skeleton__overlay--text">
+        @for (lineWidth of lineWidths(); track trackByIndex($index)) {
+          <div class="pe-skeleton__block pe-skeleton__block--line" [style.width]="lineWidth"></div>
+        }
+      </div>
+    } @else {
+      <div class="pe-skeleton__overlay pe-skeleton__overlay--rect">
+        <div class="pe-skeleton__block pe-skeleton__block--rect"></div>
+      </div>
+    }
+  }
+</div>
+

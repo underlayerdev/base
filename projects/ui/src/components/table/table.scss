@@ -1,0 +1,137 @@
+@use '../../foundations/toolkit' as *;
+
+// Use table layout tokens (from foundations/layouts/table, forwarded via toolkit).
+@use '../../foundations/layouts/table' as table-layout;
+
+.#{$prefix}table {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-spacing-3;
+  width: 100%;
+
+  &__toolbar {
+    flex-shrink: 0;
+    max-width: 100%;
+  }
+
+  &__scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__table {
+    width: 100%;
+    min-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid table-layout.$table-border-color;
+    @include typography('caption-l');
+    color: $color-text-primary;
+  }
+
+  &__head {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: table-layout.$table-header-background;
+  }
+
+  &__row {
+    border-bottom: 1px solid table-layout.$table-row-border-color;
+
+    &--head {
+      border-bottom: 2px solid table-layout.$table-border-color;
+    }
+
+    &--empty {
+      border-bottom: none;
+    }
+  }
+
+  &__th {
+    padding: table-layout.$table-cell-padding-y table-layout.$table-cell-padding-x;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+
+    &--sortable {
+      .#{$prefix}table__th-button {
+        display: inline-flex;
+        align-items: center;
+        gap: $spacing-spacing-1;
+        width: 100%;
+        min-width: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: inherit;
+        font: inherit;
+        text-align: left;
+        @include typography('caption-l');
+        font-weight: 600;
+
+        &:hover {
+          color: $color-text-secondary;
+        }
+
+        &:focus-visible {
+          outline: 2px solid $color-border-white-medium;
+          outline-offset: 2px;
+        }
+      }
+    }
+
+    &--sort-asc,
+    &--sort-desc {
+      color: $color-text-purple;
+    }
+  }
+
+  &__th-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__body {
+    @include typography('caption-l');
+    color: $color-text-primary;
+  }
+
+  &__cell {
+    padding: table-layout.$table-cell-padding-y table-layout.$table-cell-padding-x;
+    vertical-align: middle;
+
+    &--empty {
+      padding: $spacing-spacing-6;
+      text-align: center;
+      color: $color-text-secondary;
+      @include typography('body-m');
+    }
+  }
+
+  @include down('sm') {
+    &__scroll {
+      margin-left: -$spacing-spacing-4;
+      margin-right: -$spacing-spacing-4;
+      padding-left: $spacing-spacing-4;
+      padding-right: $spacing-spacing-4;
+    }
+
+    &__table {
+      min-width: max-content;
+    }
+  }
+
+  @include up('md') {
+    &__scroll {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

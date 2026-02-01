@@ -1,0 +1,75 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: $radius-radius-full;
+  background-color: $color-interactive-surface-transparent-white-enabled;
+  color: $color-text-primary;
+
+  // Size variants
+  &--sm {
+    width: $component-control-height-sm;
+    height: $component-control-height-sm;
+    min-width: $component-control-height-sm;
+  }
+
+  &--md {
+    width: $component-control-height-md;
+    height: $component-control-height-md;
+    min-width: $component-control-height-md;
+  }
+
+  &--lg {
+    width: $component-control-height-lg;
+    height: $component-control-height-lg;
+    min-width: $component-control-height-lg;
+  }
+
+  &--xl {
+    width: $component-control-height-xl;
+    height: $component-control-height-xl;
+    min-width: $component-control-height-xl;
+  }
+
+  // Image
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  // Initials
+  &__initials {
+    @include typography('body-m', 'extrabold');
+    text-transform: uppercase;
+    user-select: none;
+    line-height: 1;
+
+    .#{$prefix}avatar--sm & {
+      @include typography('caption-l', 'extrabold');
+    }
+
+    .#{$prefix}avatar--md & {
+      @include typography('body-m', 'extrabold');
+    }
+
+    .#{$prefix}avatar--lg & {
+      @include typography('body-l', 'extrabold');
+    }
+
+    .#{$prefix}avatar--xl & {
+      @include typography('headline-s', 'extrabold');
+    }
+  }
+
+  // Icon
+  .#{$prefix}icon {
+    color: $color-text-secondary;
+  }
+}

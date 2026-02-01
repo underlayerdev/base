@@ -1,0 +1,19 @@
+// Shared Quill chrome reset for viewer and editor
+@mixin quill-reset {
+  .ql-container {
+    border: none;
+    font-family: inherit;
+  }
+
+  .ql-editor {
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+  }
+}

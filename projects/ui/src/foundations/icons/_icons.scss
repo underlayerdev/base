@@ -1,0 +1,76 @@
+@use 'sass:map';
+@use '../core' as *;
+
+/// This mixin generates icon classes based on the tokens provided.
+///
+/// The generated classes include:
+///
+/// 1. Base icon class:
+///    - `.#{$prefix}icon`: The base class for all icons, which sets the font family, display, font style, font variant, line height, and text rendering properties.
+///
+/// 2. Icon sizes:
+///    - Classes for different icon sizes are generated based on the `$tokens` map.
+///    - Example: `.#{$prefix}icon-size-{size}` where `{size}` is the key from the `$tokens` map. These classes set the `font-size` and `line-height` properties.
+///
+/// 3. Icon weights:
+///    - Classes for different icon weights are generated based on the `$tokens` map.
+///    - Example: `.#{$prefix}icon-weight-{weight}` where `{weight}` is the key from the `$tokens` map. These classes set the `font-weight` property.
+///
+/// 4. Icon names:
+///    - Classes for different icon names are generated based on the `$tokens` map.
+///    - Example: `.#{$prefix}icon-{icon-name}` where `{icon-name}` is the name of the icon from the `$tokens` map. These classes set the `content` property to the icon name.
+///
+/// Usage:
+///
+/// ```scss
+/// @include generate-icon-classes();
+/// ```
+@mixin generate-icon-classes() {
+  $icons-assets: map.get($tokens, 'content', 'icon-glyph');
+
+  .#{$prefix}icon {
+    font-family: '#{$iconography-font-family-icon}';
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    font-weight: 500;
+
+    // Icon sizes
+    $icon-sizes: map.get($tokens, 'iconography', 'font', 'size');
+    @each $icon-size-key, $icon-size-value in $icon-sizes {
+      &-size-#{$icon-size-key} {
+        @include icon-size($icon-size-key);
+      }
+    }
+
+    // Icon weights
+    $icon-weights: map.get($tokens, 'iconography', 'font', 'weight');
+    @each $icon-weight-key, $icon-weight-value in $icon-weights {
+      // Convert Medium and Bold to their numeric values because there is a wrong mapping in the tokens
+      $font-weight: normal;
+      @if ($icon-weight-value == 'Medium') {
+        $font-weight: 500;
+      } @else if ($icon-weight-value == 'Bold') {
+        $font-weight: 700;
+      }
+      &-weight-#{$icon-weight-key} {
+        font-weight: #{$font-weight};
+      }
+    }
+
+    // Icon names
+    @each $icon-key, $icon-name in $icons-assets {
+      &-#{$icon-name}::before {
+        content: '#{$icon-name}';
+      }
+    }
+  }
+}
+
+@mixin icon-size($size-key) {
+  $size-value: map.get($tokens, 'iconography', 'font', 'size', $size-key);
+  font-size: $size-value;
+  line-height: $size-value;
+}

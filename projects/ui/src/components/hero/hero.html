@@ -1,0 +1,139 @@
+<section
+  class="pe-hero pe-hero-alignment-{{ alignment() }} pe-hero-size-{{ size() }}"
+  role="banner"
+  [attr.aria-label]="title()"
+  [class.pe-hero--full-height]="fullHeight()"
+  [class.pe-hero--has-background]="!!backgroundImage()"
+>
+  @if (backgroundImage()) {
+    <div
+      class="pe-hero__background"
+      [style.background-image]="'url(' + backgroundImage() + ')'"
+      [style.filter]="backgroundFilter() || null"
+      aria-hidden="true"
+    ></div>
+    <div
+      class="pe-hero__overlay"
+      [style.background]="backgroundOverlayGradient() || 'rgba(0, 0, 0, 0.4)'"
+      aria-hidden="true"
+    ></div>
+  }
+
+  <div class="pe-hero__content">
+    @if (hasBadgesSlot()) {
+      <div class="pe-hero__badges">
+        <ng-content select="[pe-hero-badges]" />
+      </div>
+    } @else if (badges().length) {
+      <div class="pe-hero__badges">
+        @for (badge of badges(); track badge) {
+          <pe-pill variant="read-only" theme="transparent-white" size="md">
+            {{ badge }}
+          </pe-pill>
+        }
+      </div>
+    }
+
+    @if (hasTitleSlot()) {
+      <div class="pe-hero__title">
+        <ng-content select="[pe-hero-title]" />
+      </div>
+    } @else {
+      <h1 class="pe-hero__title">{{ title() }}</h1>
+    }
+
+    @if (hasSubtitleSlot()) {
+      <div class="pe-hero__subtitle">
+        <ng-content select="[pe-hero-subtitle]" />
+      </div>
+    } @else if (subtitle()) {
+      <p class="pe-hero__subtitle">{{ subtitle() }}</p>
+    }
+
+    @if (hasContentSlot()) {
+      <div class="pe-hero__extra">
+        <ng-content select="[pe-hero-content]" />
+      </div>
+    }
+
+    @if (hasActionsSlot()) {
+      <div class="pe-hero__actions">
+        <ng-content select="[pe-hero-actions]" />
+      </div>
+    } @else if (primaryAction() || secondaryAction()) {
+      <div class="pe-hero__actions">
+        @if (primaryAction()) {
+          @if (primaryAction()!.href) {
+            <a [href]="primaryAction()!.href" class="pe-hero__action-link">
+              <pe-button
+                [theme]="primaryAction()!.theme ?? 'fill-purple'"
+                [size]="primaryAction()!.size ?? 'md'"
+              >
+                @if (primaryAction()!.icon) {
+                  <pe-icon [icon]="primaryAction()!.icon!" size="6" />
+                }
+                {{ primaryAction()!.label }}
+              </pe-button>
+            </a>
+          } @else if (primaryAction()!.routerLink) {
+            <a [routerLink]="primaryAction()!.routerLink" class="pe-hero__action-link">
+              <pe-button
+                [theme]="primaryAction()!.theme ?? 'fill-purple'"
+                [size]="primaryAction()!.size ?? 'md'"
+              >
+                @if (primaryAction()!.icon) {
+                  <pe-icon [icon]="primaryAction()!.icon!" size="6" />
+                }
+                {{ primaryAction()!.label }}
+              </pe-button>
+            </a>
+          } @else {
+            <pe-button
+              [theme]="primaryAction()!.theme ?? 'fill-purple'"
+              [size]="primaryAction()!.size ?? 'md'"
+            >
+              @if (primaryAction()!.icon) {
+                <pe-icon [icon]="primaryAction()!.icon!" size="6" />
+              }
+              {{ primaryAction()!.label }}
+            </pe-button>
+          }
+        }
+        @if (secondaryAction()) {
+          @if (secondaryAction()!.href) {
+            <a [href]="secondaryAction()!.href" class="pe-hero__action-link">
+              <pe-button theme="ghost-white" [size]="secondaryAction()!.size ?? 'md'">
+                @if (secondaryAction()!.icon) {
+                  <pe-icon [icon]="secondaryAction()!.icon!" size="6" />
+                }
+                {{ secondaryAction()!.label }}
+              </pe-button>
+            </a>
+          } @else if (secondaryAction()!.routerLink) {
+            <a [routerLink]="secondaryAction()!.routerLink" class="pe-hero__action-link">
+              <pe-button
+                [theme]="secondaryAction()!.theme ?? 'ghost-white'"
+                [size]="secondaryAction()!.size ?? 'md'"
+              >
+                @if (secondaryAction()!.icon) {
+                  <pe-icon [icon]="secondaryAction()!.icon!" size="6" />
+                }
+                {{ secondaryAction()!.label }}
+              </pe-button>
+            </a>
+          } @else {
+            <pe-button
+              [theme]="secondaryAction()!.theme ?? 'ghost-white'"
+              [size]="secondaryAction()!.size ?? 'md'"
+            >
+              @if (secondaryAction()!.icon) {
+                <pe-icon [icon]="secondaryAction()!.icon!" size="6" />
+              }
+              {{ secondaryAction()!.label }}
+            </pe-button>
+          }
+        }
+      </div>
+    }
+  </div>
+</section>

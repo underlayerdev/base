@@ -1,0 +1,204 @@
+@use '../../foundations/toolkit' as *;
+
+// Card base styles
+.#{$prefix}card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  overflow: visible;
+  width: 100%;
+  color: $color-text-tertiary;
+  border-radius: $radius-radius-2;
+  gap: $spacing-spacing-3;
+  outline: $spacing-spacing-2 solid transparent;
+  background-color: transparent;
+  @include typography('body-m');
+  @include transition-properties((background-color, outline));
+
+  // Responsive styles
+  @include up('xs') {
+    min-width: 140px;
+  }
+  @include up('sm') {
+    min-width: 208px;
+  }
+  @include up('lg') {
+    min-width: 232px;
+  }
+
+  // Interactive states
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &--focused {
+    outline-color: $color-interactive-surface-transparent-white-enabled;
+    background-color: $color-interactive-surface-transparent-white-enabled;
+  }
+
+  // Media section
+  &__media {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: $color-background-white-light;
+    border-radius: $radius-radius-2;
+
+    @include up('xs') {
+      min-height: 140px;
+    }
+    @include up('sm') {
+      min-height: 208px;
+    }
+    @include up('lg') {
+      min-height: 232px;
+    }
+
+    // Media content
+    > :first-child {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      filter: blur(var(--#{$prefix}card__media-blur, 0))
+        grayscale(var(--#{$prefix}card__media-grayscale, 0));
+    }
+
+    // Media overlay
+    > :nth-child(2) {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    // Media action button
+    &-action {
+      opacity: 0;
+      position: absolute;
+      top: $spacing-spacing-2;
+      right: $spacing-spacing-2;
+      z-index: 2;
+      @include transition-property(opacity, $transition-duration-fast);
+
+      @include down('sm') {
+        opacity: 1;
+      }
+    }
+  }
+
+  // Show media action on hover/focus
+  &:hover &__media-action,
+  &:focus &__media-action,
+  &:focus-within &__media-action {
+    opacity: 1;
+  }
+
+  // Content section
+  &__content {
+    flex: 1;
+
+    &-caption {
+      color: $color-text-tertiary;
+      @include line-clamp(1);
+    }
+
+    &-title {
+      color: $color-text-primary;
+      @include typography('body-l', 'extrabold');
+      @include line-clamp(2);
+
+      &--single-line {
+        @include line-clamp(1);
+      }
+    }
+
+    &-subtitle {
+      color: $color-text-tertiary;
+      @include typography('body-l', 'extrabold');
+      @include line-clamp(2);
+
+      &--single-line {
+        @include line-clamp(1);
+      }
+    }
+  }
+
+  // Footer section
+  &__footer {
+    display: flex;
+    gap: $spacing-spacing-2;
+  }
+
+  // Modifiers
+  &--disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &--caption-sm &__content-caption {
+    @include typography('caption-l');
+  }
+
+  &--footer-equal &__footer > * {
+    flex: 1;
+  }
+
+  // Media aspect ratio modifiers
+  &--media-square &__media {
+    aspect-ratio: 1/1;
+  }
+
+  &--media-portrait &__media {
+    aspect-ratio: 3/4;
+  }
+
+  &__media {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Media effect modifiers
+  &--media-blurred {
+    --#{$prefix}card__media-blur: 16px;
+
+    .#{$prefix}card__media > :first-child {
+      fill: $color-background-black-medium;
+    }
+  }
+
+  &--media-grayscale {
+    --#{$prefix}card__media-grayscale: 1;
+
+    .#{$prefix}card__media > :first-child {
+      opacity: 0.5;
+      mix-blend-mode: luminosity;
+    }
+  }
+
+  &__skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-spacing-3;
+    min-height: 100px;
+
+    // Large media thumbnail placeholder
+    > .#{$prefix}skeleton:first-child {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+
+    &-body {
+      margin-top: $spacing-spacing-3;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-spacing-2;
+    }
+  }
+}

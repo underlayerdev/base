@@ -1,0 +1,21 @@
+<div [class]="computedClasses()">
+  <div class="pe-status-icon">
+    <pe-icon [icon]="icon" size="12" />
+    @if (loadingAnimation()) {
+      <div class="pe-status-loading">
+        <pe-radial [size]="96" [percentage]="50" [infinite]="true" />
+      </div>
+    }
+  </div>
+  <div class="pe-status-title-container">
+    <div class="pe-status-title">
+      <ng-content select="[pe-status-title]" />
+    </div>
+    <div class="pe-status-subtitle">
+      <ng-content select="[pe-status-subtitle]" />
+    </div>
+  </div>
+  <div class="pe-status-description">
+    <ng-content select="[pe-status-description]" />
+  </div>
+</div>

@@ -1,0 +1,25 @@
+@use '../core' as *;
+
+/// Semantic min-height for navbar bar (uses spacing token).
+$layout-navbar-min-height: $spacing-spacing-12 !default;
+
+/// Base navbar bar layout: flex row, alignment, padding, gap, background, border.
+/// Use only in navbar component; all values reference design tokens.
+@mixin navbar-bar {
+  min-height: $layout-navbar-min-height;
+  display: flex;
+  align-items: center;
+  gap: $spacing-spacing-4;
+  padding: $spacing-spacing-2 $spacing-spacing-4;
+  background-color: $color-background-main;
+  border-bottom: 1px solid $color-border-white-light;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-spacing-3 $spacing-spacing-6;
+    gap: $spacing-spacing-6;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: $spacing-spacing-3 $spacing-spacing-8;
+  }
+}

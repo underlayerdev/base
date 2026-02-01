@@ -1,0 +1,12 @@
+<div
+  class="pe-radial"
+  role="progressbar"
+  [attr.aria-label]="ariaLabel() ?? null"
+  [attr.aria-valuenow]="percentage()"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  [class.pe-radial--infinite]="infinite()"
+  [style.width.px]="size()"
+  [style.padding.px]="lineWidth()"
+  [style.--pe-radial-percentage]="percentage() + '%'"
+></div>

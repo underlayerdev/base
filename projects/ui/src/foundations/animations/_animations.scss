@@ -1,0 +1,66 @@
+@use 'sass:list';
+
+// Duration variables
+$transition-duration-fast: 150ms;
+$transition-duration-normal: 250ms;
+$transition-duration-slow: 350ms;
+
+// Easing variables
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-in: cubic-bezier(0.4, 0, 1, 1);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+// General transition mixin for all properties
+@mixin transition-all($duration: $transition-duration-normal, $easing: $ease-in-out) {
+  transition: all $duration $easing;
+}
+
+// Single property transition mixin
+@mixin transition-property(
+  $property,
+  $duration: $transition-duration-normal,
+  $easing: $ease-in-out
+) {
+  transition: $property $duration $easing;
+}
+
+// Multiple properties transition mixin
+@mixin transition-properties(
+  $properties,
+  $duration: $transition-duration-normal,
+  $easing: $ease-in-out
+) {
+  $transitions: ();
+  @each $property in $properties {
+    $transitions: list.append($transitions, $property $duration $easing, comma);
+  }
+  transition: $transitions;
+}
+
+// Generate animation utility classes
+@mixin generate-animation-classes() {
+  .transition-all {
+    @include transition-all();
+  }
+
+  .transition-fast {
+    @include transition-all($transition-duration-fast);
+  }
+
+  .transition-slow {
+    @include transition-all($transition-duration-slow);
+  }
+
+  // Common property-specific transitions
+  .transition-transform {
+    @include transition-property(transform);
+  }
+
+  .transition-opacity {
+    @include transition-property(opacity);
+  }
+
+  .transition-colors {
+    @include transition-properties((color, background-color, border-color, box-shadow));
+  }
+}

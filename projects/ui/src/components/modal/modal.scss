@@ -1,0 +1,151 @@
+@use '../../foundations/toolkit' as *;
+
+$modal-class: '.#{$prefix}modal';
+
+#{$modal-class} {
+  &--backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: $elevation-modal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-spacing-4;
+    background-color: $color-background-black-strong;
+    @include transition-property(opacity);
+  }
+
+  &__panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100% - #{$spacing-spacing-8});
+    overflow: auto;
+    border-radius: $radius-radius-4;
+    @include typography('body-m', 'regular');
+    color: $color-text-primary;
+    @include transition-properties((opacity, transform));
+    background-color: $color-background-grey-lvl-1;
+    padding: $spacing-spacing-6;
+    border: 1px solid $color-border-white-light;
+
+    &--confirmation {
+      border: 1px solid $color-border-white-light;
+    }
+
+    @include down('xs') {
+      &--success {
+        border: 1px solid $color-border-green;
+      }
+
+      &--error {
+        border: 1px solid $color-border-red;
+      }
+    }
+
+    &--custom {
+      border: 1px solid $color-border-white-light;
+    }
+
+    &--bottom-sheet {
+      border: 1px solid $color-border-white-light;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-spacing-4;
+    margin-bottom: $spacing-spacing-4;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    margin: 0;
+    @include typography('headline-s', 'extrabold');
+    color: $color-text-primary;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-spacing-3;
+    margin-bottom: $spacing-spacing-3;
+  }
+
+  &__status-icon {
+    flex-shrink: 0;
+  }
+
+  &__close {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    min-height: 0;
+    color: $color-text-secondary;
+  }
+
+  // Variant-specific content styling
+  &__panel--success &__status-icon {
+    color: $color-text-green;
+  }
+
+  &__panel--error &__status-icon {
+    color: $color-text-red;
+  }
+
+  // Center-align and adjust font size for success/error variants
+  &__panel--success &__body,
+  &__panel--error &__body {
+    text-align: center;
+    @include typography('body-l', 'regular');
+  }
+
+  // Responsive: desktop (sm and up)
+  @include up('sm') {
+    &--backdrop {
+      padding: $spacing-spacing-6;
+    }
+
+    &__panel {
+      width: 100%;
+      max-width: $spacing-spacing-128;
+    }
+  }
+
+  // Responsive: mobile (below xs)
+  @include down('xs') {
+    &--backdrop {
+      align-items: flex-end;
+      padding: 0;
+    }
+
+    &__panel {
+      width: 100%;
+      max-width: 100%;
+      border-radius: $radius-radius-6 $radius-radius-6 0 0;
+      max-height: calc(100dvh - #{$spacing-spacing-8});
+      margin-top: auto;
+      border-bottom: none;
+    }
+
+    &__panel--bottom-sheet {
+      border-bottom: none;
+    }
+  }
+}
+
+#{$modal-class}__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-spacing-2;
+  align-items: center;
+  margin-top: $spacing-spacing-4;
+  flex-shrink: 0;
+  justify-content: flex-end;
+}

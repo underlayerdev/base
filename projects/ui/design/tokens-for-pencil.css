@@ -1,0 +1,10 @@
+/**
+ * Full design token set for Pencil import.
+ * Re-exports projects/ui/src/design-tokens/variables.css (canonical source).
+ * Source: _variables.scss (auto-generated) → variables.css
+ *
+ * Use with Pencil AI prompt: "Create Pencil variables from projects/ui/design/tokens-for-pencil.css"
+ * Or import variables.css directly: "Create Pencil variables from projects/ui/src/design-tokens/variables.css"
+ */
+
+@import '../src/design-tokens/variables.css';

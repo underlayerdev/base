@@ -1,0 +1,369 @@
+// source: https://gist.github.com/lukaskleinschmidt/f4c10d15d013fec8f8b8a341d9ade859
+@use 'sass:map';
+@use '../core' as *;
+@use '../typography';
+@use 'variants' as * with (
+  $breakpoints: map.get($tokens, 'breakpoint')
+);
+
+/// This mixin generates utility classes based on the design tokens provided.
+///
+/// The generated classes include:
+///
+/// 1. Text colors:
+///    - Classes for different text colors are generated based on the `$tokens` map.
+///    - Example: `.#{$prefix}text-{color}` where `{color}` is the key from the `$tokens` map. These classes set the `color` property.
+///
+/// 2. Background colors:
+///    - Classes for different background colors are generated based on the `$tokens` map.
+///    - Example: `.#{$prefix}bg-{color}` where `{color}` is the key from the `$tokens` map. These classes set the `background-color` property.
+///
+/// 3. Border colors:
+///    - Classes for different border colors are generated based on the `$tokens` map.
+///    - Example: `.#{$prefix}border-{color}` where `{color}` is the key from the `$tokens` map. These classes set the `border-color` property.
+///
+/// 4. Border radius:
+///    - Classes for different border radius values are generated based on the `$tokens` map.
+///    - Example: `.#{$prefix}rounded-{radius}` where `{radius}` is the key from the `$tokens` map. These classes set the `border-radius` property.
+///
+/// 5. Shadows:
+///    - Classes for different shadow values are generated based on the predefined `$shadows` map.
+///    - Example: `.#{$prefix}shadow-{size}` where `{size}` is the key from the `$shadows` map. These classes set the `box-shadow` property.
+///
+/// 6. Spacing:
+///    - Classes for different spacing values are generated based on the `$tokens` map.
+///    - Example: `.#{$prefix}m-{size}` for margin and `.#{$prefix}p-{size}` for padding, where `{size}` is the key from the `$tokens` map. These classes set the `margin` and `padding` properties respectively.
+///
+/// Usage:
+///
+/// ```scss
+/// @include generate-class-utils();
+/// ```
+@mixin generate-utils() {
+  .#{$prefix} {
+    // Text colors
+    $textColors: map.get($tokens, 'color', 'text');
+    &text {
+      @include options($textColors) using ($value) {
+        color: $value;
+      }
+    }
+
+    // Background colors
+    $backgroundColors: map.get($tokens, 'color', 'background');
+    &bg {
+      @include options($backgroundColors) using ($value) {
+        background-color: $value;
+      }
+    }
+
+    // Border colors
+    $borderColors: map.get($tokens, 'color', 'border');
+    &border {
+      @include options($borderColors) using ($value) {
+        border-color: $value;
+      }
+    }
+
+    // Border radius
+    $borderRadius: map.merge(
+      (
+        'none': 0,
+      ),
+      map.get($tokens, 'radius', 'radius')
+    );
+    &rounded {
+      @include options($borderRadius) using ($value) {
+        border-radius: $value;
+      }
+    }
+
+    // Shadows
+    $shadows: (
+      none: 'none',
+      sm: '0px 4px 8px 0px rgba(0, 0, 0, 0.25), 0px 0px 4px 0px rgba(0, 0, 0, 0.12)',
+      md: '0px 8px 16px 0px rgba(0, 0, 0, 0.25), 0px 4px 8px 0px rgba(0, 0, 0, 0.12)',
+      lg: '0px 16px 32px 0px rgba(0, 0, 0, 0.25), 0px 8px 16px 0px rgba(0, 0, 0, 0.12)',
+    );
+    &shadow {
+      @include options($shadows) using ($value) {
+        box-shadow: $value;
+      }
+    }
+
+    // Blur
+    $blur: (
+      0: '0px',
+      32: '32px',
+      128: '128px',
+      256: '256px',
+    );
+    &blur {
+      @include options($blur) using ($value) {
+        backdrop-filter: blur($value);
+      }
+    }
+
+    // Line clamp
+    $lineClamp: (
+      1: 1,
+      2: 2,
+      3: 3,
+    );
+    &line-clamp {
+      @include options($lineClamp) using ($value) {
+        @include typography.line-clamp($value);
+      }
+    }
+
+    // Spacing
+    /*
+gap-{size} (both row and column)
+gap-x-{size} (column gap)
+gap-y-{size} (row gap)
+p-{size} (all sides)
+px-{size} (left and right)
+py-{size} (top and bottom)
+pt-{size} (top)
+pr-{size} (right)
+pb-{size} (bottom)
+pl-{size} (left)
+m-{size} (all sides)
+mx-{size} (left and right)
+my-{size} (top and bottom)
+mt-{size} (top)
+mr-{size} (right)
+mb-{size} (bottom)
+ml-{size} (left)
+w-{size} (width)
+h-{size} (height)
+translate-x-{size}
+translate-y-{size}
+top-{size}
+right-{size}
+bottom-{size}
+left-{size}
+*/
+    $spacing: map.get($tokens, 'spacing', 'spacing');
+
+    // Add auto to the positive margin classes
+    $margin: map.merge(
+      (
+        'auto': auto,
+        'px': 1px,
+        '0': 0,
+      ),
+      $spacing
+    );
+
+    @include variants('responsive') using ($props...) {
+      // Gap
+      &gap {
+        @include options($spacing, $props...) using ($value) {
+          gap: $value;
+        }
+      }
+
+      &gap-x {
+        @include options($spacing, $props...) using ($value) {
+          column-gap: $value;
+        }
+      }
+
+      &gap-y {
+        @include options($spacing, $props...) using ($value) {
+          row-gap: $value;
+        }
+      }
+
+      // Padding
+      &p {
+        @include options($spacing, $props...) using ($value) {
+          padding: $value;
+        }
+      }
+
+      &px {
+        @include options($spacing, $props...) using ($value) {
+          padding-right: $value;
+          padding-left: $value;
+        }
+      }
+
+      &py {
+        @include options($spacing, $props...) using ($value) {
+          padding-bottom: $value;
+          padding-top: $value;
+        }
+      }
+
+      &pt {
+        @include options($spacing, $props...) using ($value) {
+          padding-top: $value;
+        }
+      }
+
+      &pr {
+        @include options($spacing, $props...) using ($value) {
+          padding-right: $value;
+        }
+      }
+
+      &pb {
+        @include options($spacing, $props...) using ($value) {
+          padding-bottom: $value;
+        }
+      }
+
+      &pl {
+        @include options($spacing, $props...) using ($value) {
+          padding-left: $value;
+        }
+      }
+
+      // Margin
+      &m {
+        @include options($margin, $props...) using ($value) {
+          margin: $value;
+        }
+      }
+
+      &mx {
+        @include options($margin, $props...) using ($value) {
+          margin-right: $value;
+          margin-left: $value;
+        }
+      }
+
+      &my {
+        @include options($margin, $props...) using ($value) {
+          margin-bottom: $value;
+          margin-top: $value;
+        }
+      }
+
+      &mt {
+        @include options($margin, $props...) using ($value) {
+          margin-top: $value;
+        }
+      }
+
+      &mr {
+        @include options($margin, $props...) using ($value) {
+          margin-right: $value;
+        }
+      }
+
+      &mb {
+        @include options($margin, $props...) using ($value) {
+          margin-bottom: $value;
+        }
+      }
+
+      &ml {
+        @include options($margin, $props...) using ($value) {
+          margin-left: $value;
+        }
+      }
+
+      // Negative margin
+      &-m {
+        @include options($spacing, $props...) using ($value) {
+          margin: -$value;
+        }
+      }
+
+      &-mx {
+        @include options($spacing, $props...) using ($value) {
+          margin-right: -$value;
+          margin-left: -$value;
+        }
+      }
+
+      &-my {
+        @include options($spacing, $props...) using ($value) {
+          margin-bottom: -$value;
+          margin-top: -$value;
+        }
+      }
+
+      &-mt {
+        @include options($spacing, $props...) using ($value) {
+          margin-top: -$value;
+        }
+      }
+
+      &-mr {
+        @include options($spacing, $props...) using ($value) {
+          margin-right: -$value;
+        }
+      }
+
+      &-mb {
+        @include options($spacing, $props...) using ($value) {
+          margin-bottom: -$value;
+        }
+      }
+
+      &-ml {
+        @include options($spacing, $props...) using ($value) {
+          margin-left: -$value;
+        }
+      }
+
+      // Width
+      &w {
+        @include options($spacing, $props...) using ($value) {
+          width: $value;
+        }
+      }
+
+      // Height
+      &h {
+        @include options($spacing, $props...) using ($value) {
+          height: $value;
+        }
+      }
+
+      // Transform
+      &translate {
+        &-x {
+          @include options($spacing, $props...) using ($value) {
+            transform: translateX($value);
+          }
+        }
+
+        &-y {
+          @include options($spacing, $props...) using ($value) {
+            transform: translateY($value);
+          }
+        }
+      }
+
+      // Position
+      &top {
+        @include options($spacing, $props...) using ($value) {
+          top: $value;
+        }
+      }
+
+      &right {
+        @include options($spacing, $props...) using ($value) {
+          right: $value;
+        }
+      }
+
+      &bottom {
+        @include options($spacing, $props...) using ($value) {
+          bottom: $value;
+        }
+      }
+
+      &left {
+        @include options($spacing, $props...) using ($value) {
+          left: $value;
+        }
+      }
+    }
+  }
+}

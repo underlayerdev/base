@@ -1,0 +1,14 @@
+<span class="pe-tooltip-wrapper">
+  <ng-content />
+
+  @if (isVisible() && text()) {
+    <span
+      class="pe-tooltip pe-tooltip--{{ position() }}"
+      role="tooltip"
+      [attr.id]="tooltipId"
+    >
+      {{ text() }}
+    </span>
+  }
+</span>
+

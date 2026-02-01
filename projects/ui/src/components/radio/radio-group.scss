@@ -1,0 +1,11 @@
+.pe-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pe-radio-group__radios {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}

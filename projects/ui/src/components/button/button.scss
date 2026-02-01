@@ -1,0 +1,232 @@
+@use 'sass:map';
+@use '../../foundations/toolkit' as *;
+
+@mixin button-reset {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration-line: none;
+  overflow: visible;
+}
+
+@mixin button-base {
+  @include button-reset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  width: 100%;
+  color: $color-text-primary;
+  @include focus-ring;
+  @include transition-properties((color, background-color, width));
+}
+
+@mixin focus-ring {
+  &:focus-visible,
+  &:focus {
+    outline-offset: 2px;
+    outline: $color-border-white-medium solid 2px;
+  }
+}
+
+@mixin button-variant($group, $type) {
+  @include button-base;
+  @include interactive-surface($group, $type);
+}
+
+.#{$prefix}btn {
+  @include button-base;
+
+  &[disabled],
+  &:disabled {
+    cursor: not-allowed;
+    color: $color-text-disabled;
+  }
+
+  // Size variants
+  &--sm {
+    @include typography('caption-l', 'extrabold');
+    height: $component-control-height-sm;
+    min-width: $component-control-min-width-sm;
+    padding: $spacing-spacing-2 $spacing-spacing-3;
+    border-radius: $radius-radius-2;
+    gap: $spacing-spacing-1;
+
+    &.#{$prefix}btn--icon-only {
+      min-width: $component-icon-only-size-sm;
+    }
+
+    & .#{$prefix}icon {
+      font-size: $iconography-font-size-5;
+      line-height: $iconography-font-line-height-5;
+    }
+  }
+
+  &--md {
+    @include typography('body-m', 'extrabold');
+    height: $component-control-height-md;
+    min-width: $component-control-min-width-md;
+    padding: $spacing-spacing-2 $spacing-spacing-4;
+    border-radius: $radius-radius-3;
+    gap: $spacing-spacing-2;
+
+    &.#{$prefix}btn--icon-only {
+      min-width: $component-icon-only-size-md;
+    }
+
+    & .#{$prefix}icon {
+      font-size: $iconography-font-size-6;
+      line-height: $iconography-font-line-height-6;
+    }
+  }
+
+  &--lg {
+    @include typography('body-l', 'extrabold');
+    height: $component-control-height-lg;
+    min-width: $component-control-min-width-lg;
+    padding: $spacing-spacing-2 $spacing-spacing-8;
+    border-radius: $radius-radius-4;
+    gap: $spacing-spacing-3;
+
+    &.#{$prefix}btn--icon-only {
+      min-width: $component-icon-only-size-lg;
+    }
+
+    & .#{$prefix}icon {
+      font-size: $iconography-font-size-7;
+      line-height: $iconography-font-line-height-7;
+    }
+
+    &.#{$prefix}btn--vertical {
+      @include typography('body-m', 'extrabold');
+      flex-direction: column;
+      height: auto;
+      width: $component-control-vertical-width-lg;
+      padding: $spacing-spacing-4 $spacing-spacing-8;
+      border-radius: $radius-radius-6;
+      gap: $spacing-spacing-2;
+    }
+  }
+
+  &--xl {
+    @include typography('headline-s', 'extrabold');
+    height: $component-control-height-xl;
+    min-width: $component-control-min-width-lg;
+    padding: $spacing-spacing-2 $spacing-spacing-4;
+    border-radius: $radius-radius-4;
+    gap: $spacing-spacing-3;
+
+    &.#{$prefix}btn--icon-only {
+      min-width: $component-icon-only-size-lg;
+    }
+
+    & .#{$prefix}icon {
+      font-size: $iconography-font-size-8;
+      line-height: $iconography-font-line-height-8;
+    }
+  }
+
+  &--icon-only {
+    padding: 0;
+  }
+
+  // Fill variants
+  &--fill {
+    &-purple {
+      @include interactive-surface('solid', 'purple');
+      color: $color-text-primary;
+    }
+
+    &-white {
+      @include interactive-surface('solid', 'white');
+      color: $color-text-inverted;
+    }
+
+    &-yellow {
+      @include interactive-surface('solid', 'yellow');
+      color: $color-text-inverted;
+    }
+
+    &-red {
+      @include interactive-surface('solid', 'red');
+      color: $color-text-primary;
+    }
+  }
+
+  // Transparent variants
+  &--transparent {
+    &-purple {
+      @include interactive-surface('transparent', 'purple');
+      color: $color-text-purple;
+    }
+
+    &-white {
+      @include interactive-surface('transparent', 'white');
+      color: $color-text-primary;
+    }
+
+    &-red {
+      @include interactive-surface('transparent', 'red');
+      color: $color-text-red;
+    }
+
+    &-black {
+      @include interactive-surface('transparent', 'black');
+      color: $color-text-primary;
+    }
+  }
+
+  // Ghost variants
+  &--ghost {
+    &-purple {
+      @include interactive-surface('ghost', 'purple');
+      color: $color-text-purple;
+    }
+
+    &-white {
+      @include interactive-surface('ghost', 'white');
+      color: $color-text-secondary;
+      &:active,
+      &:hover {
+        color: $color-text-primary;
+      }
+    }
+
+    &-red {
+      @include interactive-surface('ghost', 'red');
+      color: $color-text-red;
+    }
+
+    &-green {
+      @include interactive-surface('ghost', 'green');
+      color: $color-text-green;
+    }
+  }
+
+  // Outline variants (transparent bg + 1px border + semantic text)
+  &--outline {
+    &-white,
+    &-purple,
+    &-red,
+    &-green {
+      @include transition-properties((color, background-color, width, border-color));
+    }
+
+    &-white {
+      @include outline-surface('white');
+    }
+
+    &-purple {
+      @include outline-surface('purple');
+    }
+
+    &-red {
+      @include outline-surface('red');
+    }
+
+    &-green {
+      @include outline-surface('green');
+    }
+  }
+}

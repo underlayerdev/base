@@ -1,0 +1,55 @@
+@use 'sass:map';
+@use '../core' as *;
+
+/// This mixin generates the grid classes for the design system.
+///
+/// It defines the following:
+/// 1. Grid row:
+///    - Creates a grid container with the class `#{$prefix}row`.
+///    - Sets the display to grid and defines the template columns to repeat for the number of columns.
+///    - Sets the gap between grid items.
+///    - Adjusts the gap for medium and larger screens using a media query.
+///
+/// 2. Columns:
+///    - Generates classes for each column span from 1 to the number of columns.
+///    - Each class is named `#{$prefix}col-#{$i}` where `$i` is the column span.
+///
+/// 3. Responsive grid:
+///    - Iterates over each breakpoint and size in the `$grid-breakpoints` map.
+///    - For each breakpoint, generates classes for each column span from 1 to the number of columns.
+///    - Each class is named `#{$prefix}col-#{$breakpoint}-#{$i}` where `$breakpoint` is the breakpoint name and `$i` is the column span.
+@mixin generate-grid-classes {
+  // Variables
+  $grid-columns: 12 !default;
+  $grid-gap: $spacing-spacing-4 !default;
+  $grid-breakpoints: map.get($tokens, 'breakpoint') !default;
+
+  // Grid row
+  .#{$prefix}row {
+    display: grid;
+    grid-template-columns: repeat($grid-columns, 1fr);
+    gap: $grid-gap;
+
+    @media (min-width: $breakpoint-md) {
+      gap: $spacing-spacing-8;
+    }
+  }
+
+  // Columns
+  @for $i from 1 through $grid-columns {
+    .#{$prefix}col-#{$i} {
+      grid-column: span $i;
+    }
+  }
+
+  // Responsive grid
+  @each $breakpoint, $size in $grid-breakpoints {
+    @media (min-width: $size) {
+      @for $i from 1 through $grid-columns {
+        .#{$prefix}col-#{$breakpoint}-#{$i} {
+          grid-column: span $i;
+        }
+      }
+    }
+  }
+}

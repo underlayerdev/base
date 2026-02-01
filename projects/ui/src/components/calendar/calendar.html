@@ -1,0 +1,165 @@
+<div
+  class="pe-calendar pe-calendar--{{ mode() }} pe-calendar--{{ size() }}"
+  [class.pe-calendar--error]="hasError()"
+  [class.pe-calendar--disabled]="disabled()"
+  [class.pe-calendar--read-only]="readOnly()"
+  [class.pe-calendar--required]="required()"
+  [attr.aria-invalid]="hasError()"
+  [attr.aria-required]="required()"
+  [attr.aria-describedby]="describedBy()"
+>
+  <pe-form-field-label
+    [label]="label()"
+    [required]="required()"
+    [for]="ids.controlId"
+    [size]="size()"
+  />
+
+  <div class="pe-calendar__trigger-group" [class.pe-calendar__trigger-group--focused]="isOpen()">
+    <button
+      type="button"
+      [id]="ids.controlId"
+      class="pe-calendar__trigger"
+      [disabled]="disabled()"
+      [cdkMenuTriggerFor]="calendarMenu"
+      [attr.aria-invalid]="hasError()"
+      [attr.aria-required]="required()"
+      [attr.aria-describedby]="describedBy()"
+      [attr.aria-expanded]="isOpen()"
+      [attr.aria-controls]="ids.controlId + '-menu'"
+      (cdkMenuOpened)="onMenuOpened()"
+      (cdkMenuClosed)="onMenuClosed()"
+    >
+      <span
+        class="pe-calendar__trigger-text"
+        [class.pe-calendar__trigger-text--placeholder]="!displayValue()"
+      >
+        @if (displayValue()) {
+          {{ displayValue() }}
+        } @else {
+          {{ defaultPlaceholder() }}
+        }
+      </span>
+    </button>
+
+    @if (showCalendarIcon()) {
+      <pe-button
+        type="button"
+        theme="ghost-white"
+        [size]="buttonSize()"
+        [iconOnly]="true"
+        [disabled]="disabled()"
+        [cdkMenuTriggerFor]="calendarMenu"
+        class="pe-calendar__icon-button"
+        ariaLabel="Open calendar"
+        (cdkMenuOpened)="onMenuOpened()"
+        (cdkMenuClosed)="onMenuClosed()"
+      >
+        <pe-icon icon="calendar" [size]="iconSize()" />
+      </pe-button>
+    }
+  </div>
+
+  <pe-form-field-helper
+    [id]="ids.helperId"
+    [helperText]="helperText()"
+    [errorText]="resolvedErrorText()"
+    [error]="hasError()"
+  />
+
+  <ng-template #calendarMenu>
+    <div cdkMenu class="pe-calendar__popup" [id]="ids.controlId + '-menu'">
+      @if (mode() === 'date' || mode() === 'datetime') {
+        <div class="pe-calendar__date-picker">
+          <div class="pe-calendar__header">
+            <pe-button
+              type="button"
+              theme="ghost-white"
+              [iconOnly]="true"
+              ariaLabel="Previous month"
+              (buttonClick)="previousMonth()"
+            >
+              <pe-icon icon="chevron_left" size="6" />
+            </pe-button>
+            <div class="pe-calendar__month-year">{{ monthYearLabel() }}</div>
+            <pe-button
+              type="button"
+              theme="ghost-white"
+              [iconOnly]="true"
+              ariaLabel="Next month"
+              (buttonClick)="nextMonth()"
+            >
+              <pe-icon icon="chevron_right" size="6" />
+            </pe-button>
+          </div>
+
+          <div class="pe-calendar__weekdays">
+            @for (day of ['S', 'M', 'T', 'W', 'T', 'F', 'S']; track $index) {
+              <div class="pe-calendar__weekday">{{ day }}</div>
+            }
+          </div>
+
+          <div class="pe-calendar__days">
+            @for (day of calendarDays(); track day.date.getTime()) {
+              <button
+                type="button"
+                class="pe-calendar__day"
+                [class.pe-calendar__day--current-month]="day.isCurrentMonth"
+                [class.pe-calendar__day--today]="day.isToday"
+                [class.pe-calendar__day--selected]="day.isSelected"
+                [class.pe-calendar__day--disabled]="day.isDisabled"
+                [disabled]="day.isDisabled"
+                (click)="selectDate(day.date)"
+              >
+                {{ day.date.getDate() }}
+              </button>
+            }
+          </div>
+        </div>
+      }
+
+      @if (mode() === 'time' || mode() === 'datetime') {
+        <div class="pe-calendar__time-picker">
+          <div class="pe-calendar__time-controls">
+            <select
+              class="pe-calendar__time-select"
+              [value]="selectedHour()"
+              (change)="selectTime(+$any($event.target).value, selectedMinute())"
+            >
+              @for (hour of hourOptions(); track hour) {
+                <option [value]="hour" [disabled]="isTimeDisabled(hour, selectedMinute())">
+                  {{ hour.toString().padStart(2, '0') }}
+                </option>
+              }
+            </select>
+            <span class="pe-calendar__time-separator">:</span>
+            <select
+              class="pe-calendar__time-select"
+              [value]="selectedMinute()"
+              (change)="selectTime(selectedHour(), +$any($event.target).value)"
+            >
+              @for (minute of minuteOptions(); track minute) {
+                <option [value]="minute" [disabled]="isTimeDisabled(selectedHour(), minute)">
+                  {{ minute.toString().padStart(2, '0') }}
+                </option>
+              }
+            </select>
+          </div>
+        </div>
+      }
+
+      <div class="pe-calendar__actions">
+        @if (mode() === 'date' || mode() === 'datetime') {
+          <pe-button type="button" theme="transparent-white" (buttonClick)="selectToday()">
+            Today
+          </pe-button>
+        }
+        @if (value()) {
+          <pe-button type="button" theme="transparent-white" (buttonClick)="clear()">
+            Clear
+          </pe-button>
+        }
+      </div>
+    </div>
+  </ng-template>
+</div>

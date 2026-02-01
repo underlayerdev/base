@@ -1,0 +1,20 @@
+<label class="pe-radio-container" [for]="radioId()" [class.pe-radio-disabled]="disabled()">
+  <input
+    type="radio"
+    [id]="radioId()"
+    [name]="name()"
+    [value]="value()"
+    [checked]="checked()"
+    [disabled]="disabled()"
+    [attr.aria-checked]="ariaAttributes()['aria-checked']"
+    [attr.aria-disabled]="ariaAttributes()['aria-disabled']"
+    [attr.role]="ariaAttributes()['role']"
+    (change)="onRadioChange($event)"
+    (click)="onRadioClick($event)"
+    (keydown)="onKeyDown($event)"
+    class="pe-radio-input"
+  />
+  <span class="pe-radio-label">
+    <ng-content />
+  </span>
+</label>

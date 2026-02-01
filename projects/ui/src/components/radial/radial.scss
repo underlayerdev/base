@@ -1,0 +1,41 @@
+@use '../../foundations/toolkit' as *;
+
+// Main radial component styles
+.#{$prefix}radial {
+  // Base dimensions and shape
+  width: 96px; // default size
+  padding: 6px; // default line width
+  aspect-ratio: 1; // Maintains a perfect circle
+  border-radius: 50%;
+  background: $color-background-white;
+
+  &--infinite {
+    // Mask configuration for creating the radial effect
+    --#{$prefix}radial-mask: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box; // Creates the inner circle
+    // Animation for infinite rotation
+    animation: #{$prefix}radial-rotation 1s infinite linear;
+  }
+
+  &:not(&--infinite) {
+    --#{$prefix}radial-percentage: 25%; // default percentage
+    --#{$prefix}radial-mask: conic-gradient(
+        #fff var(--#{$prefix}radial-percentage),
+        transparent var(--#{$prefix}radial-percentage)
+      ),
+      linear-gradient(#000 0 0) content-box;
+  }
+
+  // Apply the mask to the radial component
+  // -webkit-mask: var(--#{$prefix}radial-mask);
+  mask: var(--#{$prefix}radial-mask);
+  // -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+}
+
+// Keyframes for the rotation animation
+// Uses 1turn (360 degrees) for a full rotation
+@keyframes #{$prefix}radial-rotation {
+  to {
+    transform: rotate(1turn);
+  }
+}

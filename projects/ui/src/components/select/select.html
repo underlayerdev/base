@@ -1,0 +1,38 @@
+<div
+  class="pe-select pe-select--{{ size() }}"
+  [class.pe-select--disabled]="disabled()"
+  [class.pe-select--error]="hasError()"
+  [class.pe-select--required]="required()"
+  [attr.aria-invalid]="hasError()"
+  [attr.aria-required]="required()"
+  [attr.aria-describedby]="describedBy()"
+>
+  <pe-form-field-label
+    [label]="label()"
+    [required]="required()"
+    [for]="ids.controlId"
+    [size]="size()"
+  />
+
+  <div
+    class="pe-select__control"
+    [id]="ids.controlId"
+    [class.pe-select__control--disabled]="disabled()"
+  >
+    <pe-dropdown
+      class="pe-select__dropdown"
+      [theme]="theme()"
+      [items]="items()"
+      [disabled]="disabled()"
+      [(selectedIndex)]="selectedIndex"
+      (selectedIndexChange)="onSelectedIndexChange($event)"
+    />
+  </div>
+
+  <pe-form-field-helper
+    [id]="ids.helperId"
+    [helperText]="helperText()"
+    [errorText]="errorText() || (hasError() && errors().length ? errors()[0].message : '') || null"
+    [error]="hasError()"
+  />
+</div>

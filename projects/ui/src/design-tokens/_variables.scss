@@ -1,0 +1,1925 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+$primitive-color-cyan-transparent-8-30: rgba(88, 183, 188, 0.3) !default;
+$primitive-color-cyan-transparent-8-20: rgba(88, 183, 188, 0.2) !default;
+$primitive-color-cyan-transparent-8-10: rgba(88, 183, 188, 0.1) !default;
+$primitive-color-cyan-transparent-8-0: rgba(88, 183, 188, 0) !default;
+$primitive-color-cyan-solid-1: #0e2728 !default;
+$primitive-color-cyan-solid-2: #09383a !default;
+$primitive-color-cyan-solid-3: #0c494c !default;
+$primitive-color-cyan-solid-4: #105e63 !default;
+$primitive-color-cyan-solid-5: #14767b !default;
+$primitive-color-cyan-solid-6: #158389 !default;
+$primitive-color-cyan-solid-7: #3aa7ad !default;
+$primitive-color-cyan-solid-8: #58b7bc !default;
+$primitive-color-cyan-solid-9: #84d5da !default;
+$primitive-color-cyan-solid-10: #ace2e6 !default;
+$primitive-color-blue-transparent-8-30: rgba(87, 164, 241, 0.3) !default;
+$primitive-color-blue-transparent-8-20: rgba(87, 164, 241, 0.2) !default;
+$primitive-color-blue-transparent-8-10: rgba(87, 164, 241, 0.1) !default;
+$primitive-color-blue-transparent-8-0: rgba(87, 164, 241, 0) !default;
+$primitive-color-blue-solid-1: #11263a !default;
+$primitive-color-blue-solid-2: #08325c !default;
+$primitive-color-blue-solid-3: #0a4179 !default;
+$primitive-color-blue-solid-4: #0d549c !default;
+$primitive-color-blue-solid-5: #0f69c2 !default;
+$primitive-color-blue-solid-6: #1275d9 !default;
+$primitive-color-blue-solid-7: #3692ee !default;
+$primitive-color-blue-solid-8: #57a4f1 !default;
+$primitive-color-blue-solid-9: #86c0fb !default;
+$primitive-color-blue-solid-10: #aed5fc !default;
+$primitive-color-pink-transparent-8-30: rgba(251, 127, 209, 0.3) !default;
+$primitive-color-pink-transparent-8-20: rgba(251, 127, 209, 0.2) !default;
+$primitive-color-pink-transparent-8-10: rgba(251, 127, 209, 0.1) !default;
+$primitive-color-pink-transparent-8-0: rgba(251, 127, 209, 0) !default;
+$primitive-color-pink-solid-1: #381b2e !default;
+$primitive-color-pink-solid-2: #61234c !default;
+$primitive-color-pink-solid-3: #7f2e64 !default;
+$primitive-color-pink-solid-4: #a33b81 !default;
+$primitive-color-pink-solid-5: #c3469a !default;
+$primitive-color-pink-solid-6: #e653b5 !default;
+$primitive-color-pink-solid-7: #fb65c9 !default;
+$primitive-color-pink-solid-8: #fb7fd1 !default;
+$primitive-color-pink-solid-9: #fda7e0 !default;
+$primitive-color-pink-solid-10: #ffc2eb !default;
+$primitive-color-orange-transparent-8-30: rgba(255, 171, 110, 0.3) !default;
+$primitive-color-orange-transparent-8-20: rgba(255, 171, 110, 0.2) !default;
+$primitive-color-orange-transparent-8-10: rgba(255, 171, 110, 0.1) !default;
+$primitive-color-orange-transparent-8-0: rgba(255, 171, 110, 0) !default;
+$primitive-color-orange-solid-1: #3a2414 !default;
+$primitive-color-orange-solid-2: #6b3610 !default;
+$primitive-color-orange-solid-3: #8c4715 !default;
+$primitive-color-orange-solid-4: #b55c1b !default;
+$primitive-color-orange-solid-5: #e87523 !default;
+$primitive-color-orange-solid-6: #ff8126 !default;
+$primitive-color-orange-solid-7: #ff9a51 !default;
+$primitive-color-orange-solid-8: #ffab6e !default;
+$primitive-color-orange-solid-9: #ffd9af !default;
+$primitive-color-orange-solid-10: #ffd8bc !default;
+$primitive-color-yellow-transparent-8-30: rgba(255, 229, 143, 0.3) !default;
+$primitive-color-yellow-transparent-8-20: rgba(255, 229, 143, 0.2) !default;
+$primitive-color-yellow-transparent-8-10: rgba(255, 229, 143, 0.1) !default;
+$primitive-color-yellow-transparent-8-0: rgba(255, 229, 143, 0) !default;
+$primitive-color-yellow-solid-1: #3e351a !default;
+$primitive-color-yellow-solid-2: #695719 !default;
+$primitive-color-yellow-solid-3: #8a7121 !default;
+$primitive-color-yellow-solid-4: #b2922b !default;
+$primitive-color-yellow-solid-5: #e4bb37 !default;
+$primitive-color-yellow-solid-6: #face3c !default;
+$primitive-color-yellow-solid-7: #ffda5f !default;
+$primitive-color-yellow-solid-8: #ffe58f !default;
+$primitive-color-yellow-solid-9: #ffe9a3 !default;
+$primitive-color-yellow-solid-10: #fff1c1 !default;
+$primitive-color-green-transparent-8-30: rgba(80, 192, 108, 0.3) !default;
+$primitive-color-green-transparent-8-20: rgba(80, 192, 108, 0.2) !default;
+$primitive-color-green-transparent-8-10: rgba(80, 192, 108, 0.1) !default;
+$primitive-color-green-transparent-8-0: rgba(80, 192, 108, 0) !default;
+$primitive-color-green-solid-1: #152e1b !default;
+$primitive-color-green-solid-2: #053c13 !default;
+$primitive-color-green-solid-3: #074f19 !default;
+$primitive-color-green-solid-4: #096620 !default;
+$primitive-color-green-solid-5: #0b7a27 !default;
+$primitive-color-green-solid-6: #0e892d !default;
+$primitive-color-green-solid-7: #32b051 !default;
+$primitive-color-green-solid-8: #50c06c !default;
+$primitive-color-green-solid-9: #7edc96 !default;
+$primitive-color-green-solid-10: #a9e7b9 !default;
+$primitive-color-red-transparent-8-30: rgba(243, 112, 112, 0.3) !default;
+$primitive-color-red-transparent-8-20: rgba(243, 112, 112, 0.2) !default;
+$primitive-color-red-transparent-8-10: rgba(243, 112, 112, 0.1) !default;
+$primitive-color-red-transparent-8-0: rgba(243, 112, 112, 0) !default;
+$primitive-color-red-solid-1: #3a1a1a !default;
+$primitive-color-red-solid-2: #5a1b1b !default;
+$primitive-color-red-solid-3: #762323 !default;
+$primitive-color-red-solid-4: #982d2d !default;
+$primitive-color-red-solid-5: #c33a3a !default;
+$primitive-color-red-solid-6: #d64040 !default;
+$primitive-color-red-solid-7: #f15353 !default;
+$primitive-color-red-solid-8: #f37070 !default;
+$primitive-color-red-solid-9: #f69d9d !default;
+$primitive-color-red-solid-10: #fdb9b9 !default;
+$primitive-color-white-0: rgba(255, 255, 255, 0) !default;
+$primitive-color-white-5: rgba(255, 255, 255, 0.05) !default;
+$primitive-color-white-7: rgba(255, 255, 255, 0.07) !default;
+$primitive-color-white-10: rgba(255, 255, 255, 0.1) !default;
+$primitive-color-white-20: rgba(255, 255, 255, 0.2) !default;
+$primitive-color-white-30: rgba(255, 255, 255, 0.3) !default;
+$primitive-color-white-50: rgba(255, 255, 255, 0.5) !default;
+$primitive-color-white-70: rgba(255, 255, 255, 0.7) !default;
+$primitive-color-white-100: #ffffff !default;
+$primitive-color-black-0: rgba(0, 0, 0, 0) !default;
+$primitive-color-black-5: rgba(0, 0, 0, 0.05) !default;
+$primitive-color-black-7: rgba(0, 0, 0, 0.07) !default;
+$primitive-color-black-10: rgba(0, 0, 0, 0.1) !default;
+$primitive-color-black-20: rgba(0, 0, 0, 0.2) !default;
+$primitive-color-black-30: rgba(0, 0, 0, 0.3) !default;
+$primitive-color-black-50: rgba(0, 0, 0, 0.5) !default;
+$primitive-color-black-70: rgba(0, 0, 0, 0.7) !default;
+$primitive-color-black-100: #000000 !default;
+$primitive-color-grey-solid-1: #0a0a0a !default;
+$primitive-color-grey-solid-2: #232323 !default;
+$primitive-color-grey-solid-3: #3b3b3b !default;
+$primitive-color-grey-solid-4: #545454 !default;
+$primitive-color-grey-solid-5: #6c6c6c !default;
+$primitive-color-grey-solid-6: #858585 !default;
+$primitive-color-grey-solid-7: #9d9d9d !default;
+$primitive-color-grey-solid-8: #b6b6b6 !default;
+$primitive-color-grey-solid-9: #cecece !default;
+$primitive-color-grey-solid-10: #e7e7e7 !default;
+$primitive-color-grey-transparent-1-70: rgba(10, 10, 10, 0.7) !default;
+$primitive-color-purple-solid-1: #291c44 !default;
+$primitive-color-purple-solid-2: #351f68 !default;
+$primitive-color-purple-solid-3: #452988 !default;
+$primitive-color-purple-solid-4: #5935af !default;
+$primitive-color-purple-solid-5: #6f3de0 !default;
+$primitive-color-purple-solid-6: #7e4af7 !default;
+$primitive-color-purple-solid-7: #9668ff !default;
+$primitive-color-purple-solid-8: #a781ff !default;
+$primitive-color-purple-solid-9: #c2a8ff !default;
+$primitive-color-purple-solid-10: #d6c5ff !default;
+$primitive-color-purple-transparent-8-30: rgba(167, 129, 255, 0.3) !default;
+$primitive-color-purple-transparent-8-20: rgba(167, 129, 255, 0.2) !default;
+$primitive-color-purple-transparent-8-10: rgba(167, 129, 255, 0.1) !default;
+$primitive-color-purple-transparent-8-0: rgba(167, 129, 255, 0) !default;
+$color-background-main: #0a0a0a !default;
+$color-background-grey-lvl-1: #232323 !default;
+$color-background-grey-lvl-2: #3b3b3b !default;
+$color-background-white-light: rgba(255, 255, 255, 0.1) !default;
+$color-background-black-strong: rgba(0, 0, 0, 0.7) !default;
+$color-background-black-medium: rgba(0, 0, 0, 0.3) !default;
+$color-background-white-extra-light: rgba(255, 255, 255, 0.05) !default;
+$color-background-main-strong: rgba(10, 10, 10, 0.7) !default;
+$color-background-purple: #6f3de0 !default;
+$color-background-purple-light: #c2a8ff !default;
+$color-background-white: #ffffff !default;
+$color-background-white-medium-strong: rgba(255, 255, 255, 0.5) !default;
+$color-background-green-light: #7edc96 !default;
+$color-background-green: #0b7a27 !default;
+$color-background-red-light: #f69d9d !default;
+$color-background-red: #c33a3a !default;
+$color-background-orange-light: #ffd9af !default;
+$color-background-orange: #e87523 !default;
+$color-background-white-medium-light: rgba(255, 255, 255, 0.2) !default;
+$color-interactive-surface-solid-grey-lvl-1-hover: #3b3b3b !default;
+$color-interactive-surface-solid-grey-lvl-1-active: #232323 !default;
+$color-interactive-surface-solid-grey-lvl-1-selected: #3b3b3b !default;
+$color-interactive-surface-solid-grey-lvl-1-disabled: #232323 !default;
+$color-interactive-surface-solid-grey-lvl-1-enabled: #232323 !default;
+$color-interactive-surface-solid-grey-lvl-2-hover: #545454 !default;
+$color-interactive-surface-solid-grey-lvl-2-active: #3b3b3b !default;
+$color-interactive-surface-solid-grey-lvl-2-selected: #545454 !default;
+$color-interactive-surface-solid-grey-lvl-2-disabled: #232323 !default;
+$color-interactive-surface-solid-grey-lvl-2-enabled: #3b3b3b !default;
+$color-interactive-surface-solid-purple-enabled: #6f3de0 !default;
+$color-interactive-surface-solid-purple-hover: #7e4af7 !default;
+$color-interactive-surface-solid-purple-active: #5935af !default;
+$color-interactive-surface-solid-purple-selected: #7e4af7 !default;
+$color-interactive-surface-solid-purple-disabled: #232323 !default;
+$color-interactive-surface-solid-red-enabled: #c33a3a !default;
+$color-interactive-surface-solid-red-hover: #d64040 !default;
+$color-interactive-surface-solid-red-active: #982d2d !default;
+$color-interactive-surface-solid-red-selected: #d64040 !default;
+$color-interactive-surface-solid-red-disabled: #232323 !default;
+$color-interactive-surface-solid-white-enabled: #ffffff !default;
+$color-interactive-surface-solid-white-hover: #e7e7e7 !default;
+$color-interactive-surface-solid-white-active: #ffffff !default;
+$color-interactive-surface-solid-white-selected: #ffffff !default;
+$color-interactive-surface-solid-white-disabled: #232323 !default;
+$color-interactive-surface-solid-yellow-enabled: #ffe9a3 !default;
+$color-interactive-surface-solid-yellow-hover: #fff1c1 !default;
+$color-interactive-surface-solid-yellow-active: #ffe58f !default;
+$color-interactive-surface-solid-yellow-selected: #fff1c1 !default;
+$color-interactive-surface-solid-yellow-disabled: #232323 !default;
+$color-interactive-surface-solid-green-enabled: #0b7a27 !default;
+$color-interactive-surface-solid-green-hover: #0e892d !default;
+$color-interactive-surface-solid-green-active: #096620 !default;
+$color-interactive-surface-solid-green-selected: #0e892d !default;
+$color-interactive-surface-solid-green-disabled: #232323 !default;
+$color-interactive-surface-solid-orange-enabled: #e87523 !default;
+$color-interactive-surface-solid-orange-hover: #ff8126 !default;
+$color-interactive-surface-solid-orange-active: #b55c1b !default;
+$color-interactive-surface-solid-orange-selected: #ff8126 !default;
+$color-interactive-surface-solid-orange-disabled: #232323 !default;
+$color-interactive-surface-transparent-purple-enabled: rgba(167, 129, 255, 0.2) !default;
+$color-interactive-surface-transparent-purple-hover: rgba(167, 129, 255, 0.3) !default;
+$color-interactive-surface-transparent-purple-active: rgba(167, 129, 255, 0.2) !default;
+$color-interactive-surface-transparent-purple-selected: rgba(167, 129, 255, 0.3) !default;
+$color-interactive-surface-transparent-purple-disabled: rgba(255, 255, 255, 0.05) !default;
+$color-interactive-surface-transparent-red-enabled: rgba(243, 112, 112, 0.2) !default;
+$color-interactive-surface-transparent-red-hover: rgba(243, 112, 112, 0.3) !default;
+$color-interactive-surface-transparent-red-active: rgba(243, 112, 112, 0.2) !default;
+$color-interactive-surface-transparent-red-selected: rgba(243, 112, 112, 0.3) !default;
+$color-interactive-surface-transparent-red-disabled: rgba(255, 255, 255, 0.05) !default;
+$color-interactive-surface-transparent-white-enabled: rgba(255, 255, 255, 0.1) !default;
+$color-interactive-surface-transparent-white-hover: rgba(255, 255, 255, 0.2) !default;
+$color-interactive-surface-transparent-white-active: rgba(255, 255, 255, 0.1) !default;
+$color-interactive-surface-transparent-white-selected: rgba(255, 255, 255, 0.2) !default;
+$color-interactive-surface-transparent-white-disabled: rgba(255, 255, 255, 0.05) !default;
+$color-interactive-surface-transparent-orange-enabled: rgba(255, 171, 110, 0.2) !default;
+$color-interactive-surface-transparent-orange-hover: rgba(255, 171, 110, 0.3) !default;
+$color-interactive-surface-transparent-orange-active: rgba(255, 171, 110, 0.2) !default;
+$color-interactive-surface-transparent-orange-selected: rgba(255, 171, 110, 0.3) !default;
+$color-interactive-surface-transparent-orange-disabled: rgba(255, 255, 255, 0.05) !default;
+$color-interactive-surface-transparent-green-enabled: rgba(80, 192, 108, 0.2) !default;
+$color-interactive-surface-transparent-green-hover: rgba(80, 192, 108, 0.3) !default;
+$color-interactive-surface-transparent-green-active: rgba(80, 192, 108, 0.2) !default;
+$color-interactive-surface-transparent-green-selected: rgba(80, 192, 108, 0.3) !default;
+$color-interactive-surface-transparent-green-disabled: rgba(255, 255, 255, 0.05) !default;
+$color-interactive-surface-transparent-black-enabled: rgba(0, 0, 0, 0.3) !default;
+$color-interactive-surface-transparent-black-hover: rgba(0, 0, 0, 0.5) !default;
+$color-interactive-surface-transparent-black-active: rgba(0, 0, 0, 0.7) !default;
+$color-interactive-surface-transparent-black-selected: rgba(0, 0, 0, 0.5) !default;
+$color-interactive-surface-transparent-black-disabled: rgba(255, 255, 255, 0.05) !default;
+$color-interactive-surface-transparent-yellow-enabled: rgba(255, 229, 143, 0.2) !default;
+$color-interactive-surface-transparent-yellow-hover: rgba(255, 229, 143, 0.3) !default;
+$color-interactive-surface-transparent-yellow-active: rgba(255, 229, 143, 0.2) !default;
+$color-interactive-surface-transparent-yellow-selected: rgba(255, 229, 143, 0.3) !default;
+$color-interactive-surface-transparent-yellow-disabled: rgba(255, 255, 255, 0.05) !default;
+$color-interactive-surface-ghost-purple-hover: rgba(167, 129, 255, 0.3) !default;
+$color-interactive-surface-ghost-purple-active: rgba(167, 129, 255, 0.2) !default;
+$color-interactive-surface-ghost-purple-selected: rgba(167, 129, 255, 0.3) !default;
+$color-interactive-surface-ghost-purple-enabled: rgba(167, 129, 255, 0) !default;
+$color-interactive-surface-ghost-purple-disabled: rgba(167, 129, 255, 0) !default;
+$color-interactive-surface-ghost-red-hover: rgba(243, 112, 112, 0.3) !default;
+$color-interactive-surface-ghost-red-active: rgba(243, 112, 112, 0.2) !default;
+$color-interactive-surface-ghost-red-selected: rgba(243, 112, 112, 0.3) !default;
+$color-interactive-surface-ghost-red-enabled: rgba(243, 112, 112, 0) !default;
+$color-interactive-surface-ghost-red-disabled: rgba(243, 112, 112, 0) !default;
+$color-interactive-surface-ghost-white-hover: rgba(255, 255, 255, 0.2) !default;
+$color-interactive-surface-ghost-white-active: rgba(255, 255, 255, 0.1) !default;
+$color-interactive-surface-ghost-white-selected: rgba(255, 255, 255, 0.2) !default;
+$color-interactive-surface-ghost-white-enabled: rgba(255, 255, 255, 0) !default;
+$color-interactive-surface-ghost-white-disabled: rgba(255, 255, 255, 0) !default;
+$color-interactive-surface-ghost-green-hover: rgba(80, 192, 108, 0.3) !default;
+$color-interactive-surface-ghost-green-active: rgba(80, 192, 108, 0.2) !default;
+$color-interactive-surface-ghost-green-selected: rgba(80, 192, 108, 0.3) !default;
+$color-interactive-surface-ghost-green-enabled: rgba(80, 192, 108, 0) !default;
+$color-interactive-surface-ghost-green-disabled: rgba(80, 192, 108, 0) !default;
+$color-text-primary: #ffffff !default;
+$color-text-secondary: rgba(255, 255, 255, 0.7) !default;
+$color-text-tertiary: rgba(255, 255, 255, 0.5) !default;
+$color-text-disabled: rgba(255, 255, 255, 0.3) !default;
+$color-text-purple: #c2a8ff !default;
+$color-text-green: #7edc96 !default;
+$color-text-red: #f69d9d !default;
+$color-text-orange: #ffd9af !default;
+$color-text-yellow: #ffe9a3 !default;
+$color-text-inverted: #000000 !default;
+$color-text-purple-inverted: #6f3de0 !default;
+$color-text-inverted-strong: rgba(0, 0, 0, 0.7) !default;
+$color-border-white-light: rgba(255, 255, 255, 0.1) !default;
+$color-border-white-medium-strong: rgba(255, 255, 255, 0.5) !default;
+$color-border-purple: #c2a8ff !default;
+$color-border-white-medium: rgba(255, 255, 255, 0.3) !default;
+$color-border-grey: #6c6c6c !default;
+$color-border-black: #0a0a0a !default;
+$color-border-white: #ffffff !default;
+$color-border-red: #f69d9d !default;
+$color-border-green: #7edc96 !default;
+$color-border-orange: #ffd9af !default;
+$color-border-yellow: #ffe9a3 !default;
+$color-link-enabled: #c2a8ff !default;
+$color-link-hover: #d6c5ff !default;
+$color-link-active: #a781ff !default;
+$typography-font-family-headline-s: Ultra Nunito Sans !default;
+$typography-font-family-body-m: Ultra Nunito Sans !default;
+$typography-font-family-caption-l: Ultra Nunito Sans !default;
+$typography-font-family-brand-caption-l: Ultra Brand !default;
+$typography-font-family-caption-mono: Roboto Mono !default;
+$typography-font-family-body-l: Ultra Nunito Sans !default;
+$typography-font-family-headline-m: Ultra Nunito Sans !default;
+$typography-font-family-headline-l: Ultra Nunito Sans !default;
+$typography-font-family-headline-xl: Ultra Nunito Sans !default;
+$typography-font-family-headline-2xl: Ultra Nunito Sans !default;
+$typography-font-family-headline-3xl: Ultra Nunito Sans !default;
+$typography-font-family-brand-body-m: Ultra Brand !default;
+$typography-font-family-brand-body-l: Ultra Brand !default;
+$typography-font-family-brand-headline-s: Ultra Brand !default;
+$typography-font-family-brand-headline-m: Ultra Brand !default;
+$typography-font-family-brand-headline-l: Ultra Brand !default;
+$typography-font-family-brand-headline-xl: Ultra Brand !default;
+$typography-font-family-brand-headline-2xl: Ultra Brand !default;
+$typography-font-family-brand-headline-3xl: Ultra Brand !default;
+$typography-font-line-height-headline-s: 36px !default;
+$typography-font-line-height-caption-l: 20px !default;
+$typography-font-line-height-body-m: 24px !default;
+$typography-font-line-height-body-l: 28px !default;
+$typography-font-line-height-headline-m: 36px !default;
+$typography-font-line-height-headline-xl: 44px !default;
+$typography-font-line-height-headline-l: 40px !default;
+$typography-font-line-height-headline-2xl: 48px !default;
+$typography-font-line-height-headline-3xl: 48px !default;
+$typography-font-line-height-caption-mono: 20px !default;
+$typography-font-line-height-brand-caption-l: 20px !default;
+$typography-font-line-height-brand-body-m: 24px !default;
+$typography-font-line-height-brand-body-l: 28px !default;
+$typography-font-line-height-brand-headline-s: 36px !default;
+$typography-font-line-height-brand-headline-m: 36px !default;
+$typography-font-line-height-brand-headline-l: 40px !default;
+$typography-font-line-height-brand-headline-xl: 44px !default;
+$typography-font-line-height-brand-headline-2xl: 48px !default;
+$typography-font-line-height-brand-headline-3xl: 48px !default;
+$typography-font-size-body-l: 18px !default;
+$typography-font-size-caption-l: 14px !default;
+$typography-font-size-body-m: 16px !default;
+$typography-font-size-headline-s: 24px !default;
+$typography-font-size-headline-m: 28px !default;
+$typography-font-size-headline-l: 32px !default;
+$typography-font-size-headline-xl: 36px !default;
+$typography-font-size-headline-2xl: 40px !default;
+$typography-font-size-headline-3xl: 48px !default;
+$typography-font-size-caption-mono: 14px !default;
+$typography-font-size-brand-caption-l: 14px !default;
+$typography-font-size-brand-body-m: 16px !default;
+$typography-font-size-brand-body-l: 18px !default;
+$typography-font-size-brand-headline-s: 24px !default;
+$typography-font-size-brand-headline-m: 28px !default;
+$typography-font-size-brand-headline-l: 32px !default;
+$typography-font-size-brand-headline-xl: 36px !default;
+$typography-font-size-brand-headline-2xl: 40px !default;
+$typography-font-size-brand-headline-3xl: 48px !default;
+$typography-font-letter-spacing-caption-l: 0.14px !default;
+$typography-font-letter-spacing-body-m: 0px !default;
+$typography-font-letter-spacing-body-l: 0px !default;
+$typography-font-letter-spacing-headline-s: -0.24px !default;
+$typography-font-letter-spacing-headline-m: -0.28px !default;
+$typography-font-letter-spacing-headline-l: -0.32px !default;
+$typography-font-letter-spacing-headline-xl: -0.36px !default;
+$typography-font-letter-spacing-headline-2xl: -0.4px !default;
+$typography-font-letter-spacing-headline-3xl: -0.48px !default;
+$typography-font-letter-spacing-caption-mono: 0px !default;
+$typography-font-letter-spacing-brand-headline-3xl: 4.8px !default;
+$typography-font-letter-spacing-brand-headline-2xl: 4px !default;
+$typography-font-letter-spacing-brand-headline-xl: 3.6px !default;
+$typography-font-letter-spacing-brand-headline-l: 3.2px !default;
+$typography-font-letter-spacing-brand-headline-m: 2.8px !default;
+$typography-font-letter-spacing-brand-caption-l: 1.4px !default;
+$typography-font-letter-spacing-brand-body-m: 1.6px !default;
+$typography-font-letter-spacing-brand-body-l: 2px !default;
+$typography-font-letter-spacing-brand-headline-s: 2.4px !default;
+$typography-font-weight-extrablack: 1000 !default;
+$typography-font-weight-regular: 400 !default;
+$typography-font-weight-extrabold: 800 !default;
+$typography-font-weight-medium: 500 !default;
+$spacing-spacing-1: 4px !default;
+$spacing-spacing-2: 8px !default;
+$spacing-spacing-3: 12px !default;
+$spacing-spacing-4: 16px !default;
+// Extended spacing scale for a smoother 4px rhythm
+// Existing components can now migrate magic numbers to these tokens.
+$spacing-spacing-5: 20px !default;
+$spacing-spacing-6: 24px !default;
+$spacing-spacing-7: 28px !default;
+$spacing-spacing-8: 32px !default;
+$spacing-spacing-9: 36px !default;
+$spacing-spacing-10: 40px !default;
+$spacing-spacing-11: 44px !default;
+$spacing-spacing-12: 48px !default;
+$spacing-spacing-14: 56px !default;
+$spacing-spacing-15: 60px !default;
+$spacing-spacing-16: 64px !default;
+$spacing-spacing-20: 80px !default;
+$spacing-spacing-24: 96px !default;
+$spacing-spacing-28: 112px !default;
+$spacing-spacing-32: 128px !default;
+$spacing-spacing-36: 144px !default;
+$spacing-spacing-40: 160px !default;
+$spacing-spacing-44: 176px !default;
+$spacing-spacing-48: 192px !default;
+$spacing-spacing-52: 208px !default;
+$spacing-spacing-56: 224px !default;
+$spacing-spacing-60: 240px !default;
+$spacing-spacing-64: 256px !default;
+$spacing-spacing-72: 288px !default;
+$spacing-spacing-80: 320px !default;
+$spacing-spacing-88: 352px !default;
+$spacing-spacing-96: 384px !default;
+$spacing-spacing-104: 416px !default;
+$spacing-spacing-112: 448px !default;
+$spacing-spacing-120: 480px !default;
+$spacing-spacing-128: 512px !default;
+
+// Component control sizing tokens (heights / min-widths / icon-only sizes)
+// These explicitly capture the shared geometry used by buttons, inputs, and other form controls.
+$component-control-height-sm: 32px !default;
+$component-control-height-md: 40px !default;
+$component-control-height-lg: 48px !default;
+$component-control-height-xl: 64px !default;
+
+$component-dropdown-list-max-height: 316px !default;
+
+$component-control-min-width-sm: 96px !default;
+$component-control-min-width-md: 112px !default;
+$component-control-min-width-lg: 144px !default;
+
+$component-control-vertical-width-lg: 164px !default;
+
+$component-icon-only-size-sm: 32px !default;
+$component-icon-only-size-md: 40px !default;
+$component-icon-only-size-lg: 48px !default;
+$radius-radius-1: 4px !default;
+$radius-radius-2: 8px !default;
+$radius-radius-3: 12px !default;
+$radius-radius-4: 16px !default;
+$radius-radius-6: 24px !default;
+$radius-radius-8: 32px !default;
+$radius-radius-16: 64px !default;
+$radius-radius-full: 4096px !default;
+$iconography-font-family-icon: Ultra Icons !default;
+$iconography-font-weight-medium: Medium !default;
+$iconography-font-weight-bold: Bold !default;
+$iconography-font-size-3: 12px !default;
+$iconography-font-size-4: 16px !default;
+$iconography-font-size-5: 20px !default;
+$iconography-font-size-6: 24px !default;
+$iconography-font-size-7: 28px !default;
+$iconography-font-size-8: 32px !default;
+$iconography-font-size-10: 40px !default;
+$iconography-font-size-12: 48px !default;
+$iconography-font-size-16: 64px !default;
+$iconography-font-size-24: 96px !default;
+$iconography-font-size-32: 128px !default;
+$iconography-font-line-height-4: 16px !default;
+$iconography-font-line-height-5: 20px !default;
+$iconography-font-line-height-6: 24px !default;
+$iconography-font-line-height-7: 28px !default;
+$iconography-font-line-height-8: 32px !default;
+$iconography-font-line-height-10: 40px !default;
+$iconography-font-line-height-12: 48px !default;
+$iconography-font-line-height-16: 64px !default;
+$iconography-font-line-height-24: 96px !default;
+$iconography-font-line-height-32: 128px !default;
+$breakpoint-xs: 0px !default;
+$breakpoint-sm: 768px !default;
+$breakpoint-md: 1024px !default;
+$breakpoint-lg: 1280px !default;
+$breakpoint-xl: 1600px !default;
+$content-icon-glyph-placeholder: placeholder !default;
+$content-icon-glyph-activity: activity !default;
+$content-icon-glyph-arrow-trending-down: arrow_trending_down !default;
+$content-icon-glyph-arrow-trending-up: arrow_trending_up !default;
+$content-icon-glyph-bar-chart-peak: bar_chart_peak !default;
+$content-icon-glyph-bar-chart-rise: bar_chart_rise !default;
+$content-icon-glyph-circular-chart: circular_chart !default;
+$content-icon-glyph-credit-card: credit_card !default;
+$content-icon-glyph-paypal: paypal !default;
+$content-icon-glyph-shopping-bag: shopping_bag !default;
+$content-icon-glyph-shopping-cart: shopping_cart !default;
+$content-icon-glyph-shopping-cart-add: shopping_cart_add !default;
+$content-icon-glyph-shopping-cart-dashed: shopping_cart_dashed !default;
+$content-icon-glyph-store: store !default;
+$content-icon-glyph-visa: visa !default;
+$content-icon-glyph-wallet: wallet !default;
+$content-icon-glyph-compass: compass !default;
+$content-icon-glyph-globe: globe !default;
+$content-icon-glyph-globe-lock: globe_lock !default;
+$content-icon-glyph-globe-minus: globe_minus !default;
+$content-icon-glyph-globe-plus: globe_plus !default;
+$content-icon-glyph-globe-dashed: globe_dashed !default;
+$content-icon-glyph-map: map !default;
+$content-icon-glyph-map-pin: map_pin !default;
+$content-icon-glyph-navigation: navigation !default;
+$content-icon-glyph-path: path !default;
+$content-icon-glyph-cloud: cloud !default;
+$content-icon-glyph-cloud-drizzle: cloud_drizzle !default;
+$content-icon-glyph-cloud-lightning: cloud_lightning !default;
+$content-icon-glyph-cloud-dashed: cloud_dashed !default;
+$content-icon-glyph-cloud-rain: cloud_rain !default;
+$content-icon-glyph-cloud-snow: cloud_snow !default;
+$content-icon-glyph-drop: drop !default;
+$content-icon-glyph-flame: flame !default;
+$content-icon-glyph-ice: ice !default;
+$content-icon-glyph-moon: moon !default;
+$content-icon-glyph-sun: sun !default;
+$content-icon-glyph-sunrise: sunrise !default;
+$content-icon-glyph-sunset: sunset !default;
+$content-icon-glyph-thermometer: thermometer !default;
+$content-icon-glyph-wind: wind !default;
+$content-icon-glyph-zap: zap !default;
+$content-icon-glyph-apple: apple !default;
+$content-icon-glyph-chrome: chrome !default;
+$content-icon-glyph-crossplatform: crossplatform !default;
+$content-icon-glyph-linux: linux !default;
+$content-icon-glyph-windows: windows !default;
+$content-icon-glyph-xbox: xbox !default;
+$content-icon-glyph-discord: discord !default;
+$content-icon-glyph-facebook: facebook !default;
+$content-icon-glyph-linkedin: linkedin !default;
+$content-icon-glyph-medium: medium !default;
+$content-icon-glyph-telegram: telegram !default;
+$content-icon-glyph-twitter: twitter !default;
+$content-icon-glyph-youtube: youtube !default;
+$content-icon-glyph-at-sign: at_sign !default;
+$content-icon-glyph-beta: beta !default;
+$content-icon-glyph-blockchain: blockchain !default;
+$content-icon-glyph-bluetooth: bluetooth !default;
+$content-icon-glyph-branch: branch !default;
+$content-icon-glyph-camera: camera !default;
+$content-icon-glyph-camera-dashed: camera_dashed !default;
+$content-icon-glyph-cloud-download: cloud_download !default;
+$content-icon-glyph-cloud-upload: cloud_upload !default;
+$content-icon-glyph-code-brackets: code_brackets !default;
+$content-icon-glyph-coins-pile: coins_pile !default;
+$content-icon-glyph-collectible: collectible !default;
+$content-icon-glyph-compatible: compatible !default;
+$content-icon-glyph-computer: computer !default;
+$content-icon-glyph-crypto: crypto !default;
+$content-icon-glyph-crypto-add: crypto_add !default;
+$content-icon-glyph-crypto-exchanged: crypto_exchanged !default;
+$content-icon-glyph-crypto-received: crypto_received !default;
+$content-icon-glyph-crypto-sent: crypto_sent !default;
+$content-icon-glyph-demo: demo !default;
+$content-icon-glyph-dlc: dlc !default;
+$content-icon-glyph-exception: exception !default;
+$content-icon-glyph-headphones: headphones !default;
+$content-icon-glyph-mail: mail !default;
+$content-icon-glyph-merge: merge !default;
+$content-icon-glyph-message: message !default;
+$content-icon-glyph-message-chat: message_chat !default;
+$content-icon-glyph-mic: mic !default;
+$content-icon-glyph-mic-dashed: mic_dashed !default;
+$content-icon-glyph-monitor-zap: monitor_zap !default;
+$content-icon-glyph-network: network !default;
+$content-icon-glyph-phone: phone !default;
+$content-icon-glyph-phone-call: phone_call !default;
+$content-icon-glyph-phone-forwarded: phone_forwarded !default;
+$content-icon-glyph-phone-incoming: phone_incoming !default;
+$content-icon-glyph-phone-missed: phone_missed !default;
+$content-icon-glyph-phone-dashed: phone_dashed !default;
+$content-icon-glyph-phone-outgoing: phone_outgoing !default;
+$content-icon-glyph-photo: photo !default;
+$content-icon-glyph-photo-dashed: photo_dashed !default;
+$content-icon-glyph-printer: printer !default;
+$content-icon-glyph-rss: rss !default;
+$content-icon-glyph-score: score !default;
+$content-icon-glyph-screen: screen !default;
+$content-icon-glyph-server: server !default;
+$content-icon-glyph-smartphone: smartphone !default;
+$content-icon-glyph-smart-contract: smart_contract !default;
+$content-icon-glyph-streaming: streaming !default;
+$content-icon-glyph-tablet: tablet !default;
+$content-icon-glyph-terminal: terminal !default;
+$content-icon-glyph-translate: translate !default;
+$content-icon-glyph-ultra-cloud: ultra_cloud !default;
+$content-icon-glyph-usb: usb !default;
+$content-icon-glyph-video: video !default;
+$content-icon-glyph-widgets: widgets !default;
+$content-icon-glyph-widgets-add: widgets_add !default;
+$content-icon-glyph-wifi: wifi !default;
+$content-icon-glyph-wifi-dashed: wifi_dashed !default;
+$content-icon-glyph-application: application !default;
+$content-icon-glyph-apps-grid: apps_grid !default;
+$content-icon-glyph-close: close !default;
+$content-icon-glyph-external-link: external_link !default;
+$content-icon-glyph-layers: layers !default;
+$content-icon-glyph-log-in: log_in !default;
+$content-icon-glyph-log-out: log_out !default;
+$content-icon-glyph-menu: menu !default;
+$content-icon-glyph-search: search !default;
+$content-icon-glyph-sidebar: sidebar !default;
+$content-icon-glyph-windows-maximize: windows_maximize !default;
+$content-icon-glyph-window-minimize: window_minimize !default;
+$content-icon-glyph-window-normalize: window_normalize !default;
+$content-icon-glyph-zoom-in: zoom_in !default;
+$content-icon-glyph-zoom-out: zoom_out !default;
+$content-icon-glyph-equal: equal !default;
+$content-icon-glyph-equal-circle: equal_circle !default;
+$content-icon-glyph-hash: hash !default;
+$content-icon-glyph-inequal: inequal !default;
+$content-icon-glyph-infinite: infinite !default;
+$content-icon-glyph-minus: minus !default;
+$content-icon-glyph-minus-circle: minus_circle !default;
+$content-icon-glyph-percent: percent !default;
+$content-icon-glyph-plus: plus !default;
+$content-icon-glyph-plus-circle: plus_circle !default;
+$content-icon-glyph-x-circle: x_circle !default;
+$content-icon-glyph-australian-dollar: australian_dollar !default;
+$content-icon-glyph-bitcoin: bitcoin !default;
+$content-icon-glyph-brazilian-real: brazilian_real !default;
+$content-icon-glyph-canadian-dollar: canadian_dollar !default;
+$content-icon-glyph-dollar: dollar !default;
+$content-icon-glyph-ether: ether !default;
+$content-icon-glyph-euro: euro !default;
+$content-icon-glyph-indian-rupee: indian_rupee !default;
+$content-icon-glyph-korean-won: korean_won !default;
+$content-icon-glyph-krona: krona !default;
+$content-icon-glyph-mexican-peso: mexican_peso !default;
+$content-icon-glyph-new-zealand-dollar: new_zealand_dollar !default;
+$content-icon-glyph-pound-sterling: pound_sterling !default;
+$content-icon-glyph-swedish-krona: swedish_krona !default;
+$content-icon-glyph-swiss-franc: swiss_franc !default;
+$content-icon-glyph-uos: uos !default;
+$content-icon-glyph-yen: yen !default;
+$content-icon-glyph-yuan: yuan !default;
+$content-icon-glyph-currency-exchange: currency_exchange !default;
+$content-icon-glyph-currency-receive: currency_receive !default;
+$content-icon-glyph-currency-send: currency_send !default;
+$content-icon-glyph-dollar-to-uos: dollar_to_uos !default;
+$content-icon-glyph-marketplace-auction: marketplace_auction !default;
+$content-icon-glyph-marketplace-cancel: marketplace_cancel !default;
+$content-icon-glyph-marketplace-fixed: marketplace_fixed !default;
+$content-icon-glyph-marketplace-inverted-auction: marketplace_inverted_auction !default;
+$content-icon-glyph-nft: nft !default;
+$content-icon-glyph-nft-check: nft_check !default;
+$content-icon-glyph-receive-nft: receive_nft !default;
+$content-icon-glyph-refund: refund !default;
+$content-icon-glyph-refund-hand: refund_hand !default;
+$content-icon-glyph-resell: resell !default;
+$content-icon-glyph-resell-cancel: resell_cancel !default;
+$content-icon-glyph-resell-dashed: resell_dashed !default;
+$content-icon-glyph-send-nft: send_nft !default;
+$content-icon-glyph-trade: trade !default;
+$content-icon-glyph-trade-dashed: trade_dashed !default;
+$content-icon-glyph-uos-add: uos_add !default;
+$content-icon-glyph-uos-receive: uos_receive !default;
+$content-icon-glyph-uos-to-dollar: uos_to_dollar !default;
+$content-icon-glyph-uos-transfer: uos_transfer !default;
+$content-icon-glyph-anchors: anchors !default;
+$content-icon-glyph-archive: archive !default;
+$content-icon-glyph-auction-hammer: auction_hammer !default;
+$content-icon-glyph-award: award !default;
+$content-icon-glyph-award-dashed: award_dashed !default;
+$content-icon-glyph-balance: balance !default;
+$content-icon-glyph-bell-dashed: bell_dashed !default;
+$content-icon-glyph-bell-on: bell_on !default;
+$content-icon-glyph-book: book !default;
+$content-icon-glyph-bookmark: bookmark !default;
+$content-icon-glyph-box: box !default;
+$content-icon-glyph-box-closed: box_closed !default;
+$content-icon-glyph-box-open: box_open !default;
+$content-icon-glyph-cards: cards !default;
+$content-icon-glyph-chess: chess !default;
+$content-icon-glyph-chest: chest !default;
+$content-icon-glyph-company: company !default;
+$content-icon-glyph-company-add: company_add !default;
+$content-icon-glyph-company-ban: company_ban !default;
+$content-icon-glyph-company-freeze: company_freeze !default;
+$content-icon-glyph-crown: crown !default;
+$content-icon-glyph-diamond: diamond !default;
+$content-icon-glyph-dice: dice !default;
+$content-icon-glyph-explosion: explosion !default;
+$content-icon-glyph-factory: factory !default;
+$content-icon-glyph-feather: feather !default;
+$content-icon-glyph-fiole: fiole !default;
+$content-icon-glyph-flag: flag !default;
+$content-icon-glyph-forge: forge !default;
+$content-icon-glyph-gamepad: gamepad !default;
+$content-icon-glyph-gamepad-oldschool: gamepad_oldschool !default;
+$content-icon-glyph-gamepad-dashed: gamepad_dashed !default;
+$content-icon-glyph-gem: gem !default;
+$content-icon-glyph-gift: gift !default;
+$content-icon-glyph-glove: glove !default;
+$content-icon-glyph-gun-pointer: gun_pointer !default;
+$content-icon-glyph-helmet: helmet !default;
+$content-icon-glyph-home: home !default;
+$content-icon-glyph-inbox: inbox !default;
+$content-icon-glyph-key: key !default;
+$content-icon-glyph-lightbulb: lightbulb !default;
+$content-icon-glyph-lock-close: lock_close !default;
+$content-icon-glyph-lock-open: lock_open !default;
+$content-icon-glyph-megaphone: megaphone !default;
+$content-icon-glyph-painting-palette: painting_palette !default;
+$content-icon-glyph-podium: podium !default;
+$content-icon-glyph-puzzle: puzzle !default;
+$content-icon-glyph-repair: repair !default;
+$content-icon-glyph-rocket: rocket !default;
+$content-icon-glyph-shield: shield !default;
+$content-icon-glyph-shield-dashed: shield_dashed !default;
+$content-icon-glyph-plaintext: plaintext !default;
+$content-icon-glyph-skull: skull !default;
+$content-icon-glyph-sport: sport !default;
+$content-icon-glyph-sword: sword !default;
+$content-icon-glyph-swords: swords !default;
+$content-icon-glyph-sword-shield: sword_shield !default;
+$content-icon-glyph-tag: tag !default;
+$content-icon-glyph-ticket: ticket !default;
+$content-icon-glyph-trophy: trophy !default;
+$content-icon-glyph-vr: vr !default;
+$content-icon-glyph-cast: cast !default;
+$content-icon-glyph-copyright: copyright !default;
+$content-icon-glyph-fast-forward: fast_forward !default;
+$content-icon-glyph-image: image !default;
+$content-icon-glyph-image-add: image_add !default;
+$content-icon-glyph-image-dashed: image_dashed !default;
+$content-icon-glyph-image-landscape: image_landscape !default;
+$content-icon-glyph-image-portrait: image_portrait !default;
+$content-icon-glyph-live: live !default;
+$content-icon-glyph-maximize: maximize !default;
+$content-icon-glyph-minimize: minimize !default;
+$content-icon-glyph-music: music !default;
+$content-icon-glyph-pause: pause !default;
+$content-icon-glyph-play: play !default;
+$content-icon-glyph-play-dashed: play_dashed !default;
+$content-icon-glyph-power: power !default;
+$content-icon-glyph-rewind: rewind !default;
+$content-icon-glyph-screen-share: screen_share !default;
+$content-icon-glyph-skip-back: skip_back !default;
+$content-icon-glyph-skip-forward: skip_forward !default;
+$content-icon-glyph-volume-0: volume_0 !default;
+$content-icon-glyph-volume-1: volume_1 !default;
+$content-icon-glyph-volume-2: volume_2 !default;
+$content-icon-glyph-volume-x: volume_x !default;
+$content-icon-glyph-alert: alert !default;
+$content-icon-glyph-asterisk: asterisk !default;
+$content-icon-glyph-block: block !default;
+$content-icon-glyph-certified: certified !default;
+$content-icon-glyph-check: check !default;
+$content-icon-glyph-check-circle: check_circle !default;
+$content-icon-glyph-check-double: check_double !default;
+$content-icon-glyph-cross: cross !default;
+$content-icon-glyph-cross-circle: cross_circle !default;
+$content-icon-glyph-dix-huit-plus: dix_huit_plus !default;
+$content-icon-glyph-info: info !default;
+$content-icon-glyph-admin: admin !default;
+$content-icon-glyph-user: user !default;
+$content-icon-glyph-user-add: user_add !default;
+$content-icon-glyph-user-check: user_check !default;
+$content-icon-glyph-user-group: user_group !default;
+$content-icon-glyph-user-group-add: user_group_add !default;
+$content-icon-glyph-user-group-check: user_group_check !default;
+$content-icon-glyph-user-group-remove: user_group_remove !default;
+$content-icon-glyph-user-profile: user_profile !default;
+$content-icon-glyph-user-remove: user_remove !default;
+$content-icon-glyph-user-swap: user_swap !default;
+$content-icon-glyph-user-team: user_team !default;
+$content-icon-glyph-calendar: calendar !default;
+$content-icon-glyph-calendar-dashed: calendar_dashed !default;
+$content-icon-glyph-clock: clock !default;
+$content-icon-glyph-clock-dashed: clock_dashed !default;
+$content-icon-glyph-history: history !default;
+$content-icon-glyph-hourglass: hourglass !default;
+$content-icon-glyph-align-center: align_center !default;
+$content-icon-glyph-align-justify: align_justify !default;
+$content-icon-glyph-align-left: align_left !default;
+$content-icon-glyph-align-right: align_right !default;
+$content-icon-glyph-bold: bold !default;
+$content-icon-glyph-delete: delete !default;
+$content-icon-glyph-emoji: emoji !default;
+$content-icon-glyph-italic: italic !default;
+$content-icon-glyph-list-bullets: list_bullets !default;
+$content-icon-glyph-list-number: list_number !default;
+$content-icon-glyph-paragraph: paragraph !default;
+$content-icon-glyph-type: type !default;
+$content-icon-glyph-type-1: type_1 !default;
+$content-icon-glyph-type-2: type_2 !default;
+$content-icon-glyph-type-3: type_3 !default;
+$content-icon-glyph-underline: underline !default;
+$content-icon-glyph-attachment: attachment !default;
+$content-icon-glyph-center-to-fit: center_to_fit !default;
+$content-icon-glyph-copy: copy !default;
+$content-icon-glyph-crop: crop !default;
+$content-icon-glyph-download: download !default;
+$content-icon-glyph-drag: drag !default;
+$content-icon-glyph-edit: edit !default;
+$content-icon-glyph-eye-dashed: eye_dashed !default;
+$content-icon-glyph-eye-on: eye_on !default;
+$content-icon-glyph-filter: filter !default;
+$content-icon-glyph-heart: heart !default;
+$content-icon-glyph-heart-fill: heart_fill !default;
+$content-icon-glyph-link-alt: link_alt !default;
+$content-icon-glyph-link-unlink: link_unlink !default;
+$content-icon-glyph-more-options: more_options !default;
+$content-icon-glyph-save: save !default;
+$content-icon-glyph-settings: settings !default;
+$content-icon-glyph-share: share !default;
+$content-icon-glyph-sliders: sliders !default;
+$content-icon-glyph-sort: sort !default;
+$content-icon-glyph-star: star !default;
+$content-icon-glyph-star-filled: star_filled !default;
+$content-icon-glyph-thumbs-down: thumbs_down !default;
+$content-icon-glyph-thumbs-up: thumbs_up !default;
+$content-icon-glyph-trash: trash !default;
+$content-icon-glyph-uninstall: uninstall !default;
+$content-icon-glyph-upload: upload !default;
+$content-icon-glyph-view-grid: view_grid !default;
+$content-icon-glyph-view-list: view_list !default;
+$content-icon-glyph-wishlist-remove: wishlist_remove !default;
+$content-icon-glyph-arrow-corner-down-left: arrow_corner_down_left !default;
+$content-icon-glyph-arrow-corner-down-right: arrow_corner_down_right !default;
+$content-icon-glyph-arrow-corner-left-down: arrow_corner_left_down !default;
+$content-icon-glyph-arrow-corner-left-up: arrow_corner_left_up !default;
+$content-icon-glyph-arrow-corner-right-down: arrow_corner_right_down !default;
+$content-icon-glyph-arrow-corner-right-up: arrow_corner_right_up !default;
+$content-icon-glyph-arrow-corner-up-left: arrow_corner_up_left !default;
+$content-icon-glyph-arrow-corner-up-right: arrow_corner_up_right !default;
+$content-icon-glyph-arrow-down: arrow_down !default;
+$content-icon-glyph-arrow-down-left: arrow_down_left !default;
+$content-icon-glyph-arrow-down-right: arrow_down_right !default;
+$content-icon-glyph-arrow-left: arrow_left !default;
+$content-icon-glyph-arrow-right: arrow_right !default;
+$content-icon-glyph-arrow-up: arrow_up !default;
+$content-icon-glyph-arrow-up-left: arrow_up_left !default;
+$content-icon-glyph-arrow-up-right: arrow_up_right !default;
+$content-icon-glyph-chevron-down: chevron_down !default;
+$content-icon-glyph-chevron-left: chevron_left !default;
+$content-icon-glyph-chevron-right: chevron_right !default;
+$content-icon-glyph-chevron-up: chevron_up !default;
+$content-icon-glyph-collapse: collapse !default;
+$content-icon-glyph-collapse-horizontal: collapse_horizontal !default;
+$content-icon-glyph-crossing-arrows: crossing_arrows !default;
+$content-icon-glyph-exchange-horizontal: exchange_horizontal !default;
+$content-icon-glyph-exchange-vertical: exchange_vertical !default;
+$content-icon-glyph-expand: expand !default;
+$content-icon-glyph-expand-horizontal: expand_horizontal !default;
+$content-icon-glyph-move: move !default;
+$content-icon-glyph-receive: receive !default;
+$content-icon-glyph-refresh-ccw: refresh_ccw !default;
+$content-icon-glyph-refresh-cw: refresh_cw !default;
+$content-icon-glyph-repeat: repeat !default;
+$content-icon-glyph-rotate-ccw: rotate_ccw !default;
+$content-icon-glyph-rotate-cw: rotate_cw !default;
+$content-icon-glyph-send: send !default;
+$content-icon-glyph-shuffle: shuffle !default;
+$content-icon-glyph-clipboard: clipboard !default;
+$content-icon-glyph-clipboard-text: clipboard_text !default;
+$content-icon-glyph-file: file !default;
+$content-icon-glyph-file-encrypted: file_encrypted !default;
+$content-icon-glyph-file-text: file_text !default;
+$content-icon-glyph-file-text-double: file_text_double !default;
+$content-icon-glyph-folder: folder !default;
+$content-icon-glyph-arena: arena !default;
+$content-icon-glyph-ultra-prime: ultra_prime !default;
+$content-icon-glyph-ultra-wallet: ultra_wallet !default;
+$content-icon-glyph-ultra-marketplace: ultra_marketplace !default;
+$content-icon-glyph-first-hand-new-uniq: first_hand_new_uniq !default;
+$content-icon-glyph-second-hand-uniq: second_hand_uniq !default;
+$content-icon-glyph-ultra-games: ultra_games !default;
+$content-icon-glyph-ultra-logo: ultra_logo !default;
+$content-icon-glyph-league: league !default;
+$content-icon-glyph-double-elim: double_elim !default;
+$content-icon-glyph-gauntlet: gauntlet !default;
+$content-icon-glyph-round-robin: round_robin !default;
+$content-icon-glyph-simple-stage: simple_stage !default;
+$content-icon-glyph-single-elim: single_elim !default;
+$content-icon-glyph-swiss-system: swiss_system !default;
+$content-icon-glyph-bracket-group: bracket_group !default;
+$content-icon-glyph-uniq-unit: uniq_unit !default;
+$content-icon-glyph-crypto-uos: crypto_uos !default;
+$content-icon-glyph-screen-wide: screen_wide !default;
+$content-icon-glyph-workshop: workshop !default;
+$content-icon-glyph-cpu: cpu !default;
+$content-icon-glyph-arena-logo: arena_logo !default;
+$content-icon-glyph-ultra-prime-logo: ultra_prime_logo !default;
+$content-icon-glyph-ultra-wallet-logo: ultra_wallet_logo !default;
+$content-icon-glyph-ultra-marketplace-logo: ultra_marketplace_logo !default;
+$content-icon-glyph-ultra-games-logo: ultra_games_logo !default;
+$content-icon-glyph-no-result: no_result !default;
+$content-icon-glyph-library: library !default;
+$content-icon-glyph-minus-small: minus_small !default;
+$content-icon-glyph-x: X !default;
+$content-icon-glyph-twitch: twitch !default;
+$content-icon-glyph-instagram: insta !default;
+$content-icon-glyph-resell-lock: resell_lock !default;
+$content-icon-glyph-lock-exclusive-locked: lock_exclusive_locked !default;
+$content-icon-glyph-lock-exclusive-open: lock_exclusive_open !default;
+
+$tokens: (
+  'primitive': (
+    'color': (
+      'cyan': (
+        'transparent': (
+          '8 - 30': $primitive-color-cyan-transparent-8-30,
+          '8 - 20': $primitive-color-cyan-transparent-8-20,
+          '8 - 10': $primitive-color-cyan-transparent-8-10,
+          '8 - 0': $primitive-color-cyan-transparent-8-0,
+        ),
+        'solid': (
+          '1': $primitive-color-cyan-solid-1,
+          '2': $primitive-color-cyan-solid-2,
+          '3': $primitive-color-cyan-solid-3,
+          '4': $primitive-color-cyan-solid-4,
+          '5': $primitive-color-cyan-solid-5,
+          '6': $primitive-color-cyan-solid-6,
+          '7': $primitive-color-cyan-solid-7,
+          '8': $primitive-color-cyan-solid-8,
+          '9': $primitive-color-cyan-solid-9,
+          '10': $primitive-color-cyan-solid-10,
+        ),
+      ),
+      'blue': (
+        'transparent': (
+          '8 - 30': $primitive-color-blue-transparent-8-30,
+          '8 - 20': $primitive-color-blue-transparent-8-20,
+          '8 - 10': $primitive-color-blue-transparent-8-10,
+          '8 - 0': $primitive-color-blue-transparent-8-0,
+        ),
+        'solid': (
+          '1': $primitive-color-blue-solid-1,
+          '2': $primitive-color-blue-solid-2,
+          '3': $primitive-color-blue-solid-3,
+          '4': $primitive-color-blue-solid-4,
+          '5': $primitive-color-blue-solid-5,
+          '6': $primitive-color-blue-solid-6,
+          '7': $primitive-color-blue-solid-7,
+          '8': $primitive-color-blue-solid-8,
+          '9': $primitive-color-blue-solid-9,
+          '10': $primitive-color-blue-solid-10,
+        ),
+      ),
+      'pink': (
+        'transparent': (
+          '8 - 30': $primitive-color-pink-transparent-8-30,
+          '8 - 20': $primitive-color-pink-transparent-8-20,
+          '8 - 10': $primitive-color-pink-transparent-8-10,
+          '8 - 0': $primitive-color-pink-transparent-8-0,
+        ),
+        'solid': (
+          '1': $primitive-color-pink-solid-1,
+          '2': $primitive-color-pink-solid-2,
+          '3': $primitive-color-pink-solid-3,
+          '4': $primitive-color-pink-solid-4,
+          '5': $primitive-color-pink-solid-5,
+          '6': $primitive-color-pink-solid-6,
+          '7': $primitive-color-pink-solid-7,
+          '8': $primitive-color-pink-solid-8,
+          '9': $primitive-color-pink-solid-9,
+          '10': $primitive-color-pink-solid-10,
+        ),
+      ),
+      'orange': (
+        'transparent': (
+          '8 - 30': $primitive-color-orange-transparent-8-30,
+          '8 - 20': $primitive-color-orange-transparent-8-20,
+          '8 - 10': $primitive-color-orange-transparent-8-10,
+          '8 - 0': $primitive-color-orange-transparent-8-0,
+        ),
+        'solid': (
+          '1': $primitive-color-orange-solid-1,
+          '2': $primitive-color-orange-solid-2,
+          '3': $primitive-color-orange-solid-3,
+          '4': $primitive-color-orange-solid-4,
+          '5': $primitive-color-orange-solid-5,
+          '6': $primitive-color-orange-solid-6,
+          '7': $primitive-color-orange-solid-7,
+          '8': $primitive-color-orange-solid-8,
+          '9': $primitive-color-orange-solid-9,
+          '10': $primitive-color-orange-solid-10,
+        ),
+      ),
+      'yellow': (
+        'transparent': (
+          '8 - 30': $primitive-color-yellow-transparent-8-30,
+          '8 - 20': $primitive-color-yellow-transparent-8-20,
+          '8 - 10': $primitive-color-yellow-transparent-8-10,
+          '8 - 0': $primitive-color-yellow-transparent-8-0,
+        ),
+        'solid': (
+          '1': $primitive-color-yellow-solid-1,
+          '2': $primitive-color-yellow-solid-2,
+          '3': $primitive-color-yellow-solid-3,
+          '4': $primitive-color-yellow-solid-4,
+          '5': $primitive-color-yellow-solid-5,
+          '6': $primitive-color-yellow-solid-6,
+          '7': $primitive-color-yellow-solid-7,
+          '8': $primitive-color-yellow-solid-8,
+          '9': $primitive-color-yellow-solid-9,
+          '10': $primitive-color-yellow-solid-10,
+        ),
+      ),
+      'green': (
+        'transparent': (
+          '8 - 30': $primitive-color-green-transparent-8-30,
+          '8 - 20': $primitive-color-green-transparent-8-20,
+          '8 - 10': $primitive-color-green-transparent-8-10,
+          '8 - 0': $primitive-color-green-transparent-8-0,
+        ),
+        'solid': (
+          '1': $primitive-color-green-solid-1,
+          '2': $primitive-color-green-solid-2,
+          '3': $primitive-color-green-solid-3,
+          '4': $primitive-color-green-solid-4,
+          '5': $primitive-color-green-solid-5,
+          '6': $primitive-color-green-solid-6,
+          '7': $primitive-color-green-solid-7,
+          '8': $primitive-color-green-solid-8,
+          '9': $primitive-color-green-solid-9,
+          '10': $primitive-color-green-solid-10,
+        ),
+      ),
+      'red': (
+        'transparent': (
+          '8 - 30': $primitive-color-red-transparent-8-30,
+          '8 - 20': $primitive-color-red-transparent-8-20,
+          '8 - 10': $primitive-color-red-transparent-8-10,
+          '8 - 0': $primitive-color-red-transparent-8-0,
+        ),
+        'solid': (
+          '1': $primitive-color-red-solid-1,
+          '2': $primitive-color-red-solid-2,
+          '3': $primitive-color-red-solid-3,
+          '4': $primitive-color-red-solid-4,
+          '5': $primitive-color-red-solid-5,
+          '6': $primitive-color-red-solid-6,
+          '7': $primitive-color-red-solid-7,
+          '8': $primitive-color-red-solid-8,
+          '9': $primitive-color-red-solid-9,
+          '10': $primitive-color-red-solid-10,
+        ),
+      ),
+      'white': (
+        '0': $primitive-color-white-0,
+        '5': $primitive-color-white-5,
+        '7': $primitive-color-white-7,
+        '10': $primitive-color-white-10,
+        '20': $primitive-color-white-20,
+        '30': $primitive-color-white-30,
+        '50': $primitive-color-white-50,
+        '70': $primitive-color-white-70,
+        '100': $primitive-color-white-100,
+      ),
+      'black': (
+        '0': $primitive-color-black-0,
+        '5': $primitive-color-black-5,
+        '7': $primitive-color-black-7,
+        '10': $primitive-color-black-10,
+        '20': $primitive-color-black-20,
+        '30': $primitive-color-black-30,
+        '50': $primitive-color-black-50,
+        '70': $primitive-color-black-70,
+        '100': $primitive-color-black-100,
+      ),
+      'grey': (
+        'solid': (
+          '1': $primitive-color-grey-solid-1,
+          '2': $primitive-color-grey-solid-2,
+          '3': $primitive-color-grey-solid-3,
+          '4': $primitive-color-grey-solid-4,
+          '5': $primitive-color-grey-solid-5,
+          '6': $primitive-color-grey-solid-6,
+          '7': $primitive-color-grey-solid-7,
+          '8': $primitive-color-grey-solid-8,
+          '9': $primitive-color-grey-solid-9,
+          '10': $primitive-color-grey-solid-10,
+        ),
+        'transparent': (
+          '1-70': $primitive-color-grey-transparent-1-70,
+        ),
+      ),
+      'purple': (
+        'solid': (
+          '1': $primitive-color-purple-solid-1,
+          '2': $primitive-color-purple-solid-2,
+          '3': $primitive-color-purple-solid-3,
+          '4': $primitive-color-purple-solid-4,
+          '5': $primitive-color-purple-solid-5,
+          '6': $primitive-color-purple-solid-6,
+          '7': $primitive-color-purple-solid-7,
+          '8': $primitive-color-purple-solid-8,
+          '9': $primitive-color-purple-solid-9,
+          '10': $primitive-color-purple-solid-10,
+        ),
+        'transparent': (
+          '8 - 30': $primitive-color-purple-transparent-8-30,
+          '8 - 20': $primitive-color-purple-transparent-8-20,
+          '8 - 10': $primitive-color-purple-transparent-8-10,
+          '8 - 0': $primitive-color-purple-transparent-8-0,
+        ),
+      ),
+    ),
+  ),
+  'color': (
+    'background': (
+      'main': $color-background-main,
+      'grey-lvl-1': $color-background-grey-lvl-1,
+      'grey-lvl-2': $color-background-grey-lvl-2,
+      'white-light': $color-background-white-light,
+      'black-strong': $color-background-black-strong,
+      'black-medium': $color-background-black-medium,
+      'white-extra-light': $color-background-white-extra-light,
+      'main-strong': $color-background-main-strong,
+      'purple': $color-background-purple,
+      'purple-light': $color-background-purple-light,
+      'white': $color-background-white,
+      'white-medium-strong': $color-background-white-medium-strong,
+      'green-light': $color-background-green-light,
+      'green': $color-background-green,
+      'red-light': $color-background-red-light,
+      'red': $color-background-red,
+      'orange-light': $color-background-orange-light,
+      'orange': $color-background-orange,
+      'white-medium-light': $color-background-white-medium-light,
+    ),
+    'interactive-surface': (
+      'solid': (
+        'grey-lvl-1': (
+          'hover': $color-interactive-surface-solid-grey-lvl-1-hover,
+          'active': $color-interactive-surface-solid-grey-lvl-1-active,
+          'selected': $color-interactive-surface-solid-grey-lvl-1-selected,
+          'disabled': $color-interactive-surface-solid-grey-lvl-1-disabled,
+          'enabled': $color-interactive-surface-solid-grey-lvl-1-enabled,
+        ),
+        'grey-lvl-2': (
+          'hover': $color-interactive-surface-solid-grey-lvl-2-hover,
+          'active': $color-interactive-surface-solid-grey-lvl-2-active,
+          'selected': $color-interactive-surface-solid-grey-lvl-2-selected,
+          'disabled': $color-interactive-surface-solid-grey-lvl-2-disabled,
+          'enabled': $color-interactive-surface-solid-grey-lvl-2-enabled,
+        ),
+        'purple': (
+          'enabled': $color-interactive-surface-solid-purple-enabled,
+          'hover': $color-interactive-surface-solid-purple-hover,
+          'active': $color-interactive-surface-solid-purple-active,
+          'selected': $color-interactive-surface-solid-purple-selected,
+          'disabled': $color-interactive-surface-solid-purple-disabled,
+        ),
+        'red': (
+          'enabled': $color-interactive-surface-solid-red-enabled,
+          'hover': $color-interactive-surface-solid-red-hover,
+          'active': $color-interactive-surface-solid-red-active,
+          'selected': $color-interactive-surface-solid-red-selected,
+          'disabled': $color-interactive-surface-solid-red-disabled,
+        ),
+        'white': (
+          'enabled': $color-interactive-surface-solid-white-enabled,
+          'hover': $color-interactive-surface-solid-white-hover,
+          'active': $color-interactive-surface-solid-white-active,
+          'selected': $color-interactive-surface-solid-white-selected,
+          'disabled': $color-interactive-surface-solid-white-disabled,
+        ),
+        'yellow': (
+          'enabled': $color-interactive-surface-solid-yellow-enabled,
+          'hover': $color-interactive-surface-solid-yellow-hover,
+          'active': $color-interactive-surface-solid-yellow-active,
+          'selected': $color-interactive-surface-solid-yellow-selected,
+          'disabled': $color-interactive-surface-solid-yellow-disabled,
+        ),
+        'green': (
+          'enabled': $color-interactive-surface-solid-green-enabled,
+          'hover': $color-interactive-surface-solid-green-hover,
+          'active': $color-interactive-surface-solid-green-active,
+          'selected': $color-interactive-surface-solid-green-selected,
+          'disabled': $color-interactive-surface-solid-green-disabled,
+        ),
+        'orange': (
+          'enabled': $color-interactive-surface-solid-orange-enabled,
+          'hover': $color-interactive-surface-solid-orange-hover,
+          'active': $color-interactive-surface-solid-orange-active,
+          'selected': $color-interactive-surface-solid-orange-selected,
+          'disabled': $color-interactive-surface-solid-orange-disabled,
+        ),
+      ),
+      'transparent': (
+        'purple': (
+          'enabled': $color-interactive-surface-transparent-purple-enabled,
+          'hover': $color-interactive-surface-transparent-purple-hover,
+          'active': $color-interactive-surface-transparent-purple-active,
+          'selected': $color-interactive-surface-transparent-purple-selected,
+          'disabled': $color-interactive-surface-transparent-purple-disabled,
+        ),
+        'red': (
+          'enabled': $color-interactive-surface-transparent-red-enabled,
+          'hover': $color-interactive-surface-transparent-red-hover,
+          'active': $color-interactive-surface-transparent-red-active,
+          'selected': $color-interactive-surface-transparent-red-selected,
+          'disabled': $color-interactive-surface-transparent-red-disabled,
+        ),
+        'white': (
+          'enabled': $color-interactive-surface-transparent-white-enabled,
+          'hover': $color-interactive-surface-transparent-white-hover,
+          'active': $color-interactive-surface-transparent-white-active,
+          'selected': $color-interactive-surface-transparent-white-selected,
+          'disabled': $color-interactive-surface-transparent-white-disabled,
+        ),
+        'orange': (
+          'enabled': $color-interactive-surface-transparent-orange-enabled,
+          'hover': $color-interactive-surface-transparent-orange-hover,
+          'active': $color-interactive-surface-transparent-orange-active,
+          'selected': $color-interactive-surface-transparent-orange-selected,
+          'disabled': $color-interactive-surface-transparent-orange-disabled,
+        ),
+        'green': (
+          'enabled': $color-interactive-surface-transparent-green-enabled,
+          'hover': $color-interactive-surface-transparent-green-hover,
+          'active': $color-interactive-surface-transparent-green-active,
+          'selected': $color-interactive-surface-transparent-green-selected,
+          'disabled': $color-interactive-surface-transparent-green-disabled,
+        ),
+        'black': (
+          'enabled': $color-interactive-surface-transparent-black-enabled,
+          'hover': $color-interactive-surface-transparent-black-hover,
+          'active': $color-interactive-surface-transparent-black-active,
+          'selected': $color-interactive-surface-transparent-black-selected,
+          'disabled': $color-interactive-surface-transparent-black-disabled,
+        ),
+        'yellow': (
+          'enabled': $color-interactive-surface-transparent-yellow-enabled,
+          'hover': $color-interactive-surface-transparent-yellow-hover,
+          'active': $color-interactive-surface-transparent-yellow-active,
+          'selected': $color-interactive-surface-transparent-yellow-selected,
+          'disabled': $color-interactive-surface-transparent-yellow-disabled,
+        ),
+      ),
+      'ghost': (
+        'purple': (
+          'hover': $color-interactive-surface-ghost-purple-hover,
+          'active': $color-interactive-surface-ghost-purple-active,
+          'selected': $color-interactive-surface-ghost-purple-selected,
+          'enabled': $color-interactive-surface-ghost-purple-enabled,
+          'disabled': $color-interactive-surface-ghost-purple-disabled,
+        ),
+        'red': (
+          'hover': $color-interactive-surface-ghost-red-hover,
+          'active': $color-interactive-surface-ghost-red-active,
+          'selected': $color-interactive-surface-ghost-red-selected,
+          'enabled': $color-interactive-surface-ghost-red-enabled,
+          'disabled': $color-interactive-surface-ghost-red-disabled,
+        ),
+        'white': (
+          'hover': $color-interactive-surface-ghost-white-hover,
+          'active': $color-interactive-surface-ghost-white-active,
+          'selected': $color-interactive-surface-ghost-white-selected,
+          'enabled': $color-interactive-surface-ghost-white-enabled,
+          'disabled': $color-interactive-surface-ghost-white-disabled,
+        ),
+        'green': (
+          'hover': $color-interactive-surface-ghost-green-hover,
+          'active': $color-interactive-surface-ghost-green-active,
+          'selected': $color-interactive-surface-ghost-green-selected,
+          'enabled': $color-interactive-surface-ghost-green-enabled,
+          'disabled': $color-interactive-surface-ghost-green-disabled,
+        ),
+      ),
+      'outline': (
+        'white': (
+          'border-enabled': $color-border-white-medium,
+          'border-hover': $color-border-white,
+          'border-active': $color-border-white-medium-strong,
+          'border-disabled': $color-border-grey,
+          'text': $color-text-primary,
+        ),
+        'purple': (
+          'border-enabled': $color-border-purple,
+          'border-hover': $color-border-purple,
+          'border-active': $color-border-purple,
+          'border-disabled': $color-border-grey,
+          'text': $color-text-purple,
+        ),
+        'red': (
+          'border-enabled': $color-border-red,
+          'border-hover': $color-border-red,
+          'border-active': $color-border-red,
+          'border-disabled': $color-border-grey,
+          'text': $color-text-red,
+        ),
+        'green': (
+          'border-enabled': $color-border-green,
+          'border-hover': $color-border-green,
+          'border-active': $color-border-green,
+          'border-disabled': $color-border-grey,
+          'text': $color-text-green,
+        ),
+      ),
+    ),
+    'text': (
+      'primary': $color-text-primary,
+      'secondary': $color-text-secondary,
+      'tertiary': $color-text-tertiary,
+      'disabled': $color-text-disabled,
+      'purple': $color-text-purple,
+      'green': $color-text-green,
+      'red': $color-text-red,
+      'orange': $color-text-orange,
+      'yellow': $color-text-yellow,
+      'inverted': $color-text-inverted,
+      'purple-inverted': $color-text-purple-inverted,
+      'inverted-strong': $color-text-inverted-strong,
+    ),
+    'border': (
+      'white-light': $color-border-white-light,
+      'white-medium-strong': $color-border-white-medium-strong,
+      'purple': $color-border-purple,
+      'white-medium': $color-border-white-medium,
+      'grey': $color-border-grey,
+      'black': $color-border-black,
+      'white': $color-border-white,
+      'red': $color-border-red,
+      'green': $color-border-green,
+      'orange': $color-border-orange,
+      'yellow': $color-border-yellow,
+    ),
+    'link': (
+      'enabled': $color-link-enabled,
+      'hover': $color-link-hover,
+      'active': $color-link-active,
+    ),
+  ),
+  'typography': (
+    'font': (
+      'family': (
+        'headline-s': $typography-font-family-headline-s,
+        'body-m': $typography-font-family-body-m,
+        'caption-l': $typography-font-family-caption-l,
+        'brand-caption-l': $typography-font-family-brand-caption-l,
+        'caption-mono': $typography-font-family-caption-mono,
+        'body-l': $typography-font-family-body-l,
+        'headline-m': $typography-font-family-headline-m,
+        'headline-l': $typography-font-family-headline-l,
+        'headline-xl': $typography-font-family-headline-xl,
+        'headline-2xl': $typography-font-family-headline-2xl,
+        'headline-3xl': $typography-font-family-headline-3xl,
+        'brand-body-m': $typography-font-family-brand-body-m,
+        'brand-body-l': $typography-font-family-brand-body-l,
+        'brand-headline-s': $typography-font-family-brand-headline-s,
+        'brand-headline-m': $typography-font-family-brand-headline-m,
+        'brand-headline-l': $typography-font-family-brand-headline-l,
+        'brand-headline-xl': $typography-font-family-brand-headline-xl,
+        'brand-headline-2xl': $typography-font-family-brand-headline-2xl,
+        'brand-headline-3xl': $typography-font-family-brand-headline-3xl,
+      ),
+      'line-height': (
+        'headline-s': $typography-font-line-height-headline-s,
+        'caption-l': $typography-font-line-height-caption-l,
+        'body-m': $typography-font-line-height-body-m,
+        'body-l': $typography-font-line-height-body-l,
+        'headline-m': $typography-font-line-height-headline-m,
+        'headline-xl': $typography-font-line-height-headline-xl,
+        'headline-l': $typography-font-line-height-headline-l,
+        'headline-2xl': $typography-font-line-height-headline-2xl,
+        'headline-3xl': $typography-font-line-height-headline-3xl,
+        'caption-mono': $typography-font-line-height-caption-mono,
+        'brand-caption-l': $typography-font-line-height-brand-caption-l,
+        'brand-body-m': $typography-font-line-height-brand-body-m,
+        'brand-body-l': $typography-font-line-height-brand-body-l,
+        'brand-headline-s': $typography-font-line-height-brand-headline-s,
+        'brand-headline-m': $typography-font-line-height-brand-headline-m,
+        'brand-headline-l': $typography-font-line-height-brand-headline-l,
+        'brand-headline-xl': $typography-font-line-height-brand-headline-xl,
+        'brand-headline-2xl': $typography-font-line-height-brand-headline-2xl,
+        'brand-headline-3xl': $typography-font-line-height-brand-headline-3xl,
+      ),
+      'size': (
+        'body-l': $typography-font-size-body-l,
+        'caption-l': $typography-font-size-caption-l,
+        'body-m': $typography-font-size-body-m,
+        'headline-s': $typography-font-size-headline-s,
+        'headline-m': $typography-font-size-headline-m,
+        'headline-l': $typography-font-size-headline-l,
+        'headline-xl': $typography-font-size-headline-xl,
+        'headline-2xl': $typography-font-size-headline-2xl,
+        'headline-3xl': $typography-font-size-headline-3xl,
+        'caption-mono': $typography-font-size-caption-mono,
+        'brand-caption-l': $typography-font-size-brand-caption-l,
+        'brand-body-m': $typography-font-size-brand-body-m,
+        'brand-body-l': $typography-font-size-brand-body-l,
+        'brand-headline-s': $typography-font-size-brand-headline-s,
+        'brand-headline-m': $typography-font-size-brand-headline-m,
+        'brand-headline-l': $typography-font-size-brand-headline-l,
+        'brand-headline-xl': $typography-font-size-brand-headline-xl,
+        'brand-headline-2xl': $typography-font-size-brand-headline-2xl,
+        'brand-headline-3xl': $typography-font-size-brand-headline-3xl,
+      ),
+      'letter-spacing': (
+        'caption-l': $typography-font-letter-spacing-caption-l,
+        'body-m': $typography-font-letter-spacing-body-m,
+        'body-l': $typography-font-letter-spacing-body-l,
+        'headline-s': $typography-font-letter-spacing-headline-s,
+        'headline-m': $typography-font-letter-spacing-headline-m,
+        'headline-l': $typography-font-letter-spacing-headline-l,
+        'headline-xl': $typography-font-letter-spacing-headline-xl,
+        'headline-2xl': $typography-font-letter-spacing-headline-2xl,
+        'headline-3xl': $typography-font-letter-spacing-headline-3xl,
+        'caption-mono': $typography-font-letter-spacing-caption-mono,
+        'brand-headline-3xl': $typography-font-letter-spacing-brand-headline-3xl,
+        'brand-headline-2xl': $typography-font-letter-spacing-brand-headline-2xl,
+        'brand-headline-xl': $typography-font-letter-spacing-brand-headline-xl,
+        'brand-headline-l': $typography-font-letter-spacing-brand-headline-l,
+        'brand-headline-m': $typography-font-letter-spacing-brand-headline-m,
+        'brand-caption-l': $typography-font-letter-spacing-brand-caption-l,
+        'brand-body-m': $typography-font-letter-spacing-brand-body-m,
+        'brand-body-l': $typography-font-letter-spacing-brand-body-l,
+        'brand-headline-s': $typography-font-letter-spacing-brand-headline-s,
+      ),
+      'weight': (
+        'extrablack': $typography-font-weight-extrablack,
+        'regular': $typography-font-weight-regular,
+        'extrabold': $typography-font-weight-extrabold,
+        'medium': $typography-font-weight-medium,
+      ),
+    ),
+  ),
+  'spacing': (
+    'spacing': (
+      '1': $spacing-spacing-1,
+      '2': $spacing-spacing-2,
+      '3': $spacing-spacing-3,
+      '4': $spacing-spacing-4,
+      '5': $spacing-spacing-5,
+      '6': $spacing-spacing-6,
+      '7': $spacing-spacing-7,
+      '8': $spacing-spacing-8,
+      '9': $spacing-spacing-9,
+      '10': $spacing-spacing-10,
+      '11': $spacing-spacing-11,
+      '12': $spacing-spacing-12,
+      '14': $spacing-spacing-14,
+      '15': $spacing-spacing-15,
+      '16': $spacing-spacing-16,
+      '20': $spacing-spacing-20,
+      '24': $spacing-spacing-24,
+      '28': $spacing-spacing-28,
+      '32': $spacing-spacing-32,
+    ),
+  ),
+  'radius': (
+    'radius': (
+      '1': $radius-radius-1,
+      '2': $radius-radius-2,
+      '3': $radius-radius-3,
+      '4': $radius-radius-4,
+      '6': $radius-radius-6,
+      '8': $radius-radius-8,
+      '16': $radius-radius-16,
+      'full': $radius-radius-full,
+    ),
+  ),
+  'iconography': (
+    'font': (
+      'family': (
+        'icon': $iconography-font-family-icon,
+      ),
+      'weight': (
+        'medium': $iconography-font-weight-medium,
+        'bold': $iconography-font-weight-bold,
+      ),
+      'size': (
+        '4': $iconography-font-size-4,
+        '5': $iconography-font-size-5,
+        '6': $iconography-font-size-6,
+        '7': $iconography-font-size-7,
+        '8': $iconography-font-size-8,
+        '10': $iconography-font-size-10,
+        '12': $iconography-font-size-12,
+        '16': $iconography-font-size-16,
+        '24': $iconography-font-size-24,
+        '32': $iconography-font-size-32,
+      ),
+      'line-height': (
+        '4': $iconography-font-line-height-4,
+        '5': $iconography-font-line-height-5,
+        '6': $iconography-font-line-height-6,
+        '7': $iconography-font-line-height-7,
+        '8': $iconography-font-line-height-8,
+        '10': $iconography-font-line-height-10,
+        '12': $iconography-font-line-height-12,
+        '16': $iconography-font-line-height-16,
+        '24': $iconography-font-line-height-24,
+        '32': $iconography-font-line-height-32,
+      ),
+    ),
+  ),
+  'component': (
+    'dropdown-list-max-height': $component-dropdown-list-max-height,
+    'control': (
+      'height': (
+        'sm': $component-control-height-sm,
+        'md': $component-control-height-md,
+        'lg': $component-control-height-lg,
+        'xl': $component-control-height-xl,
+      ),
+      'min-width': (
+        'sm': $component-control-min-width-sm,
+        'md': $component-control-min-width-md,
+        'lg': $component-control-min-width-lg,
+      ),
+      'icon-only-size': (
+        'sm': $component-icon-only-size-sm,
+        'md': $component-icon-only-size-md,
+        'lg': $component-icon-only-size-lg,
+      ),
+      'vertical-width': (
+        'lg': $component-control-vertical-width-lg,
+      ),
+    ),
+  ),
+  'breakpoint': (
+    'xs': $breakpoint-xs,
+    'sm': $breakpoint-sm,
+    'md': $breakpoint-md,
+    'lg': $breakpoint-lg,
+    'xl': $breakpoint-xl,
+  ),
+  'content': (
+    'icon-glyph': (
+      'placeholder': $content-icon-glyph-placeholder,
+      'activity': $content-icon-glyph-activity,
+      'arrow_trending_down': $content-icon-glyph-arrow-trending-down,
+      'arrow_trending_up': $content-icon-glyph-arrow-trending-up,
+      'bar_chart_peak': $content-icon-glyph-bar-chart-peak,
+      'bar_chart_rise': $content-icon-glyph-bar-chart-rise,
+      'circular_chart': $content-icon-glyph-circular-chart,
+      'credit_card': $content-icon-glyph-credit-card,
+      'paypal': $content-icon-glyph-paypal,
+      'shopping_bag': $content-icon-glyph-shopping-bag,
+      'shopping_cart': $content-icon-glyph-shopping-cart,
+      'shopping_cart_add': $content-icon-glyph-shopping-cart-add,
+      'shopping_cart_dashed': $content-icon-glyph-shopping-cart-dashed,
+      'store': $content-icon-glyph-store,
+      'visa': $content-icon-glyph-visa,
+      'wallet': $content-icon-glyph-wallet,
+      'compass': $content-icon-glyph-compass,
+      'globe': $content-icon-glyph-globe,
+      'globe_lock': $content-icon-glyph-globe-lock,
+      'globe_minus': $content-icon-glyph-globe-minus,
+      'globe_plus': $content-icon-glyph-globe-plus,
+      'globe_dashed': $content-icon-glyph-globe-dashed,
+      'map': $content-icon-glyph-map,
+      'map_pin': $content-icon-glyph-map-pin,
+      'navigation': $content-icon-glyph-navigation,
+      'path': $content-icon-glyph-path,
+      'cloud': $content-icon-glyph-cloud,
+      'cloud_drizzle': $content-icon-glyph-cloud-drizzle,
+      'cloud_lightning': $content-icon-glyph-cloud-lightning,
+      'cloud_dashed': $content-icon-glyph-cloud-dashed,
+      'cloud_rain': $content-icon-glyph-cloud-rain,
+      'cloud_snow': $content-icon-glyph-cloud-snow,
+      'drop': $content-icon-glyph-drop,
+      'flame': $content-icon-glyph-flame,
+      'ice': $content-icon-glyph-ice,
+      'moon': $content-icon-glyph-moon,
+      'sun': $content-icon-glyph-sun,
+      'sunrise': $content-icon-glyph-sunrise,
+      'sunset': $content-icon-glyph-sunset,
+      'thermometer': $content-icon-glyph-thermometer,
+      'wind': $content-icon-glyph-wind,
+      'zap': $content-icon-glyph-zap,
+      'apple': $content-icon-glyph-apple,
+      'chrome': $content-icon-glyph-chrome,
+      'crossplatform': $content-icon-glyph-crossplatform,
+      'linux': $content-icon-glyph-linux,
+      'windows': $content-icon-glyph-windows,
+      'xbox': $content-icon-glyph-xbox,
+      'discord': $content-icon-glyph-discord,
+      'facebook': $content-icon-glyph-facebook,
+      'linkedin': $content-icon-glyph-linkedin,
+      'medium': $content-icon-glyph-medium,
+      'telegram': $content-icon-glyph-telegram,
+      'twitter': $content-icon-glyph-twitter,
+      'youtube': $content-icon-glyph-youtube,
+      'at_sign': $content-icon-glyph-at-sign,
+      'beta': $content-icon-glyph-beta,
+      'blockchain': $content-icon-glyph-blockchain,
+      'bluetooth': $content-icon-glyph-bluetooth,
+      'branch': $content-icon-glyph-branch,
+      'camera': $content-icon-glyph-camera,
+      'camera_dashed': $content-icon-glyph-camera-dashed,
+      'cloud_download': $content-icon-glyph-cloud-download,
+      'cloud_upload': $content-icon-glyph-cloud-upload,
+      'code_brackets': $content-icon-glyph-code-brackets,
+      'coins_pile': $content-icon-glyph-coins-pile,
+      'collectible': $content-icon-glyph-collectible,
+      'compatible': $content-icon-glyph-compatible,
+      'computer': $content-icon-glyph-computer,
+      'crypto': $content-icon-glyph-crypto,
+      'crypto_add': $content-icon-glyph-crypto-add,
+      'crypto_exchanged': $content-icon-glyph-crypto-exchanged,
+      'crypto_received': $content-icon-glyph-crypto-received,
+      'crypto_sent': $content-icon-glyph-crypto-sent,
+      'demo': $content-icon-glyph-demo,
+      'dlc': $content-icon-glyph-dlc,
+      'exception': $content-icon-glyph-exception,
+      'headphones': $content-icon-glyph-headphones,
+      'mail': $content-icon-glyph-mail,
+      'merge': $content-icon-glyph-merge,
+      'message': $content-icon-glyph-message,
+      'message_chat': $content-icon-glyph-message-chat,
+      'mic': $content-icon-glyph-mic,
+      'mic_dashed': $content-icon-glyph-mic-dashed,
+      'monitor_zap': $content-icon-glyph-monitor-zap,
+      'network': $content-icon-glyph-network,
+      'phone': $content-icon-glyph-phone,
+      'phone_call': $content-icon-glyph-phone-call,
+      'phone_forwarded': $content-icon-glyph-phone-forwarded,
+      'phone_incoming': $content-icon-glyph-phone-incoming,
+      'phone_missed': $content-icon-glyph-phone-missed,
+      'phone_dashed': $content-icon-glyph-phone-dashed,
+      'phone_outgoing': $content-icon-glyph-phone-outgoing,
+      'photo': $content-icon-glyph-photo,
+      'photo_dashed': $content-icon-glyph-photo-dashed,
+      'printer': $content-icon-glyph-printer,
+      'rss': $content-icon-glyph-rss,
+      'score': $content-icon-glyph-score,
+      'screen': $content-icon-glyph-screen,
+      'server': $content-icon-glyph-server,
+      'smartphone': $content-icon-glyph-smartphone,
+      'smart_contract': $content-icon-glyph-smart-contract,
+      'streaming': $content-icon-glyph-streaming,
+      'tablet': $content-icon-glyph-tablet,
+      'terminal': $content-icon-glyph-terminal,
+      'translate': $content-icon-glyph-translate,
+      'ultra_cloud': $content-icon-glyph-ultra-cloud,
+      'usb': $content-icon-glyph-usb,
+      'video': $content-icon-glyph-video,
+      'widgets': $content-icon-glyph-widgets,
+      'widgets_add': $content-icon-glyph-widgets-add,
+      'wifi': $content-icon-glyph-wifi,
+      'wifi_dashed': $content-icon-glyph-wifi-dashed,
+      'application': $content-icon-glyph-application,
+      'apps_grid': $content-icon-glyph-apps-grid,
+      'close': $content-icon-glyph-close,
+      'external_link': $content-icon-glyph-external-link,
+      'layers': $content-icon-glyph-layers,
+      'log_in': $content-icon-glyph-log-in,
+      'log_out': $content-icon-glyph-log-out,
+      'menu': $content-icon-glyph-menu,
+      'search': $content-icon-glyph-search,
+      'sidebar': $content-icon-glyph-sidebar,
+      'windows_maximize': $content-icon-glyph-windows-maximize,
+      'window_minimize': $content-icon-glyph-window-minimize,
+      'window_normalize': $content-icon-glyph-window-normalize,
+      'zoom_in': $content-icon-glyph-zoom-in,
+      'zoom_out': $content-icon-glyph-zoom-out,
+      'equal': $content-icon-glyph-equal,
+      'equal_circle': $content-icon-glyph-equal-circle,
+      'hash': $content-icon-glyph-hash,
+      'inequal': $content-icon-glyph-inequal,
+      'infinite': $content-icon-glyph-infinite,
+      'minus': $content-icon-glyph-minus,
+      'minus_circle': $content-icon-glyph-minus-circle,
+      'percent': $content-icon-glyph-percent,
+      'plus': $content-icon-glyph-plus,
+      'plus_circle': $content-icon-glyph-plus-circle,
+      'x_circle': $content-icon-glyph-x-circle,
+      'australian_dollar': $content-icon-glyph-australian-dollar,
+      'bitcoin': $content-icon-glyph-bitcoin,
+      'brazilian_real': $content-icon-glyph-brazilian-real,
+      'canadian_dollar': $content-icon-glyph-canadian-dollar,
+      'dollar': $content-icon-glyph-dollar,
+      'ether': $content-icon-glyph-ether,
+      'euro': $content-icon-glyph-euro,
+      'indian_rupee': $content-icon-glyph-indian-rupee,
+      'korean_won': $content-icon-glyph-korean-won,
+      'krona': $content-icon-glyph-krona,
+      'mexican_peso': $content-icon-glyph-mexican-peso,
+      'new_zealand_dollar': $content-icon-glyph-new-zealand-dollar,
+      'pound_sterling': $content-icon-glyph-pound-sterling,
+      'swedish_krona': $content-icon-glyph-swedish-krona,
+      'swiss_franc': $content-icon-glyph-swiss-franc,
+      'uos': $content-icon-glyph-uos,
+      'yen': $content-icon-glyph-yen,
+      'yuan': $content-icon-glyph-yuan,
+      'currency_exchange': $content-icon-glyph-currency-exchange,
+      'currency_receive': $content-icon-glyph-currency-receive,
+      'currency_send': $content-icon-glyph-currency-send,
+      'dollar_to_uos': $content-icon-glyph-dollar-to-uos,
+      'marketplace_auction': $content-icon-glyph-marketplace-auction,
+      'marketplace_cancel': $content-icon-glyph-marketplace-cancel,
+      'marketplace_fixed': $content-icon-glyph-marketplace-fixed,
+      'marketplace_inverted_auction': $content-icon-glyph-marketplace-inverted-auction,
+      'nft': $content-icon-glyph-nft,
+      'nft_check': $content-icon-glyph-nft-check,
+      'receive_nft': $content-icon-glyph-receive-nft,
+      'refund': $content-icon-glyph-refund,
+      'refund_hand': $content-icon-glyph-refund-hand,
+      'resell': $content-icon-glyph-resell,
+      'resell_cancel': $content-icon-glyph-resell-cancel,
+      'resell_dashed': $content-icon-glyph-resell-dashed,
+      'send_nft': $content-icon-glyph-send-nft,
+      'trade': $content-icon-glyph-trade,
+      'trade_dashed': $content-icon-glyph-trade-dashed,
+      'uos_add': $content-icon-glyph-uos-add,
+      'uos_receive': $content-icon-glyph-uos-receive,
+      'uos_to_dollar': $content-icon-glyph-uos-to-dollar,
+      'uos_transfer': $content-icon-glyph-uos-transfer,
+      'anchors': $content-icon-glyph-anchors,
+      'archive': $content-icon-glyph-archive,
+      'auction_hammer': $content-icon-glyph-auction-hammer,
+      'award': $content-icon-glyph-award,
+      'award_dashed': $content-icon-glyph-award-dashed,
+      'balance': $content-icon-glyph-balance,
+      'bell_dashed': $content-icon-glyph-bell-dashed,
+      'bell_on': $content-icon-glyph-bell-on,
+      'book': $content-icon-glyph-book,
+      'bookmark': $content-icon-glyph-bookmark,
+      'box': $content-icon-glyph-box,
+      'box_closed': $content-icon-glyph-box-closed,
+      'box_open': $content-icon-glyph-box-open,
+      'cards': $content-icon-glyph-cards,
+      'chess': $content-icon-glyph-chess,
+      'chest': $content-icon-glyph-chest,
+      'company': $content-icon-glyph-company,
+      'company_add': $content-icon-glyph-company-add,
+      'company_ban': $content-icon-glyph-company-ban,
+      'company_freeze': $content-icon-glyph-company-freeze,
+      'crown': $content-icon-glyph-crown,
+      'diamond': $content-icon-glyph-diamond,
+      'dice': $content-icon-glyph-dice,
+      'explosion': $content-icon-glyph-explosion,
+      'factory': $content-icon-glyph-factory,
+      'feather': $content-icon-glyph-feather,
+      'fiole': $content-icon-glyph-fiole,
+      'flag': $content-icon-glyph-flag,
+      'forge': $content-icon-glyph-forge,
+      'gamepad': $content-icon-glyph-gamepad,
+      'gamepad_oldschool': $content-icon-glyph-gamepad-oldschool,
+      'gamepad_dashed': $content-icon-glyph-gamepad-dashed,
+      'gem': $content-icon-glyph-gem,
+      'gift': $content-icon-glyph-gift,
+      'glove': $content-icon-glyph-glove,
+      'gun_pointer': $content-icon-glyph-gun-pointer,
+      'helmet': $content-icon-glyph-helmet,
+      'home': $content-icon-glyph-home,
+      'inbox': $content-icon-glyph-inbox,
+      'key': $content-icon-glyph-key,
+      'lightbulb': $content-icon-glyph-lightbulb,
+      'lock_close': $content-icon-glyph-lock-close,
+      'lock_open': $content-icon-glyph-lock-open,
+      'megaphone': $content-icon-glyph-megaphone,
+      'painting_palette': $content-icon-glyph-painting-palette,
+      'podium': $content-icon-glyph-podium,
+      'puzzle': $content-icon-glyph-puzzle,
+      'repair': $content-icon-glyph-repair,
+      'rocket': $content-icon-glyph-rocket,
+      'shield': $content-icon-glyph-shield,
+      'shield_dashed': $content-icon-glyph-shield-dashed,
+      'plaintext': $content-icon-glyph-plaintext,
+      'skull': $content-icon-glyph-skull,
+      'sport': $content-icon-glyph-sport,
+      'sword': $content-icon-glyph-sword,
+      'swords': $content-icon-glyph-swords,
+      'sword_shield': $content-icon-glyph-sword-shield,
+      'tag': $content-icon-glyph-tag,
+      'ticket': $content-icon-glyph-ticket,
+      'trophy': $content-icon-glyph-trophy,
+      'vr': $content-icon-glyph-vr,
+      'cast': $content-icon-glyph-cast,
+      'copyright': $content-icon-glyph-copyright,
+      'fast_forward': $content-icon-glyph-fast-forward,
+      'image': $content-icon-glyph-image,
+      'image_add': $content-icon-glyph-image-add,
+      'image_dashed': $content-icon-glyph-image-dashed,
+      'image_landscape': $content-icon-glyph-image-landscape,
+      'image_portrait': $content-icon-glyph-image-portrait,
+      'live': $content-icon-glyph-live,
+      'maximize': $content-icon-glyph-maximize,
+      'minimize': $content-icon-glyph-minimize,
+      'music': $content-icon-glyph-music,
+      'pause': $content-icon-glyph-pause,
+      'play': $content-icon-glyph-play,
+      'play_dashed': $content-icon-glyph-play-dashed,
+      'power': $content-icon-glyph-power,
+      'rewind': $content-icon-glyph-rewind,
+      'screen_share': $content-icon-glyph-screen-share,
+      'skip_back': $content-icon-glyph-skip-back,
+      'skip_forward': $content-icon-glyph-skip-forward,
+      'volume_0': $content-icon-glyph-volume-0,
+      'volume_1': $content-icon-glyph-volume-1,
+      'volume_2': $content-icon-glyph-volume-2,
+      'volume_x': $content-icon-glyph-volume-x,
+      'alert': $content-icon-glyph-alert,
+      'asterisk': $content-icon-glyph-asterisk,
+      'block': $content-icon-glyph-block,
+      'certified': $content-icon-glyph-certified,
+      'check': $content-icon-glyph-check,
+      'check_circle': $content-icon-glyph-check-circle,
+      'check_double': $content-icon-glyph-check-double,
+      'cross': $content-icon-glyph-cross,
+      'cross_circle': $content-icon-glyph-cross-circle,
+      'dix_huit_plus': $content-icon-glyph-dix-huit-plus,
+      'info': $content-icon-glyph-info,
+      'admin': $content-icon-glyph-admin,
+      'user': $content-icon-glyph-user,
+      'user_add': $content-icon-glyph-user-add,
+      'user_check': $content-icon-glyph-user-check,
+      'user_group': $content-icon-glyph-user-group,
+      'user_group_add': $content-icon-glyph-user-group-add,
+      'user_group_check': $content-icon-glyph-user-group-check,
+      'user_group_remove': $content-icon-glyph-user-group-remove,
+      'user_profile': $content-icon-glyph-user-profile,
+      'user_remove': $content-icon-glyph-user-remove,
+      'user_swap': $content-icon-glyph-user-swap,
+      'user_team': $content-icon-glyph-user-team,
+      'calendar': $content-icon-glyph-calendar,
+      'calendar_dashed': $content-icon-glyph-calendar-dashed,
+      'clock': $content-icon-glyph-clock,
+      'clock_dashed': $content-icon-glyph-clock-dashed,
+      'history': $content-icon-glyph-history,
+      'hourglass': $content-icon-glyph-hourglass,
+      'align_center': $content-icon-glyph-align-center,
+      'align_justify': $content-icon-glyph-align-justify,
+      'align_left': $content-icon-glyph-align-left,
+      'align_right': $content-icon-glyph-align-right,
+      'bold': $content-icon-glyph-bold,
+      'delete': $content-icon-glyph-delete,
+      'emoji': $content-icon-glyph-emoji,
+      'italic': $content-icon-glyph-italic,
+      'list_bullets': $content-icon-glyph-list-bullets,
+      'list_number': $content-icon-glyph-list-number,
+      'paragraph': $content-icon-glyph-paragraph,
+      'type': $content-icon-glyph-type,
+      'type_1': $content-icon-glyph-type-1,
+      'type_2': $content-icon-glyph-type-2,
+      'type_3': $content-icon-glyph-type-3,
+      'underline': $content-icon-glyph-underline,
+      'attachment': $content-icon-glyph-attachment,
+      'center_to_fit': $content-icon-glyph-center-to-fit,
+      'copy': $content-icon-glyph-copy,
+      'crop': $content-icon-glyph-crop,
+      'download': $content-icon-glyph-download,
+      'drag': $content-icon-glyph-drag,
+      'edit': $content-icon-glyph-edit,
+      'eye_dashed': $content-icon-glyph-eye-dashed,
+      'eye_on': $content-icon-glyph-eye-on,
+      'filter': $content-icon-glyph-filter,
+      'heart': $content-icon-glyph-heart,
+      'heart_fill': $content-icon-glyph-heart-fill,
+      'link_alt': $content-icon-glyph-link-alt,
+      'link_unlink': $content-icon-glyph-link-unlink,
+      'more_options': $content-icon-glyph-more-options,
+      'save': $content-icon-glyph-save,
+      'settings': $content-icon-glyph-settings,
+      'share': $content-icon-glyph-share,
+      'sliders': $content-icon-glyph-sliders,
+      'sort': $content-icon-glyph-sort,
+      'star': $content-icon-glyph-star,
+      'star_filled': $content-icon-glyph-star-filled,
+      'thumbs_down': $content-icon-glyph-thumbs-down,
+      'thumbs_up': $content-icon-glyph-thumbs-up,
+      'trash': $content-icon-glyph-trash,
+      'uninstall': $content-icon-glyph-uninstall,
+      'upload': $content-icon-glyph-upload,
+      'view_grid': $content-icon-glyph-view-grid,
+      'view_list': $content-icon-glyph-view-list,
+      'wishlist_remove': $content-icon-glyph-wishlist-remove,
+      'arrow_corner_down_left': $content-icon-glyph-arrow-corner-down-left,
+      'arrow_corner_down_right': $content-icon-glyph-arrow-corner-down-right,
+      'arrow_corner_left_down': $content-icon-glyph-arrow-corner-left-down,
+      'arrow_corner_left_up': $content-icon-glyph-arrow-corner-left-up,
+      'arrow_corner_right_down': $content-icon-glyph-arrow-corner-right-down,
+      'arrow_corner_right_up': $content-icon-glyph-arrow-corner-right-up,
+      'arrow_corner_up_left': $content-icon-glyph-arrow-corner-up-left,
+      'arrow_corner_up_right': $content-icon-glyph-arrow-corner-up-right,
+      'arrow_down': $content-icon-glyph-arrow-down,
+      'arrow_down_left': $content-icon-glyph-arrow-down-left,
+      'arrow_down_right': $content-icon-glyph-arrow-down-right,
+      'arrow_left': $content-icon-glyph-arrow-left,
+      'arrow_right': $content-icon-glyph-arrow-right,
+      'arrow_up': $content-icon-glyph-arrow-up,
+      'arrow_up_left': $content-icon-glyph-arrow-up-left,
+      'arrow_up_right': $content-icon-glyph-arrow-up-right,
+      'chevron_down': $content-icon-glyph-chevron-down,
+      'chevron_left': $content-icon-glyph-chevron-left,
+      'chevron_right': $content-icon-glyph-chevron-right,
+      'chevron_up': $content-icon-glyph-chevron-up,
+      'collapse': $content-icon-glyph-collapse,
+      'collapse_horizontal': $content-icon-glyph-collapse-horizontal,
+      'crossing_arrows': $content-icon-glyph-crossing-arrows,
+      'exchange_horizontal': $content-icon-glyph-exchange-horizontal,
+      'exchange_vertical': $content-icon-glyph-exchange-vertical,
+      'expand': $content-icon-glyph-expand,
+      'expand_horizontal': $content-icon-glyph-expand-horizontal,
+      'move': $content-icon-glyph-move,
+      'receive': $content-icon-glyph-receive,
+      'refresh_ccw': $content-icon-glyph-refresh-ccw,
+      'refresh_cw': $content-icon-glyph-refresh-cw,
+      'repeat': $content-icon-glyph-repeat,
+      'rotate_ccw': $content-icon-glyph-rotate-ccw,
+      'rotate_cw': $content-icon-glyph-rotate-cw,
+      'send': $content-icon-glyph-send,
+      'shuffle': $content-icon-glyph-shuffle,
+      'clipboard': $content-icon-glyph-clipboard,
+      'clipboard_text': $content-icon-glyph-clipboard-text,
+      'file': $content-icon-glyph-file,
+      'file_encrypted': $content-icon-glyph-file-encrypted,
+      'file_text': $content-icon-glyph-file-text,
+      'file_text_double': $content-icon-glyph-file-text-double,
+      'folder': $content-icon-glyph-folder,
+      'arena': $content-icon-glyph-arena,
+      'ultra_prime': $content-icon-glyph-ultra-prime,
+      'ultra_wallet': $content-icon-glyph-ultra-wallet,
+      'ultra_marketplace': $content-icon-glyph-ultra-marketplace,
+      'first_hand_new_uniq': $content-icon-glyph-first-hand-new-uniq,
+      'second_hand_uniq': $content-icon-glyph-second-hand-uniq,
+      'ultra_games': $content-icon-glyph-ultra-games,
+      'ultra_logo': $content-icon-glyph-ultra-logo,
+      'league': $content-icon-glyph-league,
+      'double_elim': $content-icon-glyph-double-elim,
+      'gauntlet': $content-icon-glyph-gauntlet,
+      'round_robin': $content-icon-glyph-round-robin,
+      'simple_stage': $content-icon-glyph-simple-stage,
+      'single_elim': $content-icon-glyph-single-elim,
+      'swiss_system': $content-icon-glyph-swiss-system,
+      'bracket_group': $content-icon-glyph-bracket-group,
+      'uniq_unit': $content-icon-glyph-uniq-unit,
+      'crypto_uos': $content-icon-glyph-crypto-uos,
+      'screen_wide': $content-icon-glyph-screen-wide,
+      'workshop': $content-icon-glyph-workshop,
+      'cpu': $content-icon-glyph-cpu,
+      'arena_logo': $content-icon-glyph-arena-logo,
+      'ultra_prime_logo': $content-icon-glyph-ultra-prime-logo,
+      'ultra_wallet_logo': $content-icon-glyph-ultra-wallet-logo,
+      'ultra_marketplace_logo': $content-icon-glyph-ultra-marketplace-logo,
+      'ultra_games_logo': $content-icon-glyph-ultra-games-logo,
+      'no_result': $content-icon-glyph-no-result,
+      'library': $content-icon-glyph-library,
+      'minus_small': $content-icon-glyph-minus-small,
+      'x': $content-icon-glyph-x,
+      'twitch': $content-icon-glyph-twitch,
+      'instagram': $content-icon-glyph-instagram,
+      'resell_lock': $content-icon-glyph-resell-lock,
+      'lock_exclusive_locked': $content-icon-glyph-lock-exclusive-locked,
+      'lock_exclusive_open': $content-icon-glyph-lock-exclusive-open,
+    ),
+  ),
+);

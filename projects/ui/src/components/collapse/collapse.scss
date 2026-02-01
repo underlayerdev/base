@@ -1,0 +1,49 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}collapse {
+  &__content {
+    position: relative;
+    overflow: hidden;
+    height: var(--pe-collapse-full-height);
+    @include transition-property(height);
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: $spacing-spacing-1 0;
+    gap: $spacing-spacing-2;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px solid $color-border-white-light;
+    }
+  }
+
+  &__toggle-button .#{$prefix}icon {
+    @include transition-property(transform);
+  }
+
+  &--collapsed {
+    // fade mask
+    .#{$prefix}collapse__content {
+      mask-image: linear-gradient(
+        to bottom,
+        black calc(100% - #{$component-control-height-lg}),
+        transparent 100%
+      );
+      height: var(--pe-collapse-max-height);
+    }
+
+    // rotate icon
+    .#{$prefix}collapse__toggle-button .#{$prefix}icon {
+      transform: rotate(180deg);
+    }
+  }
+}

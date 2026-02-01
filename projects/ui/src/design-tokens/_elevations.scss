@@ -1,0 +1,22 @@
+/**
+ * Elevation tokens for z-index layering.
+ * Use these instead of hardcoded values to ensure consistent stacking order.
+ *
+ * Stacking order (low to high):
+ * - base, raised: content layers
+ * - navbar: sticky navigation
+ * - dropdown: popovers, dropdowns
+ * - overlay: backdrops (sidebar overlay, modal backdrop)
+ * - drawer: sliding panels (sidebar drawer)
+ * - modal: dialogs
+ * - toast: notifications
+ */
+
+$elevation-base: 0 !default;
+$elevation-raised: 1 !default;
+$elevation-navbar: 100 !default;
+$elevation-dropdown: 200 !default;
+$elevation-overlay: 900 !default;
+$elevation-drawer: 1000 !default;
+$elevation-modal: 1100 !default;
+$elevation-toast: 1200 !default;

@@ -1,0 +1,116 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}accordion {
+  color: $color-text-primary;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-spacing-2;
+
+  &__item {
+    min-height: $component-control-height-lg;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-spacing-2;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+
+      .#{$prefix}accordion__trigger {
+        cursor: not-allowed;
+        color: $color-text-disabled;
+        background-color: $color-interactive-surface-transparent-white-disabled;
+        pointer-events: none;
+
+        &:hover,
+        &:active {
+          background-color: $color-interactive-surface-transparent-white-disabled;
+        }
+      }
+
+      .#{$prefix}accordion__indicator {
+        color: $color-text-disabled;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: calc(100% - #{$spacing-spacing-3} * 2);
+      border-bottom: 1px solid transparent;
+    }
+  }
+
+  &--divider ::ng-deep &__item::after {
+    border-color: $color-border-white-light;
+  }
+
+  &__trigger {
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: $component-control-height-lg;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    gap: $spacing-spacing-2;
+    border-radius: $radius-radius-3;
+    padding: 0 #{$spacing-spacing-3};
+    @include interactive-surface('ghost', 'white');
+
+    &:focus-visible,
+    &:focus {
+      outline-offset: 2px;
+      outline: $color-border-white-medium solid 2px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    @include icon-size('8');
+  }
+
+  &__label {
+    @include typography('body-l');
+    flex: 1;
+  }
+
+  &__status {
+    display: flex;
+    gap: $spacing-spacing-2;
+  }
+
+  &__indicator {
+    color: $color-text-secondary;
+    @include transition-property(transform);
+  }
+
+  &__item--expanded &__indicator {
+    transform: rotate(180deg);
+  }
+
+  &__content {
+    color: $color-text-secondary;
+    background-color: transparent;
+    padding: #{$spacing-spacing-3} #{$spacing-spacing-3};
+    width: 100%;
+    display: none;
+    @include typography('body-m');
+  }
+
+  &__item--expanded &__content {
+    display: block;
+  }
+}

@@ -1,0 +1,167 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}input {
+  white-space: nowrap;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-spacing-1;
+
+  // Input group: border by default, transparent background, focus/hover per appearance
+  &__group {
+    display: flex;
+    align-items: center;
+    height: $component-control-height-md; // default height
+    padding: 0 $spacing-spacing-3; // default padding
+    gap: $spacing-spacing-2;
+    border-radius: $radius-radius-2;
+    border: 2px solid $color-border-white-light;
+    background-color: transparent;
+    color: $color-text-primary;
+    @include transition-properties((border-color, background-color));
+    @include typography('body-m');
+
+    &--focused {
+      border-color: $color-border-white-medium-strong;
+    }
+  }
+
+  // Option A: border-only — hover = border only, no fill
+  &--appearance-border-only:not(.#{$prefix}input--disabled) {
+    .#{$prefix}input__group:hover {
+      border-color: $color-border-white-medium;
+    }
+  }
+
+  // Option B: subtle-tint — hover = border + 5% fill
+  &--appearance-subtle-tint:not(.#{$prefix}input--disabled) {
+    .#{$prefix}input__group:hover {
+      border-color: $color-border-white-medium;
+      background-color: $color-background-white-extra-light;
+    }
+  }
+
+  // Input field
+  &__field {
+    all: unset;
+    flex: 1;
+
+    &::placeholder {
+      color: $color-text-tertiary;
+    }
+
+    &:hover::placeholder {
+      color: $color-text-primary;
+    }
+  }
+
+  // Left elements container
+  &__left-elements,
+  &__right-elements {
+    display: flex;
+    gap: $spacing-spacing-2;
+
+    ::ng-deep .#{$prefix}icon {
+      @include icon-size('6');
+    }
+  }
+
+  // Size variants
+  &--sm {
+    .#{$prefix}input__group {
+      height: $component-control-height-sm;
+      padding: 0 $spacing-spacing-2;
+      @include typography('caption-l');
+    }
+
+    .#{$prefix}input__left-elements,
+    .#{$prefix}input__right-elements {
+      gap: $spacing-spacing-1;
+      ::ng-deep .#{$prefix}icon {
+        @include icon-size('5');
+      }
+    }
+  }
+
+  &--md {
+    .#{$prefix}input__group {
+      height: $component-control-height-md;
+      padding: 0 $spacing-spacing-3;
+      @include typography('body-m');
+    }
+
+    .#{$prefix}input__left-elements,
+    .#{$prefix}input__right-elements {
+      ::ng-deep .#{$prefix}icon {
+        @include icon-size('6');
+      }
+    }
+  }
+
+  &--lg {
+    .#{$prefix}input__group {
+      height: $component-control-height-lg;
+      padding: $spacing-spacing-2 $spacing-spacing-3;
+      @include typography('body-l');
+    }
+
+    .#{$prefix}input__left-elements,
+    .#{$prefix}input__right-elements {
+      ::ng-deep .#{$prefix}icon {
+        @include icon-size('7');
+      }
+    }
+  }
+
+  &--xl {
+    .#{$prefix}input__group {
+      height: $component-control-height-xl;
+      padding: $spacing-spacing-2 $spacing-spacing-4;
+      @include typography('headline-s');
+    }
+
+    .#{$prefix}input__left-elements,
+    .#{$prefix}input__right-elements {
+      ::ng-deep .#{$prefix}icon {
+        @include icon-size('8');
+      }
+    }
+  }
+
+  // Error state
+  &--error {
+    .#{$prefix}input__group {
+      border: 2px solid $color-border-red;
+    }
+  }
+
+  // Disabled state
+  &--disabled {
+    .#{$prefix}input__group {
+      border: 2px solid $color-border-white-light;
+      background-color: transparent;
+    }
+
+    .#{$prefix}input__field {
+      &,
+      &:disabled::placeholder {
+        color: $color-text-disabled;
+      }
+    }
+  }
+
+  // Read-only state
+  &--read-only {
+    .#{$prefix}input__group {
+      border: 2px solid $color-border-white-light;
+      background-color: transparent;
+    }
+
+    .#{$prefix}input__field {
+      &,
+      &:read-only::placeholder {
+        color: $color-text-secondary;
+      }
+    }
+  }
+}

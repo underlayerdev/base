@@ -1,0 +1,35 @@
+<div class="pe-toast-container" aria-live="polite" aria-atomic="true">
+  @for (toast of toasts(); track trackById($index, toast)) {
+    <section class="pe-toast pe-toast--{{ toast.kind }}" [attr.role]="toast.role">
+      <div class="pe-toast__icon">
+        @if (toast.showIcon) {
+          <pe-icon [icon]="toast.icon" size="6" iconWeight="bold" />
+        }
+      </div>
+
+      <div class="pe-toast__body">
+        @if (toast.title) {
+          <h3 class="pe-toast__title">
+            {{ toast.title }}
+          </h3>
+        }
+        <p class="pe-toast__message">
+          {{ toast.message }}
+        </p>
+      </div>
+
+      @if (toast.dismissible) {
+        <pe-button
+          theme="ghost-white"
+          size="sm"
+          [iconOnly]="true"
+          class="pe-toast__close"
+          ariaLabel="Dismiss notification"
+          (buttonClick)="dismiss(toast.id)"
+        >
+          <pe-icon icon="cross" size="5" />
+        </pe-button>
+      }
+    </section>
+  }
+</div>

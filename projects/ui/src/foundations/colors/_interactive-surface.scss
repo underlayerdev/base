@@ -1,0 +1,120 @@
+@use 'sass:map';
+@use 'sass:list';
+@use '../core' as *;
+@use 'outline' as outline;
+
+/// Applies interactive surface background colors and optional text colors based on the specified group and type.
+///
+/// This mixin generates background color styles for different interactive states
+/// (e.g., hover, active, selected, disabled, enabled) of a surface element.
+/// It can optionally handle text colors for these states as well.
+///
+/// @param {String} $group - The group of interactive surface colors (e.g., 'solid', 'transparent', 'ghost')
+/// @param {String} $type - The type of interactive surface within the group (e.g., 'purple', 'red', 'white')
+/// @param {Boolean} $include-text [false] - Whether to include text color styles. When true, applies primary text color
+///                                         for enabled states and disabled text color for disabled state
+/// @param {List} $only [()] - A list of states to include (e.g., 'enabled', 'disabled'). When provided, only these states will be included in the generated styles.
+///
+/// @example scss
+/// Basic usage without text color handling
+///   .button {
+///     @include interactive-surface('solid', 'purple');
+///   }
+///
+/// Usage with text color handling
+///   .button-with-text {
+///     @include interactive-surface('solid', 'purple', true);
+///   }
+///
+/// Usage with specific states
+///   .button-with-specific-states {
+///     @include interactive-surface('solid', 'purple', false, ('enabled', 'disabled'));
+///   }
+@mixin interactive-surface($group, $type, $include-text: false, $only: ()) {
+  $surfaces: map.get($tokens, 'color', 'interactive-surface', $group, $type);
+
+  // filter the surfaces map based on the $only parameter
+  @if list.length($only) > 0 {
+    @each $key, $value in $surfaces {
+      @if not list.index($only, $key) {
+        $surfaces: map.remove($surfaces, $key);
+      }
+    }
+  }
+
+  @each $interactive-surface-key, $interactive-surface-value in $surfaces {
+    @if $interactive-surface-key == 'enabled' {
+      background-color: map.get($surfaces, 'enabled');
+      @if $include-text {
+        color: $color-text-primary;
+      } @else {
+        color: inherit;
+      }
+    } @else if $interactive-surface-key == 'disabled' {
+      &:#{$interactive-surface-key},
+      &[#{$interactive-surface-key}] {
+        background-color: $interactive-surface-value;
+        @if $include-text {
+          color: $color-text-disabled;
+        }
+      }
+    } @else {
+      &:#{$interactive-surface-key} {
+        background-color: $interactive-surface-value;
+        @if $include-text {
+          color: $color-text-primary;
+        }
+      }
+    }
+  }
+}
+
+/// Applies outline surface styles: transparent background, 1px border, and semantic text color.
+/// Uses the outline theme map from design tokens for enabled, hover, active, and disabled states.
+///
+/// @param {String} $type - The outline theme type: 'white', 'purple', 'red', or 'green'
+/// @param {Boolean} $include-text [true] - Whether to apply text color from the outline map
+///
+/// @example scss
+///   .button--outline-purple {
+///     @include outline-surface('purple');
+///   }
+@mixin outline-surface($type, $include-text: true) {
+  $outline: map.get($tokens, 'color', 'interactive-surface', 'outline', $type);
+  @if $outline {
+    background-color: transparent;
+    border: 1px solid map.get($outline, 'border-enabled');
+    @if $include-text {
+      color: map.get($outline, 'text');
+    }
+
+    &:hover:not(:disabled):not([disabled]) {
+      border-color: map.get($outline, 'border-hover');
+    }
+
+    &:active:not(:disabled):not([disabled]) {
+      border-color: map.get($outline, 'border-active');
+    }
+
+    &:disabled,
+    &[disabled] {
+      border-color: outline.$color-outline-border-disabled;
+      @if $include-text {
+        color: outline.$color-outline-text-disabled;
+      }
+    }
+  }
+}
+
+@mixin generate-interactive-surface() {
+  $surfaces: map.get($tokens, 'color', 'interactive-surface');
+  @each $surface-key, $surface-value in $surfaces {
+    @if $surface-key != 'outline' {
+      @each $color-key, $color-value in $surface-value {
+        .#{$prefix}interactive-surface-#{$surface-key}-#{$color-key} {
+          @include interactive-surface($surface-key, $color-key, true);
+        }
+      }
+    }
+  }
+}

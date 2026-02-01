@@ -1,0 +1,352 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}calendar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-spacing-1;
+
+  &__trigger-group {
+    display: flex;
+    align-items: center;
+    height: $component-control-height-md;
+    padding: 0 $spacing-spacing-3;
+    gap: $spacing-spacing-2;
+    border-radius: $radius-radius-2;
+    border: 2px solid $color-border-white-light;
+    background-color: transparent;
+    color: $color-text-primary;
+    @include transition-properties((border-color, background-color));
+    @include typography('body-m');
+
+    &--focused {
+      border-color: $color-border-white-medium-strong;
+    }
+  }
+
+  .#{$prefix}calendar:not(.#{$prefix}calendar--disabled) &__trigger-group:hover {
+    border-color: $color-border-white-medium;
+  }
+
+  &__trigger {
+    all: unset;
+    flex: 1;
+    cursor: pointer;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  &__trigger-text {
+    display: block;
+    color: $color-text-primary;
+
+    &--placeholder {
+      color: $color-text-tertiary;
+    }
+  }
+
+  &__trigger:disabled &__trigger-text {
+    color: $color-text-disabled;
+    cursor: not-allowed;
+  }
+
+  &__icon-button {
+    flex-shrink: 0;
+  }
+
+  // When calendar is open, remove focus ring from icon button and trigger
+  &__trigger-group--focused {
+    .#{$prefix}btn {
+      &:focus-visible,
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .#{$prefix}calendar__trigger:focus-visible,
+    .#{$prefix}calendar__trigger:focus-within,
+    .#{$prefix}calendar__trigger:hover,
+    .#{$prefix}calendar__trigger:focus {
+      outline: none;
+    }
+  }
+
+  &__popup {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-spacing-4;
+    background-color: $color-background-grey-lvl-1;
+    border: 2px solid $color-border-white-light;
+    border-radius: $radius-radius-4;
+    padding: $spacing-spacing-4;
+    min-width: $spacing-spacing-40;
+    max-width: $spacing-spacing-128;
+  }
+
+  &__date-picker {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-spacing-3;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-spacing-2;
+  }
+
+  &__month-year {
+    flex: 1;
+    text-align: center;
+    color: $color-text-primary;
+    @include typography('headline-s', 'extrabold');
+  }
+
+  &__weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: $spacing-spacing-1;
+  }
+
+  &__weekday {
+    text-align: center;
+    color: $color-text-tertiary;
+    @include typography('caption-l', 'extrabold');
+    padding: $spacing-spacing-1;
+  }
+
+  &__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: $spacing-spacing-1;
+  }
+
+  &__day {
+    all: unset;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius-radius-2;
+    cursor: pointer;
+    color: $color-text-primary;
+    @include typography('body-m', 'regular');
+    @include transition-properties((background-color, border-color, color));
+    min-height: $spacing-spacing-8;
+
+    &--current-month {
+      color: $color-text-primary;
+    }
+
+    &:not(&--current-month) {
+      color: $color-text-tertiary;
+    }
+
+    &--today {
+      border: 2px solid $color-border-purple;
+    }
+
+    &--selected {
+      background-color: $color-interactive-surface-solid-purple-enabled;
+      border-color: $color-interactive-surface-solid-purple-enabled;
+      color: $color-text-primary;
+    }
+
+    &--disabled {
+      color: $color-text-disabled;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &:not(&--disabled):not(&--selected):hover {
+      @include interactive-surface('transparent', 'white');
+    }
+  }
+
+  &__time-picker {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-spacing-2;
+  }
+
+  &__time-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-spacing-2;
+  }
+
+  &__time-select {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid $color-border-white-light;
+    border-radius: $radius-radius-2;
+    min-width: $spacing-spacing-12;
+    height: $component-control-height-md;
+    padding: 0 $spacing-spacing-3;
+    @include typography('body-m');
+    color: $color-text-primary;
+    cursor: pointer;
+    @include transition-properties((border-color, background-color));
+
+    &:hover:not(:disabled) {
+      border-color: $color-border-white-medium;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-border-white-medium-strong;
+    }
+
+    &:disabled {
+      color: $color-text-disabled;
+      cursor: not-allowed;
+      border-color: $color-border-white-light;
+      background-color: transparent;
+    }
+
+    option {
+      background-color: $color-background-grey-lvl-1;
+      color: $color-text-primary;
+    }
+
+    option:disabled {
+      color: $color-text-disabled;
+    }
+  }
+
+  &__time-separator {
+    color: $color-text-primary;
+    @include typography('headline-s', 'extrabold');
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-spacing-2;
+    justify-content: flex-end;
+    padding-top: $spacing-spacing-2;
+    border-top: 1px solid $color-border-white-light;
+  }
+
+  // Size variants
+  &--sm {
+    .#{$prefix}calendar__trigger-group {
+      height: $component-control-height-sm;
+      padding: 0 $spacing-spacing-2;
+      @include typography('caption-l');
+    }
+
+    .#{$prefix}calendar__day {
+      @include typography('caption-l');
+      min-height: $spacing-spacing-6;
+    }
+  }
+
+  &--md {
+    .#{$prefix}calendar__trigger-group {
+      height: $component-control-height-md;
+      padding: 0 $spacing-spacing-3;
+      @include typography('body-m');
+    }
+
+    .#{$prefix}calendar__day {
+      @include typography('body-m');
+      min-height: $spacing-spacing-8;
+    }
+  }
+
+  &--lg {
+    .#{$prefix}calendar__trigger-group {
+      height: $component-control-height-lg;
+      padding: $spacing-spacing-2 $spacing-spacing-3;
+      @include typography('body-l');
+    }
+
+    .#{$prefix}calendar__day {
+      @include typography('body-l');
+      min-height: $spacing-spacing-10;
+    }
+  }
+
+  &--xl {
+    .#{$prefix}calendar__trigger-group {
+      height: $component-control-height-xl;
+      padding: $spacing-spacing-2 $spacing-spacing-4;
+      @include typography('headline-s');
+    }
+
+    .#{$prefix}calendar__day {
+      @include typography('headline-s');
+      min-height: $spacing-spacing-12;
+    }
+  }
+
+  // Error state
+  &--error {
+    .#{$prefix}calendar__trigger-group {
+      border: 2px solid $color-border-red;
+    }
+  }
+
+  // Disabled state
+  &--disabled {
+    .#{$prefix}calendar__trigger-group {
+      border: 2px solid $color-border-white-light;
+      background-color: transparent;
+    }
+
+    .#{$prefix}calendar__trigger {
+      &,
+      &:disabled::placeholder {
+        color: $color-text-disabled;
+      }
+    }
+  }
+
+  // Read-only state
+  &--read-only {
+    .#{$prefix}calendar__trigger-group {
+      border: 2px solid $color-border-white-light;
+      background-color: transparent;
+    }
+
+    .#{$prefix}calendar__trigger {
+      &,
+      &:read-only::placeholder {
+        color: $color-text-secondary;
+      }
+    }
+  }
+
+  // Responsive
+  @include down('xs') {
+    &__popup {
+      min-width: auto;
+      // Constrain width to viewport with proper margins (16px on each side)
+      width: calc(100vw - #{$spacing-spacing-8});
+      max-width: calc(100vw - #{$spacing-spacing-8});
+      // Ensure popup respects viewport boundaries
+      box-sizing: border-box;
+      // Prevent horizontal overflow
+      overflow-x: hidden;
+      // Ensure popup doesn't extend beyond viewport
+      position: relative;
+    }
+
+    &__day {
+      min-height: $spacing-spacing-6;
+    }
+  }
+
+  // Target CDK overlay container on mobile to prevent overflow
+  @include down('sm') {
+    :host ::ng-deep .cdk-overlay-pane {
+      max-width: calc(100vw - #{$spacing-spacing-8}) !important;
+      margin-left: $spacing-spacing-4 !important;
+      margin-right: $spacing-spacing-4 !important;
+    }
+  }
+}

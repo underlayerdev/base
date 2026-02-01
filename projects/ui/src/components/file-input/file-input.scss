@@ -1,0 +1,177 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}file-input {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-spacing-1;
+
+  &__group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $component-control-height-md;
+    gap: 0;
+    padding: 0;
+    border-radius: $radius-radius-2;
+    border: 2px solid $color-border-white-light;
+    background-color: transparent;
+    color: $color-text-primary;
+    @include transition-properties((border-color, background-color));
+    @include typography('body-m');
+
+    &--focused {
+      border-color: $color-border-white-medium-strong;
+    }
+  }
+
+  &--appearance-border-only:not(.#{$prefix}file-input--disabled) {
+    .#{$prefix}file-input__group:hover {
+      border-color: $color-border-white-medium;
+    }
+  }
+
+  &--appearance-subtle-tint:not(.#{$prefix}file-input--disabled) {
+    .#{$prefix}file-input__group:hover {
+      border-color: $color-border-white-medium;
+      background-color: $color-background-white-extra-light;
+    }
+  }
+
+  &__native {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  &__trigger {
+    flex-shrink: 0;
+    margin: 0;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: $radius-radius-1;
+    background-color: $color-background-grey-lvl-1;
+    padding: 0 $spacing-spacing-3;
+    margin-right: $spacing-spacing-2;
+    color: $color-text-primary;
+    cursor: pointer;
+    @include typography('caption-l', 'bold');
+    @include transition-properties((background-color, color));
+
+    &:hover:not(:disabled) {
+      background-color: $color-background-white-light;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      color: $color-text-disabled;
+      background-color: transparent;
+    }
+  }
+
+  &__label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $color-text-tertiary;
+  }
+
+  &__left-elements,
+  &__right-elements {
+    display: flex;
+    gap: $spacing-spacing-2;
+
+    ::ng-deep .#{$prefix}icon {
+      @include icon-size('6');
+    }
+  }
+
+  &--sm {
+    .#{$prefix}file-input__group {
+      height: $component-control-height-sm;
+      // padding: 0 $spacing-spacing-2;
+      @include typography('caption-l');
+    }
+
+    .#{$prefix}file-input__trigger {
+      @include typography('caption-m', 'bold');
+    }
+
+    .#{$prefix}file-input__left-elements,
+    .#{$prefix}file-input__right-elements {
+      gap: $spacing-spacing-1;
+      ::ng-deep .#{$prefix}icon {
+        @include icon-size('5');
+      }
+    }
+  }
+
+  &--md {
+    .#{$prefix}file-input__group {
+      height: $component-control-height-md;
+      // padding: 0 $spacing-spacing-3;
+      @include typography('body-m');
+    }
+
+    .#{$prefix}file-input__left-elements,
+    .#{$prefix}file-input__right-elements {
+      ::ng-deep .#{$prefix}icon {
+        @include icon-size('6');
+      }
+    }
+  }
+
+  &--lg {
+    .#{$prefix}file-input__group {
+      height: $component-control-height-lg;
+      @include typography('body-l');
+    }
+
+    .#{$prefix}file-input__left-elements,
+    .#{$prefix}file-input__right-elements {
+      ::ng-deep .#{$prefix}icon {
+        @include icon-size('7');
+      }
+    }
+  }
+
+  &--xl {
+    .#{$prefix}file-input__group {
+      height: $component-control-height-xl;
+      // padding: $spacing-spacing-2 $spacing-spacing-4;
+      @include typography('headline-s');
+    }
+
+    .#{$prefix}file-input__left-elements,
+    .#{$prefix}file-input__right-elements {
+      ::ng-deep .#{$prefix}icon {
+        @include icon-size('8');
+      }
+    }
+  }
+
+  &--error {
+    .#{$prefix}file-input__group {
+      border: 2px solid $color-border-red;
+    }
+  }
+
+  &--disabled {
+    .#{$prefix}file-input__group {
+      border: 2px solid $color-border-white-light;
+      background-color: transparent;
+    }
+
+    .#{$prefix}file-input__label {
+      color: $color-text-disabled;
+    }
+  }
+}

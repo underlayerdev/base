@@ -1,0 +1,60 @@
+@use 'sass:map';
+@use '../core' as *;
+
+/// This mixin applies typography styles based on the provided font family and weight.
+///
+/// The applied styles include:
+///
+/// 1. Font family:
+///    - Sets the `font-family` property based on the provided `$font-family` key from the `$tokens` map.
+///
+/// 2. Line height:
+///    - Sets the `line-height` property based on the provided `$font-family` key from the `$tokens` map.
+///
+/// 3. Font size:
+///    - Sets the `font-size` property based on the provided `$font-family` key from the `$tokens` map.
+///
+/// 4. Letter spacing:
+///    - Sets the `letter-spacing` property based on the provided `$font-family` key from the `$tokens` map.
+///
+/// 5. Font weight:
+///    - Sets the `font-weight` property based on the provided `$font-weight` key from the `$tokens` map.
+///
+/// Usage:
+///
+/// ```scss
+/// @include typography('font-family-key', 'font-weight-key');
+/// ```
+///
+/// Example:
+///
+/// ```scss
+/// .example-class {
+///   @include typography('headline-s', 'extrablack');
+/// }
+/// ```
+@mixin typography($font-family, $font-weight: 'regular') {
+  $font-family-value: map.get($tokens, 'typography', 'font', 'family', $font-family);
+  font-family: $font-family-value;
+  line-height: map.get($tokens, 'typography', 'font', 'line-height', $font-family);
+  font-size: map.get($tokens, 'typography', 'font', 'size', $font-family);
+  letter-spacing: map.get($tokens, 'typography', 'font', 'letter-spacing', $font-family);
+  font-weight: map.get($tokens, 'typography', 'font', 'weight', $font-weight);
+
+  @if '#{$font-family-value}' == 'Ultra Brand' {
+    text-transform: uppercase;
+  }
+
+  // todo: add variants for different screen sizes
+}
+
+// Typography font utilities
+@mixin generate-typography-classes() {
+  @each $family-key, $family-value in map.get($tokens, 'typography', 'font', 'family') {
+    @each $weight-key, $weight-value in map.get($tokens, 'typography', 'font', 'weight') {
+      .#{$prefix}typography-#{$family-key}-#{$weight-key} {
+        @include typography($family-key, $weight-key);
+      }
+    }
+  }
+}

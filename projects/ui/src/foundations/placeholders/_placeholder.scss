@@ -1,0 +1,54 @@
+@use 'sass:map';
+@use '../core' as *;
+@use '../icons' as *;
+
+/// Full-bleed overlay with a centered icon, for empty states and broken media.
+///
+/// Use inside a selector so the pseudo-element overlays the parent (e.g. `&--not-found`).
+/// Parent must have `position: relative` and dimensions so the overlay fills the area.
+///
+/// @param {String} $icon - Icon key from `$tokens.content.icon-glyph` (e.g. 'image_dashed', 'placeholder', 'cards').
+/// @param {String} $size ['12'] - Icon size key from `$tokens.iconography.font.size` (e.g. '12', '8').
+/// @param {Color} $color [$color-text-disabled] - Color for the icon.
+/// @param {String} $pseudo ['::after'] - Pseudo-element to style ('::after' or '::before').
+///
+/// @example scss
+/// Broken media (image not found)
+///   .#{$prefix}image {
+///     &--not-found {
+///       @include placeholder-icon-overlay('image_dashed');
+///     }
+///   }
+///
+/// @example scss
+/// Card or generic empty state
+///   .#{$prefix}card__placeholder {
+///     @include placeholder-icon-overlay('placeholder', '8');
+///   }
+///   // or with icon 'cards' for card-specific empty state
+///
+@mixin placeholder-icon-overlay(
+  $icon,
+  $size: '12',
+  $color: $color-text-disabled,
+  $pseudo: '::after'
+) {
+  $glyph: map.get($tokens, 'content', 'icon-glyph', $icon);
+
+  #{$pseudo} {
+    display: flex;
+    place-items: center;
+    place-content: center;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: '#{$iconography-font-family-icon}';
+    @include icon-size($size);
+    color: $color;
+    content: ' #{$glyph}';
+    visibility: visible;
+  }
+}

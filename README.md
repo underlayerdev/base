@@ -1,59 +1,79 @@
 # Base
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
+Angular workspace that hosts the shared **UI library** — a design system built with Angular 21, following the **Industrial Arena Minimal** aesthetic for gaming, arena, and high-intensity dashboards.
 
-## Development server
+## Repository structure
 
-To start a local development server, run:
+| Path           | Description                                      |
+|----------------|--------------------------------------------------|
+| `projects/ui/` | Shared UI library (components, foundations, tokens) |
+| `.github/`     | CI/CD (e.g. Storybook deploy to GitHub Pages)    |
 
-```bash
-ng serve
-```
+## Prerequisites
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Node.js** 20+
+- **npm** 10+
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Quick start
 
 ```bash
-ng generate --help
+npm install
 ```
 
-## Building
+### Develop the UI library (Storybook)
 
-To build the project run:
+From the workspace root:
 
 ```bash
-ng build
+npm run storybook
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Storybook runs at [http://localhost:6006](http://localhost:6006) with the UI components and foundations.
 
-## Running unit tests
+### Build the UI library
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Build the library (fonts, foundations CSS, and Angular package):
+
+```bash
+npm run build:ui
+```
+
+Output: `dist/ui/` (publishable package and pre-built styles under `dist/ui/styles/`).
+
+### Run tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+Unit tests use [Vitest](https://vitest.dev/) (see `angular.json`).
 
-For end-to-end (e2e) testing, run:
+## Main scripts
+
+| Script                 | Description                                              |
+|------------------------|----------------------------------------------------------|
+| `npm run storybook`    | Start Storybook for the UI library (port 6006)           |
+| `npm run build-storybook` | Build static Storybook (e.g. for deployment)         |
+| `npm run build:ui`     | Copy fonts, compile foundations, build the UI library   |
+| `npm run ui:copy-fonts`| Copy font files into `projects/ui/assets/styles/fonts/`  |
+| `npm run ui:sass`      | Compile foundations SCSS to CSS                          |
+| `ng test`              | Run unit tests (Vitest)                                  |
+
+## Code scaffolding
+
+Generate components (or other schematics) in the UI library from the workspace root:
 
 ```bash
-ng e2e
+ng generate component component-name --project=ui
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+List available schematics:
 
-## Additional Resources
+```bash
+ng generate --help
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Documentation
+
+- **UI library**: design direction, accessibility, and build details → [projects/ui/README.md](projects/ui/README.md)
+- **Angular CLI**: [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli)

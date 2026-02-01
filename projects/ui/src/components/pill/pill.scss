@@ -1,0 +1,325 @@
+@use 'sass:map';
+@use '../../foundations/toolkit' as *;
+
+$pill-class: '.#{$prefix}pill';
+
+@mixin pill-reset {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration-line: none;
+}
+
+@mixin pill-base {
+  @include pill-reset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background-color: transparent;
+  gap: $spacing-spacing-2;
+  color: $color-text-primary;
+  border-radius: $radius-radius-2;
+  padding: $spacing-spacing-1 $spacing-spacing-3;
+  backdrop-filter: blur(16px);
+  @include transition-properties((color, background-color, border-color));
+}
+
+@mixin focus-ring {
+  &:focus-visible,
+  &:focus {
+    outline-offset: 2px;
+    outline: $color-border-white-medium solid 2px;
+  }
+}
+
+#{$pill-class} {
+  @include pill-base;
+
+  // Size variants
+  &--md {
+    @include typography('caption-l', 'medium');
+  }
+
+  &--lg {
+    @include typography('body-m', 'medium');
+  }
+
+  // Variant styles
+  &--interactive,
+  &--interactive-rounded,
+  &--selectable {
+    cursor: pointer;
+    @include focus-ring;
+  }
+
+  &--interactive-rounded {
+    cursor: pointer;
+    border-radius: $radius-radius-full;
+  }
+
+  &--read-only {
+    cursor: default;
+  }
+
+  &--dismissible#{$pill-class} {
+    cursor: default;
+
+    .#{$prefix}btn--sm:last-child .#{$prefix}icon {
+      @include icon-size('4');
+    }
+
+    &--md {
+      padding: $spacing-spacing-1 $spacing-spacing-1 $spacing-spacing-1 $spacing-spacing-3;
+      border-radius: $radius-radius-2;
+
+      .#{$prefix}btn--sm:last-child {
+        min-width: 24px;
+        height: 24px;
+      }
+    }
+
+    &--lg {
+      padding: $spacing-spacing-2 $spacing-spacing-1 $spacing-spacing-2 $spacing-spacing-4;
+      border-radius: $radius-radius-3;
+    }
+  }
+
+  // Theme variants
+  &--interactive#{$pill-class},
+  &--interactive-rounded#{$pill-class} {
+    &--fill {
+      &-white {
+        @include interactive-surface('solid', 'white');
+        color: $color-text-inverted;
+      }
+
+      &-black {
+        @include interactive-surface('solid', 'grey-lvl-1');
+        color: $color-text-primary;
+      }
+
+      &-purple {
+        @include interactive-surface('solid', 'purple');
+        color: $color-text-primary;
+      }
+
+      &-red {
+        @include interactive-surface('solid', 'red');
+        color: $color-text-primary;
+      }
+
+      &-green {
+        @include interactive-surface('solid', 'green');
+        color: $color-text-primary;
+      }
+    }
+
+    &--transparent {
+      &-white {
+        @include interactive-surface('transparent', 'white');
+        color: $color-text-primary;
+      }
+
+      &-purple {
+        @include interactive-surface('transparent', 'purple');
+        color: $color-text-purple;
+      }
+
+      &-red {
+        @include interactive-surface('transparent', 'red');
+        color: $color-text-red;
+      }
+
+      &-green {
+        @include interactive-surface('transparent', 'green');
+        color: $color-text-green;
+      }
+    }
+
+    &--stroke-white,
+    &--outline-white {
+      @include outline-surface('white');
+    }
+
+    &--outline-purple {
+      @include outline-surface('purple');
+    }
+
+    &--outline-red {
+      @include outline-surface('red');
+    }
+
+    &--outline-green {
+      @include outline-surface('green');
+    }
+  }
+
+  &--interactive#{$pill-class},
+  &--interactive-rounded#{$pill-class},
+  &--dismissible#{$pill-class} {
+    &--transparent {
+      $only: ('enabled', 'disabled');
+
+      &-white {
+        @include interactive-surface('transparent', 'white', false, $only);
+        color: $color-text-primary;
+      }
+
+      &-purple {
+        @include interactive-surface('transparent', 'purple', false, $only);
+        color: $color-text-purple;
+      }
+    }
+
+    &--outline-white {
+      @include outline-surface('white');
+    }
+
+    &--outline-purple {
+      @include outline-surface('purple');
+    }
+
+    &--outline-red {
+      @include outline-surface('red');
+    }
+
+    &--outline-green {
+      @include outline-surface('green');
+    }
+  }
+
+  &--read-only#{$pill-class} {
+    &--transparent {
+      &-white {
+        color: $color-text-secondary;
+        border: 1px solid $color-border-white-medium;
+      }
+
+      &-purple {
+        color: $color-text-purple;
+        border: 1px solid $color-border-purple;
+      }
+
+      &-red {
+        color: $color-text-red;
+        border: 1px solid $color-border-red;
+      }
+
+      &-green {
+        color: $color-text-green;
+        border: 1px solid $color-border-green;
+      }
+    }
+
+    &--outline-white {
+      @include outline-surface-read-only('white');
+    }
+
+    &--outline-purple {
+      @include outline-surface-read-only('purple');
+    }
+
+    &--outline-red {
+      @include outline-surface-read-only('red');
+    }
+
+    &--outline-green {
+      @include outline-surface-read-only('green');
+    }
+  }
+
+  &--selectable {
+    position: relative;
+
+    &#{$pill-class}--transparent {
+      &-white {
+        color: $color-text-secondary;
+        border: 1px solid $color-border-white-medium;
+
+        &:has(#{$pill-class}__checkbox:checked) {
+          border-color: transparent;
+          @include interactive-surface('transparent', 'white');
+        }
+      }
+
+      &-purple {
+        color: $color-text-purple;
+        border: 1px solid $color-border-purple;
+
+        &:has(#{$pill-class}__checkbox:checked) {
+          border-color: transparent;
+          @include interactive-surface('transparent', 'purple');
+        }
+      }
+    }
+
+    &#{$pill-class}--outline {
+      &-white {
+        @include outline-surface('white');
+
+        &:has(#{$pill-class}__checkbox:checked) {
+          border-color: transparent;
+          @include interactive-surface('transparent', 'white');
+        }
+      }
+
+      &-purple {
+        @include outline-surface('purple');
+
+        &:has(#{$pill-class}__checkbox:checked) {
+          border-color: transparent;
+          @include interactive-surface('transparent', 'purple');
+        }
+      }
+
+      &-red {
+        @include outline-surface('red');
+
+        &:has(#{$pill-class}__checkbox:checked) {
+          border-color: transparent;
+          @include interactive-surface('transparent', 'red');
+        }
+      }
+
+      &-green {
+        @include outline-surface('green');
+
+        &:has(#{$pill-class}__checkbox:checked) {
+          border-color: transparent;
+          @include interactive-surface('transparent', 'green');
+        }
+      }
+    }
+
+    #{$pill-class}__checkbox {
+      position: absolute;
+      visibility: hidden;
+      height: 0;
+      width: 0;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &--disabled,
+  &[disabled],
+  &:disabled {
+    cursor: not-allowed;
+    color: $color-text-disabled;
+
+    &.#{$prefix}pill--outline-white,
+    &.#{$prefix}pill--outline-purple,
+    &.#{$prefix}pill--outline-red,
+    &.#{$prefix}pill--outline-green,
+    &.#{$prefix}pill--stroke-white {
+      border-color: $color-outline-border-disabled;
+    }
+  }
+
+  .#{$prefix}icon {
+    @include icon-size('5');
+  }
+}

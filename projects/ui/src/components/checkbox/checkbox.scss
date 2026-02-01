@@ -1,0 +1,244 @@
+@use '../../foundations/toolkit' as *;
+
+// Base checkbox styles mixin
+@mixin checkbox-base {
+  display: inline-flex;
+  align-items: flex-start;
+  cursor: pointer;
+
+  &:has(.#{$prefix}checkbox__input:disabled) {
+    cursor: not-allowed;
+  }
+}
+
+// Pseudo input styles mixin
+@mixin checkbox-pseudo-input {
+  margin: 2px;
+  border-radius: $radius-radius-1;
+  border: 1px solid $color-border-white-medium-strong;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  flex-shrink: 0;
+  @include transition-properties((border-color, background-color));
+
+  &:before {
+    content: 'check_small';
+    font-family: $iconography-font-family-icon;
+    top: -1px;
+    left: -1px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    color: $color-text-primary;
+    line-height: 16px;
+    opacity: 0;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+// Hover state mixin
+@mixin checkbox-hover-state($is-error: false) {
+  $hover-border: $color-border-white;
+  $hover-bg: $color-background-purple;
+  $active-bg: $color-background-purple;
+
+  @if $is-error {
+    $hover-border: $color-border-red;
+    $hover-bg: $color-background-red;
+    $active-bg: $color-background-red;
+  }
+
+  &:hover .#{$prefix}checkbox__input:not([disabled]) + .#{$prefix}checkbox__pseudo-input {
+    box-shadow: 0 0 0 2px $color-background-white-light;
+    border-color: $hover-border;
+  }
+
+  &:hover
+    .#{$prefix}checkbox__input:not([disabled]):indeterminate
+    + .#{$prefix}checkbox__pseudo-input,
+  &:hover .#{$prefix}checkbox__input:not([disabled]):checked + .#{$prefix}checkbox__pseudo-input {
+    background-color: $hover-bg;
+    border-color: $hover-bg;
+  }
+
+  &:hover
+    .#{$prefix}checkbox__input:not([disabled]):indeterminate:active
+    + .#{$prefix}checkbox__pseudo-input,
+  &:hover
+    .#{$prefix}checkbox__input:not([disabled]):checked:active
+    + .#{$prefix}checkbox__pseudo-input {
+    background-color: $active-bg;
+    border-color: $active-bg;
+  }
+}
+
+// Error state mixin
+@mixin checkbox-error-state {
+  .#{$prefix}checkbox__pseudo-input {
+    border-color: $color-border-red;
+  }
+
+  .#{$prefix}checkbox__input {
+    &:focus-visible + .#{$prefix}checkbox__pseudo-input {
+      border-color: $color-border-red;
+    }
+
+    &:not([disabled]) {
+      &:active + .#{$prefix}checkbox__pseudo-input[class] {
+        border-color: $color-border-red;
+      }
+
+      &:checked + .#{$prefix}checkbox__pseudo-input,
+      &:indeterminate + .#{$prefix}checkbox__pseudo-input {
+        background-color: $color-background-red;
+        border-color: $color-background-red;
+      }
+    }
+  }
+}
+
+// Zone variants mixin
+@mixin checkbox-zone-variant($type) {
+  @if $type == 'accessible' {
+    padding: 12px;
+  } @else if $type == 'visible' {
+    padding: 12px;
+    background: $color-background-white-medium-light;
+    border-radius: $radius-radius-3;
+  } @else if $type == 'checked-visible' {
+    padding: 12px;
+    border-radius: $radius-radius-3;
+    @include transition-properties(background-color);
+
+    &:has(.#{$prefix}checkbox__input:checked) {
+      background: $color-background-white-medium-light;
+    }
+  }
+}
+
+// Wrapper (form field container: label + row + helper)
+.#{$prefix}checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+// Clickable row (label wrapping input + pseudo + text)
+.#{$prefix}checkbox__row {
+  @include checkbox-base;
+  @include checkbox-hover-state;
+
+  &:has(.#{$prefix}checkbox__input:indeterminate) .#{$prefix}checkbox__pseudo-input:before {
+    opacity: 1;
+  }
+
+  // Zone variants
+  &--accessible-zone {
+    @include checkbox-zone-variant('accessible');
+  }
+
+  &--visible-zone {
+    @include checkbox-zone-variant('visible');
+  }
+
+  &--checked-visible-zone {
+    @include checkbox-zone-variant('checked-visible');
+  }
+
+  // Error state
+  &--error {
+    @include checkbox-error-state;
+    @include checkbox-hover-state(true);
+  }
+}
+
+// Input, pseudo-input, label (descendants of wrapper, inside __row)
+.#{$prefix}checkbox {
+  &__input {
+    position: absolute;
+    opacity: 0;
+
+    &:focus-visible + .#{$prefix}checkbox__pseudo-input {
+      border-color: $color-border-white-medium-strong;
+    }
+
+    &:not([disabled]) {
+      &:active + .#{$prefix}checkbox__pseudo-input[class] {
+        border-color: $color-border-white;
+        box-shadow: none;
+      }
+
+      &:checked + .#{$prefix}checkbox__pseudo-input {
+        background-color: $color-background-purple;
+        border-color: $color-background-purple;
+
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:disabled {
+      & + .#{$prefix}checkbox__pseudo-input {
+        border-color: $color-border-white-light;
+      }
+
+      & ~ .#{$prefix}checkbox__label {
+        color: $color-text-disabled;
+      }
+
+      &:checked + .#{$prefix}checkbox__pseudo-input {
+        background-color: $color-background-white-extra-light;
+        border-color: transparent;
+
+        &:before {
+          opacity: 1;
+          color: $color-text-disabled;
+        }
+      }
+    }
+
+    &:indeterminate + .#{$prefix}checkbox__pseudo-input {
+      background-color: $color-background-purple;
+      border-color: $color-background-purple;
+
+      &:before {
+        content: 'minus_small';
+        opacity: 1;
+      }
+    }
+
+    &[disabled]:indeterminate + .#{$prefix}checkbox__pseudo-input {
+      background-color: $color-background-white-extra-light;
+      border-color: transparent;
+
+      &:before {
+        opacity: 1;
+        color: $color-text-disabled;
+      }
+    }
+  }
+
+  &__pseudo-input {
+    @include checkbox-pseudo-input;
+  }
+
+  &__label {
+    margin-left: 8px;
+    color: $color-text-primary;
+    @include transition-properties(color);
+
+    @include typography('body-m');
+
+    .#{$prefix}checkbox--sm & {
+      @include typography('caption-l');
+    }
+  }
+
+  &:not(.#{$prefix}checkbox--sm) &__label {
+    margin-top: -2px;
+    margin-bottom: -2px;
+  }
+}

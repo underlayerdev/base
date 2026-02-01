@@ -6,7 +6,14 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ui:copy-fonts": "npx shx rm -rf projects/ui/assets/styles/fonts && npx shx mkdir -p projects/ui/assets/styles/fonts && npx shx cp -r projects/ui/src/lib/fonts/* projects/ui/assets/styles/fonts/",
+    "ui:sass": "npx sass projects/ui/src/foundations/index.scss:projects/ui/assets/styles/foundations.css --no-source-map --load-path=projects/ui/src",
+    "ui:sass:watch": "npx sass projects/ui/src/foundations/index.scss:projects/ui/assets/styles/foundations.css --watch --load-path=projects/ui/src",
+    "build:ui": "npm run ui:copy-fonts && npm run ui:sass && ng build ui",
+    "storybook": "ng run ui:storybook",
+    "build-storybook": "ng run ui:build-storybook",
+    "build-storybook:ci": "npm run ui:copy-fonts && npm run ui:sass && ng run ui:build-storybook"
   },
   "prettier": {
     "printWidth": 100,
@@ -23,18 +30,34 @@
   "private": true,
   "packageManager": "npm@10.9.2",
   "dependencies": {
+    "@angular/cdk": "^21.1.2",
     "@angular/common": "^21.0.0",
     "@angular/compiler": "^21.0.0",
     "@angular/core": "^21.0.0",
     "@angular/forms": "^21.0.0",
     "@angular/platform-browser": "^21.0.0",
     "@angular/router": "^21.0.0",
+    "@splidejs/splide": "^4.1.4",
+    "prettier": "^3.8.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-devkit/architect": "^0.2100.0",
+    "@angular-devkit/build-angular": "^21.0.0",
+    "@angular-devkit/core": "^21.0.0",
+    "@angular/build": "^21.1.2",
     "@angular/cli": "^21.0.3",
     "@angular/compiler-cli": "^21.0.0",
-    "typescript": "~5.9.2"
+    "@angular/platform-browser-dynamic": "^21.0.0",
+    "@compodoc/compodoc": "^1.2.1",
+    "@storybook/addon-a11y": "10.2.2",
+    "@storybook/addon-docs": "10.2.2",
+    "@storybook/angular": "10.2.2",
+    "jsdom": "^27.1.0",
+    "ng-packagr": "^21.1.0",
+    "storybook": "10.2.2",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8"
   }
 }

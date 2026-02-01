@@ -1,0 +1,101 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}avatar-group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  // Spacing for non-stacked avatars
+  &__avatar {
+    margin-left: calc(-1 * #{$spacing-spacing-2});
+  }
+
+  &--sm &__avatar {
+    margin-left: calc(-1 * #{$spacing-spacing-1});
+  }
+
+  &--md &__avatar {
+    margin-left: calc(-1 * #{$spacing-spacing-2});
+  }
+
+  &--lg &__avatar {
+    margin-left: calc(-1 * #{$spacing-spacing-3});
+  }
+
+  &--xl &__avatar {
+    margin-left: calc(-1 * #{$spacing-spacing-3});
+  }
+
+  // Stacked variant - avatars overlap
+  &--stacked {
+    .#{$prefix}avatar {
+      margin-left: 0 !important;
+      border: 2px solid $color-background-main;
+    }
+
+    .#{$prefix}avatar:not(:first-child) {
+      margin-left: calc(-1 * #{$spacing-spacing-2});
+    }
+
+    &.#{$prefix}avatar-group--sm .#{$prefix}avatar:not(:first-child) {
+      margin-left: calc(-1 * #{$spacing-spacing-1});
+    }
+
+    &.#{$prefix}avatar-group--md .#{$prefix}avatar:not(:first-child) {
+      margin-left: calc(-1 * #{$spacing-spacing-2});
+    }
+
+    &.#{$prefix}avatar-group--lg .#{$prefix}avatar:not(:first-child) {
+      margin-left: calc(-1 * #{$spacing-spacing-3});
+    }
+
+    &.#{$prefix}avatar-group--xl .#{$prefix}avatar:not(:first-child) {
+      margin-left: calc(-1 * #{$spacing-spacing-4});
+    }
+  }
+
+  // Overflow indicator
+  &__overflow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: $radius-radius-full;
+    background-color: $color-interactive-surface-transparent-white-enabled;
+    color: $color-text-primary;
+    border: 2px solid $color-background-main;
+
+    &--sm {
+      width: $component-control-height-sm;
+      height: $component-control-height-sm;
+      min-width: $component-control-height-sm;
+      @include typography('caption-l', 'extrabold');
+    }
+
+    &--md {
+      width: $component-control-height-md;
+      height: $component-control-height-md;
+      min-width: $component-control-height-md;
+      @include typography('body-m', 'extrabold');
+    }
+
+    &--lg {
+      width: $component-control-height-lg;
+      height: $component-control-height-lg;
+      min-width: $component-control-height-lg;
+      @include typography('body-l', 'extrabold');
+    }
+
+    &--xl {
+      width: $component-control-height-xl;
+      height: $component-control-height-xl;
+      min-width: $component-control-height-xl;
+      @include typography('headline-s', 'extrabold');
+    }
+  }
+
+  &__overflow-text {
+    user-select: none;
+    line-height: 1;
+  }
+}

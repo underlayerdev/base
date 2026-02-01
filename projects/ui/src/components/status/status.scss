@@ -1,0 +1,62 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 540px;
+  gap: $spacing-spacing-8;
+
+  // Icon wrapper
+  &-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+    border-radius: $radius-radius-full;
+    background-color: $color-interactive-surface-transparent-white-enabled;
+  }
+
+  // Loading animation
+  &-loading {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+  }
+
+  // Information elements
+  &-title {
+    text-align: center;
+    @include typography('headline-m', 'extrablack');
+  }
+
+  &-subtitle {
+    text-align: center;
+    @include typography('headline-s');
+  }
+
+  &-description {
+    text-align: center;
+    @include typography('body-m');
+  }
+
+  // Status colors
+  &--confirm &-icon {
+    background-color: $color-interactive-surface-solid-green-enabled;
+  }
+
+  &--alert &-icon {
+    background-color: $color-interactive-surface-solid-orange-enabled;
+  }
+
+  &--error &-icon {
+    background-color: $color-interactive-surface-solid-red-enabled;
+  }
+
+  &--pending &-icon {
+    background-color: $color-interactive-surface-solid-purple-enabled;
+  }
+}

@@ -1,0 +1,8 @@
+@use '../core' as *;
+
+// Table layout tokens: alias design tokens for table use (no new magic numbers).
+$table-cell-padding-x: $spacing-spacing-3 !default;
+$table-cell-padding-y: $spacing-spacing-2 !default;
+$table-header-background: transparent !default;
+$table-border-color: $color-border-white-light !default;
+$table-row-border-color: $color-border-white-light !default;

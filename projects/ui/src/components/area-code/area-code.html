@@ -1,0 +1,19 @@
+<div class="pe-area-code" [class.pe-area-code--no-line-numbers]="!showLineNumbers()">
+  <div class="pe-area-code__container pe-scrollable" [style.max-height]="maxHeight()">
+    <!-- Code Display Area -->
+    <div class="pe-area-code__display">
+      <!-- Line Numbers Column -->
+      @if (showLineNumbers()) {
+        <div class="pe-area-code__line-numbers" role="presentation" aria-hidden="true">
+          @for (lineNumber of lineNumbers(); track lineNumber) {
+            <span class="pe-area-code__line-number">{{ lineNumber }}.</span>
+          }
+        </div>
+      }
+      <!-- Code Content Column -->
+      <div class="pe-area-code__content">
+        <pre class="pe-area-code__code" [id]="codeId"><code>{{ content() }}</code></pre>
+      </div>
+    </div>
+  </div>
+</div>

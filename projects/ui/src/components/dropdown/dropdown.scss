@@ -1,0 +1,20 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}dropdown {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+  gap: $spacing-spacing-1;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-spacing-1;
+    background-color: $color-background-grey-lvl-1;
+    border-radius: $radius-radius-4;
+    padding: $spacing-spacing-1;
+    margin: $spacing-spacing-1 0;
+    max-height: $component-dropdown-list-max-height;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,29 @@
+// This file defines the font-face rules for the typography used in the application.
+// It includes a mixin `load-fonts` that registers multiple custom fonts with their respective properties.
+// The fonts are loaded from the 'fonts' directory and are set to display with specific strategies for optimal rendering.
+// `libs/ui/assets/styles/fonts`
+@mixin load-fonts() {
+  @font-face {
+    font-family: 'Roboto Mono';
+    src: url('fonts/RobotoMono.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ultra Brand';
+    src: url('fonts/UltraBrand.otf') format('opentype');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ultra Icons';
+    src: url('fonts/UltraIcons-v4-VF.ttf') format('truetype');
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: 'Ultra Nunito Sans';
+    src: url('fonts/UltraNunitoSans.ttf') format('truetype');
+    font-display: swap;
+  }
+}

@@ -1,0 +1,19 @@
+/// Limits text to a specified number of lines using line clamping.
+///
+/// @param {Number} $lines - Number of lines to display. Defaults to 1.
+///
+/// Usage:
+///
+/// ```scss
+/// .example {
+///   @include line-clamp(3);
+/// }
+/// ```
+///
+/// This will clamp the text to 3 lines, hiding any overflow.
+@mixin line-clamp($lines: 1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/ui",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "styleIncludePaths": ["src/design-tokens/"]
+  },
+  "assets": [
+    {
+      "glob": "**/*",
+      "input": "src/lib/fonts",
+      "output": "/fonts"
+    },
+    {
+      "glob": "**/*",
+      "input": "assets/styles",
+      "output": "styles"
+    },
+    {
+      "glob": "**/*",
+      "input": "assets/img",
+      "output": "img"
+    }
+  ]
+}

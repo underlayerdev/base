@@ -1,0 +1,180 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}textarea {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-spacing-1;
+
+  &__group {
+    display: flex;
+    align-items: stretch;
+    padding: $spacing-spacing-3;
+    gap: $spacing-spacing-2;
+    border-radius: $radius-radius-2;
+    border: 2px solid $color-border-white-light;
+    background-color: transparent;
+    color: $color-text-primary;
+    @include transition-properties((border-color, background-color));
+
+    &--focused {
+      border-color: $color-border-white-medium-strong;
+    }
+  }
+
+  &:not(.#{$prefix}textarea--disabled) {
+    .#{$prefix}textarea__group:hover {
+      border-color: $color-border-white-medium;
+    }
+  }
+
+  &__field {
+    all: unset;
+    flex: 1;
+    min-height: 0;
+    resize: vertical;
+
+    &::placeholder {
+      color: $color-text-tertiary;
+    }
+
+    &:hover::placeholder {
+      color: $color-text-primary;
+    }
+
+    &--custom {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+  }
+
+  &__left-elements,
+  &__right-elements {
+    display: flex;
+    gap: $spacing-spacing-2;
+    align-items: flex-start;
+    padding-top: $spacing-spacing-2;
+
+    ::ng-deep .#{$prefix}icon {
+      @include icon-size('6');
+    }
+  }
+
+  // Size variants (min-height from rows + line-height and padding tokens)
+  &--sm {
+    .#{$prefix}textarea__group {
+      min-height: calc(var(--pe-textarea-rows, 3) * #{$typography-font-line-height-caption-l} + 2 * #{$spacing-spacing-2});
+      padding: $spacing-spacing-2;
+      @include typography('caption-l');
+    }
+
+    .#{$prefix}textarea__left-elements,
+    .#{$prefix}textarea__right-elements {
+      gap: $spacing-spacing-1;
+      padding-top: $spacing-spacing-1;
+      ::ng-deep .#{$prefix}icon {
+        @include icon-size('5');
+      }
+    }
+  }
+
+  &--md {
+    .#{$prefix}textarea__group {
+      min-height: calc(var(--pe-textarea-rows, 3) * #{$typography-font-line-height-body-m} + 2 * #{$spacing-spacing-3});
+      padding: $spacing-spacing-3;
+      @include typography('body-m');
+    }
+
+    .#{$prefix}textarea__left-elements,
+    .#{$prefix}textarea__right-elements {
+      ::ng-deep .#{$prefix}icon {
+        @include icon-size('6');
+      }
+    }
+  }
+
+  &--lg {
+    .#{$prefix}textarea__group {
+      min-height: calc(var(--pe-textarea-rows, 3) * #{$typography-font-line-height-body-l} + 2 * #{$spacing-spacing-3});
+      padding: $spacing-spacing-2 $spacing-spacing-3;
+      @include typography('body-l');
+    }
+
+    .#{$prefix}textarea__left-elements,
+    .#{$prefix}textarea__right-elements {
+      ::ng-deep .#{$prefix}icon {
+        @include icon-size('7');
+      }
+    }
+  }
+
+  &--xl {
+    .#{$prefix}textarea__group {
+      min-height: calc(var(--pe-textarea-rows, 3) * #{$typography-font-line-height-headline-s} + 2 * #{$spacing-spacing-4});
+      padding: $spacing-spacing-2 $spacing-spacing-4;
+      @include typography('headline-s');
+    }
+
+    .#{$prefix}textarea__left-elements,
+    .#{$prefix}textarea__right-elements {
+      ::ng-deep .#{$prefix}icon {
+        @include icon-size('8');
+      }
+    }
+  }
+
+  // Resize variants
+  &--resize-none .#{$prefix}textarea__field {
+    resize: none;
+  }
+
+  &--resize-vertical .#{$prefix}textarea__field {
+    resize: vertical;
+  }
+
+  &--resize-horizontal .#{$prefix}textarea__field {
+    resize: horizontal;
+  }
+
+  &--resize-both .#{$prefix}textarea__field {
+    resize: both;
+  }
+
+  // Error state
+  &--error {
+    .#{$prefix}textarea__group {
+      border: 2px solid $color-border-red;
+    }
+  }
+
+  // Disabled state
+  &--disabled {
+    .#{$prefix}textarea__group {
+      border: 2px solid $color-border-white-light;
+      background-color: transparent;
+    }
+
+    .#{$prefix}textarea__field {
+      &,
+      &:disabled::placeholder {
+        color: $color-text-disabled;
+      }
+    }
+  }
+
+  // Read-only state
+  &--read-only {
+    .#{$prefix}textarea__group {
+      border: 2px solid $color-border-white-light;
+      background-color: transparent;
+    }
+
+    .#{$prefix}textarea__field {
+      &,
+      &:read-only::placeholder {
+        color: $color-text-secondary;
+      }
+    }
+  }
+}

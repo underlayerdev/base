@@ -1,0 +1,81 @@
+<div class="pe-dropdown">
+  <!-- Template for rendering icon arrays -->
+  <ng-template #renderIcons let-icons>
+    @for (icon of icons; track icon) {
+      <pe-icon size="5" [icon]="icon" />
+    }
+  </ng-template>
+
+  @if (triggerIconOnly(); as iconName) {
+    <pe-button
+      [theme]="theme()"
+      [iconOnly]="true"
+      [disabled]="disabled()"
+      [cdkMenuTriggerFor]="menu"
+      class="pe-dropdown__trigger"
+      aria-haspopup="menu"
+      [attr.aria-expanded]="isOpen()"
+      [attr.aria-controls]="menuId"
+      [attr.aria-label]="iconOnlyLabel()"
+      (cdkMenuOpened)="onMenuOpened()"
+      (cdkMenuClosed)="onMenuClosed()"
+    >
+      <pe-icon [icon]="iconName" />
+    </pe-button>
+  } @else {
+    <pe-list-item
+      [theme]="theme()"
+      [disabled]="disabled()"
+      [cdkMenuTriggerFor]="menu"
+      class="pe-dropdown__trigger"
+      aria-haspopup="menu"
+      [attr.aria-expanded]="isOpen()"
+      [attr.aria-controls]="menuId"
+      (cdkMenuOpened)="onMenuOpened()"
+      (cdkMenuClosed)="onMenuClosed()"
+    >
+      <ng-container pe-list-item-before-label>
+        @if (selectedItem().leftIcons) {
+          <ng-container
+            *ngTemplateOutlet="renderIcons; context: { $implicit: selectedItem().leftIcons }"
+          />
+        }
+      </ng-container>
+      <ng-container pe-list-item-label>
+        {{ selectedItem().label }}
+      </ng-container>
+      <ng-container pe-list-item-after-label>
+        <ng-container
+          *ngTemplateOutlet="renderIcons; context: { $implicit: triggerRightIcons() }"
+        />
+      </ng-container>
+    </pe-list-item>
+  }
+
+  <ng-template #menu>
+    <div cdkMenu class="pe-dropdown__content pe-scrollable" [id]="menuId">
+      @for (item of items(); track $index) {
+        <pe-list-item
+          cdkMenuItem
+          (cdkMenuItemTriggered)="handleItemTriggered($index)"
+          [disabled]="!!item.disabled"
+          role="menuitemradio"
+          [attr.aria-checked]="selectedIndex() === $index ? 'true' : 'false'"
+        >
+          <ng-container pe-list-item-before-label>
+            <ng-container *ngTemplateOutlet="renderIcons; context: { $implicit: item.leftIcons }" />
+          </ng-container>
+          <ng-container pe-list-item-label>{{ item.label }}</ng-container>
+          <ng-container pe-list-item-after-label>
+            <ng-container
+              *ngTemplateOutlet="renderIcons; context: { $implicit: item.rightIcons }"
+            />
+            @if (selectedIndex() === $index) {
+              <pe-icon size="5" icon="check" />
+            }
+          </ng-container>
+        </pe-list-item>
+      }
+    </div>
+  </ng-template>
+</div>

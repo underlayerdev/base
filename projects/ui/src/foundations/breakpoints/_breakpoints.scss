@@ -1,0 +1,121 @@
+@use '../core' as *;
+
+/// Creates a mobile-first media query that applies styles from the specified breakpoint and up
+/// @param {String} $breakpoint - Breakpoint name: 'xs', 'sm', 'md', 'lg', or 'xl'
+/// @example
+///   @include up('md') {
+///     // styles for medium screens and larger
+///   }
+@mixin up($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @media (min-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint == 'sm' {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+/// Creates a desktop-first media query that applies styles from the specified breakpoint and down
+/// @param {String} $breakpoint - Breakpoint name: 'xs', 'sm', 'md', or 'lg'
+/// @example
+///   @include down('lg') {
+///     // styles for large screens and smaller
+///   }
+@mixin down($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @media (max-width: ($breakpoint-sm - 1)) {
+      @content;
+    }
+  } @else if $breakpoint == 'sm' {
+    @media (max-width: ($breakpoint-md - 1)) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (max-width: ($breakpoint-lg - 1)) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (max-width: ($breakpoint-xl - 1)) {
+      @content;
+    }
+  }
+}
+
+/// Creates a media query that applies styles between two breakpoints
+/// @param {String} $lower - Lower breakpoint name: 'xs', 'sm', 'md', 'lg', or 'xl'
+/// @param {String} $upper - Upper breakpoint name: 'sm', 'md', 'lg', or 'xl'
+/// @example
+///   @include between('sm', 'lg') {
+///     // styles that apply only between small and large screens
+///   }
+@mixin between($lower, $upper) {
+  $min: null;
+  $max: null;
+
+  // Set minimum breakpoint
+  @if $lower == 'xs' {
+    $min: $breakpoint-xs;
+  } @else if $lower == 'sm' {
+    $min: $breakpoint-sm;
+  } @else if $lower == 'md' {
+    $min: $breakpoint-md;
+  } @else if $lower == 'lg' {
+    $min: $breakpoint-lg;
+  } @else if $lower == 'xl' {
+    $min: $breakpoint-xl;
+  }
+
+  // Set maximum breakpoint
+  @if $upper == 'sm' {
+    $max: ($breakpoint-sm - 1);
+  } @else if $upper == 'md' {
+    $max: ($breakpoint-md - 1);
+  } @else if $upper == 'lg' {
+    $max: ($breakpoint-lg - 1);
+  } @else if $upper == 'xl' {
+    $max: ($breakpoint-xl - 1);
+  }
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+/// Creates a media query that applies styles only at a specific breakpoint range
+/// @param {String} $breakpoint - Breakpoint name: 'xs', 'sm', 'md', 'lg', or 'xl'
+/// @example
+///   @include only('md') {
+///     // styles that apply only to medium screens
+///   }
+@mixin only($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @include between('xs', 'sm');
+  } @else if $breakpoint == 'sm' {
+    @include between('sm', 'md');
+  } @else if $breakpoint == 'md' {
+    @include between('md', 'lg');
+  } @else if $breakpoint == 'lg' {
+    @include between('lg', 'xl');
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}

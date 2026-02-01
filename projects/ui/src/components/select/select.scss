@@ -1,0 +1,61 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}select {
+  white-space: nowrap;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-spacing-1;
+
+  // Control wrapper — aligned with input (2px border, hover/focus)
+  &__control {
+    display: flex;
+    align-items: center;
+    min-height: $component-control-height-md;
+    border: 2px solid $color-border-white-light;
+    border-radius: $radius-radius-2;
+    background-color: transparent;
+    @include transition-properties((border-color));
+
+    &:hover {
+      border-color: $color-border-white-medium;
+    }
+
+    &:focus-within {
+      border-color: $color-border-white-medium-strong;
+    }
+
+    // Single focus indicator: control border, not list-item outline
+    .#{$prefix}list-item:focus-visible,
+    .#{$prefix}list-item:focus {
+      outline: none;
+    }
+
+    &--disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &--disabled &__control {
+    border-color: $color-border-white-light;
+
+    &:hover,
+    &:focus-within {
+      border-color: $color-border-white-light;
+    }
+  }
+
+  // Disabled state
+  &--disabled {
+    .#{$prefix}select__control {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &__dropdown {
+    width: 100%;
+  }
+}
+

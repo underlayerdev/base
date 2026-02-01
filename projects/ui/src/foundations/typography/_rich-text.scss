@@ -1,0 +1,182 @@
+@use 'sass:map';
+@use '../core' as *;
+@use 'typography' as typography;
+
+/// Rich text base styles
+///
+/// Applies a consistent typographic system for long-form content such as
+/// articles, CMS content, and documentation blocks.
+.#{$prefix}rich-text {
+  @include typography.typography('body-l', 'regular');
+  color: map.get($tokens, 'color', 'text', 'primary');
+
+  // Vertical rhythm for block elements
+  p,
+  ul,
+  ol,
+  blockquote,
+  pre {
+    margin-top: 0;
+    margin-bottom: map.get($tokens, 'spacing', 'spacing', '4');
+  }
+
+  &:last-child,
+  p:last-child,
+  ul:last-child,
+  ol:last-child,
+  blockquote:last-child,
+  pre:last-child {
+    margin-bottom: 0;
+  }
+
+  // Headings
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: map.get($tokens, 'spacing', 'spacing', '8');
+    margin-bottom: map.get($tokens, 'spacing', 'spacing', '3');
+    font-weight: map.get($tokens, 'typography', 'font', 'weight', 'extrablack');
+  }
+
+  h1 {
+    @include typography.typography('headline-3xl', 'extrablack');
+  }
+
+  h2 {
+    @include typography.typography('headline-2xl', 'extrablack');
+  }
+
+  h3 {
+    @include typography.typography('headline-xl', 'extrablack');
+  }
+
+  h4 {
+    @include typography.typography('headline-l', 'extrablack');
+  }
+
+  h5 {
+    @include typography.typography('headline-m', 'extrablack');
+  }
+
+  h6 {
+    @include typography.typography('headline-s', 'extrablack');
+  }
+
+  // Lists
+  ul,
+  ol {
+    padding-left: map.get($tokens, 'spacing', 'spacing', '6');
+  }
+
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin-top: map.get($tokens, 'spacing', 'spacing', '2');
+    margin-bottom: map.get($tokens, 'spacing', 'spacing', '2');
+  }
+
+  li {
+    margin-top: map.get($tokens, 'spacing', 'spacing', '1');
+    margin-bottom: map.get($tokens, 'spacing', 'spacing', '1');
+  }
+
+  // Inline emphasis
+  strong {
+    font-weight: map.get($tokens, 'typography', 'font', 'weight', 'extrabold');
+  }
+
+  code {
+    @include typography.typography('caption-mono', 'regular');
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  a {
+    color: map.get($tokens, 'color', 'link', 'enabled');
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+
+    &:hover {
+      color: map.get($tokens, 'color', 'link', 'hover');
+    }
+
+    &:active {
+      color: map.get($tokens, 'color', 'link', 'active');
+    }
+  }
+
+  // Code
+  pre {
+    padding: map.get($tokens, 'spacing', 'spacing', '4');
+    border-radius: map.get($tokens, 'radius', 'radius', '2');
+    background-color: map.get($tokens, 'color', 'background', 'grey-lvl-2');
+    overflow-x: auto;
+
+    code {
+      @include typography.typography('caption-mono', 'regular');
+    }
+  }
+
+  blockquote {
+    margin-left: 0;
+    padding-left: map.get($tokens, 'spacing', 'spacing', '4');
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-left-color: map.get($tokens, 'color', 'border', 'white-light');
+    color: map.get($tokens, 'color', 'text', 'secondary');
+  }
+}
+
+// Tone variants
+.#{$prefix}rich-text--muted {
+  color: map.get($tokens, 'color', 'text', 'secondary');
+}
+
+.#{$prefix}rich-text--inverse {
+  color: map.get($tokens, 'color', 'text', 'inverted');
+
+  a {
+    color: map.get($tokens, 'color', 'text', 'inverted');
+
+    &:hover {
+      color: map.get($tokens, 'color', 'text', 'inverted-strong');
+    }
+
+    &:active {
+      color: map.get($tokens, 'color', 'text', 'inverted-strong');
+    }
+  }
+}
+
+// Size variants (base is body-l)
+.#{$prefix}rich-text--body-m {
+  @include typography.typography('body-m', 'regular');
+}
+
+// Compact spacing variant
+.#{$prefix}rich-text--compact {
+  p,
+  ul,
+  ol,
+  blockquote,
+  pre {
+    margin-bottom: map.get($tokens, 'spacing', 'spacing', '2');
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: map.get($tokens, 'spacing', 'spacing', '4');
+    margin-bottom: map.get($tokens, 'spacing', 'spacing', '2');
+  }
+}
+

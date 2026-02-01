@@ -1,0 +1,56 @@
+@if (open()) {
+  <div
+    class="pe-modal pe-modal--backdrop"
+    role="dialog"
+    [attr.aria-modal]="true"
+    [attr.aria-labelledby]="title() ? titleId : null"
+    [attr.aria-describedby]="bodyId"
+    (click)="onBackdropClick($event)"
+  >
+    <div [class]="panelClass()" cdkTrapFocus (click)="$event.stopPropagation()">
+      @if (modalTitle() || showCloseButton()) {
+        <header class="pe-modal__header">
+          @if (modalTitle()) {
+            <h2 [id]="titleId" class="pe-modal__title">{{ title() }}</h2>
+          }
+          @if (showCloseButton()) {
+            <pe-button
+              type="button"
+              theme="ghost-white"
+              [iconOnly]="true"
+              ariaLabel="Close"
+              class="pe-modal__close"
+              (buttonClick)="close()"
+            >
+              <pe-icon icon="close" size="6" />
+            </pe-button>
+          }
+        </header>
+      }
+      <div class="pe-modal__body" [id]="bodyId">
+        @if (isSuccess() || isError()) {
+          <div class="pe-modal__status" aria-hidden="true">
+            <pe-icon
+              class="pe-modal__status-icon"
+              [icon]="isSuccess() ? 'check_circle' : 'cross_circle'"
+              size="16"
+            />
+          </div>
+        }
+        <ng-content />
+      </div>
+      <div class="pe-modal__footer">
+        @if (isConfirmation()) {
+          <pe-button theme="ghost-white" (buttonClick)="onCancel()">
+            {{ cancelLabel() }}
+          </pe-button>
+          <pe-button theme="fill-purple" (buttonClick)="onConfirm()">
+            {{ confirmLabel() }}
+          </pe-button>
+        } @else {
+          <ng-content select="[pe-modal-footer]" />
+        }
+      </div>
+    </div>
+  </div>
+}

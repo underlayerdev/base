@@ -1,0 +1,66 @@
+<div class="pe-sidebar">
+  <div
+    class="pe-sidebar__overlay"
+    [class.pe-sidebar__overlay--visible]="open()"
+    [attr.aria-hidden]="!open()"
+    (click)="onOverlayClick()"
+  ></div>
+
+  <aside
+    class="pe-sidebar__drawer"
+    [class.pe-sidebar__drawer--open]="open()"
+    role="navigation"
+    [attr.aria-hidden]="!open()"
+  >
+    <div class="pe-sidebar__inner">
+      <header class="pe-sidebar__header">
+        @if (open()) {
+          <pe-button
+            theme="ghost-white"
+            [iconOnly]="true"
+            class="pe-sidebar__close"
+            ariaLabel="Close menu"
+            (buttonClick)="close()"
+          >
+            <pe-icon icon="close" size="6" />
+          </pe-button>
+        }
+        <ng-content select="[pe-sidebar-header]" />
+      </header>
+      <nav class="pe-sidebar__nav pe-scrollable">
+        @if (items().length > 0) {
+          @for (item of items(); track $index) {
+            <pe-list-item
+              [theme]="theme()"
+              [disabled]="!!item.disabled"
+              [selected]="selectedIndex() === $index"
+              [hideFocusOutline]="hideItemFocusOutline()"
+              (click)="onItemClick(item, $index)"
+            >
+              <ng-container pe-list-item-before-label>
+                @if (item.leftIcons) {
+                  @for (icon of item.leftIcons; track icon) {
+                    <pe-icon size="5" [icon]="icon" />
+                  }
+                }
+              </ng-container>
+              <ng-container pe-list-item-label>{{ item.label }}</ng-container>
+              <ng-container pe-list-item-after-label>
+                @if (item.rightIcons) {
+                  @for (icon of item.rightIcons; track icon) {
+                    <pe-icon size="5" [icon]="icon" />
+                  }
+                }
+              </ng-container>
+            </pe-list-item>
+          }
+        } @else {
+          <ng-content select="[pe-sidebar-nav]" />
+        }
+      </nav>
+      <footer class="pe-sidebar__footer">
+        <ng-content select="[pe-sidebar-footer]" />
+      </footer>
+    </div>
+  </aside>
+</div>

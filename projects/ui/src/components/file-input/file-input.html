@@ -1,0 +1,60 @@
+<div
+  class="pe-file-input pe-file-input--{{ size() }} pe-file-input--appearance-{{ appearance() }}"
+  [class.pe-file-input--error]="hasError()"
+  [class.pe-file-input--disabled]="disabled()"
+  [class.pe-file-input--required]="required()"
+  [attr.aria-invalid]="hasError()"
+  [attr.aria-required]="required()"
+  [attr.aria-describedby]="describedBy()"
+>
+  <pe-form-field-label
+    [label]="label()"
+    [required]="required()"
+    [for]="effectiveControlId()"
+    [size]="size()"
+  />
+
+  <div class="pe-file-input__group" [class.pe-file-input__group--focused]="isFocused()">
+    <div class="pe-file-input__left-elements">
+      <ng-content select="[pe-file-input-left-elements]" />
+    </div>
+
+    <input
+      #fileInput
+      [id]="effectiveControlId()"
+      type="file"
+      class="pe-file-input__native"
+      [accept]="accept()"
+      [multiple]="multiple()"
+      [disabled]="disabled()"
+      [required]="required()"
+      (change)="onFileChange($event)"
+      (blur)="onBlur($event)"
+      (focus)="onFocus($event)"
+      [attr.aria-invalid]="hasError()"
+      [attr.aria-required]="required()"
+      [attr.aria-describedby]="describedBy()"
+    />
+
+    <button
+      type="button"
+      class="pe-file-input__trigger"
+      [disabled]="disabled()"
+      (click)="triggerClick()"
+    >
+      Choose file
+    </button>
+    <span class="pe-file-input__label">{{ selectedLabel() }}</span>
+
+    <div class="pe-file-input__right-elements">
+      <ng-content select="[pe-file-input-right-elements]" />
+    </div>
+  </div>
+
+  <pe-form-field-helper
+    [id]="effectiveHelperId()"
+    [helperText]="helperText()"
+    [errorText]="errorText() || (hasError() && errors().length ? errors()[0].message : '') || null"
+    [error]="hasError()"
+  />
+</div>

@@ -1,0 +1,41 @@
+@use '../../../foundations/toolkit' as *;
+
+.#{$prefix}form-field {
+  &__label {
+    color: $color-text-primary;
+    @include typography('body-m', 'extrabold');
+
+    &--required {
+      // Visual required state is the asterisk in template
+    }
+
+    &--sm {
+      @include typography('caption-l', 'extrabold');
+    }
+
+    &--md {
+      @include typography('body-m', 'extrabold');
+    }
+
+    &--lg {
+      @include typography('body-l', 'extrabold');
+    }
+
+    &--xl {
+      @include typography('headline-s', 'extrabold');
+    }
+  }
+
+  &__required-indicator {
+    // Kept for semantics; asterisk is in template
+  }
+
+  &__helper-text {
+    color: $color-text-tertiary;
+    @include typography('caption-l');
+
+    &--error {
+      color: $color-text-red;
+    }
+  }
+}

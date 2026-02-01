@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use '../core' as *;
+
+// Outline semantic colors (single source of truth for outline disabled state)
+$color-outline-border-disabled: $color-border-grey !default;
+$color-outline-text-disabled: $color-text-disabled !default;
+
+/// Applies read-only outline surface: transparent background, border and text from the outline token map (enabled state only).
+/// Use for non-interactive outline variants (e.g. read-only pill).
+///
+/// @param {String} $type - The outline theme type: 'white', 'purple', 'red', or 'green'
+@mixin outline-surface-read-only($type) {
+  $outline: map.get($tokens, 'color', 'interactive-surface', 'outline', $type);
+  @if $outline {
+    background-color: transparent;
+    border: 1px solid map.get($outline, 'border-enabled');
+    color: map.get($outline, 'text');
+  }
+}

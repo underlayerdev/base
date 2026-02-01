@@ -1,0 +1,142 @@
+@use 'sass:map';
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}breadcrumb {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-spacing-1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-spacing-1;
+
+    &--current {
+      .#{$prefix}breadcrumb__text {
+        color: $color-text-primary;
+        font-weight: map.get($tokens, 'typography', 'font', 'weight', 'extrabold');
+      }
+    }
+
+    &--with-icon {
+      .#{$prefix}breadcrumb__icon {
+        flex-shrink: 0;
+      }
+    }
+
+    &--hidden-mobile {
+      @include down('md') {
+        display: none;
+      }
+    }
+
+    &--ellipsis {
+      @include up('md') {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    @include typography('body-m', 'medium');
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-spacing-1;
+    color: $color-text-secondary;
+    text-decoration: none;
+    @include transition-properties((color));
+
+    &:hover {
+      color: $color-text-primary;
+    }
+
+    &:focus-visible {
+      outline-offset: 2px;
+      outline: $color-border-white-medium solid 2px;
+      border-radius: $radius-radius-1;
+    }
+  }
+
+  &__text {
+    @include typography('body-m', 'medium');
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-spacing-1;
+    color: $color-text-primary;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    color: inherit;
+  }
+
+  &__separator {
+    display: inline-flex;
+    align-items: center;
+    color: $color-text-disabled;
+    margin: 0 $spacing-spacing-1;
+    flex-shrink: 0;
+
+    &-text {
+      @include typography('body-m', 'medium');
+      user-select: none;
+    }
+  }
+
+  &__ellipsis {
+    @include typography('body-m', 'medium');
+    color: $color-text-disabled;
+    margin: 0 $spacing-spacing-1;
+    user-select: none;
+  }
+
+  // Responsive adjustments
+  @include down('md') {
+    &__list, &__item {
+      gap: $spacing-spacing-1;
+    }
+
+    &__link,
+    &__text {
+      @include typography('caption-l', 'medium');
+    }
+
+    &__separator {
+      margin: 0 $spacing-spacing-1;
+    }
+  }
+
+  @include between('md', 'lg') {
+    &__list {
+      gap: $spacing-spacing-2;
+    }
+
+    &__item {
+      gap: $spacing-spacing-1;
+    }
+
+    &__separator {
+      margin: 0 $spacing-spacing-2;
+    }
+  }
+
+  @include up('lg') {
+    &__list, &__item {
+      gap: $spacing-spacing-2;
+    }
+
+    &__separator {
+      margin: 0 $spacing-spacing-2;
+    }
+  }
+}

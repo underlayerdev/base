@@ -1,0 +1,71 @@
+@use '../../foundations/toolkit' as *;
+
+.pe-area-code {
+  position: relative;
+  display: block;
+  @include typography('caption-l');
+
+  &__container {
+    position: relative;
+    border-radius: $radius-radius-4;
+    border: 2px solid $color-border-white-light;
+    background-color: $color-interactive-surface-transparent-white-enabled;
+  }
+
+  &__display {
+    display: flex;
+    min-height: 2rem;
+    overflow-x: auto;
+  }
+
+  &__line-numbers {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-spacing-3 $spacing-spacing-2;
+    border-right: 2px solid $color-border-white-light;
+    color: $color-text-tertiary;
+    user-select: none;
+    min-width: 3rem;
+    text-align: right;
+  }
+
+  &__line-number {
+    display: block;
+    white-space: nowrap;
+    padding-right: $spacing-spacing-1;
+  }
+
+  &__content {
+    flex: 1;
+    overflow-x: auto;
+  }
+
+  &__code {
+    display: block;
+    margin: 0;
+    padding: $spacing-spacing-3;
+    background: transparent;
+    color: $color-text-primary;
+    white-space: pre;
+    overflow-x: auto;
+    overflow-y: visible;
+    tab-size: 2;
+
+    code {
+      background: transparent;
+      padding: 0;
+      font-size: inherit;
+      line-height: inherit;
+      font-family: inherit;
+      color: inherit;
+    }
+  }
+
+  // State: No line numbers
+  &--no-line-numbers {
+    .pe-area-code__code {
+      padding-left: $spacing-spacing-4;
+    }
+  }
+}

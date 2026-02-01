@@ -1,0 +1,51 @@
+@if (loading()) {
+  <div class="pe-card__skeleton">
+    <div class="pe-card__media">
+      <pe-skeleton variant="rect" borderRadius="lg" [show]="true" />
+    </div>
+    <div class="pe-card__content">
+      <div class="pe-card__content-title pe-card__content-title--single-line">
+        <pe-skeleton variant="text" [lines]="2" borderRadius="sm" />
+      </div>
+      <div class="pe-card__content-subtitle pe-card__content-subtitle--single-line">
+        <pe-skeleton variant="text" [lines]="1" borderRadius="sm" />
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="pe-card__media">
+    <ng-content select="[udsCardMedia]" />
+    <ng-content select="[udsCardMediaOverlay]" />
+  </div>
+  <div class="pe-card__media-action">
+    <ng-content select="[udsCardMediaAction]" />
+  </div>
+
+  <div class="pe-card__content">
+    @if (cardCaption()) {
+      <div class="pe-card__content-caption">
+        {{ cardCaption() }}
+      </div>
+    }
+    @if (cardTitle()) {
+      <div
+        class="pe-card__content-title"
+        [class.pe-card__content-title--single-line]="cardTitleSingleLine()"
+      >
+        {{ cardTitle() }}
+      </div>
+    }
+    @if (cardSubtitle()) {
+      <div
+        class="pe-card__content-subtitle"
+        [class.pe-card__content-subtitle--single-line]="cardSubtitleSingleLine()"
+      >
+        {{ cardSubtitle() }}
+      </div>
+    }
+  </div>
+
+  <div class="pe-card__footer">
+    <ng-content select="[udsCardFooter]" />
+  </div>
+}

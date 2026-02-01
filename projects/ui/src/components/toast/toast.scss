@@ -1,0 +1,86 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}toast-container {
+  position: fixed;
+  inset-inline-end: $spacing-spacing-4;
+  inset-block-end: $spacing-spacing-4;
+  z-index: $elevation-toast;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-spacing-3;
+  pointer-events: none;
+
+  @include down('xs') {
+    inset-inline: $spacing-spacing-3;
+    inset-block-end: $spacing-spacing-3;
+  }
+}
+
+.#{$prefix}toast {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-spacing-3;
+  min-width: 280px;
+  max-width: 360px;
+  padding: $spacing-spacing-3 $spacing-spacing-4;
+  border-radius: $radius-radius-3;
+  background-color: $color-background-grey-lvl-1;
+  color: $color-text-primary;
+  border: 1px solid $color-border-white-light;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  pointer-events: auto;
+
+  @include typography('body-m', 'regular');
+
+  @include down('xs') {
+    min-width: 0;
+    width: 100%;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: $spacing-spacing-1;
+    color: $color-text-primary;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+  }
+
+  &__title {
+    margin: 0 0 $spacing-spacing-1;
+    @include typography('body-m', 'extrabold');
+    color: $color-text-primary;
+  }
+
+  &__message {
+    margin: 0;
+    color: $color-text-secondary;
+  }
+
+  &__close {
+    margin-inline-start: $spacing-spacing-2;
+    flex-shrink: 0;
+
+    // Use a smaller icon size so the glyph visually matches body text
+    .#{$prefix}icon {
+      font-size: $iconography-font-size-3;
+      line-height: $iconography-font-line-height-4;
+    }
+  }
+
+  &--success {
+    border-color: $color-border-green;
+  }
+
+  &--warning {
+    border-color: $color-border-orange;
+  }
+
+  &--error {
+    border-color: $color-border-red;
+  }
+}
+

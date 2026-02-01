@@ -1,0 +1,247 @@
+@use '../../foundations/toolkit' as *;
+
+// Hero BEM: pe-hero, pe-hero__title, pe-hero__subtitle, pe-hero__badges, pe-hero__actions, pe-hero__extra.
+// Consumers can override or extend these in app Sass (e.g. ::ng-deep or view encapsulation off in their component).
+
+.#{$prefix}hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+  padding: $spacing-spacing-8 $spacing-spacing-4;
+  color: $color-text-primary;
+
+  &--full-height {
+    min-height: 100vh;
+  }
+
+  &--has-background {
+    .#{$prefix}hero__content {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &--alignment-left {
+    .#{$prefix}hero__content {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .#{$prefix}hero__badges,
+    .#{$prefix}hero__actions {
+      justify-content: flex-start;
+    }
+  }
+
+  &--alignment-center {
+    .#{$prefix}hero__content {
+      align-items: center;
+      text-align: center;
+    }
+
+    .#{$prefix}hero__badges,
+    .#{$prefix}hero__actions {
+      justify-content: center;
+    }
+  }
+
+  &--alignment-right {
+    .#{$prefix}hero__content {
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .#{$prefix}hero__badges,
+    .#{$prefix}hero__actions {
+      justify-content: flex-end;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $color-background-grey-lvl-1;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-spacing-4;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-spacing-2;
+  }
+
+  &__title {
+    margin: 0;
+    color: $color-text-primary;
+    @include typography('headline-m', 'extrablack');
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: $color-text-secondary;
+    @include typography('body-l', 'regular');
+    max-width: 100%;
+  }
+
+  &__extra {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-spacing-4;
+    width: 100%;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-spacing-3;
+    flex-direction: column;
+  }
+
+  &__action-link {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+  }
+
+  // Size variants
+  &--size-sm {
+    padding: $spacing-spacing-6 $spacing-spacing-4;
+
+    .#{$prefix}hero__content {
+      gap: $spacing-spacing-3;
+    }
+
+    .#{$prefix}hero__title {
+      @include typography('headline-s', 'extrablack');
+    }
+
+    .#{$prefix}hero__subtitle {
+      @include typography('body-m', 'regular');
+    }
+  }
+
+  &--size-md {
+    .#{$prefix}hero__title {
+      @include typography('headline-m', 'extrablack');
+    }
+
+    .#{$prefix}hero__subtitle {
+      @include typography('body-l', 'regular');
+    }
+  }
+
+  &--size-lg {
+    padding: $spacing-spacing-12 $spacing-spacing-4;
+
+    .#{$prefix}hero__content {
+      gap: $spacing-spacing-6;
+    }
+
+    .#{$prefix}hero__title {
+      @include typography('headline-l', 'extrablack');
+    }
+
+    .#{$prefix}hero__subtitle {
+      @include typography('body-l', 'regular');
+    }
+  }
+
+  // Responsive: mobile
+  @include down('md') {
+    padding: $spacing-spacing-6 $spacing-spacing-4;
+
+    &--size-sm {
+      padding: $spacing-spacing-4 $spacing-spacing-4;
+    }
+
+    &--size-lg {
+      padding: $spacing-spacing-8 $spacing-spacing-4;
+    }
+
+    .#{$prefix}hero__title {
+      @include typography('headline-s', 'extrablack');
+    }
+
+    .#{$prefix}hero__subtitle {
+      @include typography('body-m', 'regular');
+    }
+
+    .#{$prefix}hero__actions {
+      flex-direction: column;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .#{$prefix}hero__action-link,
+    .#{$prefix}hero__actions > pe-button {
+      width: 100%;
+    }
+
+    .#{$prefix}hero__action-link pe-button {
+      width: 100%;
+    }
+  }
+
+  // Responsive: tablet
+  @include between('md', 'lg') {
+    padding: $spacing-spacing-8 $spacing-spacing-6;
+
+    &--size-lg {
+      padding: $spacing-spacing-10 $spacing-spacing-6;
+    }
+
+    .#{$prefix}hero__title {
+      @include typography('headline-m', 'extrablack');
+    }
+
+    .#{$prefix}hero__subtitle {
+      @include typography('body-l', 'regular');
+    }
+
+    .#{$prefix}hero__actions {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  // Responsive: desktop
+  @include up('lg') {
+    padding: $spacing-spacing-10 $spacing-spacing-8;
+
+    &--size-sm {
+      padding: $spacing-spacing-6 $spacing-spacing-8;
+    }
+
+    &--size-lg {
+      padding: $spacing-spacing-16 $spacing-spacing-8;
+    }
+
+    .#{$prefix}hero__content {
+      max-width: 800px;
+    }
+
+    .#{$prefix}hero__actions {
+      flex-direction: row;
+    }
+  }
+}

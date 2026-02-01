@@ -1,0 +1,47 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.#{$prefix}tooltip {
+  position: absolute;
+  z-index: $elevation-dropdown;
+  padding: $spacing-spacing-2 $spacing-spacing-4;
+  border-radius: $radius-radius-2;
+  background-color: $color-background-grey-lvl-1;
+  @include typography('caption-m', 'regular');
+  white-space: nowrap;
+  pointer-events: none;
+
+  &--top {
+    inset-block-end: 100%;
+    inset-inline-start: 50%;
+    margin-block-end: $spacing-spacing-1;
+    transform: translateX(-50%);
+  }
+
+  &--bottom {
+    inset-block-start: 100%;
+    inset-inline-start: 50%;
+    margin-block-start: $spacing-spacing-1;
+    transform: translateX(-50%);
+  }
+
+  &--left {
+    inset-inline-end: 100%;
+    inset-block-start: 50%;
+    margin-inline-end: $spacing-spacing-1;
+    transform: translateY(-50%);
+  }
+
+  &--right {
+    inset-inline-start: 100%;
+    inset-block-start: 50%;
+    margin-inline-start: $spacing-spacing-1;
+    transform: translateY(-50%);
+  }
+}
+

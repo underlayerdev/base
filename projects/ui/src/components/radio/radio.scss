@@ -1,0 +1,85 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}radio-container {
+  display: flex;
+  align-items: center;
+  gap: $spacing-spacing-2;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+
+  &.pe-radio-disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &:has(.#{$prefix}radio-input:focus-visible) {
+    outline: 2px solid $color-border-white-medium;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+.#{$prefix}radio-input {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid $color-border-white-medium-strong;
+  border-radius: 50%;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  @include transition-all($transition-duration-fast);
+  outline: solid 2px transparent;
+  flex-shrink: 0;
+
+  &:focus-visible,
+  &:focus,
+  &:hover {
+    outline-color: $color-border-white-medium;
+    border-color: $color-border-white;
+  }
+
+  &:checked {
+    border-color: transparent;
+    @include interactive-surface('solid', 'purple');
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 4px;
+      height: 4px;
+      background-color: $color-background-white;
+      border-radius: 50%;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    outline-color: transparent;
+    background-color: transparent;
+    border-color: $color-border-white-medium;
+
+    &::after {
+      background-color: $color-text-disabled;
+    }
+
+    & + .#{$prefix}radio-label {
+      cursor: not-allowed;
+      color: $color-text-disabled;
+    }
+  }
+}
+
+.#{$prefix}radio-label {
+  @include typography('body-m', 'regular');
+  cursor: pointer;
+
+  &#{$prefix}radio-disabled & {
+    cursor: not-allowed;
+    color: $color-text-disabled;
+  }
+}

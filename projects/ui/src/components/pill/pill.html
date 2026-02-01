@@ -1,0 +1,29 @@
+@if (variant() === 'selectable') {
+  <label [class]="modifierClass()" [class.pe-pill--disabled]="disabled()">
+    <input type="checkbox" class="pe-pill__checkbox" />
+    <ng-container *ngTemplateOutlet="content" />
+  </label>
+} @else if (['dismissible', 'read-only'].includes(variant())) {
+  <div [class]="modifierClass()" [class.pe-pill--disabled]="disabled()">
+    <ng-container *ngTemplateOutlet="content" />
+    @if (variant() === 'dismissible') {
+      <pe-button
+        [theme]="dismissibleButtonTheme()"
+        size="sm"
+        [iconOnly]="true"
+        [disabled]="disabled()"
+        (click)="dismiss.emit()"
+      >
+        <pe-icon icon="close" />
+      </pe-button>
+    }
+  </div>
+} @else if (['interactive', 'interactive-rounded'].includes(variant())) {
+  <button [class]="modifierClass()" [disabled]="disabled()">
+    <ng-container *ngTemplateOutlet="content" />
+  </button>
+}
+
+<ng-template #content>
+  <ng-content />
+</ng-template>

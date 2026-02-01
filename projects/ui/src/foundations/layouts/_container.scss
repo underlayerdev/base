@@ -1,0 +1,104 @@
+@use '../core' as *;
+
+// Common container styles
+@mixin container-base {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+// Container Fluid
+@mixin container-fluid {
+  @include container-base;
+  padding-left: $spacing-spacing-4;
+  padding-right: $spacing-spacing-4;
+
+  @media (min-width: $breakpoint-md) {
+    padding-left: $spacing-spacing-8;
+    padding-right: $spacing-spacing-8;
+  }
+}
+
+// Container Gallery
+@mixin container-gallery {
+  @include container-base;
+  padding-left: $spacing-spacing-8;
+  padding-right: $spacing-spacing-8;
+
+  @media (min-width: $breakpoint-md) {
+    padding-left: $spacing-spacing-16;
+    padding-right: $spacing-spacing-16;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    &.content {
+      max-width: 2176px;
+    }
+  }
+}
+
+// Container Product
+@mixin container-product {
+  @include container-base;
+  padding-left: $spacing-spacing-8;
+  padding-right: $spacing-spacing-8;
+
+  @media (min-width: $breakpoint-md) {
+    padding-left: $spacing-spacing-16;
+    padding-right: $spacing-spacing-16;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    padding-left: 192px;
+    padding-right: 192px;
+    &.content {
+      max-width: 1920px;
+    }
+  }
+}
+
+// Container Form
+@mixin container-form {
+  @include container-base;
+  padding-left: $spacing-spacing-8;
+  padding-right: $spacing-spacing-8;
+
+  @media (min-width: $breakpoint-md) {
+    padding-left: $spacing-spacing-16;
+    padding-right: $spacing-spacing-16;
+    &.content {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    padding-left: 192px;
+    padding-right: 192px;
+  }
+}
+
+// Generate container classes
+@mixin generate-container-classes {
+  .#{$prefix} {
+    &content {
+      width: 100%;
+    }
+
+    &container-fluid {
+      @include container-fluid;
+    }
+
+    &container-gallery {
+      @include container-gallery;
+    }
+
+    &container-product {
+      @include container-product;
+    }
+
+    &container-form {
+      @include container-form;
+    }
+  }
+}

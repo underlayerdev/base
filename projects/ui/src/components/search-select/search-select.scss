@@ -1,0 +1,79 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}search-select {
+  white-space: nowrap;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-spacing-1;
+  width: 100%;
+
+  &__control {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .#{$prefix}list-item:focus-visible,
+    .#{$prefix}list-item:focus {
+      outline: none;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-spacing-1;
+    background-color: $color-background-grey-lvl-1;
+    border-radius: $radius-radius-4;
+    padding: $spacing-spacing-1;
+    margin-top: $spacing-spacing-1;
+    max-height: $component-dropdown-list-max-height;
+    overflow-y: auto;
+    border: 2px solid $color-border-white-light;
+
+    &--empty {
+      padding: $spacing-spacing-3;
+    }
+  }
+
+  &__option {
+    cursor: pointer;
+    border-radius: $radius-radius-2;
+
+    &--highlighted .#{$prefix}list-item {
+      background-color: $color-interactive-surface-ghost-white-hover;
+    }
+  }
+
+  &__empty {
+    @include typography('body-m');
+    color: $color-text-secondary;
+  }
+
+  &--disabled &__control {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &--error .#{$prefix}input__group {
+    border-color: $color-border-red;
+  }
+
+  @include down('sm') {
+    &__list {
+      max-height: $component-dropdown-list-max-height;
+    }
+  }
+
+  @include up('md') {
+    &__control {
+      max-width: 100%;
+    }
+  }
+}

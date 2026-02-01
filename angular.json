@@ -6,5 +6,81 @@
   },
   "newProjectRoot": "projects",
   "projects": {
+    "ui": {
+      "projectType": "library",
+      "root": "projects/ui",
+      "sourceRoot": "projects/ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/ui/tsconfig.spec.json"
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/ui/.storybook",
+            "browserTarget": "ui:build",
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "projects/ui"],
+            "port": 6006,
+            "styles": [
+              "projects/ui/assets/styles/foundations.css"
+            ],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/ui/src/stories/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/ui/assets/styles/fonts",
+                "output": "/fonts"
+              }
+            ]
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/ui/.storybook",
+            "browserTarget": "ui:build",
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "projects/ui"],
+            "outputDir": "storybook-static",
+            "styles": [
+              "projects/ui/assets/styles/foundations.css"
+            ],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/ui/src/stories/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/ui/assets/styles/fonts",
+                "output": "/fonts"
+              }
+            ]
+          }
+        }
+      }
+    }
   }
 }
