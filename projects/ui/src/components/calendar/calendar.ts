@@ -10,7 +10,7 @@ import {
   signal,
   ViewEncapsulation,
 } from '@angular/core';
-import type { FormValueControl, ValidationError, WithOptionalField } from '@angular/forms/signals';
+import type { FormValueControl, ValidationError, WithOptionalFieldTree } from '@angular/forms/signals';
 
 import {
   createFormFieldIds,
@@ -78,7 +78,7 @@ export class CalendarComponent implements FormValueControl<Date | null> {
   readonly showCalendarIcon = input<boolean>(true);
 
   readonly invalid = input<boolean>(false);
-  readonly errors = input<readonly WithOptionalField<ValidationError>[]>([]);
+  readonly errors = input<readonly WithOptionalFieldTree<ValidationError>[]>([]);
 
   protected readonly ids = createFormFieldIds('pe-calendar');
 
@@ -241,7 +241,6 @@ export class CalendarComponent implements FormValueControl<Date | null> {
     return val.getMinutes();
   });
 
-  readonly valueChange = output<Date | null>();
   readonly opened = output<void>();
   readonly closed = output<void>();
 
@@ -355,7 +354,6 @@ export class CalendarComponent implements FormValueControl<Date | null> {
     }
 
     this.value.set(newDate);
-    this.valueChange.emit(newDate);
 
     if (mode === 'date') {
       this.closeMenuViaEscape();
@@ -381,7 +379,6 @@ export class CalendarComponent implements FormValueControl<Date | null> {
     }
 
     this.value.set(newDate);
-    this.valueChange.emit(newDate);
 
     if (mode === 'time' || mode === 'datetime') {
       this.closeMenuViaEscape();
@@ -408,7 +405,6 @@ export class CalendarComponent implements FormValueControl<Date | null> {
 
   clear(): void {
     this.value.set(null);
-    this.valueChange.emit(null);
     this.selectedTime.set(null);
   }
 

@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, computed, effect, input, model, output, signal } from '@angular/core';
-import type { FormValueControl, ValidationError, WithOptionalField } from '@angular/forms/signals';
+import { ChangeDetectionStrategy, Component, computed, input, model, output, signal } from '@angular/core';
+import type { FormValueControl, ValidationError, WithOptionalFieldTree } from '@angular/forms/signals';
 
 import {
   createFormFieldIds,
@@ -53,7 +53,7 @@ export class InputComponent implements FormValueControl<string> {
   /** FormUiControl optional: bound by [formField] when invalid */
   readonly invalid = input<boolean>(false);
   /** FormUiControl optional: bound by [formField] for validation errors */
-  readonly errors = input<readonly WithOptionalField<ValidationError>[]>([]);
+  readonly errors = input<readonly WithOptionalFieldTree<ValidationError>[]>([]);
   /** FormUiControl optional: control sets on blur */
   readonly touched = model<boolean>(false);
 
@@ -64,8 +64,6 @@ export class InputComponent implements FormValueControl<string> {
   protected readonly effectiveHelperId = computed(() => (this.controlId() ? `${this.controlId()}-helper` : this.ids.helperId));
   protected readonly effectiveErrorId = computed(() => (this.controlId() ? `${this.controlId()}-error` : this.ids.errorId));
   protected readonly isFocused = signal(false);
-  protected readonly isDirty = signal(false);
-
   protected readonly hasError = computed(() => this.error() || this.invalid());
 
   protected readonly describedBy = computed(() =>
@@ -81,21 +79,9 @@ export class InputComponent implements FormValueControl<string> {
   // Outputs
   readonly inputBlur = output<FocusEvent>();
   readonly inputFocus = output<FocusEvent>();
-  readonly valueChange = output<string>();
-
-  constructor() {
-    // Effect to emit value changes
-    effect(() => {
-      const currentValue = this.value();
-      if (this.isDirty()) {
-        this.valueChange.emit(currentValue);
-      }
-    });
-  }
 
   onInput(event: Event): void {
     const value = (event.target as HTMLInputElement).value;
-    this.isDirty.set(true);
     this.value.set(value);
   }
 

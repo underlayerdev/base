@@ -3,13 +3,12 @@ import {
   Component,
   computed,
   contentChild,
-  effect,
   input,
   model,
   output,
   signal,
 } from '@angular/core';
-import type { FormValueControl, ValidationError, WithOptionalField } from '@angular/forms/signals';
+import type { FormValueControl, ValidationError, WithOptionalFieldTree } from '@angular/forms/signals';
 
 import {
   createFormFieldIds,
@@ -57,7 +56,7 @@ export class TextareaComponent implements FormValueControl<string> {
   readonly groupFocused = input<boolean | null>(null);
 
   readonly invalid = input<boolean>(false);
-  readonly errors = input<readonly WithOptionalField<ValidationError>[]>([]);
+  readonly errors = input<readonly WithOptionalFieldTree<ValidationError>[]>([]);
   readonly touched = model<boolean>(false);
 
   readonly value = model<string>('');
@@ -65,7 +64,6 @@ export class TextareaComponent implements FormValueControl<string> {
   protected readonly customField = contentChild(TextareaFieldDirective);
   protected readonly ids = createFormFieldIds('pe-textarea');
   protected readonly isFocused = signal(false);
-  protected readonly isDirty = signal(false);
   protected readonly groupFocusedState = computed(() => this.groupFocused() ?? this.isFocused());
 
   protected readonly hasError = computed(() => this.error() || this.invalid());
@@ -82,20 +80,9 @@ export class TextareaComponent implements FormValueControl<string> {
 
   readonly inputBlur = output<FocusEvent>();
   readonly inputFocus = output<FocusEvent>();
-  readonly valueChange = output<string>();
-
-  constructor() {
-    effect(() => {
-      const currentValue = this.value();
-      if (this.isDirty()) {
-        this.valueChange.emit(currentValue);
-      }
-    });
-  }
 
   onInput(event: Event): void {
     const value = (event.target as HTMLTextAreaElement).value;
-    this.isDirty.set(true);
     this.value.set(value);
   }
 

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, effect, input, model, ViewEncapsulation } from '@angular/core';
-import type { FormValueControl, ValidationError, WithOptionalField } from '@angular/forms/signals';
+import type { FormValueControl, ValidationError, WithOptionalFieldTree } from '@angular/forms/signals';
 
 import { DropdownComponent, DropdownItem } from '../dropdown/dropdown';
 import {
@@ -45,7 +45,7 @@ export class SelectComponent implements FormValueControl<string | null> {
   readonly options = input<SelectOption[]>([]);
 
   readonly invalid = input<boolean>(false);
-  readonly errors = input<readonly WithOptionalField<ValidationError>[]>([]);
+  readonly errors = input<readonly WithOptionalFieldTree<ValidationError>[]>([]);
 
   readonly value = model<string | null>(null);
   protected readonly selectedIndex = model<number>(0);

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, input, model, output, signal } from '@angular/core';
-import type { FormValueControl, ValidationError, WithOptionalField } from '@angular/forms/signals';
+import type { FormValueControl, ValidationError, WithOptionalFieldTree } from '@angular/forms/signals';
 
 import { IconComponent } from '../icon/icon';
 import { InputComponent } from '../input/input';
@@ -48,10 +48,9 @@ export class SearchSelectComponent implements FormValueControl<string | null> {
   readonly minCharsToOpen = input<number>(0);
 
   readonly invalid = input<boolean>(false);
-  readonly errors = input<readonly WithOptionalField<ValidationError>[]>([]);
+  readonly errors = input<readonly WithOptionalFieldTree<ValidationError>[]>([]);
 
   readonly value = model<string | null>(null);
-  readonly valueChange = output<string | null>();
 
   protected readonly ids = createFormFieldIds('pe-search-select');
   protected readonly query = signal('');
@@ -119,7 +118,6 @@ export class SearchSelectComponent implements FormValueControl<string | null> {
     this.highlightedIndex.set(0);
     if (this.value() != null && text !== this.selectedLabel()) {
       this.value.set(null);
-      this.valueChange.emit(null);
     }
   }
 
@@ -172,7 +170,6 @@ export class SearchSelectComponent implements FormValueControl<string | null> {
   selectOption(opt: SearchSelectOption): void {
     this.cancelBlurClose();
     this.value.set(opt.value);
-    this.valueChange.emit(opt.value);
     this.query.set(opt.label);
     this.isOpen.set(false);
   }

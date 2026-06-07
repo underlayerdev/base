@@ -37,7 +37,7 @@ export class TableComponent {
 
   readonly loading = input<boolean>(false);
 
-  readonly sortColumnChange = output<{ column: string | null; direction: SortDirection }>();
+  readonly sortChange = output<{ column: string | null; direction: SortDirection }>();
   readonly filterChange = output<string>();
 
   protected readonly filterQuery = signal('');
@@ -93,12 +93,12 @@ export class TableComponent {
     if (current === columnId) {
       const nextDir: SortDirection = currentDir === 'asc' ? 'desc' : 'asc';
       this.sortDirection.set(nextDir);
-      this.sortColumnChange.emit({ column: columnId, direction: nextDir });
+      this.sortChange.emit({ column: columnId, direction: nextDir });
       return;
     } else {
       this.sortColumn.set(columnId);
       this.sortDirection.set('asc');
-      this.sortColumnChange.emit({ column: columnId, direction: 'asc' });
+      this.sortChange.emit({ column: columnId, direction: 'asc' });
     }
   }
 

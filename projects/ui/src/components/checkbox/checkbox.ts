@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, input, model } from '@angular/core';
-import type { FormCheckboxControl, ValidationError, WithOptionalField } from '@angular/forms/signals';
+import type { FormCheckboxControl, ValidationError, WithOptionalFieldTree } from '@angular/forms/signals';
 
 import {
   createFormFieldIds,
@@ -91,7 +91,7 @@ export class CheckboxComponent implements FormCheckboxControl {
   error = input<boolean>(false);
   errorText = input<string | null>(null);
   invalid = input<boolean>(false);
-  errors = input<readonly WithOptionalField<ValidationError>[]>([]);
+  errors = input<readonly WithOptionalFieldTree<ValidationError>[]>([]);
 
   protected readonly ids = createFormFieldIds('pe-checkbox');
   protected readonly hasError = computed(() => this.error() || this.invalid());

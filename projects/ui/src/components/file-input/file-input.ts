@@ -10,7 +10,7 @@ import {
   signal,
   viewChild,
 } from '@angular/core';
-import type { FormValueControl, ValidationError, WithOptionalField } from '@angular/forms/signals';
+import type { FormValueControl, ValidationError, WithOptionalFieldTree } from '@angular/forms/signals';
 
 import {
   createFormFieldIds,
@@ -53,7 +53,7 @@ export class FileInputComponent implements FormValueControl<FileList | null> {
   readonly controlId = input<string | undefined>();
 
   readonly invalid = input<boolean>(false);
-  readonly errors = input<readonly WithOptionalField<ValidationError>[]>([]);
+  readonly errors = input<readonly WithOptionalFieldTree<ValidationError>[]>([]);
   readonly touched = model<boolean>(false);
   readonly error = input<boolean>(false);
 
@@ -92,15 +92,8 @@ export class FileInputComponent implements FormValueControl<FileList | null> {
 
   readonly inputBlur = output<FocusEvent>();
   readonly inputFocus = output<FocusEvent>();
-  readonly valueChange = output<FileList | null>();
 
   constructor() {
-    effect(() => {
-      const current = this.value();
-      if (current !== undefined) {
-        this.valueChange.emit(current);
-      }
-    });
     effect(() => {
       if (this.value() === null) {
         const el = this.fileInputRef()?.nativeElement;
@@ -114,7 +107,6 @@ export class FileInputComponent implements FormValueControl<FileList | null> {
     const fileList = inputEl.files;
     const next = fileList && fileList.length > 0 ? fileList : null;
     this.value.set(next);
-    this.valueChange.emit(next);
   }
 
   onBlur(event: FocusEvent): void {
