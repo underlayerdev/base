@@ -1,6 +1,6 @@
 # Base
 
-Angular workspace that hosts the shared **UI library** — a design system built with Angular 21, following the **Industrial Arena Minimal** aesthetic for gaming, arena, and high-intensity dashboards.
+Angular workspace that hosts the shared **UI library** — a design system built with Angular 22, following the **Industrial Arena Minimal** aesthetic for gaming, arena, and high-intensity dashboards.
 
 ## Repository structure
 

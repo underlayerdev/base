@@ -1,6 +1,6 @@
 # UI Library
 
-Reusable Angular UI library and design system. Built with [Angular CLI](https://github.com/angular/angular-cli) (v21), intended for publishing as an npm package and consumption by applications (e.g. gaming, arena, or dashboard products).
+Reusable Angular UI library and design system. Built with [Angular CLI](https://github.com/angular/angular-cli) (v22), intended for publishing as an npm package and consumption by applications (e.g. gaming, arena, or dashboard products).
 
 **Try the library:** [**Live Storybook demo →**](https://lyamone.github.io/base/) (deployed via [GitHub Pages](../../.github/workflows/deploy-storybook.yml)).
 
