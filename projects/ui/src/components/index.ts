@@ -26,6 +26,7 @@ export * from './radial/radial';
 export * from './rich-text';
 export * from './skeleton/skeleton';
 export * from './toast/toast';
+export * from './toast/toast.service';
 export * from './tooltip/tooltip';
 export * from './search-select';
 export * from './select';
