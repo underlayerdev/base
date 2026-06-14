@@ -1,7 +1,8 @@
 {
   "name": "@underlayerdev/ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
+    "@angular/cdk": "^22.0.0",
     "@angular/common": "^22.0.0",
     "@angular/core": "^22.0.0",
     "@splidejs/splide": "^4.1.4"
