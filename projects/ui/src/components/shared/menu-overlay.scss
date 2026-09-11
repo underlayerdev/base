@@ -23,10 +23,23 @@
     max-height: 40vh;
     margin: 0;
     border-radius: $radius-radius-4 $radius-radius-4 0 0;
-    gap: 16px;
+    gap: $spacing-spacing-4;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    @include typography('body-l');
+
+    // ul-list-item sets its own font-size (caption-l) unconditionally on its
+    // inner .ul-list-item button, which otherwise wins over the body-l set
+    // above regardless of stylesheet order (both rules are equally specific
+    // — a tie the cascade would resolve by injection order, which is
+    // indeterminate for ViewEncapsulation.None component styles). The extra
+    // `ul-list-item` element selector — the actual host tag wrapping each
+    // row's `.ul-list-item` button — makes this rule strictly more specific
+    // so it reliably wins.
+    ul-list-item .ul-list-item {
+      @include typography('body-l');
+    }
   }
 }
 
