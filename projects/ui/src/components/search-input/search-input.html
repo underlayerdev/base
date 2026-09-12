@@ -107,10 +107,14 @@
           <div
             class="ul-search-input__list ul-search-input__list--takeover ul-scrollable"
             [id]="listId"
-            role="listbox"
-            [attr.aria-label]="activeListLabel()"
+            [attr.role]="hasCustomResults() ? null : 'listbox'"
+            [attr.aria-label]="hasCustomResults() ? null : activeListLabel()"
           >
-            <ng-container *ngTemplateOutlet="resultsList" />
+            @if (hasCustomResults()) {
+              <ng-container *ngTemplateOutlet="resultsTemplate()!" />
+            } @else {
+              <ng-container *ngTemplateOutlet="resultsList" />
+            }
           </div>
         }
       </div>
@@ -159,10 +163,14 @@
         <div
           class="ul-search-input__list ul-scrollable"
           [id]="listId"
-          role="listbox"
-          [attr.aria-label]="activeListLabel()"
+          [attr.role]="hasCustomResults() ? null : 'listbox'"
+          [attr.aria-label]="hasCustomResults() ? null : activeListLabel()"
         >
-          <ng-container *ngTemplateOutlet="resultsList" />
+          @if (hasCustomResults()) {
+            <ng-container *ngTemplateOutlet="resultsTemplate()!" />
+          } @else {
+            <ng-container *ngTemplateOutlet="resultsList" />
+          }
         </div>
       }
     </div>

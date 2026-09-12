@@ -82,6 +82,39 @@ export const Default: Story = {
   }),
 };
 
+export const CustomResults: Story = {
+  args: {
+    helperText: 'Type to swap the plain-text rows for a projected results template.',
+  },
+  render: (args) => ({
+    props: args,
+    template: `
+      <ul-search-input
+        [size]="size"
+        [label]="label"
+        [helperText]="helperText"
+        [placeholder]="placeholder"
+        [suggestions]="suggestions"
+        [suggestionsLabel]="suggestionsLabel"
+        [resultsTemplate]="customResults"
+        [(value)]="value"
+      />
+      <ng-template #customResults>
+        <div style="display: flex; flex-direction: column; gap: 8px; padding: 8px;">
+          @for (car of ['Porsche 911 Turbo', 'Porsche 911 GT3', 'Porsche Cayman']; track car) {
+            <div
+              style="display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 8px; background: rgba(255, 255, 255, 0.05);"
+            >
+              <div style="width: 40px; height: 40px; border-radius: 6px; background: #333;"></div>
+              <div class="ul-typography-body-m-regular">{{ car }}</div>
+            </div>
+          }
+        </div>
+      </ng-template>
+    `,
+  }),
+};
+
 export const NoSuggestions: Story = {
   args: {
     suggestions: [],

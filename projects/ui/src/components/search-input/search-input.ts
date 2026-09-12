@@ -1,6 +1,15 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, computed, inject, input, model, output, viewChild } from '@angular/core';
+import {
+  Component,
+  computed,
+  inject,
+  input,
+  model,
+  output,
+  TemplateRef,
+  viewChild,
+} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import type {
   FormValueControl,
@@ -77,6 +86,16 @@ export class SearchInputComponent implements FormValueControl<string> {
   readonly suggestionsLabel = input<string | null>(null);
   /** Shown once the query is non-empty — e.g. live search results. The consumer computes/fetches these as `value` changes (via `[(value)]`/`valueChange`). */
   readonly results = input<SearchSuggestion[]>([]);
+  /**
+   * Overrides `results` once the query is non-empty, projecting arbitrary
+   * content (e.g. rich cards with images/prices) instead of the built-in
+   * plain-text rows. `suggestions` (shown while the query is empty) are
+   * unaffected and keep rendering as plain `SearchSuggestion` rows regardless.
+   * When set, arrow-key/Enter option-highlighting is skipped — Enter always
+   * falls through to `searchSubmit` since the projected content owns its own
+   * selection interaction.
+   */
+  readonly resultsTemplate = input<TemplateRef<unknown> | null>(null);
 
   readonly invalid = input<boolean>(false);
   readonly errors = input<readonly WithOptionalFieldTree<ValidationError>[]>([]);
@@ -125,14 +144,16 @@ export class SearchInputComponent implements FormValueControl<string> {
     this.hasQuery() ? null : this.suggestionsLabel(),
   );
 
+  protected readonly hasCustomResults = computed(() => this.hasQuery() && !!this.resultsTemplate());
+
   protected readonly shouldShowPanel = computed(
-    () => this.combobox.isOpen() && this.activeList().length > 0,
+    () => this.combobox.isOpen() && (this.activeList().length > 0 || this.hasCustomResults()),
   );
 
   protected readonly optionId = (index: number) => comboboxOptionId(this.ids.controlId, index);
 
   protected readonly activeDescendantId = computed(() => {
-    if (!this.shouldShowPanel()) return undefined;
+    if (!this.shouldShowPanel() || this.hasCustomResults()) return undefined;
     return comboboxActiveDescendantId(
       this.ids.controlId,
       this.activeList().length,
@@ -164,7 +185,7 @@ export class SearchInputComponent implements FormValueControl<string> {
     this.combobox.close();
   }
 
-  clearInput(): void  {
+  clearInput(): void {
     this.onValueChange('');
   }
 

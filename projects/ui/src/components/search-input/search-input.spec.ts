@@ -158,9 +158,9 @@ describe('SearchInputComponent (desktop)', () => {
     getInputEl(fixture).dispatchEvent(new FocusEvent('focus'));
     fixture.detectChanges();
 
-    expect(
-      fixture.nativeElement.querySelectorAll('.ul-search-input__option').length,
-    ).toBe(suggestions.length);
+    expect(fixture.nativeElement.querySelectorAll('.ul-search-input__option').length).toBe(
+      suggestions.length,
+    );
 
     getInputEl(fixture).value = 'porsche';
     getInputEl(fixture).dispatchEvent(new Event('input'));
@@ -169,6 +169,77 @@ describe('SearchInputComponent (desktop)', () => {
     const options = fixture.nativeElement.querySelectorAll('.ul-search-input__option');
     expect(options.length).toBe(results.length);
     expect(options[0].textContent).toContain(results[0].label);
+  });
+});
+
+@Component({
+  imports: [SearchInputComponent],
+  template: `
+    <ul-search-input
+      [(value)]="value"
+      [suggestions]="suggestions"
+      [resultsTemplate]="customResults"
+      (searchSubmit)="submits.push($event)"
+    />
+    <ng-template #customResults>
+      <div class="custom-result">Custom row</div>
+    </ng-template>
+  `,
+})
+class CustomResultsHostComponent {
+  value = '';
+  suggestions = suggestions;
+  readonly submits: string[] = [];
+}
+
+describe('SearchInputComponent (resultsTemplate)', () => {
+  function setupCustomResults() {
+    mockMatchMedia(false);
+    TestBed.configureTestingModule({ imports: [CustomResultsHostComponent] });
+    const fixture: ComponentFixture<CustomResultsHostComponent> = TestBed.createComponent(
+      CustomResultsHostComponent,
+    );
+    fixture.detectChanges();
+    return fixture;
+  }
+
+  it('still renders suggestions as plain rows while the query is empty', () => {
+    const fixture = setupCustomResults();
+
+    fixture.nativeElement.querySelector('input').dispatchEvent(new FocusEvent('focus'));
+    fixture.detectChanges();
+
+    expect(fixture.nativeElement.querySelectorAll('.ul-search-input__option').length).toBe(
+      suggestions.length,
+    );
+    expect(fixture.nativeElement.querySelector('.custom-result')).toBeFalsy();
+  });
+
+  it('renders the projected template instead of plain rows once the query is non-empty', () => {
+    const fixture = setupCustomResults();
+    const input: HTMLInputElement = fixture.nativeElement.querySelector('input');
+    input.dispatchEvent(new FocusEvent('focus'));
+
+    input.value = 'porsche';
+    input.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    expect(fixture.nativeElement.querySelector('.custom-result')).toBeTruthy();
+    expect(fixture.nativeElement.querySelectorAll('.ul-search-input__option').length).toBe(0);
+  });
+
+  it('still emits searchSubmit on Enter since there are no options to highlight', () => {
+    const fixture = setupCustomResults();
+    const input: HTMLInputElement = fixture.nativeElement.querySelector('input');
+    input.dispatchEvent(new FocusEvent('focus'));
+    input.value = 'porsche';
+    input.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    const combobox: HTMLElement = fixture.nativeElement.querySelector('.ul-search-input__combobox');
+    combobox.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+
+    expect(fixture.componentInstance.submits).toEqual(['porsche']);
   });
 });
 
