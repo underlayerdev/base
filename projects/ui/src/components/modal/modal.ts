@@ -55,6 +55,14 @@ export class ModalComponent {
   /** Optional CSS class for the panel (e.g. for custom variant). */
   customClass = input<string | undefined>(undefined);
 
+  /**
+   * Below the phone breakpoint, fills the entire viewport edge-to-edge (no
+   * margin, no rounded corners, no visible backdrop) instead of the default
+   * bottom-pinned sheet every variant otherwise gets there. Has no effect
+   * above that breakpoint — desktop/tablet layout is unchanged either way.
+   */
+  fullScreenInMobile = input<boolean>(false);
+
   /** Emitted when the modal is closed (button, backdrop, or escape). */
   closed = output<void>();
 
@@ -68,6 +76,9 @@ export class ModalComponent {
     const variant = this.variant();
     const custom = this.customClass();
     const classes = ['ul-modal__panel', `ul-modal__panel--${variant}`];
+    if (this.fullScreenInMobile()) {
+      classes.push('ul-modal__panel--fullscreen-mobile');
+    }
     if (custom) {
       classes.push(custom);
     }

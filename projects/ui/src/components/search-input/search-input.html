@@ -1,0 +1,177 @@
+<ng-template #resultsList>
+  @if (activeListLabel()) {
+    <div class="ul-search-input__list-label" role="presentation">{{ activeListLabel() }}</div>
+  }
+  @for (result of activeList(); track result.value; let i = $index) {
+    <div
+      class="ul-search-input__option"
+      [class.ul-search-input__option--highlighted]="combobox.highlightedIndex() === i"
+      [id]="optionId(i)"
+      role="option"
+      [attr.aria-selected]="value() === result.label"
+      (mousedown)="selectSuggestion(result)"
+    >
+      <ul-list-item theme="ghost-white" [hideFocusOutline]="true">
+        @if (result.icon) {
+          <ng-container ul-list-item-before-label>
+            <ul-icon size="5" [icon]="result.icon" />
+          </ng-container>
+        }
+        <ng-container ul-list-item-label>{{ result.label }}</ng-container>
+      </ul-list-item>
+    </div>
+  }
+</ng-template>
+
+<div
+  class="ul-search-input ul-search-input--{{ size() }}"
+  [class.ul-search-input--error]="hasError()"
+  [class.ul-search-input--disabled]="disabled()"
+>
+  <ul-form-field-label
+    [label]="label()"
+    [for]="ids.controlId"
+    [size]="size()"
+    [showRequiredIndicator]="false"
+  />
+
+  @if (isMobile()) {
+    <ul-input
+      [controlId]="ids.controlId"
+      [value]="value()"
+      [readOnly]="true"
+      [size]="size()"
+      [placeholder]="placeholder()"
+      [disabled]="disabled()"
+      [label]="null"
+      [helperText]="null"
+      (click)="openMobileSearch()"
+    >
+      <ng-container ul-input-right-elements>
+        <ul-icon size="5" icon="search" />
+      </ng-container>
+    </ul-input>
+
+    <ul-modal [(open)]="combobox.isOpen" [fullScreenInMobile]="true" [showCloseButton]="false">
+      <div
+        class="ul-search-input__combobox ul-search-input__combobox--takeover"
+        role="combobox"
+        [attr.aria-expanded]="shouldShowPanel()"
+        [attr.aria-controls]="listId"
+        [attr.aria-activedescendant]="activeDescendantId()"
+        (keydown)="onKeydown($event)"
+      >
+        <div class="ul-search-input__header">
+          <ul-button
+            type="button"
+            theme="ghost-white"
+            size="sm"
+            [iconOnly]="true"
+            [ariaLabel]="backLabel()"
+            (buttonClick)="closeMobileSearch()"
+          >
+            <ul-icon icon="arrow_left" size="6" />
+          </ul-button>
+
+          <ul-input
+            #mobileInput
+            class="ul-search-input__field"
+            [value]="value()"
+            (valueChange)="onValueChange($event)"
+            [size]="size()"
+            [placeholder]="placeholder()"
+            [label]="null"
+            [helperText]="null"
+            [autocomplete]="'off'"
+          >
+            <ng-container ul-input-right-elements>
+              @if (hasQuery()) {
+                <ul-button
+                  type="button"
+                  theme="ghost-white"
+                  size="sm"
+                  [iconOnly]="true"
+                  [ariaLabel]="clearLabel()"
+                  (buttonClick)="clearInput()"
+                >
+                  <ul-icon icon="cross" size="4" />
+                </ul-button>
+              } @else {
+                <ul-icon size="5" icon="search" />
+              }
+            </ng-container>
+          </ul-input>
+        </div>
+
+        @if (shouldShowPanel()) {
+          <div
+            class="ul-search-input__list ul-search-input__list--takeover ul-scrollable"
+            [id]="listId"
+            role="listbox"
+            [attr.aria-label]="activeListLabel()"
+          >
+            <ng-container *ngTemplateOutlet="resultsList" />
+          </div>
+        }
+      </div>
+    </ul-modal>
+  } @else {
+    <div
+      class="ul-search-input__combobox"
+      role="combobox"
+      [attr.aria-expanded]="shouldShowPanel()"
+      [attr.aria-controls]="listId"
+      [attr.aria-activedescendant]="activeDescendantId()"
+      (keydown)="onKeydown($event)"
+    >
+      <ul-input
+        [controlId]="ids.controlId"
+        [value]="value()"
+        (valueChange)="onValueChange($event)"
+        (inputFocus)="onInputFocus()"
+        (inputBlur)="onInputBlur()"
+        [size]="size()"
+        [placeholder]="placeholder()"
+        [disabled]="disabled()"
+        [label]="null"
+        [helperText]="null"
+        [autocomplete]="'off'"
+      >
+        <ng-container ul-input-right-elements>
+          @if (hasQuery()) {
+            <ul-button
+              type="button"
+              theme="ghost-white"
+              size="sm"
+              [iconOnly]="true"
+              [ariaLabel]="clearLabel()"
+              (buttonClick)="clearInput()"
+            >
+              <ul-icon icon="cross" size="4" />
+            </ul-button>
+          } @else {
+            <ul-icon size="5" icon="search" />
+          }
+        </ng-container>
+      </ul-input>
+
+      @if (shouldShowPanel()) {
+        <div
+          class="ul-search-input__list ul-scrollable"
+          [id]="listId"
+          role="listbox"
+          [attr.aria-label]="activeListLabel()"
+        >
+          <ng-container *ngTemplateOutlet="resultsList" />
+        </div>
+      }
+    </div>
+  }
+
+  <ul-form-field-helper
+    [id]="ids.helperId"
+    [helperText]="helperText()"
+    [errorText]="errorText() || (hasError() && errors().length ? errors()[0].message : '') || null"
+    [error]="hasError()"
+  />
+</div>

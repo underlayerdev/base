@@ -1,6 +1,6 @@
 <div
   class="ul-search-select ul-search-select--{{ size() }}"
-  [class.ul-search-select--open]="isOpen()"
+  [class.ul-search-select--open]="combobox.isOpen()"
   [class.ul-search-select--error]="hasError()"
   [class.ul-search-select--disabled]="disabled()"
   [class.ul-search-select--required]="required()"
@@ -18,9 +18,9 @@
 
   <div
     class="ul-search-select__control"
-    [class.ul-search-select__control--focused]="isFocused()"
+    [class.ul-search-select__control--focused]="combobox.isFocused()"
     role="combobox"
-    [attr.aria-expanded]="isOpen()"
+    [attr.aria-expanded]="combobox.isOpen()"
     [attr.aria-controls]="listId"
     [attr.aria-activedescendant]="activeDescendantId()"
     (keydown)="onKeydown($event)"
@@ -56,7 +56,7 @@
           @for (opt of filteredOptions(); track opt.value; let i = $index) {
             <div
               class="ul-search-select__option"
-              [class.ul-search-select__option--highlighted]="highlightedIndex() === i"
+              [class.ul-search-select__option--highlighted]="combobox.highlightedIndex() === i"
               [id]="optionId(i)"
               role="option"
               [attr.aria-selected]="value() === opt.value"

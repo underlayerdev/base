@@ -12,7 +12,7 @@ const meta: Meta<ModalComponent> = {
     docs: {
       description: {
         component:
-          'Dialog overlay with optional title, close button, and backdrop. Variants: default, success, error, custom, bottom-sheet, confirmation. Use [(open)] for two-way binding. Content is projected; optional confirm/cancel labels for confirmation variant. Can close on backdrop click.',
+          'Dialog overlay with optional title, close button, and backdrop. Variants: default, success, error, custom, bottom-sheet, confirmation. Use [(open)] for two-way binding. Content is projected; optional confirm/cancel labels for confirmation variant. Can close on backdrop click. `fullScreenInMobile` composes with any variant to make it fill the entire viewport edge-to-edge below the phone breakpoint instead of the default bottom-pinned sheet.',
       },
     },
   },
@@ -44,6 +44,9 @@ const meta: Meta<ModalComponent> = {
     cancelLabel: {
       control: { type: 'text' },
     },
+    fullScreenInMobile: {
+      control: { type: 'boolean' },
+    },
   },
   args: {
     variant: 'default',
@@ -53,6 +56,7 @@ const meta: Meta<ModalComponent> = {
     showCloseButton: true,
     confirmLabel: 'Confirm',
     cancelLabel: 'Cancel',
+    fullScreenInMobile: false,
   },
 };
 
@@ -197,6 +201,39 @@ export const BottomSheet: Story = {
         [showCloseButton]="showCloseButton"
         (closed)="isOpen = false">
         <p>On viewports below the <code>sm</code> breakpoint, this variant appears as a bottom sheet (anchored to the bottom, rounded top corners).</p>
+      </ul-modal>
+    </div>
+    `,
+  }),
+};
+
+export const FullScreenInMobile: Story = {
+  args: {
+    variant: 'default',
+    open: false,
+    title: 'Full-screen on mobile',
+    fullScreenInMobile: true,
+  },
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+  render: (args) => ({
+    props: {
+      ...args,
+      isOpen: args.open,
+    },
+    template: `
+    <div style="width: 512px; height: 512px;">
+      <ul-button theme="transparent-white" (click)="isOpen = true">Open full-screen modal</ul-button>
+      <ul-modal
+        [(open)]="isOpen"
+        [variant]="variant"
+        [title]="title"
+        [closeOnBackdropClick]="closeOnBackdropClick"
+        [showCloseButton]="showCloseButton"
+        [fullScreenInMobile]="fullScreenInMobile"
+        (closed)="isOpen = false">
+        <p>Below the phone breakpoint, this fills the entire viewport edge-to-edge — no margin, no rounded corners, no visible backdrop — instead of the default bottom-pinned sheet. Composes with any variant.</p>
       </ul-modal>
     </div>
     `,

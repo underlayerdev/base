@@ -1,0 +1,97 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}search-input {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-spacing-1;
+  width: 100%;
+
+  &__combobox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .#{$prefix}list-item:focus-visible,
+    .#{$prefix}list-item:focus {
+      outline: none;
+    }
+
+    // Fills the ul-modal body (fullScreenInMobile) instead of just wrapping
+    // its own (header + list) content, so the list below can flex to the
+    // remaining height.
+    &--takeover {
+      height: 100%;
+    }
+  }
+
+  // Header row inside the takeover: back button + the real field.
+  // flex-shrink: 0 keeps it pinned while --takeover's list grows/scrolls.
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: $spacing-spacing-2;
+    width: 100%;
+  }
+
+  &__field {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-spacing-1;
+    background-color: $color-background-grey-lvl-1;
+    border-radius: $radius-radius-4;
+    padding: $spacing-spacing-1;
+    margin-top: $spacing-spacing-1;
+    max-height: $component-dropdown-list-max-height;
+    overflow-y: auto;
+    border: 2px solid $color-border-white-light;
+
+    // Inside the takeover the list fills the rest of the screen and scrolls
+    // on its own, rather than floating as a bounded dropdown.
+    &--takeover {
+      position: static;
+      flex: 1;
+      min-height: 0;
+      margin-top: $spacing-spacing-4;
+      max-height: none;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+    }
+  }
+
+  &__list-label {
+    @include typography('caption-m');
+    color: $color-text-secondary;
+    padding: $spacing-spacing-1 $spacing-spacing-2;
+  }
+
+  &__option {
+    cursor: pointer;
+    border-radius: $radius-radius-2;
+
+    &--highlighted .#{$prefix}list-item {
+      background-color: $color-interactive-surface-ghost-white-hover;
+    }
+  }
+
+  &--disabled &__combobox {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &--error .#{$prefix}input__group {
+    border-color: $color-border-red;
+  }
+}

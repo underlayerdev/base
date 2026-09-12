@@ -2602,6 +2602,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-search-input\n        [size]=\"size\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [placeholder]=\"placeholder\"\n        [suggestions]=\"suggestions\"\n        [suggestionsLabel]=\"suggestionsLabel\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/search-select/search-select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2793,6 +2803,16 @@
                 "defaultValue": "{\n  args: {\n    disabled: true,\n    price: 9.99,\n    originalPrice: 19.99,\n    discountBasis: 50,\n    label: 'Unavailable',\n  },\n}",
                 "rawdescription": "Story for a disabled price button.",
                 "description": "<p>Story for a disabled price button.</p>\n"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    disabled: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-search-input\n        [size]=\"size\"\n        [label]=\"label\"\n        [placeholder]=\"placeholder\"\n        [disabled]=\"disabled\"\n        [suggestions]=\"suggestions\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
             },
             {
                 "name": "Disabled",
@@ -3646,6 +3666,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SearchInputComponent>",
+                "defaultValue": "{\n  title: 'Components/Form Elements/SearchInput',\n  component: SearchInputComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Free-text search box with an optional suggestions panel (e.g. recent searches). The panel becomes a bottom sheet below the \\'md\\' breakpoint automatically — consumers only supply data, not open/close or breakpoint logic. Implements `FormValueControl<string>` for Signal Forms. Use `[(value)]` for two-way binding.',\n      },\n    },\n    layout: 'centered',\n  },\n  decorators: [\n    (story) => ({\n      ...story(),\n      template: `<div style=\"min-height: 400px; min-width: 400px;\">${story().template}</div>`,\n    }),\n  ],\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    error: { control: { type: 'boolean' } },\n    disabled: { control: { type: 'boolean' } },\n    label: { control: { type: 'text' } },\n    helperText: { control: { type: 'text' } },\n    errorText: { control: { type: 'text' } },\n    placeholder: { control: { type: 'text' } },\n    suggestionsLabel: { control: { type: 'text' } },\n  },\n  args: {\n    size: 'md',\n    error: false,\n    disabled: false,\n    label: 'Search',\n    helperText: null,\n    errorText: 'Something went wrong',\n    placeholder: 'Search listings...',\n    suggestionsLabel: 'Recent searches',\n    suggestions: recentSearches,\n    value: '',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/search-select/search-select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3905,6 +3935,16 @@
                 "defaultValue": "{\n  args: {\n    ...Basic.args,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-checkbox\n        [checked]=\"checked\"\n        [disabled]=\"disabled\"\n        [indeterminate]=\"indeterminate\"\n        [zone]=\"zone\"\n        [size]=\"size\"\n        [error]=\"error\"\n      ></ul-checkbox>\n    `,\n  }),\n}"
             },
             {
+                "name": "NoSuggestions",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    suggestions: [],\n    helperText: 'No recent searches yet',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-search-input\n        [size]=\"size\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [placeholder]=\"placeholder\"\n        [suggestions]=\"suggestions\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
+            },
+            {
                 "name": "options",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4095,6 +4135,16 @@
                 "description": "<p>Demonstrates a read-only pill variant.</p>\n"
             },
             {
+                "name": "recentSearches",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "SearchSuggestion[]",
+                "defaultValue": "[\n  { value: 'porsche-911', label: 'Porsche 911', icon: 'clock' },\n  { value: 'bmw-m3', label: 'BMW M3', icon: 'clock' },\n  { value: 'audi-rs6', label: 'Audi RS6', icon: 'clock' },\n]"
+            },
+            {
                 "name": "RequiredWithoutIndicator",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4175,6 +4225,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-textarea\n          resize=\"none\"\n          label=\"Resize: none\"\n          placeholder=\"Cannot resize\"\n          [rows]=\"3\"\n        />\n        <ul-textarea\n          resize=\"vertical\"\n          label=\"Resize: vertical (default)\"\n          placeholder=\"Resize vertically\"\n          [rows]=\"3\"\n        />\n        <ul-textarea\n          resize=\"both\"\n          label=\"Resize: both\"\n          placeholder=\"Resize both directions\"\n          [rows]=\"3\"\n        />\n      </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "Responsive",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Search (responsive)',\n    helperText: 'Resize below the md breakpoint — the suggestions panel becomes a bottom sheet.',\n  },\n  parameters: {\n    viewport: { defaultViewport: 'responsive' },\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"width: 100%; max-width: 480px; padding: 1rem;\">\n        <ul-search-input\n          [size]=\"size\"\n          [label]=\"label\"\n          [helperText]=\"helperText\"\n          [placeholder]=\"placeholder\"\n          [suggestions]=\"suggestions\"\n          [suggestionsLabel]=\"suggestionsLabel\"\n          [(value)]=\"value\"\n        />\n      </div>\n    `,\n  }),\n}"
             },
             {
                 "name": "Responsive",
@@ -4723,6 +4783,16 @@
                 "defaultValue": "{\n  args: {\n    error: true,\n    label: 'Email',\n    helperText: 'Use your personal email address',\n    errorText: 'Please enter a valid email address',\n    value: 'invalid-email',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-input\n        [size]=\"size\"\n        [appearance]=\"appearance\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [readOnly]=\"readOnly\"\n        [placeholder]=\"placeholder\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [errorText]=\"errorText\"\n        [value]=\"value\"\n      />\n    `,\n  }),\n}",
                 "rawdescription": "Shows an input field in error state.",
                 "description": "<p>Shows an input field in error state.</p>\n"
+            },
+            {
+                "name": "WithError",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    error: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-search-input\n        [size]=\"size\"\n        [label]=\"label\"\n        [errorText]=\"errorText\"\n        [error]=\"error\"\n        [placeholder]=\"placeholder\"\n        [suggestions]=\"suggestions\"\n        [suggestionsLabel]=\"suggestionsLabel\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
             },
             {
                 "name": "WithError",
@@ -5430,6 +5500,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<RichTextComponent>",
                 "file": "projects/ui/src/components/rich-text/rich-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SearchInputComponent>",
+                "file": "projects/ui/src/components/search-input/search-input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -8424,6 +8505,78 @@
                     "defaultValue": "{\n  args: {\n    size: 32,\n    percentage: 75,\n    infinite: false,\n  },\n}"
                 }
             ],
+            "projects/ui/src/components/search-input/search-input.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-search-input\n        [size]=\"size\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [placeholder]=\"placeholder\"\n        [suggestions]=\"suggestions\"\n        [suggestionsLabel]=\"suggestionsLabel\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    disabled: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-search-input\n        [size]=\"size\"\n        [label]=\"label\"\n        [placeholder]=\"placeholder\"\n        [disabled]=\"disabled\"\n        [suggestions]=\"suggestions\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SearchInputComponent>",
+                    "defaultValue": "{\n  title: 'Components/Form Elements/SearchInput',\n  component: SearchInputComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Free-text search box with an optional suggestions panel (e.g. recent searches). The panel becomes a bottom sheet below the \\'md\\' breakpoint automatically — consumers only supply data, not open/close or breakpoint logic. Implements `FormValueControl<string>` for Signal Forms. Use `[(value)]` for two-way binding.',\n      },\n    },\n    layout: 'centered',\n  },\n  decorators: [\n    (story) => ({\n      ...story(),\n      template: `<div style=\"min-height: 400px; min-width: 400px;\">${story().template}</div>`,\n    }),\n  ],\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    error: { control: { type: 'boolean' } },\n    disabled: { control: { type: 'boolean' } },\n    label: { control: { type: 'text' } },\n    helperText: { control: { type: 'text' } },\n    errorText: { control: { type: 'text' } },\n    placeholder: { control: { type: 'text' } },\n    suggestionsLabel: { control: { type: 'text' } },\n  },\n  args: {\n    size: 'md',\n    error: false,\n    disabled: false,\n    label: 'Search',\n    helperText: null,\n    errorText: 'Something went wrong',\n    placeholder: 'Search listings...',\n    suggestionsLabel: 'Recent searches',\n    suggestions: recentSearches,\n    value: '',\n  },\n}"
+                },
+                {
+                    "name": "NoSuggestions",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    suggestions: [],\n    helperText: 'No recent searches yet',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-search-input\n        [size]=\"size\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [placeholder]=\"placeholder\"\n        [suggestions]=\"suggestions\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "recentSearches",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SearchSuggestion[]",
+                    "defaultValue": "[\n  { value: 'porsche-911', label: 'Porsche 911', icon: 'clock' },\n  { value: 'bmw-m3', label: 'BMW M3', icon: 'clock' },\n  { value: 'audi-rs6', label: 'Audi RS6', icon: 'clock' },\n]"
+                },
+                {
+                    "name": "Responsive",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Search (responsive)',\n    helperText: 'Resize below the md breakpoint — the suggestions panel becomes a bottom sheet.',\n  },\n  parameters: {\n    viewport: { defaultViewport: 'responsive' },\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"width: 100%; max-width: 480px; padding: 1rem;\">\n        <ul-search-input\n          [size]=\"size\"\n          [label]=\"label\"\n          [helperText]=\"helperText\"\n          [placeholder]=\"placeholder\"\n          [suggestions]=\"suggestions\"\n          [suggestionsLabel]=\"suggestionsLabel\"\n          [(value)]=\"value\"\n        />\n      </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "WithError",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/search-input/search-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    error: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-search-input\n        [size]=\"size\"\n        [label]=\"label\"\n        [errorText]=\"errorText\"\n        [error]=\"error\"\n        [placeholder]=\"placeholder\"\n        [suggestions]=\"suggestions\"\n        [suggestionsLabel]=\"suggestionsLabel\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
+                }
+            ],
             "projects/ui/src/components/selectable-row/selectable-row.stories.ts": [
                 {
                     "name": "Default",
@@ -9370,6 +9523,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<RichTextComponent>",
                     "file": "projects/ui/src/components/rich-text/rich-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/components/search-input/search-input.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SearchInputComponent>",
+                    "file": "projects/ui/src/components/search-input/search-input.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -12177,6 +12343,86 @@
             },
             {
                 "filePath": "projects/ui/src/components/rich-text/rich-text.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NoSuggestions",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "recentSearches",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Responsive",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/search-input/search-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithError",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/search-input/search-input.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
