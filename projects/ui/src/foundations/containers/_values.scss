@@ -1,0 +1,14 @@
+// Keep in sync with design-tokens/_variables.scss $breakpoint-*/$spacing-spacing-*.
+//
+// Duplicated (not imported from ../core / ../design-tokens) so the
+// published `./containers` package export stays self-contained: Node's
+// package "exports" boundaries block relative imports that cross from one
+// exported subpath into a different one, so this file can't reach outside
+// its own foundations/containers/ directory once published.
+$breakpoint-md: 1024px !default;
+$breakpoint-xl: 1600px !default;
+
+$spacing-spacing-4: 16px !default;
+$spacing-spacing-8: 32px !default;
+$spacing-spacing-16: 64px !default;
+$spacing-spacing-48: 192px !default;

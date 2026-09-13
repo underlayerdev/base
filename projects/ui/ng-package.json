@@ -30,6 +30,11 @@
       "glob": "*.scss",
       "input": "src/foundations/breakpoints",
       "output": "breakpoints"
+    },
+    {
+      "glob": "*.scss",
+      "input": "src/foundations/containers",
+      "output": "containers"
     }
   ]
 }

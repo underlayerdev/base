@@ -1,0 +1,22 @@
+/**
+ * Public Sass entry point for @underlayerdev/ui container mixins.
+ *
+ * Consuming apps can import this via the `pkg:` importer to compose their
+ * own responsive container (e.g. fluid on mobile, product on desktop)
+ * instead of duplicating the padding scale by hand:
+ *
+ *   @use 'pkg:@underlayerdev/ui/containers' as containers;
+ *   @use 'pkg:@underlayerdev/ui/breakpoints' as bp;
+ *
+ *   .my-page {
+ *     @include containers.container-fluid;
+ *
+ *     @include bp.up('md') {
+ *       @include containers.container-product;
+ *     }
+ *   }
+ *
+ * Requires Dart Sass with the Node package importer enabled (supported by
+ * @angular/build out of the box since Angular CLI 20+).
+ */
+@forward './containers';
