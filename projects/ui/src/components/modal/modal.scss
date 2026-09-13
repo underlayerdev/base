@@ -25,7 +25,7 @@ $modal-class: '.#{$prefix}modal';
     @include typography('body-m', 'regular');
     color: $color-text-primary;
     @include transition-properties((opacity, transform));
-    background-color: $color-background-grey-lvl-1;
+    background-color: $color-background-main;
     padding: $spacing-spacing-6;
     border: 1px solid $color-border-white-light;
 
