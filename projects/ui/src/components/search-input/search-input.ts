@@ -144,7 +144,7 @@ export class SearchInputComponent implements FormValueControl<string> {
     this.hasQuery() ? null : this.suggestionsLabel(),
   );
 
-  protected readonly hasCustomResults = computed(() => this.hasQuery() && !!this.resultsTemplate());
+  protected readonly hasCustomResults = computed(() => !!this.resultsTemplate());
 
   protected readonly shouldShowPanel = computed(
     () => this.combobox.isOpen() && (this.activeList().length > 0 || this.hasCustomResults()),
