@@ -50,7 +50,7 @@ import { LongPressDirective } from '../long-press/long-press.directive';
     '(click)': 'onHostClick($event)',
   },
   template: `
-    @if (isCompact() && selectionActive()) {
+    @if (selectable() && isCompact() && selectionActive()) {
       <ul-checkbox
         size="lg"
         [checked]="selected()"
@@ -60,7 +60,7 @@ import { LongPressDirective } from '../long-press/long-press.directive';
     } @else {
       <ng-content select="[ul-selectable-row-media]" />
     }
-    @if (!isCompact()) {
+    @if (selectable() && !isCompact()) {
       <ul-checkbox
         class="ul-selectable-row__hover-checkbox"
         [checked]="selected()"
@@ -81,6 +81,12 @@ export class SelectableRowComponent {
    * selected) — drives the compact-mode media-for-checkbox swap.
    */
   selectionActive = input<boolean>(false);
+  /**
+   * Whether this row supports selection at all. False renders it as a plain
+   * row — no checkbox (hover or compact), no long-press, no click-to-toggle
+   * — for a list that doesn't offer bulk actions right now.
+   */
+  selectable = input<boolean>(true);
   /** Accessible label for this row's checkbox(es). */
   ariaLabel = input<string | null>(null);
 
@@ -108,6 +114,7 @@ export class SelectableRowComponent {
 
   constructor() {
     inject(LongPressDirective).ulLongPress.subscribe(() => {
+      if (!this.selectable()) return;
       this.justLongPressed = true;
       this.longPress.emit();
     });
@@ -131,7 +138,7 @@ export class SelectableRowComponent {
       this.justLongPressed = false;
       return;
     }
-    if (!this.selectionActive()) return;
+    if (!this.selectable() || !this.selectionActive()) return;
     // The checkbox already has its own (checkedChange) handler — without
     // this, a tap on it would toggle twice (once from checkedChange, once
     // from this handler catching the same click as it bubbles up).

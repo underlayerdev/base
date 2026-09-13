@@ -25,6 +25,7 @@ function mockMatchMedia(matches: boolean): void {
     <ul-selectable-row
       [selected]="selected"
       [selectionActive]="selectionActive"
+      [selectable]="selectable"
       [ariaLabel]="'Select item'"
       (selectedChange)="selectedChanges.push($event)"
       (longPress)="longPresses.push(undefined)"
@@ -37,6 +38,7 @@ function mockMatchMedia(matches: boolean): void {
 class HostComponent {
   selected = false;
   selectionActive = false;
+  selectable = true;
   readonly selectedChanges: boolean[] = [];
   readonly longPresses: undefined[] = [];
 }
@@ -45,12 +47,14 @@ function setup(options: {
   hasFinePointer: boolean;
   selected?: boolean;
   selectionActive?: boolean;
+  selectable?: boolean;
 }) {
   mockMatchMedia(options.hasFinePointer);
   TestBed.configureTestingModule({ imports: [HostComponent] });
   const fixture: ComponentFixture<HostComponent> = TestBed.createComponent(HostComponent);
   fixture.componentInstance.selected = options.selected ?? false;
   fixture.componentInstance.selectionActive = options.selectionActive ?? false;
+  fixture.componentInstance.selectable = options.selectable ?? true;
   fixture.detectChanges();
   return fixture;
 }
@@ -173,6 +177,39 @@ describe('SelectableRowComponent', () => {
     host.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
 
     expect(fixture.componentInstance.longPresses.length).toBe(1);
+    expect(fixture.componentInstance.selectedChanges).toEqual([]);
+  });
+
+  it('renders no hover checkbox on fine-pointer devices when not selectable', () => {
+    const fixture = setup({ hasFinePointer: true, selectable: false });
+
+    expect(fixture.nativeElement.querySelector('img')).toBeTruthy();
+    expect(fixture.nativeElement.querySelector('.ul-selectable-row__hover-checkbox')).toBeFalsy();
+  });
+
+  it('keeps showing the media on coarse-pointer devices when not selectable, even once selectionActive', () => {
+    const fixture = setup({ hasFinePointer: false, selectionActive: true, selectable: false });
+
+    expect(fixture.nativeElement.querySelector('img')).toBeTruthy();
+    expect(fixture.nativeElement.querySelector('ul-checkbox')).toBeFalsy();
+  });
+
+  it('does not emit longPress when not selectable', () => {
+    const fixture = setup({ hasFinePointer: false, selectable: false });
+    const host: HTMLElement = fixture.nativeElement.querySelector('ul-selectable-row');
+
+    host.dispatchEvent(pointerEvent('pointerdown'));
+    vi.advanceTimersByTime(500);
+
+    expect(fixture.componentInstance.longPresses.length).toBe(0);
+  });
+
+  it('does not toggle on a plain tap when not selectable, even if selectionActive is somehow true', () => {
+    const fixture = setup({ hasFinePointer: true, selectionActive: true, selectable: false });
+
+    const content: HTMLElement = fixture.nativeElement.querySelector('[ul-selectable-row-content]');
+    content.click();
+
     expect(fixture.componentInstance.selectedChanges).toEqual([]);
   });
 });
