@@ -87,13 +87,13 @@ export class SearchInputComponent implements FormValueControl<string> {
   /** Shown once the query is non-empty — e.g. live search results. The consumer computes/fetches these as `value` changes (via `[(value)]`/`valueChange`). */
   readonly results = input<SearchSuggestion[]>([]);
   /**
-   * Overrides `results` once the query is non-empty, projecting arbitrary
-   * content (e.g. rich cards with images/prices) instead of the built-in
-   * plain-text rows. `suggestions` (shown while the query is empty) are
-   * unaffected and keep rendering as plain `SearchSuggestion` rows regardless.
-   * When set, arrow-key/Enter option-highlighting is skipped — Enter always
-   * falls through to `searchSubmit` since the projected content owns its own
-   * selection interaction.
+   * When set, always projects this arbitrary content (e.g. rich cards with
+   * images/prices) into the panel instead of the built-in plain-text rows —
+   * for both `suggestions` (query empty) and `results` (query non-empty).
+   * The consumer's own template is responsible for varying its content by
+   * query if it needs to. Arrow-key/Enter option-highlighting is skipped
+   * while this is set — Enter always falls through to `searchSubmit` since
+   * the projected content owns its own selection interaction.
    */
   readonly resultsTemplate = input<TemplateRef<unknown> | null>(null);
 

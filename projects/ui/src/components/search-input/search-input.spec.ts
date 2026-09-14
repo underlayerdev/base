@@ -203,16 +203,14 @@ describe('SearchInputComponent (resultsTemplate)', () => {
     return fixture;
   }
 
-  it('still renders suggestions as plain rows while the query is empty', () => {
+  it('renders the projected template while the query is empty too', () => {
     const fixture = setupCustomResults();
 
     fixture.nativeElement.querySelector('input').dispatchEvent(new FocusEvent('focus'));
     fixture.detectChanges();
 
-    expect(fixture.nativeElement.querySelectorAll('.ul-search-input__option').length).toBe(
-      suggestions.length,
-    );
-    expect(fixture.nativeElement.querySelector('.custom-result')).toBeFalsy();
+    expect(fixture.nativeElement.querySelector('.custom-result')).toBeTruthy();
+    expect(fixture.nativeElement.querySelectorAll('.ul-search-input__option').length).toBe(0);
   });
 
   it('renders the projected template instead of plain rows once the query is non-empty', () => {
