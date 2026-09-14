@@ -34,6 +34,7 @@ export * from './rich-text';
 export * from './skeleton/skeleton';
 export * from './toast/toast';
 export * from './toast/toast.service';
+export * from './toggle/toggle';
 export * from './tooltip/tooltip';
 export * from './search-input/search-input';
 export * from './search-select';

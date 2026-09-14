@@ -1,0 +1,171 @@
+@use '../../foundations/toolkit' as *;
+
+$toggle-inset: 2px;
+
+@mixin toggle-base {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:has(.#{$prefix}toggle__input:disabled) {
+    cursor: not-allowed;
+  }
+}
+
+// Wrapper (form field container: label + row + helper)
+.#{$prefix}toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+// Clickable row (label wrapping input + track + text)
+.#{$prefix}toggle__row {
+  @include toggle-base;
+
+  &:hover .#{$prefix}toggle__input:not([disabled]) + .#{$prefix}toggle__track {
+    box-shadow: 0 0 0 2px $color-background-white-light;
+    border-color: $color-border-white;
+  }
+
+  &:hover .#{$prefix}toggle__input:not([disabled]):checked + .#{$prefix}toggle__track {
+    background-color: $color-background-purple;
+    border-color: $color-background-purple;
+  }
+
+  // Error state
+  &--error {
+    .#{$prefix}toggle__track {
+      border-color: $color-border-red;
+    }
+
+    .#{$prefix}toggle__input:checked + .#{$prefix}toggle__track {
+      background-color: $color-background-red;
+      border-color: $color-background-red;
+    }
+
+    .#{$prefix}toggle__input:focus-visible + .#{$prefix}toggle__track {
+      border-color: $color-border-red;
+    }
+
+    &:hover .#{$prefix}toggle__input:not([disabled]) + .#{$prefix}toggle__track {
+      border-color: $color-border-red;
+    }
+  }
+
+  // Small variant
+  &--sm {
+    .#{$prefix}toggle__track {
+      width: 32px;
+      height: 18px;
+    }
+
+    .#{$prefix}toggle__thumb {
+      width: 14px;
+      height: 14px;
+    }
+
+    .#{$prefix}toggle__input:checked + .#{$prefix}toggle__track .#{$prefix}toggle__thumb {
+      transform: translateX(14px);
+    }
+
+    .#{$prefix}toggle__label {
+      @include typography('caption-l');
+    }
+  }
+
+  // Large variant — easier to tap on touch.
+  &--lg {
+    .#{$prefix}toggle__track {
+      width: 48px;
+      height: 28px;
+    }
+
+    .#{$prefix}toggle__thumb {
+      width: 22px;
+      height: 22px;
+    }
+
+    .#{$prefix}toggle__input:checked + .#{$prefix}toggle__track .#{$prefix}toggle__thumb {
+      transform: translateX(22px);
+    }
+  }
+}
+
+// Input, track, thumb, label (descendants of wrapper, inside __row)
+.#{$prefix}toggle {
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+
+    &:focus-visible + .#{$prefix}toggle__track {
+      border-color: $color-border-white-medium-strong;
+      box-shadow: 0 0 0 2px $color-background-white-light;
+    }
+
+    &:checked + .#{$prefix}toggle__track {
+      background-color: $color-background-purple;
+      border-color: $color-background-purple;
+
+      .#{$prefix}toggle__thumb {
+        transform: translateX(18px);
+      }
+    }
+
+    &:disabled {
+      & + .#{$prefix}toggle__track {
+        border-color: $color-border-white-light;
+        background-color: $color-background-white-extra-light;
+
+        .#{$prefix}toggle__thumb {
+          background-color: $color-text-disabled;
+        }
+      }
+
+      &:checked + .#{$prefix}toggle__track {
+        background-color: $color-background-white-extra-light;
+        border-color: transparent;
+      }
+
+      & ~ .#{$prefix}toggle__label {
+        color: $color-text-disabled;
+      }
+    }
+  }
+
+  &__track {
+    position: relative;
+    flex-shrink: 0;
+    width: 40px;
+    height: 22px;
+    border-radius: $radius-radius-full;
+    border: 1px solid $color-border-white-medium-strong;
+    background-color: $color-background-white-medium-light;
+    @include transition-properties((border-color, background-color));
+  }
+
+  &__thumb {
+    position: absolute;
+    top: $toggle-inset;
+    left: $toggle-inset;
+    width: 18px;
+    height: 18px;
+    border-radius: $radius-radius-full;
+    background-color: $color-background-white;
+    @include transition-property(transform);
+  }
+
+  &__label {
+    margin-left: 8px;
+    color: $color-text-primary;
+    @include transition-properties(color);
+
+    @include typography('body-m');
+
+    &:empty {
+      display: none;
+    }
+  }
+}
