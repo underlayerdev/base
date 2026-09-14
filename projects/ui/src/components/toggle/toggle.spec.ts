@@ -51,12 +51,12 @@ describe('ToggleComponent', () => {
     expect(component.checked()).toBe(false);
   });
 
-  it('hides the required asterisk when showRequiredIndicator is false', () => {
+  it('renders the projected label text', () => {
     fixture.componentRef.setInput('label', 'Enable notifications');
-    fixture.componentRef.setInput('required', true);
-    fixture.componentRef.setInput('showRequiredIndicator', false);
     fixture.detectChanges();
 
-    expect(fixture.nativeElement.querySelector('.ul-form-field__required-indicator')).toBeFalsy();
+    expect(fixture.nativeElement.querySelector('.ul-form-field__label').textContent.trim()).toBe(
+      'Enable notifications',
+    );
   });
 });

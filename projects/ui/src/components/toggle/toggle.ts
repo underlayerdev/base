@@ -28,17 +28,13 @@ import type { UiCheckboxSize } from '../shared/ui-types';
       class="ul-toggle ul-toggle--{{ size() }}"
       [class.ul-toggle--error]="hasError()"
       [class.ul-toggle--disabled]="disabled()"
-      [class.ul-toggle--required]="required()"
       [attr.aria-invalid]="hasError()"
-      [attr.aria-required]="required()"
       [attr.aria-describedby]="describedBy()"
     >
       <ul-form-field-label
         [label]="label()"
-        [required]="required()"
         [for]="ids.controlId"
         [size]="size() === 'sm' ? 'sm' : 'md'"
-        [showRequiredIndicator]="showRequiredIndicator()"
       />
 
       <label
@@ -58,7 +54,6 @@ import type { UiCheckboxSize } from '../shared/ui-types';
           [attr.aria-checked]="checked()"
           [attr.aria-describedby]="describedBy()"
           [attr.aria-invalid]="hasError()"
-          [attr.aria-required]="required()"
           (change)="onChange($event)"
           (keydown.enter)="onEnter($event)"
         />
@@ -87,8 +82,6 @@ export class ToggleComponent implements FormCheckboxControl {
   readonly size = input<UiCheckboxSize>('default');
   readonly label = input<string | null>(null);
   readonly helperText = input<string | null>(null);
-  readonly required = input<boolean>(false);
-  readonly showRequiredIndicator = input<boolean>(true);
   readonly error = input<boolean>(false);
   readonly errorText = input<string | null>(null);
   readonly invalid = input<boolean>(false);

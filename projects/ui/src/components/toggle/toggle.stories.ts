@@ -36,15 +36,6 @@ const meta: Meta<ToggleComponent> = {
       control: 'text',
       description: 'Helper text below the toggle when not in error state',
     },
-    required: {
-      control: 'boolean',
-      description: 'Whether the toggle is required (shows asterisk, aria-required)',
-    },
-    showRequiredIndicator: {
-      control: 'boolean',
-      description:
-        'Whether the "*" shows when required — set false when every field on a form is required by convention and the asterisk would just be noise. The required styling/aria stays either way.',
-    },
     error: {
       control: 'boolean',
       description: 'Whether the toggle is in an error state',
@@ -152,8 +143,6 @@ export const FormField: Story = {
     ...Basic.args,
     label: 'Notifications',
     helperText: 'Get notified about new messages and offers.',
-    required: true,
-    showRequiredIndicator: true,
   },
   render: (args) => ({
     props: args,
@@ -162,8 +151,6 @@ export const FormField: Story = {
         [checked]="checked"
         [label]="label"
         [helperText]="helperText"
-        [required]="required"
-        [showRequiredIndicator]="showRequiredIndicator"
         [disabled]="disabled"
         [size]="size"
       >
