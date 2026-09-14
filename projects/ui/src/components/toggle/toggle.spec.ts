@@ -51,11 +51,13 @@ describe('ToggleComponent', () => {
     expect(component.checked()).toBe(false);
   });
 
-  it('renders the projected label text', () => {
+  it('renders the label inline in the same row as the switch, not stacked above it', () => {
     fixture.componentRef.setInput('label', 'Enable notifications');
     fixture.detectChanges();
 
-    expect(fixture.nativeElement.querySelector('.ul-form-field__label').textContent.trim()).toBe(
+    const row: HTMLElement = fixture.nativeElement.querySelector('.ul-toggle__row');
+    expect(row.querySelector('.ul-toggle__input')).toBeTruthy();
+    expect(row.querySelector('.ul-toggle__label')?.textContent?.trim()).toBe(
       'Enable notifications',
     );
   });

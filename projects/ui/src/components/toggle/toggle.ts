@@ -8,7 +8,6 @@ import type {
 import {
   createFormFieldIds,
   FormFieldHelperComponent,
-  FormFieldLabelComponent,
   getFormFieldDescribedBy,
 } from '../shared/form-field';
 import type { UiCheckboxSize } from '../shared/ui-types';
@@ -22,7 +21,7 @@ import type { UiCheckboxSize } from '../shared/ui-types';
  */
 @Component({
   selector: 'ul-toggle',
-  imports: [FormFieldLabelComponent, FormFieldHelperComponent],
+  imports: [FormFieldHelperComponent],
   template: `
     <div
       class="ul-toggle ul-toggle--{{ size() }}"
@@ -31,12 +30,6 @@ import type { UiCheckboxSize } from '../shared/ui-types';
       [attr.aria-invalid]="hasError()"
       [attr.aria-describedby]="describedBy()"
     >
-      <ul-form-field-label
-        [label]="label()"
-        [for]="ids.controlId"
-        [size]="size() === 'sm' ? 'sm' : 'md'"
-      />
-
       <label
         class="ul-toggle__row"
         [class.ul-toggle__row--sm]="size() === 'sm'"
@@ -61,6 +54,9 @@ import type { UiCheckboxSize } from '../shared/ui-types';
           <span class="ul-toggle__thumb"></span>
         </span>
         <span class="ul-toggle__label">
+          @if (label()) {
+            {{ label() }}
+          }
           <ng-content />
         </span>
       </label>
@@ -80,6 +76,7 @@ export class ToggleComponent implements FormCheckboxControl {
 
   readonly disabled = model<boolean>(false);
   readonly size = input<UiCheckboxSize>('default');
+  /** Rendered inline next to the switch (not stacked above it, unlike ul-input/ul-checkbox's form-field label). Use ng-content instead for richer projected content. */
   readonly label = input<string | null>(null);
   readonly helperText = input<string | null>(null);
   readonly error = input<boolean>(false);

@@ -30,7 +30,7 @@ const meta: Meta<ToggleComponent> = {
     },
     label: {
       control: 'text',
-      description: 'Form field label (above the toggle), same as input/checkbox',
+      description: 'Label text rendered inline next to the switch',
     },
     helperText: {
       control: 'text',
