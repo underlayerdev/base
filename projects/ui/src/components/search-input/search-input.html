@@ -84,6 +84,10 @@
             [helperText]="null"
             [autocomplete]="'off'"
           >
+            <ng-container ul-input-left-elements>
+              <ul-icon icon="search" size="4" />
+            </ng-container>
+
             <ng-container ul-input-right-elements>
               @if (hasQuery()) {
                 <ul-button
@@ -96,8 +100,6 @@
                 >
                   <ul-icon icon="cross" size="4" />
                 </ul-button>
-              } @else {
-                <ul-icon size="5" icon="search" />
               }
             </ng-container>
           </ul-input>
@@ -141,6 +143,10 @@
         [helperText]="null"
         [autocomplete]="'off'"
       >
+        <ng-container ul-input-left-elements>
+          <ul-icon icon="search" size="4" />
+        </ng-container>
+
         <ng-container ul-input-right-elements>
           @if (hasQuery()) {
             <ul-button
@@ -153,8 +159,6 @@
             >
               <ul-icon icon="cross" size="4" />
             </ul-button>
-          } @else {
-            <ul-icon size="5" icon="search" />
           }
         </ng-container>
       </ul-input>
