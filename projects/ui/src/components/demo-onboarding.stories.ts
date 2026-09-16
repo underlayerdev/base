@@ -15,9 +15,11 @@ const TOTAL_STEPS = STEP_LABELS.length;
   imports: [AvatarComponent, ButtonComponent, InputComponent, StepperComponent],
   template: `
     <div class="ul-demo-onboarding">
-      <div class="ul-demo-onboarding__card">
+      <div class="ul-demo-onboarding__header">
         <ul-stepper [totalSteps]="totalSteps" [currentStep]="currentStep()" [labels]="labels" />
+      </div>
 
+      <div class="ul-demo-onboarding__content">
         @switch (currentStep()) {
           @case (1) {
             <div class="ul-demo-onboarding__step">
@@ -28,34 +30,15 @@ const TOTAL_STEPS = STEP_LABELS.length;
                 </p>
               </div>
               <ul-input label="Display name" placeholder="e.g. Jane Doe" [(value)]="displayName" />
-              <div class="ul-demo-onboarding__actions ul-demo-onboarding__actions--end">
-                <ul-button
-                  theme="fill-purple"
-                  size="md"
-                  [disabled]="!displayName()"
-                  (buttonClick)="next()"
-                >
-                  Continue
-                </ul-button>
-              </div>
             </div>
           }
           @case (2) {
             <div class="ul-demo-onboarding__step ul-demo-onboarding__step--centered">
               <div class="ul-demo-onboarding__step-header">
                 <h2 class="ul-demo-onboarding__title">Add a profile photo</h2>
-                <p class="ul-demo-onboarding__subtitle">Optional — you can skip this.</p>
+                <p class="ul-demo-onboarding__subtitle">Optional — you can just continue.</p>
               </div>
               <ul-avatar size="xl" [initials]="avatarInitials()" />
-              <div class="ul-demo-onboarding__actions">
-                <!-- <ul-button theme="ghost-white" size="md" (buttonClick)="back()">Back</ul-button> -->
-                <div class="ul-demo-onboarding__actions-right">
-                  <ul-button theme="ghost-white" size="md" (buttonClick)="next()">Skip</ul-button>
-                  <ul-button theme="fill-purple" size="md" (buttonClick)="next()"
-                    >Continue</ul-button
-                  >
-                </div>
-              </div>
             </div>
           }
           @case (3) {
@@ -65,19 +48,22 @@ const TOTAL_STEPS = STEP_LABELS.length;
                 <p class="ul-demo-onboarding__subtitle">Optional — helps show you items nearby.</p>
               </div>
               <ul-button theme="outline-white" size="md">Use my current location</ul-button>
-              <div class="ul-demo-onboarding__actions">
-                <ul-button theme="ghost-white" size="md" (buttonClick)="back()">Back</ul-button>
-                <div class="ul-demo-onboarding__actions-right">
-                  <ul-button theme="ghost-white" size="md" (buttonClick)="restart()"
-                    >Skip</ul-button
-                  >
-                  <ul-button theme="fill-purple" size="md" (buttonClick)="restart()"
-                    >Finish</ul-button
-                  >
-                </div>
-              </div>
             </div>
           }
+        }
+      </div>
+
+      <div class="ul-demo-onboarding__footer">
+        <ul-button
+          theme="fill-purple"
+          size="md"
+          [disabled]="!canContinue()"
+          (buttonClick)="primaryAction()"
+        >
+          {{ currentStep() === totalSteps ? 'Finish' : 'Continue' }}
+        </ul-button>
+        @if (currentStep() > 1) {
+          <ul-button theme="ghost-white" size="md" (buttonClick)="back()">Back</ul-button>
         }
       </div>
     </div>
@@ -87,19 +73,22 @@ const TOTAL_STEPS = STEP_LABELS.length;
       .ul-demo-onboarding {
         min-height: 100vh;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
+        flex-direction: column;
         background: #0a0a0a;
         font-family: sans-serif;
       }
-      .ul-demo-onboarding__card {
-        width: 320px;
+      .ul-demo-onboarding__header {
+        padding: 2rem 2rem 0;
+      }
+      .ul-demo-onboarding__content {
+        flex: 1;
         display: flex;
-        flex-direction: column;
-        gap: 2.5rem;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
       }
       .ul-demo-onboarding__step {
+        width: 320px;
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
@@ -121,20 +110,15 @@ const TOTAL_STEPS = STEP_LABELS.length;
         font-size: 14px;
         margin: 0;
       }
-      .ul-demo-onboarding__actions {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-      }
-      .ul-demo-onboarding__actions--end {
-        justify-content: flex-end;
-      }
-      .ul-demo-onboarding__actions-right {
+      .ul-demo-onboarding__footer {
         display: flex;
         flex-direction: column;
-        width: 100%;
         gap: 0.75rem;
+        padding: 1.5rem 2rem 2rem;
+      }
+      .ul-demo-onboarding__footer ul-button {
+        display: block;
+        width: 100%;
       }
     `,
   ],
@@ -146,7 +130,16 @@ class DemoOnboardingComponent {
   readonly displayName = signal('');
   readonly avatarInitials = computed(() => this.displayName().trim().charAt(0).toUpperCase());
 
-  next(): void {
+  // Step 1 (name) is the only required step — the rest can always be
+  // continued past without doing anything, which is what "skipping" means
+  // here, rather than a separate Skip button.
+  readonly canContinue = computed(() => this.currentStep() !== 1 || !!this.displayName().trim());
+
+  primaryAction(): void {
+    if (this.currentStep() === this.totalSteps) {
+      this.restart();
+      return;
+    }
     this.currentStep.update((step) => Math.min(step + 1, this.totalSteps));
   }
 
@@ -154,7 +147,7 @@ class DemoOnboardingComponent {
     this.currentStep.update((step) => Math.max(step - 1, 1));
   }
 
-  restart(): void {
+  private restart(): void {
     this.currentStep.set(1);
     this.displayName.set('');
   }
@@ -168,7 +161,7 @@ const meta: Meta<DemoOnboardingComponent> = {
     docs: {
       description: {
         component:
-          "Realistic mock of undermarket's onboarding flow (name required, photo/location optional) — click Continue/Back/Skip to see ul-stepper track progress in context, not just as a bare indicator.",
+          "Realistic mock of undermarket's onboarding flow (name required, photo/location optional) — click Continue/Back to see ul-stepper track progress in context, not just as a bare indicator. There's no separate Skip button: optional steps can always be continued past without input.",
       },
     },
   },
