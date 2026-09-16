@@ -48,7 +48,7 @@ const TOTAL_STEPS = STEP_LABELS.length;
               </div>
               <ul-avatar size="xl" [initials]="avatarInitials()" />
               <div class="ul-demo-onboarding__actions">
-                <ul-button theme="ghost-white" size="md" (buttonClick)="back()">Back</ul-button>
+                <!-- <ul-button theme="ghost-white" size="md" (buttonClick)="back()">Back</ul-button> -->
                 <div class="ul-demo-onboarding__actions-right">
                   <ul-button theme="ghost-white" size="md" (buttonClick)="next()">Skip</ul-button>
                   <ul-button theme="fill-purple" size="md" (buttonClick)="next()"
@@ -132,6 +132,8 @@ const TOTAL_STEPS = STEP_LABELS.length;
       }
       .ul-demo-onboarding__actions-right {
         display: flex;
+        flex-direction: column;
+        width: 100%;
         gap: 0.75rem;
       }
     `,

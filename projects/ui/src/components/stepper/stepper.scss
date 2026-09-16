@@ -55,7 +55,7 @@
     margin-top: $spacing-spacing-2;
     color: $color-text-secondary;
     text-align: center;
-    @include typography('caption-l');
+    @include typography('caption-l', 'extrablack');
   }
 
   &__item--current &__label,
