@@ -32,6 +32,7 @@ export * from './radio/radio-group';
 export * from './radial/radial';
 export * from './rich-text';
 export * from './skeleton/skeleton';
+export * from './stepper/stepper';
 export * from './toast/toast';
 export * from './toast/toast.service';
 export * from './toggle/toggle';

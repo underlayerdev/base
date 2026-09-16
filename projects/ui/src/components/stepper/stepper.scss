@@ -1,0 +1,65 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}stepper {
+  display: flex;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: calc(50% + 8px);
+      width: calc(100% - 16px);
+      height: 2px;
+      background-color: $color-border-white-medium-strong;
+      @include transition-property(background-color);
+    }
+
+    &--completed:not(:last-child)::after {
+      background-color: $color-background-purple;
+    }
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: $radius-radius-full;
+    background-color: $color-background-white-medium-light;
+    border: 2px solid $color-border-white-medium-strong;
+    position: relative;
+    z-index: 1;
+    @include transition-properties((background-color, border-color, box-shadow));
+  }
+
+  &__item--completed &__dot {
+    background-color: $color-background-purple;
+    border-color: $color-background-purple;
+  }
+
+  &__item--current &__dot {
+    border-color: $color-background-purple;
+    box-shadow: 0 0 0 3px $color-background-white-light;
+  }
+
+  &__label {
+    margin-top: $spacing-spacing-2;
+    color: $color-text-secondary;
+    text-align: center;
+    @include typography('caption-l');
+  }
+
+  &__item--current &__label,
+  &__item--completed &__label {
+    color: $color-text-primary;
+  }
+}
