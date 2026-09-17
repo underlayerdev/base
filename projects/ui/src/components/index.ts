@@ -17,6 +17,7 @@ export * from './footer/footer';
 export * from './hero';
 export * from './icon/icon';
 export * from './image/image-not-found';
+export * from './image-cropper/image-cropper';
 export * from './input/input';
 export * from './list-item/list-item';
 export * from './long-press/long-press.directive';

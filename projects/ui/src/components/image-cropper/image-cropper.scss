@@ -1,0 +1,45 @@
+@use '../../foundations/toolkit' as *;
+
+$image-cropper-class: '.#{$prefix}image-cropper';
+
+#{$image-cropper-class} {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-spacing-4;
+
+  &__frame {
+    display: block;
+    width: 100%;
+    height: $spacing-spacing-80;
+
+    // ngx-image-cropper reads these as CSS custom properties, letting us
+    // theme its cropper frame/scrim without reaching into its internal DOM.
+    --cropper-overlay-color: #{rgba($color-background-main, 0.85)};
+    --cropper-outline-color: #{rgba($color-background-main, 0.85)};
+    --cropper-color: #{$color-background-purple};
+    --cropper-border: 2px solid #{$color-background-purple};
+    --cropper-hover-border: 2px solid #{$color-background-purple};
+    --cropper-focus-border: 2px solid #{$color-background-purple};
+    --cropper-resize-square-bg: #{$color-background-purple};
+    --cropper-resize-square-border: 1px solid #{$color-background-main};
+  }
+
+  &__zoom {
+    display: flex;
+    align-items: center;
+    gap: $spacing-spacing-3;
+    width: 100%;
+  }
+
+  &__zoom-label {
+    @include typography('caption-l', 'regular');
+    color: $color-text-secondary;
+    flex-shrink: 0;
+  }
+
+  &__zoom-input {
+    flex: 1;
+    accent-color: $color-background-purple;
+  }
+}
