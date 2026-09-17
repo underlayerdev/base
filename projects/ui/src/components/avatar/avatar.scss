@@ -36,6 +36,12 @@
     min-width: $component-control-height-xl;
   }
 
+  &--2xl {
+    width: $component-avatar-size-2xl;
+    height: $component-avatar-size-2xl;
+    min-width: $component-avatar-size-2xl;
+  }
+
   // Image
   &__image {
     width: 100%;
@@ -65,6 +71,10 @@
 
     .#{$prefix}avatar--xl & {
       @include typography('headline-s', 'extrabold');
+    }
+
+    .#{$prefix}avatar--2xl & {
+      @include typography('headline-m', 'extrabold');
     }
   }
 

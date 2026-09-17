@@ -408,6 +408,11 @@ $component-control-height-md: 40px !default;
 $component-control-height-lg: 48px !default;
 $component-control-height-xl: 64px !default;
 
+// Avatar-only — deliberately not part of the shared control-height family
+// above (a giant size doesn't make sense on a button or input), so it isn't
+// exposed through UiSize.
+$component-avatar-size-2xl: 128px !default;
+
 $component-dropdown-list-max-height: 316px !default;
 
 $component-control-min-width-sm: 96px !default;

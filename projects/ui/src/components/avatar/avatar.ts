@@ -3,7 +3,16 @@ import { Component, computed, effect, input, signal, ViewEncapsulation } from '@
 import { IconComponent, IconName } from '../icon/icon';
 import { SkeletonComponent } from '../skeleton/skeleton';
 import type { UiSize } from '../shared/ui-types';
-type IconSize = '5' | '6' | '7' | '8';
+type IconSize = '5' | '6' | '7' | '8' | '16';
+
+/**
+ * Avatar-only size scale: the shared UiSize sizes, plus a larger '2xl' for
+ * contexts where the avatar itself is the focal point (e.g. an onboarding
+ * photo step) rather than one control among many. Deliberately not folded
+ * into UiSize — a giant size doesn't make sense on a button or input.
+ */
+export type AvatarSize = UiSize | '2xl';
+
 /**
  * A reusable avatar component that displays user images, initials, or icons.
  * Supports multiple sizes and fallback options when an image is not available.
@@ -36,7 +45,7 @@ type IconSize = '5' | '6' | '7' | '8';
 })
 export class AvatarComponent {
   /** The size of the avatar */
-  size = input<UiSize>('md');
+  size = input<AvatarSize>('md');
 
   /** The image source URL */
   src = input<string | undefined>(undefined);
@@ -58,11 +67,12 @@ export class AvatarComponent {
 
   /** Computed icon size based on avatar size */
   readonly iconSize = computed<IconSize>(() => {
-    const sizeMap: Record<UiSize, IconSize> = {
+    const sizeMap: Record<AvatarSize, IconSize> = {
       sm: '5',
       md: '6',
       lg: '7',
       xl: '8',
+      '2xl': '16',
     };
     return sizeMap[this.size()];
   });
