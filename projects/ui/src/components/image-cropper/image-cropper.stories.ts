@@ -31,8 +31,6 @@ import { ImageCropperComponent } from './image-cropper';
         [maxOutputSize]="mode() === 'avatar' ? 512 : 1920"
         [title]="mode() === 'avatar' ? 'Adjust photo' : 'Trim photo'"
         confirmLabel="Save"
-        cancelLabel="Cancel"
-        zoomLabel="Zoom"
         (cropped)="onCropped($event)"
       />
     </div>
@@ -68,7 +66,7 @@ const meta: Meta<ImageCropperStoryComponent> = {
     docs: {
       description: {
         component:
-          'Modal flow for cropping/resizing a photo, wrapping ngx-image-cropper so consumers never import it directly. Two modes depending on whether `aspectRatio` is set: **locked** (fixed frame, drag/zoom the photo underneath — for avatars and anything needing a consistent ratio) or **free-form** (resizable frame over a static photo, no ratio imposed — for listing photos, which keep their own shape today). Pick a file with any trigger (hidden input, `ul-file-input`, etc.), pass it to `[imageFile]`, and listen for `(cropped)` to get back a resized File ready to upload.',
+          'Modal flow for cropping/resizing a photo, wrapping ngx-image-cropper so consumers never import it directly. The frame always does the moving/resizing (bounds-checked by the library) — the photo itself is never dragged, since ngx-image-cropper does not clamp that path. `aspectRatio` just decides whether the frame is **locked** to a ratio (e.g. avatars) or **free-form** (no ratio imposed — for listing photos, which keep their own shape today). Only a single confirm button is shown; dismiss via the modal’s own close button, backdrop, or Escape. Pick a file with any trigger (hidden input, `ul-file-input`, etc.), pass it to `[imageFile]`, and listen for `(cropped)` to get back a resized File ready to upload.',
       },
     },
   },
@@ -86,7 +84,7 @@ type Story = StoryObj<ImageCropperStoryComponent>;
 
 /**
  * Locked 1:1 round crop, as used for an avatar: pick a photo to open the
- * cropper, drag/zoom it within the fixed circle, then confirm.
+ * cropper, drag/resize the circular frame over it, then confirm.
  */
 export const Avatar: Story = {
   args: { mode: 'avatar' },

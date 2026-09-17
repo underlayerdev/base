@@ -18,7 +18,6 @@ import { ImageCropperComponent, type ImageCropperShape } from './image-cropper';
       [shape]="shape()"
       [aspectRatio]="aspectRatio()"
       confirmLabel="Save"
-      cancelLabel="Cancel"
       (cropped)="croppedFile = $event"
       (cancelled)="cancelledCount = cancelledCount + 1"
     />
@@ -62,6 +61,26 @@ describe('ImageCropperComponent', () => {
     expect(panel).toBeTruthy();
   });
 
+  it('renders a single confirm button — no redundant cancel button next to the modal close icon', () => {
+    const fixture = setup();
+    const footer = fixture.nativeElement.querySelector('[ul-modal-footer]') as HTMLElement;
+
+    expect(footer.querySelectorAll('button').length).toBe(1);
+  });
+
+  it('emits cancelled when the modal is dismissed via its own close button', () => {
+    const fixture = setup();
+    const closeButton: HTMLButtonElement = fixture.nativeElement.querySelector(
+      'button[aria-label="Close"]',
+    );
+
+    closeButton.click();
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance.cancelledCount).toBe(1);
+    expect(fixture.componentInstance.open).toBe(false);
+  });
+
   it('disables the confirm button until the cropper reports it is ready', () => {
     const fixture = setup();
     expect(findButtonByText(fixture, 'Save').disabled).toBe(true);
@@ -73,16 +92,6 @@ describe('ImageCropperComponent', () => {
     fixture.detectChanges();
 
     expect(findButtonByText(fixture, 'Save').disabled).toBe(false);
-  });
-
-  it('emits cancelled and closes the modal when the cancel button is clicked', () => {
-    const fixture = setup();
-
-    findButtonByText(fixture, 'Cancel').click();
-    fixture.detectChanges();
-
-    expect(fixture.componentInstance.cancelledCount).toBe(1);
-    expect(fixture.componentInstance.open).toBe(false);
   });
 
   it('emits the cropped file and closes the modal when confirm succeeds', async () => {
@@ -106,36 +115,30 @@ describe('ImageCropperComponent', () => {
     expect(fixture.componentInstance.croppedFile).toBeInstanceOf(File);
     expect(fixture.componentInstance.croppedFile?.type).toBe('image/jpeg');
     expect(fixture.componentInstance.open).toBe(false);
+    // Confirming must not also fire cancelled (open closes via a direct
+    // signal write here, not via the modal's own close(), which is what
+    // emits closed/cancelled).
+    expect(fixture.componentInstance.cancelledCount).toBe(0);
   });
 
   describe('locked aspect ratio mode (e.g. avatar)', () => {
-    function setupLocked() {
+    it('locks the frame to the given ratio and shape — the photo is never dragged, only the frame moves', () => {
       const fixture = setup();
       fixture.componentInstance.shape.set('round');
       fixture.componentInstance.aspectRatio.set(1);
       fixture.detectChanges();
-      return fixture;
-    }
 
-    it('configures a fixed round frame and forwards the zoom slider as a scale transform', () => {
-      const fixture = setupLocked();
       const cropper = queryCropper(fixture);
-
       expect(cropper.roundCropper).toBe(true);
       expect(cropper.maintainAspectRatio).toBe(true);
-      expect(cropper.cropperStaticWidth).toBe(240);
-      expect(cropper.cropperStaticHeight).toBe(240);
-      expect(cropper.allowMoveImage).toBe(true);
-
-      const slider: HTMLInputElement = fixture.nativeElement.querySelector(
-        '.ul-image-cropper__zoom-input',
-      );
-      expect(slider).toBeTruthy();
-      slider.value = '2';
-      slider.dispatchEvent(new Event('input'));
-      fixture.detectChanges();
-
-      expect(cropper.transform).toEqual({ scale: 2 });
+      expect(cropper.aspectRatio).toBe(1);
+      // No cropperStaticWidth/Height and no allowMoveImage: dragging always
+      // moves/resizes the frame within the photo (bounds-checked by
+      // ngx-image-cropper), never the photo within a fixed frame (which
+      // ngx-image-cropper does not bounds-check at all).
+      expect(cropper.cropperStaticWidth).toBeUndefined();
+      expect(cropper.cropperStaticHeight).toBeUndefined();
+      expect(cropper.allowMoveImage).toBe(false);
     });
 
     it('derives a proportional frame for a non-square locked ratio', () => {
@@ -143,22 +146,17 @@ describe('ImageCropperComponent', () => {
       fixture.componentInstance.aspectRatio.set(4 / 3);
       fixture.detectChanges();
 
-      const cropper = queryCropper(fixture);
-      expect(cropper.cropperStaticWidth).toBe(240);
-      expect(cropper.cropperStaticHeight).toBe(180);
+      expect(queryCropper(fixture).aspectRatio).toBe(4 / 3);
     });
   });
 
   describe('free-form mode (e.g. listing photos)', () => {
-    it('leaves the frame resizable and hides the zoom slider', () => {
+    it('leaves the frame fully resizable with no ratio imposed', () => {
       const fixture = setup();
       const cropper = queryCropper(fixture);
 
       expect(cropper.maintainAspectRatio).toBe(false);
-      expect(cropper.cropperStaticWidth).toBeUndefined();
-      expect(cropper.cropperStaticHeight).toBeUndefined();
       expect(cropper.allowMoveImage).toBe(false);
-      expect(fixture.nativeElement.querySelector('.ul-image-cropper__zoom-input')).toBeNull();
     });
   });
 });

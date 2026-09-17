@@ -1,4 +1,4 @@
-<ul-modal [(open)]="open" variant="custom" [title]="title()" (closed)="onCancel()">
+<ul-modal [(open)]="open" variant="custom" [title]="title()" (closed)="onClosed()">
   @if (imageFile()) {
     <div class="ul-image-cropper">
       <image-cropper
@@ -7,10 +7,8 @@
         [maintainAspectRatio]="isLocked()"
         [aspectRatio]="effectiveAspectRatio()"
         [roundCropper]="isRound()"
-        [cropperStaticWidth]="frameWidth()"
-        [cropperStaticHeight]="frameHeight()"
-        [allowMoveImage]="isLocked()"
-        [transform]="transform()"
+        [cropperMinWidth]="minFrameDimension"
+        [cropperMinHeight]="minFrameDimension"
         [resizeToWidth]="maxOutputSize()"
         [resizeToHeight]="maxOutputSize()"
         [cropperFrameAriaLabel]="frameAriaLabel()"
@@ -19,28 +17,10 @@
         (cropperReady)="cropperReady.set(true)"
         (loadImageFailed)="loadFailed.emit()"
       />
-
-      @if (isLocked()) {
-        <label class="ul-image-cropper__zoom">
-          <span class="ul-image-cropper__zoom-label">{{ zoomLabel() }}</span>
-          <input
-            type="range"
-            class="ul-image-cropper__zoom-input"
-            [min]="minZoom"
-            [max]="maxZoom"
-            [step]="zoomStep"
-            [value]="zoom()"
-            (input)="onZoomInput($event)"
-          />
-        </label>
-      }
     </div>
   }
 
   <div ul-modal-footer>
-    <ul-button theme="ghost-white" size="md" (buttonClick)="onCancel()">
-      {{ cancelLabel() }}
-    </ul-button>
     <ul-button
       theme="fill-purple"
       size="md"
