@@ -18,6 +18,7 @@ import { ImageCropperComponent, type ImageCropperShape } from './image-cropper';
       [shape]="shape()"
       [aspectRatio]="aspectRatio()"
       confirmLabel="Save"
+      zoomLabel="Zoom"
       (cropped)="croppedFile = $event"
       (cancelled)="cancelledCount = cancelledCount + 1"
     />
@@ -39,6 +40,14 @@ function setup() {
   return fixture;
 }
 
+function setupLocked() {
+  const fixture = setup();
+  fixture.componentInstance.shape.set('round');
+  fixture.componentInstance.aspectRatio.set(1);
+  fixture.detectChanges();
+  return fixture;
+}
+
 function findButtonByText(
   fixture: ComponentFixture<HostComponent>,
   text: string,
@@ -52,6 +61,10 @@ function findButtonByText(
 function queryCropper(fixture: ComponentFixture<HostComponent>): NgxImageCropperComponent {
   return fixture.debugElement.query(By.directive(NgxImageCropperComponent))
     .componentInstance as NgxImageCropperComponent;
+}
+
+function zoomSlider(fixture: ComponentFixture<HostComponent>): HTMLInputElement {
+  return fixture.nativeElement.querySelector('.ul-image-cropper__zoom-input');
 }
 
 describe('ImageCropperComponent', () => {
@@ -122,23 +135,16 @@ describe('ImageCropperComponent', () => {
   });
 
   describe('locked aspect ratio mode (e.g. avatar)', () => {
-    it('locks the frame to the given ratio and shape — the photo is never dragged, only the frame moves', () => {
-      const fixture = setup();
-      fixture.componentInstance.shape.set('round');
-      fixture.componentInstance.aspectRatio.set(1);
-      fixture.detectChanges();
-
+    it('configures a fixed round frame with a zoom slider', () => {
+      const fixture = setupLocked();
       const cropper = queryCropper(fixture);
+
       expect(cropper.roundCropper).toBe(true);
       expect(cropper.maintainAspectRatio).toBe(true);
-      expect(cropper.aspectRatio).toBe(1);
-      // No cropperStaticWidth/Height and no allowMoveImage: dragging always
-      // moves/resizes the frame within the photo (bounds-checked by
-      // ngx-image-cropper), never the photo within a fixed frame (which
-      // ngx-image-cropper does not bounds-check at all).
-      expect(cropper.cropperStaticWidth).toBeUndefined();
-      expect(cropper.cropperStaticHeight).toBeUndefined();
-      expect(cropper.allowMoveImage).toBe(false);
+      expect(cropper.cropperStaticWidth).toBe(240);
+      expect(cropper.cropperStaticHeight).toBe(240);
+      expect(cropper.allowMoveImage).toBe(true);
+      expect(zoomSlider(fixture)).toBeTruthy();
     });
 
     it('derives a proportional frame for a non-square locked ratio', () => {
@@ -146,17 +152,74 @@ describe('ImageCropperComponent', () => {
       fixture.componentInstance.aspectRatio.set(4 / 3);
       fixture.detectChanges();
 
-      expect(queryCropper(fixture).aspectRatio).toBe(4 / 3);
+      const cropper = queryCropper(fixture);
+      expect(cropper.cropperStaticWidth).toBe(240);
+      expect(cropper.cropperStaticHeight).toBe(180);
+    });
+
+    it('forwards the zoom slider value to the cropper as a scale transform', () => {
+      const fixture = setupLocked();
+      const cropper = queryCropper(fixture);
+      cropper.cropperReady.emit({ width: 400, height: 400 });
+      fixture.detectChanges();
+
+      const slider = zoomSlider(fixture);
+      slider.value = '2';
+      slider.dispatchEvent(new Event('input'));
+      fixture.detectChanges();
+
+      expect(cropper.transform).toEqual({ scale: 2, translateH: 0, translateV: 0 });
+    });
+
+    it('clamps a drag that would leave the frame uncovered instead of letting the photo escape it', () => {
+      const fixture = setupLocked();
+      const cropper = queryCropper(fixture);
+      // A 400x400 photo covering a 240x240 frame at scale 1 has 80px of
+      // slack on each side, i.e. 50 * (1 - 240/400) = 20% max pan.
+      cropper.cropperReady.emit({ width: 400, height: 400 });
+      fixture.detectChanges();
+
+      cropper.transformChange.emit({ scale: 1, translateH: 90, translateV: -90 });
+      fixture.detectChanges();
+
+      expect(cropper.transform).toEqual({ scale: 1, translateH: 20, translateV: -20 });
+    });
+
+    it('re-clamps the existing pan when zooming back out reduces the available slack', () => {
+      const fixture = setupLocked();
+      const cropper = queryCropper(fixture);
+      cropper.cropperReady.emit({ width: 400, height: 400 });
+      fixture.detectChanges();
+
+      // At scale 2 the max pan is 50 * (1 - 240/800) = 35%; drag to exactly that.
+      const slider = zoomSlider(fixture);
+      slider.value = '2';
+      slider.dispatchEvent(new Event('input'));
+      fixture.detectChanges();
+      cropper.transformChange.emit({ scale: 2, translateH: 35, translateV: 0 });
+      fixture.detectChanges();
+      expect(cropper.transform).toEqual({ scale: 2, translateH: 35, translateV: 0 });
+
+      // Zooming back to 1 shrinks the max pan to 20% — the same raw pan
+      // must now be re-clamped down, not left poking the photo out of frame.
+      slider.value = '1';
+      slider.dispatchEvent(new Event('input'));
+      fixture.detectChanges();
+
+      expect(cropper.transform).toEqual({ scale: 1, translateH: 20, translateV: 0 });
     });
   });
 
   describe('free-form mode (e.g. listing photos)', () => {
-    it('leaves the frame fully resizable with no ratio imposed', () => {
+    it('leaves the frame resizable and hides the zoom slider', () => {
       const fixture = setup();
       const cropper = queryCropper(fixture);
 
       expect(cropper.maintainAspectRatio).toBe(false);
+      expect(cropper.cropperStaticWidth).toBeUndefined();
+      expect(cropper.cropperStaticHeight).toBeUndefined();
       expect(cropper.allowMoveImage).toBe(false);
+      expect(zoomSlider(fixture)).toBeNull();
     });
   });
 });

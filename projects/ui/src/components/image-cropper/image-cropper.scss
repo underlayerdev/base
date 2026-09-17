@@ -6,6 +6,7 @@ $image-cropper-class: '.#{$prefix}image-cropper';
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: $spacing-spacing-4;
 
   &__frame {
     display: block;
@@ -23,4 +24,27 @@ $image-cropper-class: '.#{$prefix}image-cropper';
     --cropper-resize-square-bg: #{$color-background-purple};
     --cropper-resize-square-border: 1px solid #{$color-background-main};
   }
+
+  &__zoom {
+    display: flex;
+    align-items: center;
+    gap: $spacing-spacing-3;
+    width: 100%;
+  }
+
+  &__zoom-label {
+    @include typography('caption-l', 'regular');
+    color: $color-text-secondary;
+    flex-shrink: 0;
+  }
+
+  &__zoom-input {
+    flex: 1;
+    accent-color: $color-background-purple;
+  }
+}
+
+.ul-modal__foter-content {
+  width: 100%;
+  margin-top: $spacing-spacing-8;
 }
