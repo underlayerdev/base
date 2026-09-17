@@ -15,13 +15,22 @@ import { ImageCropperComponent } from './image-cropper';
       style="padding: 24px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;"
     >
       @if (mode() === 'avatar') {
-        <ul-avatar size="xl" [src]="resultUrl()" />
-      } @else if (resultUrl(); as url) {
-        <img [src]="url" alt="" style="max-width: 320px; border-radius: 8px;" />
+        <button
+          type="button"
+          style="padding: 0; border: 0; background: none; cursor: pointer; border-radius: 4096px;"
+          aria-label="Change photo"
+          (click)="fileInput.click()"
+        >
+          <ul-avatar size="2xl" [editable]="true" [src]="resultUrl()" />
+        </button>
+      } @else {
+        @if (resultUrl(); as url) {
+          <img [src]="url" alt="" style="max-width: 320px; border-radius: 8px;" />
+        }
+        <ul-button theme="fill-purple" (buttonClick)="fileInput.click()">Choose photo</ul-button>
       }
 
       <input #fileInput type="file" accept="image/*" hidden (change)="onFileSelected($event)" />
-      <ul-button theme="fill-purple" (buttonClick)="fileInput.click()">Choose photo</ul-button>
 
       <ul-image-cropper
         [(open)]="showCropper"
@@ -84,8 +93,9 @@ export default meta;
 type Story = StoryObj<ImageCropperStoryComponent>;
 
 /**
- * Locked 1:1 round crop, as used for an avatar: pick a photo to open the
- * cropper, drag/zoom it within the fixed circle, then confirm.
+ * Locked 1:1 round crop, as used for an avatar: click the editable avatar
+ * itself (hover to see the camera affordance) to pick a photo, drag/zoom
+ * it within the fixed circle in the cropper that opens, then confirm.
  */
 export const Avatar: Story = {
   args: { mode: 'avatar' },
