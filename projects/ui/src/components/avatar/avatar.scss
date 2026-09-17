@@ -83,9 +83,15 @@
     color: $color-text-secondary;
   }
 
-  // Editable "tap to add a photo" overlay — dims whatever fallback is
-  // showing underneath (initials, icon, or the default person icon) and
-  // puts a camera icon on top to signal it's clickable.
+  // Editable "tap to change photo" overlay — dims whatever's showing
+  // underneath (a real photo, initials, icon, or the default person icon)
+  // and puts a photo icon on top to signal it's clickable. Shown even once
+  // a photo is set, not just when one is missing, so it's clear the photo
+  // can still be changed later. Visible by default (mobile/touch has no
+  // hover, so the affordance would otherwise never be seen at all), then
+  // hidden until hover on devices that actually have a mouse — the same
+  // reveal-on-hover treatment X/Twitter, LinkedIn, and Instagram use for
+  // their own editable avatar on desktop.
   &__edit-overlay {
     position: absolute;
     inset: 0;
@@ -94,9 +100,26 @@
     justify-content: center;
     background-color: #{rgba($color-background-main, 0.55)};
     pointer-events: none;
+    opacity: 1;
+    @include transition-property(opacity, $transition-duration-fast);
 
     .#{$prefix}icon {
       color: $color-text-primary;
+      @include transition-property(transform, $transition-duration-fast);
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &__edit-overlay {
+      opacity: 0;
+    }
+
+    &:hover &__edit-overlay {
+      opacity: 1;
+
+      .#{$prefix}icon {
+        transform: scale(0.75);
+      }
     }
   }
 }

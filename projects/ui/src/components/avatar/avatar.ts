@@ -40,9 +40,9 @@ export type AvatarSize = UiSize | '2xl';
           <ul-icon icon="user" [size]="iconSize()" />
         }
 
-        @if (showEditOverlay()) {
+        @if (editable()) {
           <div class="ul-avatar__edit-overlay" aria-hidden="true">
-            <ul-icon icon="camera" [size]="iconSize()" />
+            <ul-icon icon="photo" [size]="iconSize()" />
           </div>
         }
       </div>
@@ -73,9 +73,10 @@ export class AvatarComponent {
   /**
    * Marks this avatar as a photo picker: when there's no photo to show, a
    * default person icon fills in for initials/icon, and a dimmed overlay
-   * with a camera icon is layered on top to signal it's clickable. Purely
-   * visual — wrap the avatar in your own button/link to actually handle
-   * the click.
+   * with a photo icon is layered on top to signal it's clickable — shown
+   * even once a photo is set, so the user can tell they can still change
+   * it, not just add one the first time. Purely visual — wrap the avatar
+   * in your own button/link to actually handle the click.
    */
   editable = input<boolean>(false);
 
@@ -83,9 +84,6 @@ export class AvatarComponent {
   protected readonly imageError = signal(false);
 
   protected readonly hasPhoto = computed(() => !!this.src() && !this.imageError());
-
-  /** Whether the editable "tap to add a photo" overlay should render. */
-  protected readonly showEditOverlay = computed(() => this.editable() && !this.hasPhoto());
 
   /** Computed icon size based on avatar size */
   readonly iconSize = computed<IconSize>(() => {

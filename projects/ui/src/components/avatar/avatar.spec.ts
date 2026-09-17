@@ -49,18 +49,18 @@ describe('AvatarComponent', () => {
   });
 
   describe('editable', () => {
-    it('shows a default person icon and the camera overlay when nothing is set', () => {
+    it('shows a default person icon and the photo-icon overlay when nothing is set', () => {
       const fixture = setup();
       fixture.componentRef.setInput('editable', true);
       fixture.detectChanges();
 
       expect(fixture.nativeElement.querySelector('.ul-icon-user')).toBeTruthy();
       expect(
-        fixture.nativeElement.querySelector('.ul-avatar__edit-overlay .ul-icon-camera'),
+        fixture.nativeElement.querySelector('.ul-avatar__edit-overlay .ul-icon-photo'),
       ).toBeTruthy();
     });
 
-    it('layers the camera overlay on top of initials when there is no photo yet', () => {
+    it('layers the overlay on top of initials when there is no photo yet', () => {
       const fixture = setup();
       fixture.componentRef.setInput('editable', true);
       fixture.componentRef.setInput('initials', 'JD');
@@ -70,21 +70,22 @@ describe('AvatarComponent', () => {
       expect(fixture.nativeElement.querySelector('.ul-avatar__edit-overlay')).toBeTruthy();
     });
 
-    it('hides the overlay once a photo is showing', () => {
+    it('keeps showing the overlay once a photo is set, so the user can tell they can change it', () => {
       const fixture = setup();
       fixture.componentRef.setInput('editable', true);
       fixture.componentRef.setInput('src', 'https://example.com/photo.jpg');
       fixture.detectChanges();
 
-      expect(fixture.nativeElement.querySelector('.ul-avatar__edit-overlay')).toBeNull();
+      expect(fixture.nativeElement.querySelector('.ul-avatar__image')).toBeTruthy();
+      expect(fixture.nativeElement.querySelector('.ul-avatar__edit-overlay')).toBeTruthy();
     });
 
-    it('brings the overlay back if the photo fails to load', () => {
+    it('keeps showing the overlay if the photo fails to load', () => {
       const fixture = setup();
       fixture.componentRef.setInput('editable', true);
       fixture.componentRef.setInput('src', 'https://example.com/broken.jpg');
       fixture.detectChanges();
-      expect(fixture.nativeElement.querySelector('.ul-avatar__edit-overlay')).toBeNull();
+      expect(fixture.nativeElement.querySelector('.ul-avatar__edit-overlay')).toBeTruthy();
 
       const img: HTMLImageElement = fixture.nativeElement.querySelector('.ul-avatar__image');
       img.dispatchEvent(new Event('error'));
@@ -95,6 +96,7 @@ describe('AvatarComponent', () => {
 
     it('does not show the overlay or default icon when not editable', () => {
       const fixture = setup();
+      fixture.componentRef.setInput('src', 'https://example.com/photo.jpg');
       fixture.detectChanges();
 
       expect(fixture.nativeElement.querySelector('.ul-avatar__edit-overlay')).toBeNull();

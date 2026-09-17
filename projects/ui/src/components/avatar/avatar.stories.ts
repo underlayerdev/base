@@ -43,7 +43,7 @@ const meta: Meta<AvatarComponent> = {
     editable: {
       control: { type: 'boolean' },
       description:
-        'Marks this avatar as a photo picker: shows a default person icon when nothing else is set, and layers a dimmed camera-icon overlay on top whenever there is no photo. Purely visual — wrap the avatar in your own button/link to handle the click.',
+        'Marks this avatar as a photo picker: shows a default person icon when nothing else is set, and layers a dimmed photo-icon overlay on top — even once a real photo is showing, so it stays clear the photo can be changed. Purely visual — wrap the avatar in your own button/link to handle the click.',
     },
   },
   args: {
@@ -205,10 +205,11 @@ export const Loading: Story = {
 };
 
 /**
- * Editable photo-picker avatars: a dimmed camera-icon overlay signals it's
+ * Editable photo-picker avatars: a dimmed photo-icon overlay signals it's
  * clickable, layered over whatever's showing underneath — a default person
- * icon when nothing is set, or initials once the user has a name but no
- * photo yet. The overlay disappears once a real photo (`src`) is showing.
+ * icon when nothing is set, initials once the user has a name but no photo
+ * yet, or a real photo. The overlay stays even once a photo is set, so it's
+ * clear the photo can still be changed, not just added the first time.
  */
 export const Editable: Story = {
   args: { editable: true },
