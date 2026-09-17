@@ -82,4 +82,21 @@
   .#{$prefix}icon {
     color: $color-text-secondary;
   }
+
+  // Editable "tap to add a photo" overlay — dims whatever fallback is
+  // showing underneath (initials, icon, or the default person icon) and
+  // puts a camera icon on top to signal it's clickable.
+  &__edit-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #{rgba($color-background-main, 0.55)};
+    pointer-events: none;
+
+    .#{$prefix}icon {
+      color: $color-text-primary;
+    }
+  }
 }

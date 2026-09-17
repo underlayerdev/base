@@ -30,12 +30,20 @@ export type AvatarSize = UiSize | '2xl';
       borderRadius="full"
     >
       <div class="ul-avatar ul-avatar--{{ size() }}">
-        @if (src() && !imageError()) {
+        @if (hasPhoto()) {
           <img [src]="src()" [alt]="alt()" (error)="handleImageError()" class="ul-avatar__image" />
         } @else if (initials()) {
           <span class="ul-avatar__initials">{{ initials() }}</span>
         } @else if (icon()) {
           <ul-icon [icon]="icon()!" [size]="iconSize()" />
+        } @else if (editable()) {
+          <ul-icon icon="user" [size]="iconSize()" />
+        }
+
+        @if (showEditOverlay()) {
+          <div class="ul-avatar__edit-overlay" aria-hidden="true">
+            <ul-icon icon="camera" [size]="iconSize()" />
+          </div>
         }
       </div>
     </ul-skeleton>
@@ -62,8 +70,22 @@ export class AvatarComponent {
   /** Show a skeleton placeholder instead of content while loading. */
   loading = input<boolean>(false);
 
+  /**
+   * Marks this avatar as a photo picker: when there's no photo to show, a
+   * default person icon fills in for initials/icon, and a dimmed overlay
+   * with a camera icon is layered on top to signal it's clickable. Purely
+   * visual — wrap the avatar in your own button/link to actually handle
+   * the click.
+   */
+  editable = input<boolean>(false);
+
   /** Internal signal to track image loading errors */
   protected readonly imageError = signal(false);
+
+  protected readonly hasPhoto = computed(() => !!this.src() && !this.imageError());
+
+  /** Whether the editable "tap to add a photo" overlay should render. */
+  protected readonly showEditOverlay = computed(() => this.editable() && !this.hasPhoto());
 
   /** Computed icon size based on avatar size */
   readonly iconSize = computed<IconSize>(() => {

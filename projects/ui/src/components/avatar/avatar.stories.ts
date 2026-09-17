@@ -40,6 +40,11 @@ const meta: Meta<AvatarComponent> = {
       control: { type: 'boolean' },
       description: 'Show skeleton placeholder instead of avatar content while loading',
     },
+    editable: {
+      control: { type: 'boolean' },
+      description:
+        'Marks this avatar as a photo picker: shows a default person icon when nothing else is set, and layers a dimmed camera-icon overlay on top whenever there is no photo. Purely visual — wrap the avatar in your own button/link to handle the click.',
+    },
   },
   args: {
     size: 'md',
@@ -48,6 +53,7 @@ const meta: Meta<AvatarComponent> = {
     icon: undefined,
     alt: '',
     loading: false,
+    editable: false,
   },
 };
 
@@ -194,6 +200,25 @@ export const Loading: Story = {
         [alt]="alt"
         [loading]="loading"
       />
+    `,
+  }),
+};
+
+/**
+ * Editable photo-picker avatars: a dimmed camera-icon overlay signals it's
+ * clickable, layered over whatever's showing underneath — a default person
+ * icon when nothing is set, or initials once the user has a name but no
+ * photo yet. The overlay disappears once a real photo (`src`) is showing.
+ */
+export const Editable: Story = {
+  args: { editable: true },
+  render: () => ({
+    template: `
+      <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+        <ul-avatar size="xl" [editable]="true" />
+        <ul-avatar size="xl" [editable]="true" initials="JD" />
+        <ul-avatar size="xl" [editable]="true" src="https://i.pravatar.cc/150?img=12" alt="User avatar" />
+      </div>
     `,
   }),
 };
