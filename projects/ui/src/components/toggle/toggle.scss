@@ -17,6 +17,7 @@ $toggle-inset: 2px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: $spacing-spacing-2;
 }
 
 // Clickable row (label wrapping input + track + text)
