@@ -1,5 +1,9 @@
 @use '../../foundations/toolkit' as *;
 
+:host {
+  width: 100%;
+}
+
 .#{$prefix}search-input {
   display: flex;
   flex-direction: column;
