@@ -613,6 +613,179 @@
             "extends": []
         },
         {
+            "name": "DemoOnboardingComponent",
+            "id": "component-DemoOnboardingComponent-e5831530152b2cdef074a22ab25646f5f1be04e2ac0ffba79bd39016d7fe1eead160b7cad1aeb554f5a5a1dabbe46e08ba6044da63df9c8b0a83dcd0de0bf6e5",
+            "file": "projects/ui/src/components/demo-onboarding.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ul-demo-onboarding",
+            "styleUrls": [],
+            "styles": [
+                "\n      .ul-demo-onboarding {\n        min-height: 100vh;\n        display: flex;\n        flex-direction: column;\n        background: #0a0a0a;\n        font-family: sans-serif;\n      }\n      .ul-demo-onboarding__header {\n        padding: 2rem 2rem 0;\n      }\n      .ul-demo-onboarding__content {\n        flex: 1;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 2rem;\n      }\n      .ul-demo-onboarding__step {\n        width: 320px;\n        display: flex;\n        flex-direction: column;\n        gap: 1.5rem;\n      }\n      .ul-demo-onboarding__step--centered {\n        align-items: center;\n      }\n      .ul-demo-onboarding__step-header {\n        align-self: flex-start;\n      }\n      .ul-demo-onboarding__title {\n        color: #fff;\n        font-size: 24px;\n        font-weight: 800;\n        margin: 0 0 8px;\n      }\n      .ul-demo-onboarding__subtitle {\n        color: rgba(255, 255, 255, 0.6);\n        font-size: 14px;\n        margin: 0;\n      }\n      .ul-demo-onboarding__footer {\n        display: flex;\n        flex-direction: column;\n        gap: 0.75rem;\n        padding: 1.5rem 2rem 2rem;\n      }\n      .ul-demo-onboarding__footer ul-button {\n        display: block;\n        width: 100%;\n      }\n    "
+            ],
+            "template": "<div class=\"ul-demo-onboarding\">\n  <div class=\"ul-demo-onboarding__header\">\n    <ul-stepper [totalSteps]=\"totalSteps\" [currentStep]=\"currentStep()\" [labels]=\"labels\" />\n  </div>\n\n  <div class=\"ul-demo-onboarding__content\">\n    @switch (currentStep()) {\n      @case (1) {\n        <div class=\"ul-demo-onboarding__step\">\n          <div>\n            <h2 class=\"ul-demo-onboarding__title\">What's your name?</h2>\n            <p class=\"ul-demo-onboarding__subtitle\">\n              This is how you'll appear to other users.\n            </p>\n          </div>\n          <ul-input label=\"Display name\" placeholder=\"e.g. Jane Doe\" [(value)]=\"displayName\" />\n        </div>\n      }\n      @case (2) {\n        <div class=\"ul-demo-onboarding__step ul-demo-onboarding__step--centered\">\n          <div class=\"ul-demo-onboarding__step-header\">\n            <h2 class=\"ul-demo-onboarding__title\">Add a profile photo</h2>\n            <p class=\"ul-demo-onboarding__subtitle\">Optional — you can just continue.</p>\n          </div>\n          <ul-avatar size=\"xl\" [initials]=\"avatarInitials()\" />\n        </div>\n      }\n      @case (3) {\n        <div class=\"ul-demo-onboarding__step\">\n          <div>\n            <h2 class=\"ul-demo-onboarding__title\">Where are you browsing from?</h2>\n            <p class=\"ul-demo-onboarding__subtitle\">Optional — helps show you items nearby.</p>\n          </div>\n          <ul-button theme=\"outline-white\" size=\"md\">Use my current location</ul-button>\n        </div>\n      }\n    }\n  </div>\n\n  <div class=\"ul-demo-onboarding__footer\">\n    <ul-button\n      theme=\"fill-purple\"\n      size=\"md\"\n      [disabled]=\"!canContinue()\"\n      (buttonClick)=\"primaryAction()\"\n    >\n      {{ currentStep() === totalSteps ? 'Finish' : 'Continue' }}\n    </ul-button>\n    @if (currentStep() > 1) {\n      <ul-button theme=\"ghost-white\" size=\"md\" (buttonClick)=\"back()\">Back</ul-button>\n    }\n  </div>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "avatarInitials",
+                    "defaultValue": "computed(() => this.displayName().trim().charAt(0).toUpperCase())",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 131,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "canContinue",
+                    "defaultValue": "computed(() => this.currentStep() !== 1 || !!this.displayName().trim())",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 136,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "currentStep",
+                    "defaultValue": "signal(1)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 129,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "displayName",
+                    "defaultValue": "signal('')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 130,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "labels",
+                    "defaultValue": "STEP_LABELS",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 128,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "totalSteps",
+                    "defaultValue": "TOTAL_STEPS",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 127,
+                    "modifierKind": [
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "back",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 146,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "primaryAction",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 138,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "restart",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 150,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "AvatarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "InputComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "StepperComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, computed, signal } from '@angular/core';\nimport { moduleMetadata } from '@storybook/angular';\n\nimport { Meta, StoryObj } from '../../.storybook/types';\nimport { AvatarComponent } from './avatar/avatar';\nimport { ButtonComponent } from './button/button';\nimport { InputComponent } from './input/input';\nimport { StepperComponent } from './stepper/stepper';\n\nconst STEP_LABELS = ['Name', 'Photo', 'Location'];\nconst TOTAL_STEPS = STEP_LABELS.length;\n\n@Component({\n  selector: 'ul-demo-onboarding',\n  imports: [AvatarComponent, ButtonComponent, InputComponent, StepperComponent],\n  template: `\n    <div class=\"ul-demo-onboarding\">\n      <div class=\"ul-demo-onboarding__header\">\n        <ul-stepper [totalSteps]=\"totalSteps\" [currentStep]=\"currentStep()\" [labels]=\"labels\" />\n      </div>\n\n      <div class=\"ul-demo-onboarding__content\">\n        @switch (currentStep()) {\n          @case (1) {\n            <div class=\"ul-demo-onboarding__step\">\n              <div>\n                <h2 class=\"ul-demo-onboarding__title\">What's your name?</h2>\n                <p class=\"ul-demo-onboarding__subtitle\">\n                  This is how you'll appear to other users.\n                </p>\n              </div>\n              <ul-input label=\"Display name\" placeholder=\"e.g. Jane Doe\" [(value)]=\"displayName\" />\n            </div>\n          }\n          @case (2) {\n            <div class=\"ul-demo-onboarding__step ul-demo-onboarding__step--centered\">\n              <div class=\"ul-demo-onboarding__step-header\">\n                <h2 class=\"ul-demo-onboarding__title\">Add a profile photo</h2>\n                <p class=\"ul-demo-onboarding__subtitle\">Optional — you can just continue.</p>\n              </div>\n              <ul-avatar size=\"xl\" [initials]=\"avatarInitials()\" />\n            </div>\n          }\n          @case (3) {\n            <div class=\"ul-demo-onboarding__step\">\n              <div>\n                <h2 class=\"ul-demo-onboarding__title\">Where are you browsing from?</h2>\n                <p class=\"ul-demo-onboarding__subtitle\">Optional — helps show you items nearby.</p>\n              </div>\n              <ul-button theme=\"outline-white\" size=\"md\">Use my current location</ul-button>\n            </div>\n          }\n        }\n      </div>\n\n      <div class=\"ul-demo-onboarding__footer\">\n        <ul-button\n          theme=\"fill-purple\"\n          size=\"md\"\n          [disabled]=\"!canContinue()\"\n          (buttonClick)=\"primaryAction()\"\n        >\n          {{ currentStep() === totalSteps ? 'Finish' : 'Continue' }}\n        </ul-button>\n        @if (currentStep() > 1) {\n          <ul-button theme=\"ghost-white\" size=\"md\" (buttonClick)=\"back()\">Back</ul-button>\n        }\n      </div>\n    </div>\n  `,\n  styles: [\n    `\n      .ul-demo-onboarding {\n        min-height: 100vh;\n        display: flex;\n        flex-direction: column;\n        background: #0a0a0a;\n        font-family: sans-serif;\n      }\n      .ul-demo-onboarding__header {\n        padding: 2rem 2rem 0;\n      }\n      .ul-demo-onboarding__content {\n        flex: 1;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 2rem;\n      }\n      .ul-demo-onboarding__step {\n        width: 320px;\n        display: flex;\n        flex-direction: column;\n        gap: 1.5rem;\n      }\n      .ul-demo-onboarding__step--centered {\n        align-items: center;\n      }\n      .ul-demo-onboarding__step-header {\n        align-self: flex-start;\n      }\n      .ul-demo-onboarding__title {\n        color: #fff;\n        font-size: 24px;\n        font-weight: 800;\n        margin: 0 0 8px;\n      }\n      .ul-demo-onboarding__subtitle {\n        color: rgba(255, 255, 255, 0.6);\n        font-size: 14px;\n        margin: 0;\n      }\n      .ul-demo-onboarding__footer {\n        display: flex;\n        flex-direction: column;\n        gap: 0.75rem;\n        padding: 1.5rem 2rem 2rem;\n      }\n      .ul-demo-onboarding__footer ul-button {\n        display: block;\n        width: 100%;\n      }\n    `,\n  ],\n})\nclass DemoOnboardingComponent {\n  readonly totalSteps = TOTAL_STEPS;\n  readonly labels = STEP_LABELS;\n  readonly currentStep = signal(1);\n  readonly displayName = signal('');\n  readonly avatarInitials = computed(() => this.displayName().trim().charAt(0).toUpperCase());\n\n  // Step 1 (name) is the only required step — the rest can always be\n  // continued past without doing anything, which is what \"skipping\" means\n  // here, rather than a separate Skip button.\n  readonly canContinue = computed(() => this.currentStep() !== 1 || !!this.displayName().trim());\n\n  primaryAction(): void {\n    if (this.currentStep() === this.totalSteps) {\n      this.restart();\n      return;\n    }\n    this.currentStep.update((step) => Math.min(step + 1, this.totalSteps));\n  }\n\n  back(): void {\n    this.currentStep.update((step) => Math.max(step - 1, 1));\n  }\n\n  private restart(): void {\n    this.currentStep.set(1);\n    this.displayName.set('');\n  }\n}\n\nconst meta: Meta<DemoOnboardingComponent> = {\n  title: 'Demos/Onboarding',\n  component: DemoOnboardingComponent,\n  parameters: {\n    layout: 'fullscreen',\n    docs: {\n      description: {\n        component:\n          \"Realistic mock of undermarket's onboarding flow (name required, photo/location optional) — click Continue/Back to see ul-stepper track progress in context, not just as a bare indicator. There's no separate Skip button: optional steps can always be continued past without input.\",\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [DemoOnboardingComponent],\n    }),\n  ],\n};\n\nexport default meta;\ntype Story = StoryObj<DemoOnboardingComponent>;\n\nexport const Default: Story = {\n  render: () => ({\n    template: '<ul-demo-onboarding></ul-demo-onboarding>',\n  }),\n};\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n      .ul-demo-onboarding {\n        min-height: 100vh;\n        display: flex;\n        flex-direction: column;\n        background: #0a0a0a;\n        font-family: sans-serif;\n      }\n      .ul-demo-onboarding__header {\n        padding: 2rem 2rem 0;\n      }\n      .ul-demo-onboarding__content {\n        flex: 1;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 2rem;\n      }\n      .ul-demo-onboarding__step {\n        width: 320px;\n        display: flex;\n        flex-direction: column;\n        gap: 1.5rem;\n      }\n      .ul-demo-onboarding__step--centered {\n        align-items: center;\n      }\n      .ul-demo-onboarding__step-header {\n        align-self: flex-start;\n      }\n      .ul-demo-onboarding__title {\n        color: #fff;\n        font-size: 24px;\n        font-weight: 800;\n        margin: 0 0 8px;\n      }\n      .ul-demo-onboarding__subtitle {\n        color: rgba(255, 255, 255, 0.6);\n        font-size: 14px;\n        margin: 0;\n      }\n      .ul-demo-onboarding__footer {\n        display: flex;\n        flex-direction: column;\n        gap: 0.75rem;\n        padding: 1.5rem 2rem 2rem;\n      }\n      .ul-demo-onboarding__footer ul-button {\n        display: block;\n        width: 100%;\n      }\n    \n",
+            "extends": []
+        },
+        {
             "name": "DemoProductPageComponent",
             "id": "component-DemoProductPageComponent-02fa29da0b8a605852d43382f859707362b794ff507f6188c5eb31c6b78b90830ee782ba689782314ce6e9fe14afb2f48cb8b42e76ff2c1c3bf2e07b8bdfa81c",
             "file": "projects/ui/src/components/demo-product-page.stories.ts",
@@ -1278,6 +1451,175 @@
             "extends": []
         },
         {
+            "name": "ImageCropperStoryComponent",
+            "id": "component-ImageCropperStoryComponent-72ed803409322070ba09660de0004d2c1fe399b3bf8baa5ad97932b4d275f7f8cada9904660498e5830b7cd3bbd6a14636aa4a75c8fc654d0527d13531e78703",
+            "file": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ul-image-cropper-story",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div\n  style=\"padding: 24px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;\"\n>\n  @if (mode() === 'avatar') {\n    <button\n      type=\"button\"\n      style=\"padding: 0; border: 0; background: none; cursor: pointer; border-radius: 4096px;\"\n      aria-label=\"Change photo\"\n      (click)=\"fileInput.click()\"\n    >\n      <ul-avatar size=\"2xl\" [editable]=\"true\" [src]=\"resultUrl()\" />\n    </button>\n  } @else {\n    @if (resultUrl(); as url) {\n      <img [src]=\"url\" alt=\"\" style=\"max-width: 320px; border-radius: 8px;\" />\n    }\n    <ul-button theme=\"fill-purple\" (buttonClick)=\"fileInput.click()\">Choose photo</ul-button>\n  }\n\n  <input #fileInput type=\"file\" accept=\"image/*\" hidden (change)=\"onFileSelected($event)\" />\n\n  <ul-image-cropper\n    [(open)]=\"showCropper\"\n    [imageFile]=\"selectedFile()\"\n    [shape]=\"mode() === 'avatar' ? 'round' : 'rectangle'\"\n    [aspectRatio]=\"mode() === 'avatar' ? 1 : null\"\n    [maxOutputSize]=\"mode() === 'avatar' ? 512 : 1920\"\n    [title]=\"mode() === 'avatar' ? 'Adjust photo' : 'Trim photo'\"\n    confirmLabel=\"Save\"\n    zoomLabel=\"Zoom\"\n    (cropped)=\"onCropped($event)\"\n  />\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "mode",
+                    "defaultValue": "'avatar'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"avatar\" | \"listing\"",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 50,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "resultUrl",
+                    "defaultValue": "signal<string | undefined>(undefined)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 53,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "selectedFile",
+                    "defaultValue": "signal<File | null>(null)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 52,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "showCropper",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 54
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onCropped",
+                    "args": [
+                        {
+                            "name": "file",
+                            "type": "File",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "file",
+                            "type": "File",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onFileSelected",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 56,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "AvatarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "ImageCropperComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, signal } from '@angular/core';\n\nimport { Meta, StoryObj } from '../../../.storybook/types';\n\nimport { AvatarComponent } from '../avatar/avatar';\nimport { ButtonComponent } from '../button/button';\n\nimport { ImageCropperComponent } from './image-cropper';\n\n@Component({\n  selector: 'ul-image-cropper-story',\n  imports: [AvatarComponent, ImageCropperComponent, ButtonComponent],\n  template: `\n    <div\n      style=\"padding: 24px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;\"\n    >\n      @if (mode() === 'avatar') {\n        <button\n          type=\"button\"\n          style=\"padding: 0; border: 0; background: none; cursor: pointer; border-radius: 4096px;\"\n          aria-label=\"Change photo\"\n          (click)=\"fileInput.click()\"\n        >\n          <ul-avatar size=\"2xl\" [editable]=\"true\" [src]=\"resultUrl()\" />\n        </button>\n      } @else {\n        @if (resultUrl(); as url) {\n          <img [src]=\"url\" alt=\"\" style=\"max-width: 320px; border-radius: 8px;\" />\n        }\n        <ul-button theme=\"fill-purple\" (buttonClick)=\"fileInput.click()\">Choose photo</ul-button>\n      }\n\n      <input #fileInput type=\"file\" accept=\"image/*\" hidden (change)=\"onFileSelected($event)\" />\n\n      <ul-image-cropper\n        [(open)]=\"showCropper\"\n        [imageFile]=\"selectedFile()\"\n        [shape]=\"mode() === 'avatar' ? 'round' : 'rectangle'\"\n        [aspectRatio]=\"mode() === 'avatar' ? 1 : null\"\n        [maxOutputSize]=\"mode() === 'avatar' ? 512 : 1920\"\n        [title]=\"mode() === 'avatar' ? 'Adjust photo' : 'Trim photo'\"\n        confirmLabel=\"Save\"\n        zoomLabel=\"Zoom\"\n        (cropped)=\"onCropped($event)\"\n      />\n    </div>\n  `,\n})\nclass ImageCropperStoryComponent {\n  readonly mode = input<'avatar' | 'listing'>('avatar');\n\n  readonly selectedFile = signal<File | null>(null);\n  readonly resultUrl = signal<string | undefined>(undefined);\n  showCropper = false;\n\n  onFileSelected(event: Event): void {\n    const input = event.target as HTMLInputElement;\n    const file = input.files?.[0];\n    input.value = '';\n    if (!file) return;\n\n    this.selectedFile.set(file);\n    this.showCropper = true;\n  }\n\n  onCropped(file: File): void {\n    this.resultUrl.set(URL.createObjectURL(file));\n  }\n}\n\nconst meta: Meta<ImageCropperStoryComponent> = {\n  title: 'Components/Data Display/Image Cropper',\n  component: ImageCropperStoryComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Modal flow for cropping/resizing a photo, wrapping ngx-image-cropper so consumers never import it directly. Two modes depending on whether `aspectRatio` is set: **locked** (fixed frame, drag/zoom the photo underneath — for avatars and anything needing a consistent ratio) or **free-form** (resizable frame over a static photo, no ratio imposed — for listing photos, which keep their own shape today). In locked mode, dragging the photo is clamped so it can never uncover the frame — ngx-image-cropper itself only bounds-checks its frame-resize path, not this one, so this component re-implements that clamping for pan and zoom together. Only a single confirm button is shown; dismiss via the modal’s own close button, backdrop, or Escape. Pick a file with any trigger (hidden input, `ul-file-input`, etc.), pass it to `[imageFile]`, and listen for `(cropped)` to get back a resized File ready to upload.',\n      },\n    },\n  },\n  argTypes: {\n    mode: {\n      options: ['avatar', 'listing'],\n      control: { type: 'radio' },\n      description: 'Which preset this story demonstrates — not a real component input.',\n    },\n  },\n};\n\nexport default meta;\ntype Story = StoryObj<ImageCropperStoryComponent>;\n\n/**\n * Locked 1:1 round crop, as used for an avatar: click the editable avatar\n * itself (hover to see the camera affordance) to pick a photo, drag/zoom\n * it within the fixed circle in the cropper that opens, then confirm.\n */\nexport const Avatar: Story = {\n  args: { mode: 'avatar' },\n};\n\n/**\n * Free-form rectangular crop, as used for a listing photo: pick a photo to\n * open the cropper, drag the frame's corners to trim it, then confirm — no\n * aspect ratio is imposed.\n */\nexport const ListingPhoto: Story = {\n  args: { mode: 'listing' },\n};\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "SelectableRowDemoComponent",
             "id": "component-SelectableRowDemoComponent-f22d9442db168c166bbd80cafac4aa9c9ded539ac6f349728d6e97a35f3c566fbb3917c5d1b2c811da23bc4f6201e647602d23600261b4a9aad1bf85dd21b235",
             "file": "projects/ui/src/components/selectable-row/selectable-row.stories.ts",
@@ -1916,9 +2258,9 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-avatar [size]=\"'sm'\" [initials]=\"'SM'\" />\n        <ul-avatar [size]=\"'md'\" [initials]=\"'MD'\" />\n        <ul-avatar [size]=\"'lg'\" [initials]=\"'LG'\" />\n        <ul-avatar [size]=\"'xl'\" [initials]=\"'XL'\" />\n      </div>\n    `,\n  }),\n}",
-                "rawdescription": "Demonstrates all available avatar sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.",
-                "description": "<p>Demonstrates all available avatar sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.</p>\n"
+                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-avatar [size]=\"'sm'\" [initials]=\"'SM'\" />\n        <ul-avatar [size]=\"'md'\" [initials]=\"'MD'\" />\n        <ul-avatar [size]=\"'lg'\" [initials]=\"'LG'\" />\n        <ul-avatar [size]=\"'xl'\" [initials]=\"'XL'\" />\n        <ul-avatar [size]=\"'2xl'\" [initials]=\"'XXL'\" />\n      </div>\n    `,\n  }),\n}",
+                "rawdescription": "Demonstrates all available avatar sizes side by side.\nShows sm, md, lg, xl, and 2xl sizes for easy comparison.",
+                "description": "<p>Demonstrates all available avatar sizes side by side.\nShows sm, md, lg, xl, and 2xl sizes for easy comparison.</p>\n"
             },
             {
                 "name": "AllSizes",
@@ -2029,6 +2371,18 @@
                 "defaultValue": "{\n  render: () => ({\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center;\">\n        ${Object.keys(variables.iconography.font.weight)\n          .map((weight) => `<ul-icon [size]=\"'8'\" [weight]=\"'${weight}'\" [icon]=\"'ultra_games'\"></ul-icon>`)\n          .join('\\n')}\n      </div>\n    `,\n  }),\n}"
             },
             {
+                "name": "Avatar",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: { mode: 'avatar' },\n}",
+                "rawdescription": "Locked 1:1 round crop, as used for an avatar: click the editable avatar\nitself (hover to see the camera affordance) to pick a photo, drag/zoom\nit within the fixed circle in the cropper that opens, then confirm.",
+                "description": "<p>Locked 1:1 round crop, as used for an avatar: click the editable avatar\nitself (hover to see the camera affordance) to pick a photo, drag/zoom\nit within the fixed circle in the cropper that opens, then confirm.</p>\n"
+            },
+            {
                 "name": "BackgroundColors",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2101,6 +2455,26 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"max-width: 400px\">\n        <ul-list-item [theme]=\"theme\" [disabled]=\"disabled\" [loading]=\"loading\">\n          <ng-container ul-list-item-label>Basic List Item</ng-container>\n        </ul-list-item>\n      </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    totalSteps: 3,\n    currentStep: 1,\n  },\n  render: (args) => ({\n    props: args,\n    template: `<ul-stepper [totalSteps]=\"totalSteps\" [currentStep]=\"currentStep\" style=\"display: block; width: 320px;\" />`,\n  }),\n}"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    checked: false,\n    disabled: false,\n    size: 'default',\n    error: false,\n    errorText: '',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-toggle\n        [checked]=\"checked\"\n        [disabled]=\"disabled\"\n        [size]=\"size\"\n        [error]=\"error\"\n      >\n        Basic Toggle\n      </ul-toggle>\n    `,\n  }),\n}"
             },
             {
                 "name": "Blur",
@@ -2372,6 +2746,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/demo-onboarding.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: () => ({\n    template: '<ul-demo-onboarding></ul-demo-onboarding>',\n  }),\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/demo-product-page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2438,18 +2822,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" [maxItems]=\"maxItems\" />\n    `,\n  }),\n}",
-                "rawdescription": "Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.",
-                "description": "<p>Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.</p>\n"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2457,6 +2829,18 @@
                 "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
                 "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
                 "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" [maxItems]=\"maxItems\" />\n    `,\n  }),\n}",
+                "rawdescription": "Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.",
+                "description": "<p>Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.</p>\n"
             },
             {
                 "name": "Default",
@@ -2855,6 +3239,16 @@
                 "defaultValue": "{\n  args: {\n    ...Basic.args,\n    disabled: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-checkbox [checked]=\"checked\" [disabled]=\"true\">\n          Disabled Unchecked\n        </ul-checkbox>\n        <ul-checkbox [checked]=\"false\" [disabled]=\"true\">\n          Disabled Checked\n        </ul-checkbox>\n        <ul-checkbox [checked]=\"checked\" [disabled]=\"true\" [indeterminate]=\"true\">\n          Disabled Indeterminate\n        </ul-checkbox>\n      </div>\n    `,\n  }),\n}"
             },
             {
+                "name": "DisabledStates",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Basic.args,\n    disabled: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-toggle [checked]=\"false\" [disabled]=\"true\">\n          Disabled Off\n        </ul-toggle>\n        <ul-toggle [checked]=\"true\" [disabled]=\"true\">\n          Disabled On\n        </ul-toggle>\n      </div>\n    `,\n  }),\n}"
+            },
+            {
                 "name": "Dismissible",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2887,6 +3281,18 @@
                 "deprecationMessage": "",
                 "type": "DropdownItem[]",
                 "defaultValue": "[\n  {\n    label: 'Most recent first',\n    value: 'recent_desc',\n    leftIcons: ['sort'],\n  },\n  {\n    label: 'Most old first',\n    value: 'recent_asc',\n    leftIcons: ['sort'],\n  },\n  {\n    label: 'Lower price first',\n    value: 'price_asc',\n    leftIcons: ['dollar'],\n    disabled: true,\n  },\n  {\n    label: 'Higher price first',\n    value: 'price_desc',\n    leftIcons: ['dollar'],\n  },\n  {\n    label: 'Alphabetical order A - Z',\n    value: 'alpha_asc',\n    leftIcons: ['type'],\n  },\n  {\n    label: 'Alphabetical order Z - A',\n    value: 'alpha_desc',\n    leftIcons: ['type'],\n  },\n  {\n    label: 'Popular games',\n    value: 'popular',\n    leftIcons: ['star_filled'],\n  },\n  {\n    label: 'New releases',\n    value: 'new',\n    leftIcons: ['star'],\n  },\n  {\n    label: 'On sale',\n    value: 'sale',\n    leftIcons: ['tag'],\n  },\n  {\n    label: 'Free games',\n    value: 'free',\n    leftIcons: ['gift'],\n  },\n  {\n    label: 'Premium games',\n    value: 'premium',\n    leftIcons: ['crown'],\n  },\n  {\n    label: 'Categories',\n    value: 'categories',\n    leftIcons: ['apps_grid'],\n    rightIcons: ['chevron_right'],\n  },\n]"
+            },
+            {
+                "name": "Editable",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/avatar/avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: { editable: true },\n  render: () => ({\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-avatar size=\"xl\" [editable]=\"true\" />\n        <ul-avatar size=\"xl\" [editable]=\"true\" initials=\"JD\" />\n        <ul-avatar size=\"xl\" [editable]=\"true\" src=\"https://i.pravatar.cc/150?img=12\" alt=\"User avatar\" />\n      </div>\n    `,\n  }),\n}",
+                "rawdescription": "Editable photo-picker avatars: a dimmed photo-icon overlay signals it's\nclickable, layered over whatever's showing underneath — a default person\nicon when nothing is set, initials once the user has a name but no photo\nyet, or a real photo. The overlay stays even once a photo is set, so it's\nclear the photo can still be changed, not just added the first time.",
+                "description": "<p>Editable photo-picker avatars: a dimmed photo-icon overlay signals it&#39;s\nclickable, layered over whatever&#39;s showing underneath — a default person\nicon when nothing is set, initials once the user has a name but no photo\nyet, or a real photo. The overlay stays even once a photo is set, so it&#39;s\nclear the photo can still be changed, not just added the first time.</p>\n"
             },
             {
                 "name": "EmptyState",
@@ -2949,6 +3355,26 @@
                 "defaultValue": "{\n  args: {\n    ...Basic.args,\n    error: true,\n    errorText: 'This field is required',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-checkbox [checked]=\"checked\" [error]=\"true\" [errorText]=\"errorText\">\n        Error State Checkbox\n      </ul-checkbox>\n    `,\n  }),\n}"
             },
             {
+                "name": "ErrorState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Basic.args,\n    error: true,\n    errorText: 'Could not save this setting',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-toggle [checked]=\"checked\" [error]=\"true\" [errorText]=\"errorText\">\n        Error State Toggle\n      </ul-toggle>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "FiveSteps",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    totalSteps: 5,\n    currentStep: 3,\n  },\n  render: (args) => ({\n    props: args,\n    template: `<ul-stepper [totalSteps]=\"totalSteps\" [currentStep]=\"currentStep\" style=\"display: block; width: 320px;\" />`,\n  }),\n}"
+            },
+            {
                 "name": "Focused",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2967,6 +3393,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    ...Basic.args,\n    label: 'Accept terms and conditions',\n    helperText: 'You must agree to continue.',\n    required: true,\n    showRequiredIndicator: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-checkbox\n        [checked]=\"checked\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [required]=\"required\"\n        [showRequiredIndicator]=\"showRequiredIndicator\"\n        [disabled]=\"disabled\"\n        [size]=\"size\"\n      >\n        I agree to the terms\n      </ul-checkbox>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "FormField",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Basic.args,\n    label: 'Notifications',\n    helperText: 'Get notified about new messages and offers.',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-toggle\n        [checked]=\"checked\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [disabled]=\"disabled\"\n        [size]=\"size\"\n      >\n        Enable notifications\n      </ul-toggle>\n    `,\n  }),\n}"
             },
             {
                 "name": "Free",
@@ -3251,6 +3687,16 @@
                 "defaultValue": "{\n  args: {\n    size: 96,\n    percentage: 25,\n    infinite: false,\n  },\n}"
             },
             {
+                "name": "LastStep",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Basic.args,\n    currentStep: 3,\n  },\n  render: (args) => ({\n    props: args,\n    template: `<ul-stepper [totalSteps]=\"totalSteps\" [currentStep]=\"currentStep\" style=\"display: block; width: 320px;\" />`,\n  }),\n}"
+            },
+            {
                 "name": "LineClamp",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3269,6 +3715,18 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  render: () => ({\n    template: `\n      <div class=\"ul-p-4\">\n        <h2 class=\"ul-typography-headline-l-regular ul-mb-8\">Line Clamp</h2>\n        \n        <div class=\"ul-gap-8\" style=\"display: flex; flex-direction: column;\">\n          <div *ngFor=\"let clamp of clamps\">\n            <h3 class=\"ul-typography-body-l-regular ul-mb-4\">{{clamp.name}}</h3>\n            <div class=\"ul-bg-grey-lvl-1 ul-p-4\" style=\"max-width: 300px;\">\n              <p [class]=\"clamp.class\" class=\"ul-typography-body-m-regular\">\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n              </p>\n            </div>\n            <code>.{{clamp.class}}</code>\n          </div>\n        </div>\n      </div>\n    `,\n    props: {\n      clamps: [\n        { name: '1 Line', class: 'ul-line-clamp-1' },\n        { name: '2 Lines', class: 'ul-line-clamp-2' },\n        { name: '3 Lines', class: 'ul-line-clamp-3' },\n      ],\n    },\n  }),\n}"
+            },
+            {
+                "name": "ListingPhoto",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: { mode: 'listing' },\n}",
+                "rawdescription": "Free-form rectangular crop, as used for a listing photo: pick a photo to\nopen the cropper, drag the frame's corners to trim it, then confirm — no\naspect ratio is imposed.",
+                "description": "<p>Free-form rectangular crop, as used for a listing photo: pick a photo to\nopen the cropper, drag the frame&#39;s corners to trim it, then confirm — no\naspect ratio is imposed.</p>\n"
             },
             {
                 "name": "ListRowSkeleton",
@@ -3396,6 +3854,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/demo-onboarding.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<DemoOnboardingComponent>",
+                "defaultValue": "{\n  title: 'Demos/Onboarding',\n  component: DemoOnboardingComponent,\n  parameters: {\n    layout: 'fullscreen',\n    docs: {\n      description: {\n        component:\n          \"Realistic mock of undermarket's onboarding flow (name required, photo/location optional) — click Continue/Back to see ul-stepper track progress in context, not just as a bare indicator. There's no separate Skip button: optional steps can always be continued past without input.\",\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [DemoOnboardingComponent],\n    }),\n  ],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/demo-product-page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3460,7 +3928,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<AvatarComponent>",
-                "defaultValue": "{\n  title: 'Components/Data Display/Avatar',\n  component: AvatarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'User or entity avatar showing an image, or fallback to initials or icon when no image. Sizes: sm, md, lg, xl. Use for user lists, headers, and profile placeholders.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n      description: 'The size of the avatar',\n    },\n    src: {\n      control: { type: 'text' },\n      description: 'The image source URL',\n    },\n    initials: {\n      control: { type: 'text' },\n      description: 'Fallback initials to display when image is not available',\n    },\n    icon: {\n      control: { type: 'text' },\n      description: 'Fallback icon to display when image and initials are not available',\n    },\n    alt: {\n      control: { type: 'text' },\n      description: 'Alt text for the avatar image',\n    },\n    loading: {\n      control: { type: 'boolean' },\n      description: 'Show skeleton placeholder instead of avatar content while loading',\n    },\n  },\n  args: {\n    size: 'md',\n    src: undefined,\n    initials: undefined,\n    icon: undefined,\n    alt: '',\n    loading: false,\n  },\n}"
+                "defaultValue": "{\n  title: 'Components/Data Display/Avatar',\n  component: AvatarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'User or entity avatar showing an image, or fallback to initials or icon when no image. Sizes: sm, md, lg, xl, 2xl. 2xl is avatar-only (not part of the shared UiSize scale) — use it where the avatar itself is the focal point, e.g. an onboarding photo step, rather than one control among many.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl', '2xl'],\n      control: { type: 'radio' },\n      description: 'The size of the avatar',\n    },\n    src: {\n      control: { type: 'text' },\n      description: 'The image source URL',\n    },\n    initials: {\n      control: { type: 'text' },\n      description: 'Fallback initials to display when image is not available',\n    },\n    icon: {\n      control: { type: 'text' },\n      description: 'Fallback icon to display when image and initials are not available',\n    },\n    alt: {\n      control: { type: 'text' },\n      description: 'Alt text for the avatar image',\n    },\n    loading: {\n      control: { type: 'boolean' },\n      description: 'Show skeleton placeholder instead of avatar content while loading',\n    },\n    editable: {\n      control: { type: 'boolean' },\n      description:\n        'Marks this avatar as a photo picker: shows a default person icon when nothing else is set, and layers a dimmed photo-icon overlay on top — even once a real photo is showing, so it stays clear the photo can be changed. Purely visual — wrap the avatar in your own button/link to handle the click.',\n    },\n  },\n  args: {\n    size: 'md',\n    src: undefined,\n    initials: undefined,\n    icon: undefined,\n    alt: '',\n    loading: false,\n    editable: false,\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
             },
             {
                 "name": "meta",
@@ -3471,16 +3949,6 @@
                 "deprecationMessage": "",
                 "type": "Meta<BreadcrumbComponent>",
                 "defaultValue": "{\n  title: 'Components/Navigation/Breadcrumb',\n  component: BreadcrumbComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [RouterTestingModule],\n    }),\n  ],\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Navigation breadcrumb component for displaying page hierarchy. Supports responsive collapsing on mobile, customizable separators (chevron, slash, dot), and optional icons. Last item is not a link and uses aria-current=\"page\" for accessibility.',\n      },\n    },\n  },\n  argTypes: {\n    items: {\n      control: { type: 'object' },\n      description: 'Array of breadcrumb items to display',\n    },\n    separator: {\n      options: ['chevron_right', 'slash', 'dot'],\n      control: { type: 'radio' },\n      description: 'Separator type between breadcrumb items',\n    },\n    maxItems: {\n      control: { type: 'number' },\n      description: 'Maximum number of items to show before collapsing (for responsive behavior)',\n    },\n  },\n  args: {\n    items: [\n      { label: 'Home', href: '/' },\n      { label: 'Products', href: '/products' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page' },\n    ],\n    separator: 'chevron_right',\n    maxItems: undefined,\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
             },
             {
                 "name": "meta",
@@ -3591,6 +4059,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<ImageNotFoundDirective>",
                 "defaultValue": "{\n  title: 'Components/Media/ImageNotFound',\n  component: ImageNotFoundDirective,\n  tags: ['autodocs'],\n  argTypes: {\n    showPlaceholder: {\n      description: 'Controls whether to show a placeholder image when the source image fails to load',\n      control: 'boolean',\n      defaultValue: true,\n    },\n  },\n  parameters: {\n    layout: 'centered',\n    docs: {\n      description: {\n        component:\n          'A directive that handles image loading failures by displaying a placeholder or hiding the broken image.',\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ImageCropperStoryComponent>",
+                "defaultValue": "{\n  title: 'Components/Data Display/Image Cropper',\n  component: ImageCropperStoryComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Modal flow for cropping/resizing a photo, wrapping ngx-image-cropper so consumers never import it directly. Two modes depending on whether `aspectRatio` is set: **locked** (fixed frame, drag/zoom the photo underneath — for avatars and anything needing a consistent ratio) or **free-form** (resizable frame over a static photo, no ratio imposed — for listing photos, which keep their own shape today). In locked mode, dragging the photo is clamped so it can never uncover the frame — ngx-image-cropper itself only bounds-checks its frame-resize path, not this one, so this component re-implements that clamping for pan and zoom together. Only a single confirm button is shown; dismiss via the modal’s own close button, backdrop, or Escape. Pick a file with any trigger (hidden input, `ul-file-input`, etc.), pass it to `[imageFile]`, and listen for `(cropped)` to get back a resized File ready to upload.',\n      },\n    },\n  },\n  argTypes: {\n    mode: {\n      options: ['avatar', 'listing'],\n      control: { type: 'radio' },\n      description: 'Which preset this story demonstrates — not a real component input.',\n    },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -3766,6 +4244,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<StepperComponent>",
+                "defaultValue": "{\n  title: 'Components/Navigation/Stepper',\n  component: StepperComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Presentational step indicator for a multi-step flow (e.g. onboarding, checkout) — dots connected by a line, current/completed/upcoming states. Has no notion of step content or navigation; the consumer owns that. `currentStep` is 1-indexed.',\n      },\n    },\n  },\n  argTypes: {\n    totalSteps: {\n      control: 'number',\n      description: 'The total number of steps',\n    },\n    currentStep: {\n      control: 'number',\n      description: 'The current step (1-indexed)',\n    },\n    labels: {\n      control: 'object',\n      description: 'Optional label shown under each step',\n    },\n    ariaLabel: {\n      control: 'text',\n      description: 'Accessible name for the whole step list',\n    },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/table/table.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3791,6 +4279,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<ToastStoryComponent>",
                 "defaultValue": "{\n  title: 'Components/Feedback/Toast',\n  component: ToastStoryComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Global toast notification system for transient feedback messages. Render `ul-toast-container` once near the root of your app and inject `ToastService` to show toasts (info, success, warning, error). Uses ARIA roles (status/alert) and lives above other UI using the toast elevation token.',\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ToggleComponent>",
+                "defaultValue": "{\n  title: 'Components/Form Elements/Toggle',\n  component: ToggleComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'On/off switch, the switch equivalent of ul-checkbox. Renders `role=\"switch\"` with `aria-checked` kept in sync, and responds to both click and Enter (Space is native to the underlying checkbox input). Prefer this over ul-checkbox when the change takes effect immediately (e.g. a setting), rather than being submitted later with the rest of a form. Implements `FormCheckboxControl` for Signal Forms `[formField]`. Use `[(checked)]` for two-way binding. Supports size (default, sm, lg — lg is easier to tap on touch).',\n      },\n    },\n  },\n  argTypes: {\n    checked: {\n      control: 'boolean',\n      description: 'The checked (on) state of the toggle',\n    },\n    disabled: {\n      control: 'boolean',\n      description: 'Whether the toggle is disabled',\n    },\n    size: {\n      control: 'select',\n      options: ['default', 'sm', 'lg'],\n      description: 'The size variant of the toggle',\n    },\n    label: {\n      control: 'text',\n      description: 'Label text rendered inline next to the switch',\n    },\n    helperText: {\n      control: 'text',\n      description: 'Helper text below the toggle when not in error state',\n    },\n    error: {\n      control: 'boolean',\n      description: 'Whether the toggle is in an error state',\n    },\n    errorText: {\n      control: 'text',\n      description: 'Error message shown below when in error state',\n    },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -3861,6 +4359,16 @@
                 "deprecationMessage": "",
                 "type": "Meta",
                 "defaultValue": "{\n  title: 'Foundations/Typography',\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Type scale and text styles. Use `.ul-typography-*` classes for headlines, body, labels, and captions with regular or bold weight. Ensures consistent type across the app.',\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "MidFlow",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Basic.args,\n    currentStep: 2,\n  },\n  render: (args) => ({\n    props: args,\n    template: `<ul-stepper [totalSteps]=\"totalSteps\" [currentStep]=\"currentStep\" style=\"display: block; width: 320px;\" />`,\n  }),\n}"
             },
             {
                 "name": "Minimal",
@@ -3963,6 +4471,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    ...Basic.args,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-checkbox\n        [checked]=\"checked\"\n        [disabled]=\"disabled\"\n        [indeterminate]=\"indeterminate\"\n        [zone]=\"zone\"\n        [size]=\"size\"\n        [error]=\"error\"\n      ></ul-checkbox>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "NoLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Basic.args,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-toggle\n        [checked]=\"checked\"\n        [disabled]=\"disabled\"\n        [size]=\"size\"\n        [error]=\"error\"\n      ></ul-toggle>\n    `,\n  }),\n}"
             },
             {
                 "name": "NoSuggestions",
@@ -4471,6 +4989,16 @@
                 "defaultValue": "{\n  args: {\n    ...Basic.args,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-checkbox [checked]=\"checked\" size=\"default\">\n          Default Size\n        </ul-checkbox>\n        <ul-checkbox [checked]=\"checked\" size=\"sm\">\n          Small Size\n        </ul-checkbox>\n        <ul-checkbox [checked]=\"checked\" size=\"lg\">\n          Large Size\n        </ul-checkbox>\n      </div>\n    `,\n  }),\n}"
             },
             {
+                "name": "SizeVariants",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Basic.args,\n    checked: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-toggle [checked]=\"checked\" size=\"default\">\n          Default Size\n        </ul-toggle>\n        <ul-toggle [checked]=\"checked\" size=\"sm\">\n          Small Size\n        </ul-toggle>\n        <ul-toggle [checked]=\"checked\" size=\"lg\">\n          Large Size\n        </ul-toggle>\n      </div>\n    `,\n  }),\n}"
+            },
+            {
                 "name": "SlashSeparator",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4551,6 +5079,16 @@
                 "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-textarea\n          [disabled]=\"true\"\n          label=\"Disabled textarea\"\n          value=\"This textarea is disabled\"\n          [rows]=\"3\"\n        />\n        <ul-textarea\n          [readOnly]=\"true\"\n          label=\"Readonly textarea\"\n          value=\"This textarea is readonly\"\n          [rows]=\"3\"\n        />\n      </div>\n    `,\n  }),\n}"
             },
             {
+                "name": "STEP_LABELS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/demo-onboarding.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "['Name', 'Photo', 'Location']"
+            },
+            {
                 "name": "Success",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4621,6 +5159,16 @@
                 "defaultValue": "{\n  args: {\n    title: 'Simple Hero',\n    subtitle: undefined,\n    primaryAction: undefined,\n    secondaryAction: undefined,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-hero\n        [title]=\"title\"\n        [subtitle]=\"subtitle\"\n        [alignment]=\"alignment\"\n        [size]=\"size\"\n      />\n    `,\n  }),\n}",
                 "rawdescription": "Minimal hero with title only.",
                 "description": "<p>Minimal hero with title only.</p>\n"
+            },
+            {
+                "name": "TOTAL_STEPS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/demo-onboarding.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "unknown",
+                "defaultValue": "STEP_LABELS.length"
             },
             {
                 "name": "TransformAndPosition",
@@ -4914,18 +5462,6 @@
                 "name": "WithIcons",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    items: [\n      { label: 'Home', href: '/', icon: 'home' },\n      { label: 'Products', href: '/products', icon: 'store' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page', icon: 'chevron_right' },\n    ],\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" />\n    `,\n  }),\n}",
-                "rawdescription": "Breadcrumb with icons on some items.\nDemonstrates how icons can be added to breadcrumb items.",
-                "description": "<p>Breadcrumb with icons on some items.\nDemonstrates how icons can be added to breadcrumb items.</p>\n"
-            },
-            {
-                "name": "WithIcons",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4933,6 +5469,18 @@
                 "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\">\n        <i class=\"ul-icon ul-icon-store\"></i>\n        Button\n        <i class=\"ul-icon ul-icon-chevron_right\"></i>\n      </ul-button>\n    `,\n  }),\n}",
                 "rawdescription": "Demonstrates a button with icons on both sides.",
                 "description": "<p>Demonstrates a button with icons on both sides.</p>\n"
+            },
+            {
+                "name": "WithIcons",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    items: [\n      { label: 'Home', href: '/', icon: 'home' },\n      { label: 'Products', href: '/products', icon: 'store' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page', icon: 'chevron_right' },\n    ],\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" />\n    `,\n  }),\n}",
+                "rawdescription": "Breadcrumb with icons on some items.\nDemonstrates how icons can be added to breadcrumb items.",
+                "description": "<p>Breadcrumb with icons on some items.\nDemonstrates how icons can be added to breadcrumb items.</p>\n"
             },
             {
                 "name": "WithIcons",
@@ -5001,6 +5549,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'Description',\n    helperText: 'Enter a short description',\n    placeholder: 'Type here...',\n    required: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-textarea\n        [(value)]=\"value\"\n        [size]=\"size\"\n        [placeholder]=\"placeholder\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [rows]=\"rows\"\n        [required]=\"required\"\n        [showRequiredIndicator]=\"showRequiredIndicator\"\n      />\n    `,\n  }),\n}"
+            },
+            {
+                "name": "WithLabels",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    totalSteps: 3,\n    currentStep: 2,\n    labels: ['Name', 'Photo', 'Location'],\n  },\n  render: (args) => ({\n    props: args,\n    template: `<ul-stepper [totalSteps]=\"totalSteps\" [currentStep]=\"currentStep\" [labels]=\"labels\" style=\"display: block; width: 320px;\" />`,\n  }),\n}"
             },
             {
                 "name": "WithLeftMenuTriggerIcons",
@@ -5209,6 +5767,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<DemoOnboardingComponent>",
+                "file": "projects/ui/src/components/demo-onboarding.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<DemoProductPageComponent>",
                 "file": "projects/ui/src/components/demo-product-page.stories.ts",
                 "deprecated": false,
@@ -5286,8 +5855,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<BreadcrumbComponent>",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5297,8 +5866,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/ui/src/components/button/button.stories.ts",
+                "rawtype": "StoryObj<BreadcrumbComponent>",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5420,6 +5989,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ImageNotFoundDirective>",
                 "file": "projects/ui/src/components/image/image-not-found.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ImageCropperStoryComponent>",
+                "file": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5616,6 +6196,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<StepperComponent>",
+                "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<TableComponent>",
                 "file": "projects/ui/src/components/table/table.stories.ts",
                 "deprecated": false,
@@ -5640,6 +6231,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ToastStoryComponent>",
                 "file": "projects/ui/src/components/toast/toast.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ToggleComponent>",
+                "file": "projects/ui/src/components/toggle/toggle.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6168,9 +6770,9 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-avatar [size]=\"'sm'\" [initials]=\"'SM'\" />\n        <ul-avatar [size]=\"'md'\" [initials]=\"'MD'\" />\n        <ul-avatar [size]=\"'lg'\" [initials]=\"'LG'\" />\n        <ul-avatar [size]=\"'xl'\" [initials]=\"'XL'\" />\n      </div>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates all available avatar sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.",
-                    "description": "<p>Demonstrates all available avatar sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.</p>\n"
+                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-avatar [size]=\"'sm'\" [initials]=\"'SM'\" />\n        <ul-avatar [size]=\"'md'\" [initials]=\"'MD'\" />\n        <ul-avatar [size]=\"'lg'\" [initials]=\"'LG'\" />\n        <ul-avatar [size]=\"'xl'\" [initials]=\"'XL'\" />\n        <ul-avatar [size]=\"'2xl'\" [initials]=\"'XXL'\" />\n      </div>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates all available avatar sizes side by side.\nShows sm, md, lg, xl, and 2xl sizes for easy comparison.",
+                    "description": "<p>Demonstrates all available avatar sizes side by side.\nShows sm, md, lg, xl, and 2xl sizes for easy comparison.</p>\n"
                 },
                 {
                     "name": "AllVariants",
@@ -6195,6 +6797,18 @@
                     "defaultValue": "{\n  args: {\n    initials: 'JD',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-avatar\n        [size]=\"size\"\n        [src]=\"src\"\n        [initials]=\"initials\"\n        [icon]=\"icon\"\n        [alt]=\"alt\"\n        [loading]=\"loading\"\n      />\n    `,\n  }),\n}",
                     "rawdescription": "Default avatar story that demonstrates the basic avatar component.\nShows an avatar with initials as fallback.",
                     "description": "<p>Default avatar story that demonstrates the basic avatar component.\nShows an avatar with initials as fallback.</p>\n"
+                },
+                {
+                    "name": "Editable",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/avatar/avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: { editable: true },\n  render: () => ({\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-avatar size=\"xl\" [editable]=\"true\" />\n        <ul-avatar size=\"xl\" [editable]=\"true\" initials=\"JD\" />\n        <ul-avatar size=\"xl\" [editable]=\"true\" src=\"https://i.pravatar.cc/150?img=12\" alt=\"User avatar\" />\n      </div>\n    `,\n  }),\n}",
+                    "rawdescription": "Editable photo-picker avatars: a dimmed photo-icon overlay signals it's\nclickable, layered over whatever's showing underneath — a default person\nicon when nothing is set, initials once the user has a name but no photo\nyet, or a real photo. The overlay stays even once a photo is set, so it's\nclear the photo can still be changed, not just added the first time.",
+                    "description": "<p>Editable photo-picker avatars: a dimmed photo-icon overlay signals it&#39;s\nclickable, layered over whatever&#39;s showing underneath — a default person\nicon when nothing is set, initials once the user has a name but no photo\nyet, or a real photo. The overlay stays even once a photo is set, so it&#39;s\nclear the photo can still be changed, not just added the first time.</p>\n"
                 },
                 {
                     "name": "ImageWithFallback",
@@ -6226,7 +6840,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<AvatarComponent>",
-                    "defaultValue": "{\n  title: 'Components/Data Display/Avatar',\n  component: AvatarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'User or entity avatar showing an image, or fallback to initials or icon when no image. Sizes: sm, md, lg, xl. Use for user lists, headers, and profile placeholders.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n      description: 'The size of the avatar',\n    },\n    src: {\n      control: { type: 'text' },\n      description: 'The image source URL',\n    },\n    initials: {\n      control: { type: 'text' },\n      description: 'Fallback initials to display when image is not available',\n    },\n    icon: {\n      control: { type: 'text' },\n      description: 'Fallback icon to display when image and initials are not available',\n    },\n    alt: {\n      control: { type: 'text' },\n      description: 'Alt text for the avatar image',\n    },\n    loading: {\n      control: { type: 'boolean' },\n      description: 'Show skeleton placeholder instead of avatar content while loading',\n    },\n  },\n  args: {\n    size: 'md',\n    src: undefined,\n    initials: undefined,\n    icon: undefined,\n    alt: '',\n    loading: false,\n  },\n}"
+                    "defaultValue": "{\n  title: 'Components/Data Display/Avatar',\n  component: AvatarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'User or entity avatar showing an image, or fallback to initials or icon when no image. Sizes: sm, md, lg, xl, 2xl. 2xl is avatar-only (not part of the shared UiSize scale) — use it where the avatar itself is the focal point, e.g. an onboarding photo step, rather than one control among many.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl', '2xl'],\n      control: { type: 'radio' },\n      description: 'The size of the avatar',\n    },\n    src: {\n      control: { type: 'text' },\n      description: 'The image source URL',\n    },\n    initials: {\n      control: { type: 'text' },\n      description: 'Fallback initials to display when image is not available',\n    },\n    icon: {\n      control: { type: 'text' },\n      description: 'Fallback icon to display when image and initials are not available',\n    },\n    alt: {\n      control: { type: 'text' },\n      description: 'Alt text for the avatar image',\n    },\n    loading: {\n      control: { type: 'boolean' },\n      description: 'Show skeleton placeholder instead of avatar content while loading',\n    },\n    editable: {\n      control: { type: 'boolean' },\n      description:\n        'Marks this avatar as a photo picker: shows a default person icon when nothing else is set, and layers a dimmed photo-icon overlay on top — even once a real photo is showing, so it stays clear the photo can be changed. Purely visual — wrap the avatar in your own button/link to handle the click.',\n    },\n  },\n  args: {\n    size: 'md',\n    src: undefined,\n    initials: undefined,\n    icon: undefined,\n    alt: '',\n    loading: false,\n    editable: false,\n  },\n}"
                 },
                 {
                     "name": "WithIcon",
@@ -6310,7 +6924,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
+                    "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
                 },
                 {
                     "name": "Outline",
@@ -6939,6 +7553,42 @@
                     "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-textarea\n        [(value)]=\"value\"\n        [size]=\"size\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [rows]=\"rows\"\n        [maxLength]=\"200\">\n        <ng-container ul-textarea-left-elements>\n          <i class=\"ul-icon ul-icon-size-6 ul-icon-message\"></i>\n        </ng-container>\n        <ng-container ul-textarea-right-elements>\n          <span>{{ value?.length ?? 0 }}/200</span>\n        </ng-container>\n      </ul-textarea>\n    `,\n  }),\n  args: {\n    label: 'Message',\n    helperText: 'Max 200 characters',\n    maxLength: 200,\n  },\n}"
                 }
             ],
+            "projects/ui/src/components/image-cropper/image-cropper.stories.ts": [
+                {
+                    "name": "Avatar",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: { mode: 'avatar' },\n}",
+                    "rawdescription": "Locked 1:1 round crop, as used for an avatar: click the editable avatar\nitself (hover to see the camera affordance) to pick a photo, drag/zoom\nit within the fixed circle in the cropper that opens, then confirm.",
+                    "description": "<p>Locked 1:1 round crop, as used for an avatar: click the editable avatar\nitself (hover to see the camera affordance) to pick a photo, drag/zoom\nit within the fixed circle in the cropper that opens, then confirm.</p>\n"
+                },
+                {
+                    "name": "ListingPhoto",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: { mode: 'listing' },\n}",
+                    "rawdescription": "Free-form rectangular crop, as used for a listing photo: pick a photo to\nopen the cropper, drag the frame's corners to trim it, then confirm — no\naspect ratio is imposed.",
+                    "description": "<p>Free-form rectangular crop, as used for a listing photo: pick a photo to\nopen the cropper, drag the frame&#39;s corners to trim it, then confirm — no\naspect ratio is imposed.</p>\n"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ImageCropperStoryComponent>",
+                    "defaultValue": "{\n  title: 'Components/Data Display/Image Cropper',\n  component: ImageCropperStoryComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Modal flow for cropping/resizing a photo, wrapping ngx-image-cropper so consumers never import it directly. Two modes depending on whether `aspectRatio` is set: **locked** (fixed frame, drag/zoom the photo underneath — for avatars and anything needing a consistent ratio) or **free-form** (resizable frame over a static photo, no ratio imposed — for listing photos, which keep their own shape today). In locked mode, dragging the photo is clamped so it can never uncover the frame — ngx-image-cropper itself only bounds-checks its frame-resize path, not this one, so this component re-implements that clamping for pan and zoom together. Only a single confirm button is shown; dismiss via the modal’s own close button, backdrop, or Escape. Pick a file with any trigger (hidden input, `ul-file-input`, etc.), pass it to `[imageFile]`, and listen for `(cropped)` to get back a resized File ready to upload.',\n      },\n    },\n  },\n  argTypes: {\n    mode: {\n      options: ['avatar', 'listing'],\n      control: { type: 'radio' },\n      description: 'Which preset this story demonstrates — not a real component input.',\n    },\n  },\n}"
+                }
+            ],
             "projects/ui/src/foundations/colors/colors.stories.ts": [
                 {
                     "name": "BackgroundColors",
@@ -7319,6 +7969,140 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  render: () => ({\n    template: `\n    <div style=\"max-width: 400px\">\n      <ul-list-item>\n        <ng-container ul-list-item-before-label>\n          <ul-checkbox />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n          <ul-icon size=\"5\" icon=\"ultra_games\" />\n        </ng-container>\n        <ng-container ul-list-item-label>Basic List Item</ng-container>\n        <ng-container ul-list-item-after-label>\n          <span>+80</span>\n          <ul-icon size=\"5\" icon=\"ultra_marketplace\" />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n        </ng-container>\n      </ul-list-item>\n    </div>\n    `,\n  }),\n}"
+                }
+            ],
+            "projects/ui/src/components/stepper/stepper.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    totalSteps: 3,\n    currentStep: 1,\n  },\n  render: (args) => ({\n    props: args,\n    template: `<ul-stepper [totalSteps]=\"totalSteps\" [currentStep]=\"currentStep\" style=\"display: block; width: 320px;\" />`,\n  }),\n}"
+                },
+                {
+                    "name": "FiveSteps",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    totalSteps: 5,\n    currentStep: 3,\n  },\n  render: (args) => ({\n    props: args,\n    template: `<ul-stepper [totalSteps]=\"totalSteps\" [currentStep]=\"currentStep\" style=\"display: block; width: 320px;\" />`,\n  }),\n}"
+                },
+                {
+                    "name": "LastStep",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Basic.args,\n    currentStep: 3,\n  },\n  render: (args) => ({\n    props: args,\n    template: `<ul-stepper [totalSteps]=\"totalSteps\" [currentStep]=\"currentStep\" style=\"display: block; width: 320px;\" />`,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<StepperComponent>",
+                    "defaultValue": "{\n  title: 'Components/Navigation/Stepper',\n  component: StepperComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Presentational step indicator for a multi-step flow (e.g. onboarding, checkout) — dots connected by a line, current/completed/upcoming states. Has no notion of step content or navigation; the consumer owns that. `currentStep` is 1-indexed.',\n      },\n    },\n  },\n  argTypes: {\n    totalSteps: {\n      control: 'number',\n      description: 'The total number of steps',\n    },\n    currentStep: {\n      control: 'number',\n      description: 'The current step (1-indexed)',\n    },\n    labels: {\n      control: 'object',\n      description: 'Optional label shown under each step',\n    },\n    ariaLabel: {\n      control: 'text',\n      description: 'Accessible name for the whole step list',\n    },\n  },\n}"
+                },
+                {
+                    "name": "MidFlow",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Basic.args,\n    currentStep: 2,\n  },\n  render: (args) => ({\n    props: args,\n    template: `<ul-stepper [totalSteps]=\"totalSteps\" [currentStep]=\"currentStep\" style=\"display: block; width: 320px;\" />`,\n  }),\n}"
+                },
+                {
+                    "name": "WithLabels",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    totalSteps: 3,\n    currentStep: 2,\n    labels: ['Name', 'Photo', 'Location'],\n  },\n  render: (args) => ({\n    props: args,\n    template: `<ul-stepper [totalSteps]=\"totalSteps\" [currentStep]=\"currentStep\" [labels]=\"labels\" style=\"display: block; width: 320px;\" />`,\n  }),\n}"
+                }
+            ],
+            "projects/ui/src/components/toggle/toggle.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    checked: false,\n    disabled: false,\n    size: 'default',\n    error: false,\n    errorText: '',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-toggle\n        [checked]=\"checked\"\n        [disabled]=\"disabled\"\n        [size]=\"size\"\n        [error]=\"error\"\n      >\n        Basic Toggle\n      </ul-toggle>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "DisabledStates",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Basic.args,\n    disabled: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-toggle [checked]=\"false\" [disabled]=\"true\">\n          Disabled Off\n        </ul-toggle>\n        <ul-toggle [checked]=\"true\" [disabled]=\"true\">\n          Disabled On\n        </ul-toggle>\n      </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "ErrorState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Basic.args,\n    error: true,\n    errorText: 'Could not save this setting',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-toggle [checked]=\"checked\" [error]=\"true\" [errorText]=\"errorText\">\n        Error State Toggle\n      </ul-toggle>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "FormField",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Basic.args,\n    label: 'Notifications',\n    helperText: 'Get notified about new messages and offers.',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-toggle\n        [checked]=\"checked\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [disabled]=\"disabled\"\n        [size]=\"size\"\n      >\n        Enable notifications\n      </ul-toggle>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ToggleComponent>",
+                    "defaultValue": "{\n  title: 'Components/Form Elements/Toggle',\n  component: ToggleComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'On/off switch, the switch equivalent of ul-checkbox. Renders `role=\"switch\"` with `aria-checked` kept in sync, and responds to both click and Enter (Space is native to the underlying checkbox input). Prefer this over ul-checkbox when the change takes effect immediately (e.g. a setting), rather than being submitted later with the rest of a form. Implements `FormCheckboxControl` for Signal Forms `[formField]`. Use `[(checked)]` for two-way binding. Supports size (default, sm, lg — lg is easier to tap on touch).',\n      },\n    },\n  },\n  argTypes: {\n    checked: {\n      control: 'boolean',\n      description: 'The checked (on) state of the toggle',\n    },\n    disabled: {\n      control: 'boolean',\n      description: 'Whether the toggle is disabled',\n    },\n    size: {\n      control: 'select',\n      options: ['default', 'sm', 'lg'],\n      description: 'The size variant of the toggle',\n    },\n    label: {\n      control: 'text',\n      description: 'Label text rendered inline next to the switch',\n    },\n    helperText: {\n      control: 'text',\n      description: 'Helper text below the toggle when not in error state',\n    },\n    error: {\n      control: 'boolean',\n      description: 'Whether the toggle is in an error state',\n    },\n    errorText: {\n      control: 'text',\n      description: 'Error message shown below when in error state',\n    },\n  },\n}"
+                },
+                {
+                    "name": "NoLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Basic.args,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-toggle\n        [checked]=\"checked\"\n        [disabled]=\"disabled\"\n        [size]=\"size\"\n        [error]=\"error\"\n      ></ul-toggle>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "SizeVariants",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Basic.args,\n    checked: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-toggle [checked]=\"checked\" size=\"default\">\n          Default Size\n        </ul-toggle>\n        <ul-toggle [checked]=\"checked\" size=\"sm\">\n          Small Size\n        </ul-toggle>\n        <ul-toggle [checked]=\"checked\" size=\"lg\">\n          Large Size\n        </ul-toggle>\n      </div>\n    `,\n  }),\n}"
                 }
             ],
             "projects/ui/src/foundations/class-utils/borders.stories.ts": [
@@ -7993,6 +8777,48 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  render: () => ({\n    template: '<ul-demo-dashboard-with-layout></ul-demo-dashboard-with-layout>',\n    moduleMetadata: {\n      imports: [DemoDashboardWithLayoutComponent],\n    },\n  }),\n}"
+                }
+            ],
+            "projects/ui/src/components/demo-onboarding.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/demo-onboarding.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: () => ({\n    template: '<ul-demo-onboarding></ul-demo-onboarding>',\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/demo-onboarding.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<DemoOnboardingComponent>",
+                    "defaultValue": "{\n  title: 'Demos/Onboarding',\n  component: DemoOnboardingComponent,\n  parameters: {\n    layout: 'fullscreen',\n    docs: {\n      description: {\n        component:\n          \"Realistic mock of undermarket's onboarding flow (name required, photo/location optional) — click Continue/Back to see ul-stepper track progress in context, not just as a bare indicator. There's no separate Skip button: optional steps can always be continued past without input.\",\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [DemoOnboardingComponent],\n    }),\n  ],\n}"
+                },
+                {
+                    "name": "STEP_LABELS",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/demo-onboarding.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "['Name', 'Photo', 'Location']"
+                },
+                {
+                    "name": "TOTAL_STEPS",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/demo-onboarding.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "STEP_LABELS.length"
                 }
             ],
             "projects/ui/src/components/demo-product-strip.stories.ts": [
@@ -9199,6 +10025,19 @@
                     "kind": 184
                 }
             ],
+            "projects/ui/src/components/demo-onboarding.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<DemoOnboardingComponent>",
+                    "file": "projects/ui/src/components/demo-onboarding.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "projects/ui/src/components/demo-product-page.stories.ts": [
                 {
                     "name": "Story",
@@ -9290,19 +10129,6 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<BreadcrumbComponent>",
-                    "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/ui/src/components/button/button.stories.ts": [
                 {
                     "name": "Story",
@@ -9310,6 +10136,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ButtonComponent>",
                     "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<BreadcrumbComponent>",
+                    "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -9453,6 +10292,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ImageNotFoundDirective>",
                     "file": "projects/ui/src/components/image/image-not-found.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/components/image-cropper/image-cropper.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ImageCropperStoryComponent>",
+                    "file": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -9680,6 +10532,19 @@
                     "kind": 184
                 }
             ],
+            "projects/ui/src/components/stepper/stepper.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<StepperComponent>",
+                    "file": "projects/ui/src/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "projects/ui/src/components/table/table.stories.ts": [
                 {
                     "name": "Story",
@@ -9713,6 +10578,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ToastStoryComponent>",
                     "file": "projects/ui/src/components/toast/toast.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/components/toggle/toggle.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleComponent>",
+                    "file": "projects/ui/src/components/toggle/toggle.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -9818,7 +10696,7 @@
         "children": []
     },
     "coverage": {
-        "count": 23,
+        "count": 22,
         "status": "low",
         "files": [
             {
@@ -10047,6 +10925,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui/src/components/avatar/avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Editable",
                 "coveragePercent": 100,
                 "coverageCount": "1/1",
                 "status": "very-good"
@@ -10858,6 +11746,65 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ui/src/components/demo-onboarding.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DemoOnboardingComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/demo-onboarding.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/demo-onboarding.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/demo-onboarding.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "STEP_LABELS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/demo-onboarding.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TOTAL_STEPS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/demo-onboarding.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ui/src/components/demo-product-page.stories.ts",
                 "type": "component",
                 "linktype": "component",
@@ -11523,6 +12470,55 @@
             },
             {
                 "filePath": "projects/ui/src/components/icon/icon.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ImageCropperStoryComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Avatar",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ListingPhoto",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/image-cropper/image-cropper.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -12930,6 +13926,76 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FiveSteps",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LastStep",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MidFlow",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithLabels",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/stepper/stepper.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ui/src/components/table/table.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -13180,6 +14246,86 @@
             },
             {
                 "filePath": "projects/ui/src/components/toast/toast.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DisabledStates",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ErrorState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FormField",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NoLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SizeVariants",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/toggle/toggle.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",

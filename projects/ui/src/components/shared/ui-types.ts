@@ -7,6 +7,7 @@ export type UiTheme =
   | 'fill-white'
   | 'fill-yellow'
   | 'fill-red'
+  | 'fill-green'
   | 'transparent-purple'
   | 'transparent-white'
   | 'transparent-red'
