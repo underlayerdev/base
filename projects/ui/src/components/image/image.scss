@@ -1,8 +1,32 @@
 @use '../../foundations/toolkit' as *;
 
+// These classes have to live in the global stylesheet rather than in a
+// component's `styles`: the only thing that applies `--not-found` is
+// `ImageNotFoundDirective`, and a directive can't carry styles. That's why this
+// file is pulled into `foundations/index.scss`.
 .#{$prefix}image {
   height: 100%;
+
+  // A broken <img> stops being a replaced element, which is what lets it render
+  // a pseudo-element at all — so the icon is drawn on the image box itself. The
+  // directive also sets `visibility: hidden` to suppress the browser's own
+  // broken-image glyph and the alt text; the mixin re-declares
+  // `visibility: visible` on the pseudo so the placeholder survives that.
+  //
+  // `position: relative` is set here rather than being asked of the caller
+  // because the overlay is absolutely positioned: without it the icon would
+  // escape to whichever ancestor happens to be positioned, which is a different
+  // box on every consumer.
   &--not-found {
+    position: relative;
     @include placeholder-icon-overlay('image_dashed');
+
+    // The fill has to sit on the pseudo-element, not on the image box: the
+    // directive's `visibility: hidden` would take a background on the box with
+    // it, and the pseudo-element is the one thing that opts back into being
+    // visible. It already spans the full box, so it doubles as the surface.
+    &::after {
+      background-color: $color-background-grey-lvl-1;
+    }
   }
 }

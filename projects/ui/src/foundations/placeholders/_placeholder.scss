@@ -35,7 +35,9 @@
 ) {
   $glyph: map.get($tokens, 'content', 'icon-glyph', $icon);
 
-  #{$pseudo} {
+  // `&` is required: a bare `#{$pseudo}` interpolates as a fresh selector and
+  // Sass nests it as a descendant (`.foo ::after`) instead of attaching it.
+  &#{$pseudo} {
     display: flex;
     place-items: center;
     place-content: center;
@@ -48,7 +50,10 @@
     font-family: '#{$iconography-font-family-icon}';
     @include icon-size($size);
     color: $color;
-    content: ' #{$glyph}';
+    // No leading whitespace: the icon font resolves names as ligatures, and any
+    // stray character in front of the name stops the ligature from forming, so
+    // the glyph name renders as literal text.
+    content: '#{$glyph}';
     visibility: visible;
   }
 }

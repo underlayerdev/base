@@ -2,6 +2,10 @@
 
 @use 'reset';
 
+// Component classes that no component can own, because what applies them is a
+// directive (which cannot declare styles). They ship here or nowhere.
+@use '../components/image/image';
+
 @include load-fonts();
 @include generate-container-classes();
 @include generate-scrollbar-styles();
