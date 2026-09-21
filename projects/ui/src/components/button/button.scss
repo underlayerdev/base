@@ -152,6 +152,11 @@
       @include interactive-surface('solid', 'red');
       color: $color-text-primary;
     }
+
+    &-green {
+      @include interactive-surface('solid', 'green');
+      color: $color-text-primary;
+    }
   }
 
   // Transparent variants
