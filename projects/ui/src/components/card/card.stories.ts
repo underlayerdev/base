@@ -137,11 +137,11 @@ const cardTemplate = (args: any) => ({
       [loading]="loading"
     >
       <img
-        udsCardMedia
+        ulCardMedia
         src="https://picsum.photos/1080/720"
         alt="Sample image"
       />
-      <div udsCardMediaAction>
+      <div ulCardMediaAction>
         <ul-button [iconOnly]="true" theme="transparent-black">
           <i class="ul-icon ul-icon-heart"></i>
         </ul-button>
@@ -216,16 +216,16 @@ export const MediaOverlay: Story = {
         [cardSubtitle]="cardSubtitle"
       >
         <img
-          udsCardMedia
+          ulCardMedia
           src="https://picsum.photos/1080/720"
           alt="Sample image"
         />
-        <div udsCardMediaAction>
+        <div ulCardMediaAction>
           <ul-button [iconOnly]="true" theme="transparent-black">
             <i class="ul-icon ul-icon-heart"></i>
           </ul-button>
         </div>
-        <div udsCardMediaOverlay class="ul-gap-2">
+        <div ulCardMediaOverlay class="ul-gap-2">
           <div class="ul-icon ul-icon-size-12 ul-icon-uninstall"></div>
           Game missing
         </div>
