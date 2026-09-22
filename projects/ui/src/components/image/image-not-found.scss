@@ -1,0 +1,15 @@
+@use '../../foundations/toolkit' as *;
+
+// Same values `image.scss`'s `&::after` places on the directive's pseudo-element
+// placeholder, kept in sync by hand rather than shared: that one is a pseudo on
+// an <img>, this is a real element's box, and there's no single selector the
+// two could share.
+:host {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-background-grey-lvl-1;
+  color: $color-text-disabled;
+}

@@ -2870,18 +2870,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/area-code/area-code.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-area-code\n        [content]=\"content\"\n        [showLineNumbers]=\"showLineNumbers\"\n        [maxHeight]=\"maxHeight\"\n      />\n    `,\n  }),\n}",
-                "rawdescription": "Default area code story that demonstrates the basic code display component.\nShows TypeScript code with line numbers.",
-                "description": "<p>Default area code story that demonstrates the basic code display component.\nShows TypeScript code with line numbers.</p>\n"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/avatar/avatar-group.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2906,18 +2894,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
-                "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
-                "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2925,6 +2901,30 @@
                 "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" [maxItems]=\"maxItems\" />\n    `,\n  }),\n}",
                 "rawdescription": "Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.",
                 "description": "<p>Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.</p>\n"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/area-code/area-code.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-area-code\n        [content]=\"content\"\n        [showLineNumbers]=\"showLineNumbers\"\n        [maxHeight]=\"maxHeight\"\n      />\n    `,\n  }),\n}",
+                "rawdescription": "Default area code story that demonstrates the basic code display component.\nShows TypeScript code with line numbers.",
+                "description": "<p>Default area code story that demonstrates the basic code display component.\nShows TypeScript code with line numbers.</p>\n"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
+                "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
+                "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
             },
             {
                 "name": "Default",
@@ -4038,16 +4038,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/area-code/area-code.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<AreaCodeComponent>",
-                "defaultValue": "{\n  title: 'Components/Data Display/AreaCode',\n  component: AreaCodeComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Code block display with optional line numbers and max height. Pass `content` (code string); supports `showLineNumbers` and `maxHeight` for scrollable blocks. Use for documentation or code snippets.',\n      },\n    },\n  },\n  argTypes: {\n    content: {\n      control: { type: 'text' },\n    },\n    showLineNumbers: {\n      control: { type: 'boolean' },\n    },\n    maxHeight: {\n      control: { type: 'text' },\n    },\n  },\n  args: {\n    content: `function greet(name: string): string {\n  return \\`Hello, \\${name}!\\`;\n}\n\nconst message = greet('World');\nconsole.log(message);`,\n    showLineNumbers: true,\n    maxHeight: null,\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/avatar/avatar-group.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4068,21 +4058,31 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<BreadcrumbComponent>",
                 "defaultValue": "{\n  title: 'Components/Navigation/Breadcrumb',\n  component: BreadcrumbComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [RouterTestingModule],\n    }),\n  ],\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Navigation breadcrumb component for displaying page hierarchy. Supports responsive collapsing on mobile, customizable separators (chevron, slash, dot), and optional icons. Last item is not a link and uses aria-current=\"page\" for accessibility.',\n      },\n    },\n  },\n  argTypes: {\n    items: {\n      control: { type: 'object' },\n      description: 'Array of breadcrumb items to display',\n    },\n    separator: {\n      options: ['chevron_right', 'slash', 'dot'],\n      control: { type: 'radio' },\n      description: 'Separator type between breadcrumb items',\n    },\n    maxItems: {\n      control: { type: 'number' },\n      description: 'Maximum number of items to show before collapsing (for responsive behavior)',\n    },\n  },\n  args: {\n    items: [\n      { label: 'Home', href: '/' },\n      { label: 'Products', href: '/products' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page' },\n    ],\n    separator: 'chevron_right',\n    maxItems: undefined,\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/area-code/area-code.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AreaCodeComponent>",
+                "defaultValue": "{\n  title: 'Components/Data Display/AreaCode',\n  component: AreaCodeComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Code block display with optional line numbers and max height. Pass `content` (code string); supports `showLineNumbers` and `maxHeight` for scrollable blocks. Use for documentation or code snippets.',\n      },\n    },\n  },\n  argTypes: {\n    content: {\n      control: { type: 'text' },\n    },\n    showLineNumbers: {\n      control: { type: 'boolean' },\n    },\n    maxHeight: {\n      control: { type: 'text' },\n    },\n  },\n  args: {\n    content: `function greet(name: string): string {\n  return \\`Hello, \\${name}!\\`;\n}\n\nconst message = greet('World');\nconsole.log(message);`,\n    showLineNumbers: true,\n    maxHeight: null,\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
             },
             {
                 "name": "meta",
@@ -4192,7 +4192,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ImageNotFoundDirective>",
-                "defaultValue": "{\n  title: 'Components/Media/ImageNotFound',\n  component: ImageNotFoundDirective,\n  tags: ['autodocs'],\n  argTypes: {\n    showPlaceholder: {\n      description: 'Controls whether to show a placeholder image when the source image fails to load',\n      control: 'boolean',\n      defaultValue: true,\n    },\n  },\n  parameters: {\n    layout: 'centered',\n    docs: {\n      description: {\n        component:\n          'A directive that handles image loading failures by displaying a placeholder or hiding the broken image.',\n      },\n    },\n  },\n}"
+                "defaultValue": "{\n  title: 'Components/Media/ImageNotFound',\n  component: ImageNotFoundDirective,\n  decorators: [moduleMetadata({ imports: [ImageNotFoundComponent] })],\n  tags: ['autodocs'],\n  argTypes: {\n    showPlaceholder: {\n      description: 'Controls whether to show a placeholder image when the source image fails to load',\n      control: 'boolean',\n      defaultValue: true,\n    },\n  },\n  parameters: {\n    layout: 'centered',\n    docs: {\n      description: {\n        component:\n          'A directive that handles image loading failures by displaying a placeholder or hiding the broken image.',\n      },\n    },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -4605,6 +4605,26 @@
                 "defaultValue": "{\n  args: {\n    price: 15,\n    originalPrice: 0,\n    discountBasis: 0,\n    theme: 'transparent-white' as UiTheme,\n  },\n}",
                 "rawdescription": "Story for a price button with no discount.",
                 "description": "<p>Story for a price button with no discount.</p>\n"
+            },
+            {
+                "name": "NoImage",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/image/image-not-found.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: () => ({\n    template: `\n    <div class=\"ul-background-white-light\" style=\"position: relative; height: 300px; width: 200px;\">\n        <ul-image-not-found />\n    </div>\n    `,\n  }),\n  parameters: {\n    docs: {\n      description: {\n        story:\n          'ImageNotFoundComponent (`ul-image-not-found`): for a listing with no photo at all, rather than a photo that failed to load. Fills its nearest `position: relative` ancestor, the same way the directive\\'s own placeholder fills the `<img>` it replaces.',\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "NoImageLargeIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/image/image-not-found.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: () => ({\n    template: `\n    <div class=\"ul-background-white-light\" style=\"position: relative; height: 480px; width: 100%;\">\n        <ul-image-not-found iconSize=\"16\" />\n    </div>\n    `,\n  }),\n  parameters: {\n    docs: {\n      description: {\n        story: '`iconSize` scales the glyph for a larger slot, e.g. a full-width empty gallery.',\n      },\n    },\n  },\n}"
             },
             {
                 "name": "NoLabel",
@@ -5628,18 +5648,6 @@
                 "name": "WithIcons",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\">\n        <i class=\"ul-icon ul-icon-store\"></i>\n        Button\n        <i class=\"ul-icon ul-icon-chevron_right\"></i>\n      </ul-button>\n    `,\n  }),\n}",
-                "rawdescription": "Demonstrates a button with icons on both sides.",
-                "description": "<p>Demonstrates a button with icons on both sides.</p>\n"
-            },
-            {
-                "name": "WithIcons",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -5647,6 +5655,18 @@
                 "defaultValue": "{\n  args: {\n    items: [\n      { label: 'Home', href: '/', icon: 'home' },\n      { label: 'Products', href: '/products', icon: 'store' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page', icon: 'chevron_right' },\n    ],\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" />\n    `,\n  }),\n}",
                 "rawdescription": "Breadcrumb with icons on some items.\nDemonstrates how icons can be added to breadcrumb items.",
                 "description": "<p>Breadcrumb with icons on some items.\nDemonstrates how icons can be added to breadcrumb items.</p>\n"
+            },
+            {
+                "name": "WithIcons",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\">\n        <i class=\"ul-icon ul-icon-store\"></i>\n        Button\n        <i class=\"ul-icon ul-icon-chevron_right\"></i>\n      </ul-button>\n    `,\n  }),\n}",
+                "rawdescription": "Demonstrates a button with icons on both sides.",
+                "description": "<p>Demonstrates a button with icons on both sides.</p>\n"
             },
             {
                 "name": "WithIcons",
@@ -5998,17 +6018,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AreaCodeComponent>",
-                "file": "projects/ui/src/components/area-code/area-code.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<AvatarGroupComponent>",
                 "file": "projects/ui/src/components/avatar/avatar-group.stories.ts",
                 "deprecated": false,
@@ -6031,8 +6040,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/ui/src/components/button/button.stories.ts",
+                "rawtype": "StoryObj<BreadcrumbComponent>",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6042,8 +6051,19 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<BreadcrumbComponent>",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                "rawtype": "StoryObj<AreaCodeComponent>",
+                "file": "projects/ui/src/components/area-code/area-code.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -9164,66 +9184,6 @@
                     "defaultValue": "{\n  args: {\n    multi: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>First Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>You can expand multiple items at once in multi mode.</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>Second Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This item can be expanded alongside the first one.</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>Third Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>All items can be expanded simultaneously.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
                 }
             ],
-            "projects/ui/src/components/area-code/area-code.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/area-code/area-code.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-area-code\n        [content]=\"content\"\n        [showLineNumbers]=\"showLineNumbers\"\n        [maxHeight]=\"maxHeight\"\n      />\n    `,\n  }),\n}",
-                    "rawdescription": "Default area code story that demonstrates the basic code display component.\nShows TypeScript code with line numbers.",
-                    "description": "<p>Default area code story that demonstrates the basic code display component.\nShows TypeScript code with line numbers.</p>\n"
-                },
-                {
-                    "name": "JSONCode",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/area-code/area-code.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    content: `{\n  \"name\": \"area-code-component\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A reusable code display component\",\n  \"author\": \"UDS Team\",\n  \"dependencies\": {\n    \"@angular/core\": \"^17.0.0\",\n    \"@angular/common\": \"^17.0.0\"\n  },\n  \"features\": [\n    \"Automatic line numbering\",\n    \"Clean layout\",\n    \"Responsive design\"\n  ]\n}`,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-area-code\n        [content]=\"content\"\n        [showLineNumbers]=\"showLineNumbers\"\n      />\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates JSON data formatting.",
-                    "description": "<p>Demonstrates JSON data formatting.</p>\n"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/area-code/area-code.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<AreaCodeComponent>",
-                    "defaultValue": "{\n  title: 'Components/Data Display/AreaCode',\n  component: AreaCodeComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Code block display with optional line numbers and max height. Pass `content` (code string); supports `showLineNumbers` and `maxHeight` for scrollable blocks. Use for documentation or code snippets.',\n      },\n    },\n  },\n  argTypes: {\n    content: {\n      control: { type: 'text' },\n    },\n    showLineNumbers: {\n      control: { type: 'boolean' },\n    },\n    maxHeight: {\n      control: { type: 'text' },\n    },\n  },\n  args: {\n    content: `function greet(name: string): string {\n  return \\`Hello, \\${name}!\\`;\n}\n\nconst message = greet('World');\nconsole.log(message);`,\n    showLineNumbers: true,\n    maxHeight: null,\n  },\n}"
-                },
-                {
-                    "name": "WithMaxHeight",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/area-code/area-code.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    maxHeight: '200px',\n    content: `// This is a longer code example to demonstrate scrolling\nfunction fibonacci(n: number): number {\n  if (n <= 1) {\n    return n;\n  }\n  return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nfunction optimizedFibonacci(n: number): number {\n  const memo: { [key: number]: number } = {};\n  \n  function fib(num: number): number {\n    if (num <= 1) {\n      return num;\n    }\n    \n    if (memo[num] !== undefined) {\n      return memo[num];\n    }\n    \n    memo[num] = fib(num - 1) + fib(num - 2);\n    return memo[num];\n  }\n  \n  return fib(n);\n}\n\n// Usage examples\nconsole.log('Fibonacci sequence:');\nfor (let i = 0; i <= 10; i++) {\n  console.log(\\`F(\\${i}) = \\${optimizedFibonacci(i)}\\`);\n}\n\n// Performance comparison\nconst start = performance.now();\nconst result = optimizedFibonacci(40);\nconst end = performance.now();\nconsole.log(\\`Result: \\${result}, Time: \\${end - start}ms\\`);`,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-area-code\n        [content]=\"content\"\n        [showLineNumbers]=\"showLineNumbers\"\n        [maxHeight]=\"maxHeight\"\n      />\n    `,\n  }),\n}",
-                    "rawdescription": "Shows area code with limited height and scrolling.",
-                    "description": "<p>Shows area code with limited height and scrolling.</p>\n"
-                },
-                {
-                    "name": "WithoutLineNumbers",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/area-code/area-code.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    showLineNumbers: false,\n    content: `const greeting = 'Hello, World!';\nconsole.log(greeting);`,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-area-code\n        [content]=\"content\"\n        [showLineNumbers]=\"showLineNumbers\"\n      />\n    `,\n  }),\n}",
-                    "rawdescription": "Shows area code without line numbers.",
-                    "description": "<p>Shows area code without line numbers.</p>\n"
-                }
-            ],
             "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts": [
                 {
                     "name": "Default",
@@ -9330,6 +9290,66 @@
                     "defaultValue": "{\n  args: {\n    items: [\n      { label: 'Home', routerLink: '/' },\n      { label: 'Products', routerLink: '/products' },\n      { label: 'Current Page' },\n    ],\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" />\n    `,\n  }),\n}",
                     "rawdescription": "Breadcrumb with router links (if RouterModule is available).\nNote: This requires RouterModule to be imported in the story context.",
                     "description": "<p>Breadcrumb with router links (if RouterModule is available).\nNote: This requires RouterModule to be imported in the story context.</p>\n"
+                }
+            ],
+            "projects/ui/src/components/area-code/area-code.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/area-code/area-code.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-area-code\n        [content]=\"content\"\n        [showLineNumbers]=\"showLineNumbers\"\n        [maxHeight]=\"maxHeight\"\n      />\n    `,\n  }),\n}",
+                    "rawdescription": "Default area code story that demonstrates the basic code display component.\nShows TypeScript code with line numbers.",
+                    "description": "<p>Default area code story that demonstrates the basic code display component.\nShows TypeScript code with line numbers.</p>\n"
+                },
+                {
+                    "name": "JSONCode",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/area-code/area-code.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    content: `{\n  \"name\": \"area-code-component\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A reusable code display component\",\n  \"author\": \"UDS Team\",\n  \"dependencies\": {\n    \"@angular/core\": \"^17.0.0\",\n    \"@angular/common\": \"^17.0.0\"\n  },\n  \"features\": [\n    \"Automatic line numbering\",\n    \"Clean layout\",\n    \"Responsive design\"\n  ]\n}`,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-area-code\n        [content]=\"content\"\n        [showLineNumbers]=\"showLineNumbers\"\n      />\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates JSON data formatting.",
+                    "description": "<p>Demonstrates JSON data formatting.</p>\n"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/area-code/area-code.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AreaCodeComponent>",
+                    "defaultValue": "{\n  title: 'Components/Data Display/AreaCode',\n  component: AreaCodeComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Code block display with optional line numbers and max height. Pass `content` (code string); supports `showLineNumbers` and `maxHeight` for scrollable blocks. Use for documentation or code snippets.',\n      },\n    },\n  },\n  argTypes: {\n    content: {\n      control: { type: 'text' },\n    },\n    showLineNumbers: {\n      control: { type: 'boolean' },\n    },\n    maxHeight: {\n      control: { type: 'text' },\n    },\n  },\n  args: {\n    content: `function greet(name: string): string {\n  return \\`Hello, \\${name}!\\`;\n}\n\nconst message = greet('World');\nconsole.log(message);`,\n    showLineNumbers: true,\n    maxHeight: null,\n  },\n}"
+                },
+                {
+                    "name": "WithMaxHeight",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/area-code/area-code.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    maxHeight: '200px',\n    content: `// This is a longer code example to demonstrate scrolling\nfunction fibonacci(n: number): number {\n  if (n <= 1) {\n    return n;\n  }\n  return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nfunction optimizedFibonacci(n: number): number {\n  const memo: { [key: number]: number } = {};\n  \n  function fib(num: number): number {\n    if (num <= 1) {\n      return num;\n    }\n    \n    if (memo[num] !== undefined) {\n      return memo[num];\n    }\n    \n    memo[num] = fib(num - 1) + fib(num - 2);\n    return memo[num];\n  }\n  \n  return fib(n);\n}\n\n// Usage examples\nconsole.log('Fibonacci sequence:');\nfor (let i = 0; i <= 10; i++) {\n  console.log(\\`F(\\${i}) = \\${optimizedFibonacci(i)}\\`);\n}\n\n// Performance comparison\nconst start = performance.now();\nconst result = optimizedFibonacci(40);\nconst end = performance.now();\nconsole.log(\\`Result: \\${result}, Time: \\${end - start}ms\\`);`,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-area-code\n        [content]=\"content\"\n        [showLineNumbers]=\"showLineNumbers\"\n        [maxHeight]=\"maxHeight\"\n      />\n    `,\n  }),\n}",
+                    "rawdescription": "Shows area code with limited height and scrolling.",
+                    "description": "<p>Shows area code with limited height and scrolling.</p>\n"
+                },
+                {
+                    "name": "WithoutLineNumbers",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/area-code/area-code.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    showLineNumbers: false,\n    content: `const greeting = 'Hello, World!';\nconsole.log(greeting);`,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-area-code\n        [content]=\"content\"\n        [showLineNumbers]=\"showLineNumbers\"\n      />\n    `,\n  }),\n}",
+                    "rawdescription": "Shows area code without line numbers.",
+                    "description": "<p>Shows area code without line numbers.</p>\n"
                 }
             ],
             "projects/ui/src/components/collapse/collapse.stories.ts": [
@@ -10163,7 +10183,27 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ImageNotFoundDirective>",
-                    "defaultValue": "{\n  title: 'Components/Media/ImageNotFound',\n  component: ImageNotFoundDirective,\n  tags: ['autodocs'],\n  argTypes: {\n    showPlaceholder: {\n      description: 'Controls whether to show a placeholder image when the source image fails to load',\n      control: 'boolean',\n      defaultValue: true,\n    },\n  },\n  parameters: {\n    layout: 'centered',\n    docs: {\n      description: {\n        component:\n          'A directive that handles image loading failures by displaying a placeholder or hiding the broken image.',\n      },\n    },\n  },\n}"
+                    "defaultValue": "{\n  title: 'Components/Media/ImageNotFound',\n  component: ImageNotFoundDirective,\n  decorators: [moduleMetadata({ imports: [ImageNotFoundComponent] })],\n  tags: ['autodocs'],\n  argTypes: {\n    showPlaceholder: {\n      description: 'Controls whether to show a placeholder image when the source image fails to load',\n      control: 'boolean',\n      defaultValue: true,\n    },\n  },\n  parameters: {\n    layout: 'centered',\n    docs: {\n      description: {\n        component:\n          'A directive that handles image loading failures by displaying a placeholder or hiding the broken image.',\n      },\n    },\n  },\n}"
+                },
+                {
+                    "name": "NoImage",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/image/image-not-found.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n    <div class=\"ul-background-white-light\" style=\"position: relative; height: 300px; width: 200px;\">\n        <ul-image-not-found />\n    </div>\n    `,\n  }),\n  parameters: {\n    docs: {\n      description: {\n        story:\n          'ImageNotFoundComponent (`ul-image-not-found`): for a listing with no photo at all, rather than a photo that failed to load. Fills its nearest `position: relative` ancestor, the same way the directive\\'s own placeholder fills the `<img>` it replaces.',\n      },\n    },\n  },\n}"
+                },
+                {
+                    "name": "NoImageLargeIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/image/image-not-found.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n    <div class=\"ul-background-white-light\" style=\"position: relative; height: 480px; width: 100%;\">\n        <ul-image-not-found iconSize=\"16\" />\n    </div>\n    `,\n  }),\n  parameters: {\n    docs: {\n      description: {\n        story: '`iconSize` scales the glyph for a larger slot, e.g. a full-width empty gallery.',\n      },\n    },\n  },\n}"
                 },
                 {
                     "name": "ValidImage",
@@ -10369,19 +10409,6 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/area-code/area-code.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<AreaCodeComponent>",
-                    "file": "projects/ui/src/components/area-code/area-code.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/ui/src/components/avatar/avatar-group.stories.ts": [
                 {
                     "name": "Story",
@@ -10408,19 +10435,6 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/button/button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts": [
                 {
                     "name": "Story",
@@ -10428,6 +10442,32 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<BreadcrumbComponent>",
                     "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/components/area-code/area-code.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AreaCodeComponent>",
+                    "file": "projects/ui/src/components/area-code/area-code.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/components/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -12942,6 +12982,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/image/image-not-found.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NoImage",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/components/image/image-not-found.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NoImageLargeIcon",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
