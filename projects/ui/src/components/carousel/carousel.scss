@@ -6,6 +6,78 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
+  // Containing block for the arrow overlay below.
+  position: relative;
+
+  // With `arrows: true` Splide injects its own `.splide__arrows` wrapper and two
+  // native buttons into this root element. Only splide-core.min.css is imported
+  // (the themed splide.min.css is not), and core styles nothing about arrows —
+  // so without these rules the buttons land in the grid's first row, stacked
+  // above the track at their SVG's intrinsic size, with the UA's default button
+  // chrome. The component defaults `arrows` to false, which is why that has gone
+  // unnoticed; anything passing the option through hits it.
+  //
+  // Lifted out of the grid entirely and laid over the carousel instead, so
+  // enabling arrows doesn't shift the slides down.
+  .splide__arrows {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    // The overlay spans the whole carousel, so it has to stay transparent to
+    // clicks — only the two buttons take them back.
+    pointer-events: none;
+  }
+
+  .splide__arrow {
+    pointer-events: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $component-icon-only-size-md;
+    height: $component-icon-only-size-md;
+    padding: 0;
+    border: 0;
+    border-radius: $radius-radius-full;
+    background-color: $color-background-black-medium;
+    color: $color-text-primary;
+    cursor: pointer;
+    @include transition-properties((background-color, opacity));
+
+    &:hover:not(:disabled) {
+      background-color: $color-background-black-strong;
+    }
+
+    // Splide's default arrow content is an inline SVG that inherits neither a
+    // fill nor a size from anywhere.
+    svg {
+      width: $iconography-font-size-5;
+      height: $iconography-font-size-5;
+      fill: currentColor;
+    }
+
+    // Splide disables an arrow at either end of a non-looping carousel. Faded
+    // rather than removed, so the other arrow doesn't jump across.
+    &:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+
+    &--prev {
+      left: $spacing-spacing-2;
+      // The default SVG only points one way; Splide relies on the theme to turn
+      // it around.
+      svg {
+        transform: scaleX(-1);
+      }
+    }
+
+    &--next {
+      right: $spacing-spacing-2;
+    }
+  }
 
   &__pagination-dot {
     border: 0;
