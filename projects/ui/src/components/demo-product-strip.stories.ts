@@ -37,7 +37,7 @@ const quantityDropdownItems: DropdownItem[] = [
           <img
             udsCardMedia
             class="ul-h-full"
-            peCatchImageNotFound
+            ulCatchImageNotFound
             src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=400&h=300&fit=crop"
             alt="Adventure Quest"
           />
@@ -54,7 +54,7 @@ const quantityDropdownItems: DropdownItem[] = [
           <div udsCardMedia>
             <img
               class="ul-h-full"
-              peCatchImageNotFound
+              ulCatchImageNotFound
               src="https://images.unsplash.com/photo-1511882150382-421056eb6909?w=400&h=300&fit=crop"
               alt="Space Racer"
             />
@@ -74,7 +74,7 @@ const quantityDropdownItems: DropdownItem[] = [
         <ul-card cardCaption="Game" cardTitle="Puzzle Master" cardSubtitle="Casual">
           <img
             udsCardMedia
-            peCatchImageNotFound
+            ulCatchImageNotFound
             src="https://images.unsplash.com/photo-1585504198199-20277593b94f?w=400&h=300&fit=crop"
             alt="Puzzle Master"
           />

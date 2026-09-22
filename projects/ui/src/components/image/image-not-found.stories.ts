@@ -32,7 +32,7 @@ export const ValidImage: Story = {
     template: `
     <div style="height: 300px; width: 200px;">  
         <img 
-            peCatchImageNotFound 
+            ulCatchImageNotFound 
             src="https://picsum.photos/200/300" 
             alt="Valid image example"
             width="200"
@@ -55,7 +55,7 @@ export const InvalidImage: Story = {
     template: `
     <div class="ul-background-white-light" style="height: 300px; width: 200px;">  
         <img 
-            peCatchImageNotFound 
+            ulCatchImageNotFound 
             src="invalid-image-url.jpg" 
             alt="Invalid image example"
             width="200"
@@ -78,7 +78,7 @@ export const WithoutPlaceholder: Story = {
     template: `
     <div class="ul-background-white-light" style="height: 300px; width: 200px;">  
         <img 
-            peCatchImageNotFound
+            ulCatchImageNotFound
             [showPlaceholder]="false"
             src="invalid-image-url.jpg" 
             alt="Invalid image without placeholder"
