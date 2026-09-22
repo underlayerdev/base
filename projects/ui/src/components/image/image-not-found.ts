@@ -3,7 +3,7 @@ import { Directive, input, signal } from '@angular/core';
  * Directive to handle image loading errors and display placeholders
  */
 @Directive({
-  selector: '[peCatchImageNotFound]',
+  selector: '[ulCatchImageNotFound]',
   host: {
     '(load)': 'handleLoad()',
     '(error)': 'handleError()',

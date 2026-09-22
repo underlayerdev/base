@@ -100,7 +100,7 @@ const searchOptions = [
               <ul-carousel-item>
                 <div class="ul-demo-product-page__gallery-slide">
                   <img
-                    peCatchImageNotFound
+                    ulCatchImageNotFound
                     src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&h=450&fit=crop"
                     alt="Chrono Nexus - Game artwork"
                   />
@@ -109,7 +109,7 @@ const searchOptions = [
               <ul-carousel-item>
                 <div class="ul-demo-product-page__gallery-slide">
                   <img
-                    peCatchImageNotFound
+                    ulCatchImageNotFound
                     src="https://images.unsplash.com/photo-1511882150382-421056eb6909?w=800&h=450&fit=crop"
                     alt="Chrono Nexus - Gameplay screenshot"
                   />
@@ -118,7 +118,7 @@ const searchOptions = [
               <ul-carousel-item>
                 <div class="ul-demo-product-page__gallery-slide">
                   <img
-                    peCatchImageNotFound
+                    ulCatchImageNotFound
                     src="https://images.unsplash.com/photo-1585504198199-20277593b94f?w=800&h=450&fit=crop"
                     alt="Chrono Nexus - In-game view"
                   />
@@ -420,7 +420,7 @@ class DemoProductPageComponent {
                 <ul-carousel-item>
                   <div class="ul-demo-product-page__gallery-slide">
                     <img
-                      peCatchImageNotFound
+                      ulCatchImageNotFound
                       src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&h=450&fit=crop"
                       alt="Chrono Nexus - Game artwork"
                     />
@@ -429,7 +429,7 @@ class DemoProductPageComponent {
                 <ul-carousel-item>
                   <div class="ul-demo-product-page__gallery-slide">
                     <img
-                      peCatchImageNotFound
+                      ulCatchImageNotFound
                       src="https://images.unsplash.com/photo-1511882150382-421056eb6909?w=800&h=450&fit=crop"
                       alt="Chrono Nexus - Gameplay screenshot"
                     />
@@ -438,7 +438,7 @@ class DemoProductPageComponent {
                 <ul-carousel-item>
                   <div class="ul-demo-product-page__gallery-slide">
                     <img
-                      peCatchImageNotFound
+                      ulCatchImageNotFound
                       src="https://images.unsplash.com/photo-1585504198199-20277593b94f?w=800&h=450&fit=crop"
                       alt="Chrono Nexus - In-game view"
                     />
