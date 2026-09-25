@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { moduleMetadata } from '@storybook/angular';
 
-import { Meta, StoryObj } from '../../../.storybook/types';
-import { ButtonComponent } from '../button/button';
+import { Meta, StoryObj } from '../.storybook/types';
+import { ButtonComponent } from '../src/components/button/button';
 
 import { CarouselComponent } from './carousel';
 import { CarouselItemComponent } from './carousel';

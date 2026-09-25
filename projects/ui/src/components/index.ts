@@ -5,7 +5,8 @@ export * from './breadcrumb';
 export * from './button/button';
 export * from './calendar/calendar';
 export * from './card/card';
-export * from './carousel/carousel';
+// CarouselComponent is a secondary entry point (@underlayerdev/ui/carousel),
+// not re-exported here — see projects/ui/carousel/public-api.ts for why.
 export * from './checkbox/checkbox';
 export * from './collapse/collapse';
 export * from './dock/dock';

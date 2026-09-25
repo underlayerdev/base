@@ -4,6 +4,9 @@ const config: StorybookConfig = {
   stories: [
     '../src/**/*.mdx',
     '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    // The carousel secondary entry point owns its source — including its
+    // stories — outside src/, so the glob above doesn't reach it on its own.
+    '../carousel/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-a11y',

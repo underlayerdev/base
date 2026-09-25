@@ -6,7 +6,7 @@ import { AccordionComponent, AccordionItemComponent } from './accordion/accordio
 import { AvatarComponent } from './avatar/avatar';
 import { BreadcrumbComponent, BreadcrumbItem } from './breadcrumb/breadcrumb';
 import { ButtonComponent } from './button/button';
-import { CarouselComponent, CarouselItemComponent } from './carousel/carousel';
+import { CarouselComponent, CarouselItemComponent } from '../../carousel/carousel';
 import { DemoAppLayoutComponent } from './demo-app-layout.stories';
 import { DropdownComponent, DropdownItem } from './dropdown/dropdown';
 import { FooterComponent } from './footer/footer';
