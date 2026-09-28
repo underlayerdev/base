@@ -1,0 +1,139 @@
+<div
+  class="ul-category-picker ul-category-picker--{{ size() }}"
+  [class.ul-category-picker--disabled]="disabled()"
+  [class.ul-category-picker--error]="hasError()"
+  [class.ul-category-picker--required]="required()"
+  [attr.aria-invalid]="hasError()"
+  [attr.aria-required]="required()"
+  [attr.aria-describedby]="describedBy()"
+>
+  <ul-form-field-label
+    [label]="label()"
+    [required]="required()"
+    [for]="ids.controlId"
+    [size]="size()"
+    [showRequiredIndicator]="showRequiredIndicator()"
+  />
+
+  <button
+    type="button"
+    [id]="ids.controlId"
+    class="ul-category-picker__control"
+    [disabled]="disabled()"
+    (click)="openPicker()"
+  >
+    <span
+      class="ul-category-picker__control-text"
+      [class.ul-category-picker__control-text--placeholder]="!selectedNode()"
+    >
+      {{ selectedLabel() || placeholder() }}
+    </span>
+    <ul-icon size="5" icon="chevron_down" />
+  </button>
+
+  <ul-form-field-helper
+    [id]="ids.helperId"
+    [helperText]="helperText()"
+    [errorText]="errorText() || (hasError() && errors().length ? errors()[0].message : '') || null"
+    [error]="hasError()"
+  />
+</div>
+
+<ul-modal
+  variant="bottom-sheet"
+  [fullScreenInMobile]="true"
+  [(open)]="open"
+  [title]="modalTitle()"
+  (closed)="closePicker()"
+>
+  @if (open()) {
+    <div class="ul-category-picker__modal">
+      <ul-input
+        [controlId]="ids.controlId + '-search'"
+        [value]="query()"
+        (valueChange)="query.set($event)"
+        [placeholder]="searchPlaceholder()"
+        [label]="null"
+        [helperText]="null"
+        [autocomplete]="'off'"
+      >
+        <ng-container ul-input-right-elements>
+          <ul-icon size="5" icon="search" />
+        </ng-container>
+      </ul-input>
+
+      @if (isSearching()) {
+        <div class="ul-category-picker__list ul-scrollable" role="listbox">
+          @if (hasNoResults()) {
+            <div class="ul-category-picker__empty" role="status">{{ noResultsText() }}</div>
+          } @else {
+            @for (result of searchResults(); track result.node.id) {
+              <ul-list-item theme="ghost-white" (click)="selectNode(result.node)">
+                <ng-container ul-list-item-before-label>
+                  @if (result.node.icon) {
+                    <ul-icon size="5" [icon]="result.node.icon" />
+                  }
+                </ng-container>
+                <ng-container ul-list-item-label>
+                  <div class="ul-category-picker__option-label">{{ result.node.label }}</div>
+                  @if (result.breadcrumb) {
+                    <div class="ul-category-picker__option-breadcrumb">{{ result.breadcrumb }}</div>
+                  }
+                </ng-container>
+              </ul-list-item>
+            }
+          }
+        </div>
+      } @else {
+        @if (breadcrumb().length) {
+          <div class="ul-category-picker__breadcrumb">
+            <button
+              type="button"
+              class="ul-category-picker__breadcrumb-item"
+              (click)="goToBreadcrumb(null)"
+            >
+              {{ rootLabel() }}
+            </button>
+            @for (ancestor of breadcrumb(); track ancestor.id; let last = $last) {
+              <ul-icon size="4" icon="chevron_right" />
+              @if (last) {
+                <span
+                  class="ul-category-picker__breadcrumb-item ul-category-picker__breadcrumb-item--current"
+                  aria-current="page"
+                >
+                  {{ ancestor.label }}
+                </span>
+              } @else {
+                <button
+                  type="button"
+                  class="ul-category-picker__breadcrumb-item"
+                  (click)="goToBreadcrumb(ancestor.id)"
+                >
+                  {{ ancestor.label }}
+                </button>
+              }
+            }
+          </div>
+        }
+
+        <div class="ul-category-picker__list ul-scrollable" role="listbox">
+          @for (node of currentChildren(); track node.id) {
+            <ul-list-item theme="ghost-white" (click)="selectNode(node)">
+              <ng-container ul-list-item-before-label>
+                @if (node.icon) {
+                  <ul-icon size="5" [icon]="node.icon" />
+                }
+              </ng-container>
+              <ng-container ul-list-item-label>{{ node.label }}</ng-container>
+              <ng-container ul-list-item-after-label>
+                @if (!node.isLeaf) {
+                  <ul-icon size="5" icon="chevron_right" />
+                }
+              </ng-container>
+            </ul-list-item>
+          }
+        </div>
+      }
+    </div>
+  }
+</ul-modal>

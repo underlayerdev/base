@@ -1,0 +1,112 @@
+@use '../../foundations/toolkit' as *;
+
+.#{$prefix}category-picker {
+  white-space: nowrap;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: $spacing-spacing-1;
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-spacing-2;
+    width: 100%;
+    min-height: $component-control-height-md;
+    padding: 0 $spacing-spacing-3;
+    border: 2px solid $color-border-white-light;
+    border-radius: $radius-radius-2;
+    background-color: transparent;
+    cursor: pointer;
+    @include transition-properties((border-color));
+
+    &:hover {
+      border-color: $color-border-white-medium;
+    }
+
+    &:focus-visible {
+      border-color: $color-border-white-medium-strong;
+    }
+  }
+
+  &__control-text {
+    @include typography('body-m');
+    color: $color-text-primary;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--placeholder {
+      color: $color-text-secondary;
+    }
+  }
+
+  &--disabled &__control {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    &:hover,
+    &:focus-visible {
+      border-color: $color-border-white-light;
+    }
+  }
+
+  &--error &__control {
+    border-color: $color-border-red;
+  }
+}
+
+.#{$prefix}category-picker__modal {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-spacing-3;
+  min-height: 0;
+}
+
+.#{$prefix}category-picker__breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing-spacing-1;
+}
+
+.#{$prefix}category-picker__breadcrumb-item {
+  @include typography('body-s');
+  background: none;
+  border: none;
+  padding: 0;
+  color: $color-text-secondary;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-text-primary;
+  }
+
+  &--current {
+    color: $color-text-primary;
+    cursor: default;
+  }
+}
+
+.#{$prefix}category-picker__list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-spacing-1;
+  overflow-y: auto;
+}
+
+.#{$prefix}category-picker__option-label {
+  @include typography('body-m');
+}
+
+.#{$prefix}category-picker__option-breadcrumb {
+  @include typography('body-s');
+  color: $color-text-secondary;
+}
+
+.#{$prefix}category-picker__empty {
+  @include typography('body-m');
+  color: $color-text-secondary;
+  padding: $spacing-spacing-3;
+}
