@@ -2918,16 +2918,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/card/card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: baseArgs,\n  render: cardTemplate,\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2935,6 +2925,16 @@
                 "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
                 "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
                 "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: baseArgs,\n  render: cardTemplate,\n}"
             },
             {
                 "name": "Default",
@@ -4098,11 +4098,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/checkbox/checkbox.stories.ts",
+                "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<CheckboxComponent>",
-                "defaultValue": "{\n  title: 'Components/Form Elements/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Checkbox aligned with other form fields (input, textarea, radio-group). Uses shared form field label and helper. Optional label (prop or projected content), helperText, required, and error state. Implements `FormCheckboxControl` for Signal Forms `[formField]`. Use `[(checked)]` for two-way binding. Supports zone variants and size (default, sm, lg — lg is easier to tap on touch, e.g. mobile bulk-select rows).',\n      },\n    },\n  },\n  argTypes: {\n    checked: {\n      control: 'boolean',\n      description: 'The checked state of the checkbox',\n    },\n    disabled: {\n      control: 'boolean',\n      description: 'Whether the checkbox is disabled',\n    },\n    indeterminate: {\n      control: 'boolean',\n      description: 'Whether the checkbox is in an indeterminate state',\n    },\n    zone: {\n      control: 'select',\n      options: ['none', 'accessible', 'visible', 'checked-visible'],\n      description: 'The zone type of the checkbox',\n    },\n    size: {\n      control: 'select',\n      options: ['default', 'sm', 'lg'],\n      description: 'The size variant of the checkbox',\n    },\n    label: {\n      control: 'text',\n      description: 'Form field label (above the checkbox), same as input/textarea',\n    },\n    helperText: {\n      control: 'text',\n      description: 'Helper text below the checkbox when not in error state',\n    },\n    required: {\n      control: 'boolean',\n      description: 'Whether the checkbox is required (shows asterisk, aria-required)',\n    },\n    showRequiredIndicator: {\n      control: 'boolean',\n      description:\n        'Whether the \"*\" shows when required — set false when every field on a form is required by convention and the asterisk would just be noise. The required styling/aria stays either way.',\n    },\n    error: {\n      control: 'boolean',\n      description: 'Whether the checkbox is in an error state',\n    },\n    errorText: {\n      control: 'text',\n      description: 'Error message shown below when in error state',\n    },\n  },\n}"
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
             },
             {
                 "name": "meta",
@@ -4118,11 +4118,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
+                "file": "projects/ui/src/components/checkbox/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
+                "type": "Meta<CheckboxComponent>",
+                "defaultValue": "{\n  title: 'Components/Form Elements/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Checkbox aligned with other form fields (input, textarea, radio-group). Uses shared form field label and helper. Optional label (prop or projected content), helperText, required, and error state. Implements `FormCheckboxControl` for Signal Forms `[formField]`. Use `[(checked)]` for two-way binding. Supports zone variants and size (default, sm, lg — lg is easier to tap on touch, e.g. mobile bulk-select rows).',\n      },\n    },\n  },\n  argTypes: {\n    checked: {\n      control: 'boolean',\n      description: 'The checked state of the checkbox',\n    },\n    disabled: {\n      control: 'boolean',\n      description: 'Whether the checkbox is disabled',\n    },\n    indeterminate: {\n      control: 'boolean',\n      description: 'Whether the checkbox is in an indeterminate state',\n    },\n    zone: {\n      control: 'select',\n      options: ['none', 'accessible', 'visible', 'checked-visible'],\n      description: 'The zone type of the checkbox',\n    },\n    size: {\n      control: 'select',\n      options: ['default', 'sm', 'lg'],\n      description: 'The size variant of the checkbox',\n    },\n    label: {\n      control: 'text',\n      description: 'Form field label (above the checkbox), same as input/textarea',\n    },\n    helperText: {\n      control: 'text',\n      description: 'Helper text below the checkbox when not in error state',\n    },\n    required: {\n      control: 'boolean',\n      description: 'Whether the checkbox is required (shows asterisk, aria-required)',\n    },\n    showRequiredIndicator: {\n      control: 'boolean',\n      description:\n        'Whether the \"*\" shows when required — set false when every field on a form is required by convention and the asterisk would just be noise. The required styling/aria stays either way.',\n    },\n    error: {\n      control: 'boolean',\n      description: 'Whether the checkbox is in an error state',\n    },\n    errorText: {\n      control: 'text',\n      description: 'Error message shown below when in error state',\n    },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -6084,8 +6084,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<CheckboxComponent>",
-                "file": "projects/ui/src/components/checkbox/checkbox.stories.ts",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6106,8 +6106,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/ui/src/components/button/button.stories.ts",
+                "rawtype": "StoryObj<CheckboxComponent>",
+                "file": "projects/ui/src/components/checkbox/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -10498,13 +10498,13 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/checkbox/checkbox.stories.ts": [
+            "projects/ui/src/components/button/button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<CheckboxComponent>",
-                    "file": "projects/ui/src/components/checkbox/checkbox.stories.ts",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -10524,13 +10524,13 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/button/button.stories.ts": [
+            "projects/ui/src/components/checkbox/checkbox.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "rawtype": "StoryObj<CheckboxComponent>",
+                    "file": "projects/ui/src/components/checkbox/checkbox.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
