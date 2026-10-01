@@ -2730,9 +2730,9 @@ export default {
         value: 'translate',
         name: 'content-icon-glyph-translate',
       },
-      ultra_cloud: {
-        value: 'ultra_cloud',
-        name: 'content-icon-glyph-ultra-cloud',
+      apps_cloud: {
+        value: 'apps_cloud',
+        name: 'content-icon-glyph-apps-cloud',
       },
       usb: {
         value: 'usb',
@@ -3802,13 +3802,9 @@ export default {
         value: 'folder',
         name: 'content-icon-glyph-folder',
       },
-      ultra_wallet: {
-        value: 'ultra_wallet',
-        name: 'content-icon-glyph-ultra-wallet',
-      },
-      ultra_games: {
-        value: 'ultra_games',
-        name: 'content-icon-glyph-ultra-games',
+      games: {
+        value: 'games',
+        name: 'content-icon-glyph-games',
       },
       league: {
         value: 'league',

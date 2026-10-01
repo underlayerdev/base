@@ -682,7 +682,7 @@ declare const tokens: {
       tablet: DesignToken;
       terminal: DesignToken;
       translate: DesignToken;
-      ultra_cloud: DesignToken;
+      apps_cloud: DesignToken;
       usb: DesignToken;
       video: DesignToken;
       widgets: DesignToken;
@@ -950,8 +950,7 @@ declare const tokens: {
       file_text: DesignToken;
       file_text_double: DesignToken;
       folder: DesignToken;
-      ultra_wallet: DesignToken;
-      ultra_games: DesignToken;
+      games: DesignToken;
       league: DesignToken;
       double_elim: DesignToken;
       gauntlet: DesignToken;

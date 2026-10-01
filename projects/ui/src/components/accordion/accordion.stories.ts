@@ -48,7 +48,7 @@ export const Default: Story = {
       <ul-accordion [multi]="multi" [showDivider]="showDivider">
         <ul-accordion-item>
           <ng-container ul-accordion-icon>
-            <i class="ul-icon ul-icon-ultra_games"></i>
+            <i class="ul-icon ul-icon-games"></i>
           </ng-container>
           <ng-container ul-accordion-label>Accordion Item 1</ng-container>
           <ng-container ul-accordion-status>

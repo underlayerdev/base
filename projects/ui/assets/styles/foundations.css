@@ -15109,8 +15109,8 @@ a:active {
 .ul-icon-translate::before {
   content: "translate";
 }
-.ul-icon-ultra_cloud::before {
-  content: "ultra_cloud";
+.ul-icon-apps_cloud::before {
+  content: "apps_cloud";
 }
 .ul-icon-usb::before {
   content: "usb";
@@ -15913,11 +15913,8 @@ a:active {
 .ul-icon-folder::before {
   content: "folder";
 }
-.ul-icon-ultra_wallet::before {
-  content: "ultra_wallet";
-}
-.ul-icon-ultra_games::before {
-  content: "ultra_games";
+.ul-icon-games::before {
+  content: "games";
 }
 .ul-icon-league::before {
   content: "league";

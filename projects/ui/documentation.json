@@ -2386,7 +2386,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n      <div style=\"display: flex; min-height: 100vh; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        ${Object.keys(variables.iconography.font.size)\n          .map((size) => `<ul-icon [size]=\"'${size}'\" [weight]=\"'medium'\" [icon]=\"'ultra_games'\"></ul-icon>`)\n          .join('\\n')}\n      </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\n  render: () => ({\n    template: `\n      <div style=\"display: flex; min-height: 100vh; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        ${Object.keys(variables.iconography.font.size)\n          .map((size) => `<ul-icon [size]=\"'${size}'\" [weight]=\"'medium'\" [icon]=\"'games'\"></ul-icon>`)\n          .join('\\n')}\n      </div>\n    `,\n  }),\n}"
             },
             {
                 "name": "AllSizes",
@@ -2452,7 +2452,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center;\">\n        ${Object.keys(variables.iconography.font.weight)\n          .map((weight) => `<ul-icon [size]=\"'8'\" [weight]=\"'${weight}'\" [icon]=\"'ultra_games'\"></ul-icon>`)\n          .join('\\n')}\n      </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\n  render: () => ({\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center;\">\n        ${Object.keys(variables.iconography.font.weight)\n          .map((weight) => `<ul-icon [size]=\"'8'\" [weight]=\"'${weight}'\" [icon]=\"'games'\"></ul-icon>`)\n          .join('\\n')}\n      </div>\n    `,\n  }),\n}"
             },
             {
                 "name": "Avatar",
@@ -2860,6 +2860,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-games\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 1</ng-container>\n          <ng-container ul-accordion-status>\n            <i class=\"ul-icon ul-icon-hourglass\"></i>\n            <i class=\"ul-icon ul-icon-history\"></i>\n          </ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 1 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-store\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 2</ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 2 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item [disabled]=\"true\">\n          <ng-container ul-accordion-label>Disabled Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This accordion item is disabled.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/area-code/area-code.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2908,6 +2918,18 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
+                "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
+                "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2918,33 +2940,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-ultra_games\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 1</ng-container>\n          <ng-container ul-accordion-status>\n            <i class=\"ul-icon ul-icon-hourglass\"></i>\n            <i class=\"ul-icon ul-icon-history\"></i>\n          </ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 1 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-store\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 2</ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 2 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item [disabled]=\"true\">\n          <ng-container ul-accordion-label>Disabled Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This accordion item is disabled.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    nodes: defaultNodes,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-category-picker\n        [size]=\"size\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [required]=\"required\"\n        [showRequiredIndicator]=\"showRequiredIndicator\"\n        [placeholder]=\"placeholder\"\n        [searchPlaceholder]=\"searchPlaceholder\"\n        [modalTitle]=\"modalTitle\"\n        [rootLabel]=\"rootLabel\"\n        [noResultsText]=\"noResultsText\"\n        [nodes]=\"nodes\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
-                "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
-                "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
             },
             {
                 "name": "Default",
@@ -2998,7 +2998,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: '8',\n    weight: 'medium',\n    icon: 'ultra_games',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    size: '8',\n    weight: 'medium',\n    icon: 'games',\n  },\n}"
             },
             {
                 "name": "Default",
@@ -4068,6 +4068,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AccordionComponent>",
+                "defaultValue": "{\n  title: 'Components/Data Display/Accordion',\n  component: AccordionComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Vertical list of expandable panels. Use `ul-accordion-item` children with projected icon, label, status, and content. `multi` allows multiple panels open; `showDivider` adds separators between items.',\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [AccordionItemComponent],\n    }),\n  ],\n  argTypes: {\n    multi: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n    showDivider: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n  },\n  args: {\n    multi: false,\n    showDivider: false,\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/area-code/area-code.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4118,6 +4128,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4128,31 +4148,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<AccordionComponent>",
-                "defaultValue": "{\n  title: 'Components/Data Display/Accordion',\n  component: AccordionComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Vertical list of expandable panels. Use `ul-accordion-item` children with projected icon, label, status, and content. `multi` allows multiple panels open; `showDivider` adds separators between items.',\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [AccordionItemComponent],\n    }),\n  ],\n  argTypes: {\n    multi: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n    showDivider: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n  },\n  args: {\n    multi: false,\n    showDivider: false,\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<CategoryPickerComponent>",
                 "defaultValue": "{\n  title: 'Components/Form Elements/CategoryPicker',\n  component: CategoryPickerComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Picker for a hierarchical category tree of unbounded depth: a closed field that opens a drill-down + search modal (one level of children at a time, with a breadcrumb trail) and resolves to a single leaf node id. Implements `FormValueControl<string | null>` for Signal Forms. Use `[(value)]` for two-way binding.',\n      },\n    },\n    layout: 'centered',\n  },\n  decorators: [\n    (story) => ({\n      ...story(),\n      template: `<div style=\"min-height: 500px; min-width: 400px;\">${story().template}</div>`,\n    }),\n  ],\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    error: { control: { type: 'boolean' } },\n    disabled: { control: { type: 'boolean' } },\n    required: { control: { type: 'boolean' } },\n    showRequiredIndicator: { control: { type: 'boolean' } },\n    label: { control: { type: 'text' } },\n    helperText: { control: { type: 'text' } },\n    errorText: { control: { type: 'text' } },\n    placeholder: { control: { type: 'text' } },\n    searchPlaceholder: { control: { type: 'text' } },\n    modalTitle: { control: { type: 'text' } },\n    rootLabel: { control: { type: 'text' } },\n    noResultsText: { control: { type: 'text' } },\n  },\n  args: {\n    size: 'md',\n    error: false,\n    disabled: false,\n    required: false,\n    showRequiredIndicator: true,\n    label: 'Category',\n    helperText: 'Choose the most specific category that fits',\n    errorText: 'Please select a category',\n    placeholder: 'Select a category',\n    searchPlaceholder: 'Search categories',\n    modalTitle: 'Select a category',\n    rootLabel: 'All categories',\n    noResultsText: 'No results',\n    nodes: defaultNodes,\n    value: null,\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
             },
             {
                 "name": "meta",
@@ -5500,7 +5500,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n    <div style=\"max-width: 400px\">\n      <ul-list-item>\n        <ng-container ul-list-item-before-label>\n          <ul-checkbox />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n          <ul-icon size=\"5\" icon=\"ultra_games\" />\n        </ng-container>\n        <ng-container ul-list-item-label>Basic List Item</ng-container>\n        <ng-container ul-list-item-after-label>\n          <span>+80</span>\n          <ul-icon size=\"5\" icon=\"store\" />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n        </ng-container>\n      </ul-list-item>\n    </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\n  render: () => ({\n    template: `\n    <div style=\"max-width: 400px\">\n      <ul-list-item>\n        <ng-container ul-list-item-before-label>\n          <ul-checkbox />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n          <ul-icon size=\"5\" icon=\"games\" />\n        </ng-container>\n        <ng-container ul-list-item-label>Basic List Item</ng-container>\n        <ng-container ul-list-item-after-label>\n          <span>+80</span>\n          <ul-icon size=\"5\" icon=\"store\" />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n        </ng-container>\n      </ul-list-item>\n    </div>\n    `,\n  }),\n}"
             },
             {
                 "name": "WithConstraints",
@@ -5562,7 +5562,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-input\n        [size]=\"size\"\n        [appearance]=\"appearance\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [readOnly]=\"readOnly\"\n        [placeholder]=\"placeholder\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [value]=\"value\"\n      >\n        <ng-container ul-input-left-elements>\n          <i class=\"ul-icon ul-icon-ultra_games\"></i>\n        </ng-container>\n        <ng-container ul-input-right-elements>\n          <span>47</span>\n          <i class=\"ul-icon ul-icon-trash\"></i>\n          <i class=\"ul-icon ul-icon-search\"></i>\n        </ng-container>\n      </ul-input>\n    `,\n  }),\n}",
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-input\n        [size]=\"size\"\n        [appearance]=\"appearance\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [readOnly]=\"readOnly\"\n        [placeholder]=\"placeholder\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [value]=\"value\"\n      >\n        <ng-container ul-input-left-elements>\n          <i class=\"ul-icon ul-icon-games\"></i>\n        </ng-container>\n        <ng-container ul-input-right-elements>\n          <span>47</span>\n          <i class=\"ul-icon ul-icon-trash\"></i>\n          <i class=\"ul-icon ul-icon-search\"></i>\n        </ng-container>\n      </ul-input>\n    `,\n  }),\n}",
                 "rawdescription": "Demonstrates an input with elements on the left and right.",
                 "description": "<p>Demonstrates an input with elements on the left and right.</p>\n"
             },
@@ -5736,7 +5736,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-pill [variant]=\"variant\" [size]=\"size\" [theme]=\"theme\" [disabled]=\"disabled\">\n        <span class=\"ul-icon ul-icon-ultra_games\"></span>\n        <span>Pill with Icons</span>\n        <span class=\"ul-icon ul-icon-chevron_right\"></span>\n      </ul-pill>\n    `,\n  }),\n}",
+                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-pill [variant]=\"variant\" [size]=\"size\" [theme]=\"theme\" [disabled]=\"disabled\">\n        <span class=\"ul-icon ul-icon-games\"></span>\n        <span>Pill with Icons</span>\n        <span class=\"ul-icon ul-icon-chevron_right\"></span>\n      </ul-pill>\n    `,\n  }),\n}",
                 "rawdescription": "Demonstrates a pill with icons on both sides.",
                 "description": "<p>Demonstrates a pill with icons on both sides.</p>\n"
             },
@@ -6078,6 +6078,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<AccordionComponent>",
+                "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<AreaCodeComponent>",
                 "file": "projects/ui/src/components/area-code/area-code.stories.ts",
                 "deprecated": false,
@@ -6133,6 +6144,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<CardComponent>",
                 "file": "projects/ui/src/components/card/card.stories.ts",
                 "deprecated": false,
@@ -6144,30 +6166,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AccordionComponent>",
-                "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<CategoryPickerComponent>",
                 "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6912,7 +6912,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <div style=\"display: flex; min-height: 100vh; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        ${Object.keys(variables.iconography.font.size)\n          .map((size) => `<ul-icon [size]=\"'${size}'\" [weight]=\"'medium'\" [icon]=\"'ultra_games'\"></ul-icon>`)\n          .join('\\n')}\n      </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <div style=\"display: flex; min-height: 100vh; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        ${Object.keys(variables.iconography.font.size)\n          .map((size) => `<ul-icon [size]=\"'${size}'\" [weight]=\"'medium'\" [icon]=\"'games'\"></ul-icon>`)\n          .join('\\n')}\n      </div>\n    `,\n  }),\n}"
                 },
                 {
                     "name": "AllWeights",
@@ -6922,7 +6922,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center;\">\n        ${Object.keys(variables.iconography.font.weight)\n          .map((weight) => `<ul-icon [size]=\"'8'\" [weight]=\"'${weight}'\" [icon]=\"'ultra_games'\"></ul-icon>`)\n          .join('\\n')}\n      </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center;\">\n        ${Object.keys(variables.iconography.font.weight)\n          .map((weight) => `<ul-icon [size]=\"'8'\" [weight]=\"'${weight}'\" [icon]=\"'games'\"></ul-icon>`)\n          .join('\\n')}\n      </div>\n    `,\n  }),\n}"
                 },
                 {
                     "name": "Default",
@@ -6932,7 +6932,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: '8',\n    weight: 'medium',\n    icon: 'ultra_games',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    size: '8',\n    weight: 'medium',\n    icon: 'games',\n  },\n}"
                 },
                 {
                     "name": "meta",
@@ -7554,7 +7554,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-input\n        [size]=\"size\"\n        [appearance]=\"appearance\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [readOnly]=\"readOnly\"\n        [placeholder]=\"placeholder\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [value]=\"value\"\n      >\n        <ng-container ul-input-left-elements>\n          <i class=\"ul-icon ul-icon-ultra_games\"></i>\n        </ng-container>\n        <ng-container ul-input-right-elements>\n          <span>47</span>\n          <i class=\"ul-icon ul-icon-trash\"></i>\n          <i class=\"ul-icon ul-icon-search\"></i>\n        </ng-container>\n      </ul-input>\n    `,\n  }),\n}",
+                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-input\n        [size]=\"size\"\n        [appearance]=\"appearance\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [readOnly]=\"readOnly\"\n        [placeholder]=\"placeholder\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [value]=\"value\"\n      >\n        <ng-container ul-input-left-elements>\n          <i class=\"ul-icon ul-icon-games\"></i>\n        </ng-container>\n        <ng-container ul-input-right-elements>\n          <span>47</span>\n          <i class=\"ul-icon ul-icon-trash\"></i>\n          <i class=\"ul-icon ul-icon-search\"></i>\n        </ng-container>\n      </ul-input>\n    `,\n  }),\n}",
                     "rawdescription": "Demonstrates an input with elements on the left and right.",
                     "description": "<p>Demonstrates an input with elements on the left and right.</p>\n"
                 },
@@ -8338,7 +8338,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: `\n    <div style=\"max-width: 400px\">\n      <ul-list-item>\n        <ng-container ul-list-item-before-label>\n          <ul-checkbox />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n          <ul-icon size=\"5\" icon=\"ultra_games\" />\n        </ng-container>\n        <ng-container ul-list-item-label>Basic List Item</ng-container>\n        <ng-container ul-list-item-after-label>\n          <span>+80</span>\n          <ul-icon size=\"5\" icon=\"store\" />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n        </ng-container>\n      </ul-list-item>\n    </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n    <div style=\"max-width: 400px\">\n      <ul-list-item>\n        <ng-container ul-list-item-before-label>\n          <ul-checkbox />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n          <ul-icon size=\"5\" icon=\"games\" />\n        </ng-container>\n        <ng-container ul-list-item-label>Basic List Item</ng-container>\n        <ng-container ul-list-item-after-label>\n          <span>+80</span>\n          <ul-icon size=\"5\" icon=\"store\" />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n        </ng-container>\n      </ul-list-item>\n    </div>\n    `,\n  }),\n}"
                 }
             ],
             "projects/ui/src/components/stepper/stepper.stories.ts": [
@@ -9223,6 +9223,38 @@
                     "defaultValue": "[\n  { label: '1', value: '1' },\n  { label: '2', value: '2' },\n  { label: '3', value: '3' },\n]"
                 }
             ],
+            "projects/ui/src/components/accordion/accordion.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-games\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 1</ng-container>\n          <ng-container ul-accordion-status>\n            <i class=\"ul-icon ul-icon-hourglass\"></i>\n            <i class=\"ul-icon ul-icon-history\"></i>\n          </ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 1 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-store\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 2</ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 2 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item [disabled]=\"true\">\n          <ng-container ul-accordion-label>Disabled Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This accordion item is disabled.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AccordionComponent>",
+                    "defaultValue": "{\n  title: 'Components/Data Display/Accordion',\n  component: AccordionComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Vertical list of expandable panels. Use `ul-accordion-item` children with projected icon, label, status, and content. `multi` allows multiple panels open; `showDivider` adds separators between items.',\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [AccordionItemComponent],\n    }),\n  ],\n  argTypes: {\n    multi: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n    showDivider: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n  },\n  args: {\n    multi: false,\n    showDivider: false,\n  },\n}"
+                },
+                {
+                    "name": "MultiExpand",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    multi: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>First Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>You can expand multiple items at once in multi mode.</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>Second Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This item can be expanded alongside the first one.</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>Third Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>All items can be expanded simultaneously.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
+                }
+            ],
             "projects/ui/src/components/area-code/area-code.stories.ts": [
                 {
                     "name": "Default",
@@ -9389,38 +9421,6 @@
                     "defaultValue": "{\n  args: {\n    items: [\n      { label: 'Home', routerLink: '/' },\n      { label: 'Products', routerLink: '/products' },\n      { label: 'Current Page' },\n    ],\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" />\n    `,\n  }),\n}",
                     "rawdescription": "Breadcrumb with router links (if RouterModule is available).\nNote: This requires RouterModule to be imported in the story context.",
                     "description": "<p>Breadcrumb with router links (if RouterModule is available).\nNote: This requires RouterModule to be imported in the story context.</p>\n"
-                }
-            ],
-            "projects/ui/src/components/accordion/accordion.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-ultra_games\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 1</ng-container>\n          <ng-container ul-accordion-status>\n            <i class=\"ul-icon ul-icon-hourglass\"></i>\n            <i class=\"ul-icon ul-icon-history\"></i>\n          </ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 1 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-store\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 2</ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 2 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item [disabled]=\"true\">\n          <ng-container ul-accordion-label>Disabled Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This accordion item is disabled.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<AccordionComponent>",
-                    "defaultValue": "{\n  title: 'Components/Data Display/Accordion',\n  component: AccordionComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Vertical list of expandable panels. Use `ul-accordion-item` children with projected icon, label, status, and content. `multi` allows multiple panels open; `showDivider` adds separators between items.',\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [AccordionItemComponent],\n    }),\n  ],\n  argTypes: {\n    multi: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n    showDivider: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n  },\n  args: {\n    multi: false,\n    showDivider: false,\n  },\n}"
-                },
-                {
-                    "name": "MultiExpand",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    multi: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>First Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>You can expand multiple items at once in multi mode.</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>Second Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This item can be expanded alongside the first one.</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>Third Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>All items can be expanded simultaneously.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
                 }
             ],
             "projects/ui/src/components/category-picker/category-picker.stories.ts": [
@@ -9746,7 +9746,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-pill [variant]=\"variant\" [size]=\"size\" [theme]=\"theme\" [disabled]=\"disabled\">\n        <span class=\"ul-icon ul-icon-ultra_games\"></span>\n        <span>Pill with Icons</span>\n        <span class=\"ul-icon ul-icon-chevron_right\"></span>\n      </ul-pill>\n    `,\n  }),\n}",
+                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-pill [variant]=\"variant\" [size]=\"size\" [theme]=\"theme\" [disabled]=\"disabled\">\n        <span class=\"ul-icon ul-icon-games\"></span>\n        <span>Pill with Icons</span>\n        <span class=\"ul-icon ul-icon-chevron_right\"></span>\n      </ul-pill>\n    `,\n  }),\n}",
                     "rawdescription": "Demonstrates a pill with icons on both sides.",
                     "description": "<p>Demonstrates a pill with icons on both sides.</p>\n"
                 }
@@ -10553,6 +10553,19 @@
                     "kind": 184
                 }
             ],
+            "projects/ui/src/components/accordion/accordion.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AccordionComponent>",
+                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "projects/ui/src/components/area-code/area-code.stories.ts": [
                 {
                     "name": "Story",
@@ -10618,6 +10631,19 @@
                     "kind": 184
                 }
             ],
+            "projects/ui/src/components/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "projects/ui/src/components/card/card.stories.ts": [
                 {
                     "name": "Story",
@@ -10631,19 +10657,6 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/accordion/accordion.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<AccordionComponent>",
-                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/ui/src/components/category-picker/category-picker.stories.ts": [
                 {
                     "name": "Story",
@@ -10651,19 +10664,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CategoryPickerComponent>",
                     "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
-            "projects/ui/src/components/button/button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

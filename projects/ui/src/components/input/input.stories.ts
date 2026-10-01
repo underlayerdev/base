@@ -325,7 +325,7 @@ export const WithElements: Story = {
         [value]="value"
       >
         <ng-container ul-input-left-elements>
-          <i class="ul-icon ul-icon-ultra_games"></i>
+          <i class="ul-icon ul-icon-games"></i>
         </ng-container>
         <ng-container ul-input-right-elements>
           <span>47</span>

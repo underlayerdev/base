@@ -567,7 +567,7 @@ $content-icon-glyph-streaming: streaming !default;
 $content-icon-glyph-tablet: tablet !default;
 $content-icon-glyph-terminal: terminal !default;
 $content-icon-glyph-translate: translate !default;
-$content-icon-glyph-ultra-cloud: ultra_cloud !default;
+$content-icon-glyph-apps-cloud: apps_cloud !default;
 $content-icon-glyph-usb: usb !default;
 $content-icon-glyph-video: video !default;
 $content-icon-glyph-widgets: widgets !default;
@@ -835,8 +835,7 @@ $content-icon-glyph-file-encrypted: file_encrypted !default;
 $content-icon-glyph-file-text: file_text !default;
 $content-icon-glyph-file-text-double: file_text_double !default;
 $content-icon-glyph-folder: folder !default;
-$content-icon-glyph-ultra-wallet: ultra_wallet !default;
-$content-icon-glyph-ultra-games: ultra_games !default;
+$content-icon-glyph-games: games !default;
 $content-icon-glyph-league: league !default;
 $content-icon-glyph-double-elim: double_elim !default;
 $content-icon-glyph-gauntlet: gauntlet !default;
@@ -1592,7 +1591,7 @@ $tokens: (
       'tablet': $content-icon-glyph-tablet,
       'terminal': $content-icon-glyph-terminal,
       'translate': $content-icon-glyph-translate,
-      'ultra_cloud': $content-icon-glyph-ultra-cloud,
+      'apps_cloud': $content-icon-glyph-apps-cloud,
       'usb': $content-icon-glyph-usb,
       'video': $content-icon-glyph-video,
       'widgets': $content-icon-glyph-widgets,
@@ -1860,8 +1859,7 @@ $tokens: (
       'file_text': $content-icon-glyph-file-text,
       'file_text_double': $content-icon-glyph-file-text-double,
       'folder': $content-icon-glyph-folder,
-      'ultra_wallet': $content-icon-glyph-ultra-wallet,
-      'ultra_games': $content-icon-glyph-ultra-games,
+      'games': $content-icon-glyph-games,
       'league': $content-icon-glyph-league,
       'double_elim': $content-icon-glyph-double-elim,
       'gauntlet': $content-icon-glyph-gauntlet,

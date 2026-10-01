@@ -62,7 +62,7 @@ export const WithBeforeAndAfterContent: Story = {
         <ng-container ul-list-item-before-label>
           <ul-checkbox />
           <ul-icon size="5" icon="placeholder" />
-          <ul-icon size="5" icon="ultra_games" />
+          <ul-icon size="5" icon="games" />
         </ng-container>
         <ng-container ul-list-item-label>Basic List Item</ng-container>
         <ng-container ul-list-item-after-label>

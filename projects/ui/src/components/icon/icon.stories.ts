@@ -41,7 +41,7 @@ export const Default: Story = {
   args: {
     size: '8',
     weight: 'medium',
-    icon: 'ultra_games',
+    icon: 'games',
   },
 };
 
@@ -111,7 +111,7 @@ export const AllSizes: Story = {
     template: `
       <div style="display: flex; min-height: 100vh; gap: 16px; align-items: center; flex-wrap: wrap;">
         ${Object.keys(variables.iconography.font.size)
-          .map((size) => `<ul-icon [size]="'${size}'" [weight]="'medium'" [icon]="'ultra_games'"></ul-icon>`)
+          .map((size) => `<ul-icon [size]="'${size}'" [weight]="'medium'" [icon]="'games'"></ul-icon>`)
           .join('\n')}
       </div>
     `,
@@ -123,7 +123,7 @@ export const AllWeights: Story = {
     template: `
       <div style="display: flex; gap: 16px; align-items: center;">
         ${Object.keys(variables.iconography.font.weight)
-          .map((weight) => `<ul-icon [size]="'8'" [weight]="'${weight}'" [icon]="'ultra_games'"></ul-icon>`)
+          .map((weight) => `<ul-icon [size]="'8'" [weight]="'${weight}'" [icon]="'games'"></ul-icon>`)
           .join('\n')}
       </div>
     `,

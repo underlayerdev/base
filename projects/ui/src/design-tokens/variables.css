@@ -552,7 +552,7 @@
   --content-icon-glyph-tablet: tablet;
   --content-icon-glyph-terminal: terminal;
   --content-icon-glyph-translate: translate;
-  --content-icon-glyph-ultra-cloud: ultra_cloud;
+  --content-icon-glyph-apps-cloud: apps_cloud;
   --content-icon-glyph-usb: usb;
   --content-icon-glyph-video: video;
   --content-icon-glyph-widgets: widgets;
@@ -820,8 +820,7 @@
   --content-icon-glyph-file-text: file_text;
   --content-icon-glyph-file-text-double: file_text_double;
   --content-icon-glyph-folder: folder;
-  --content-icon-glyph-ultra-wallet: ultra_wallet;
-  --content-icon-glyph-ultra-games: ultra_games;
+  --content-icon-glyph-games: games;
   --content-icon-glyph-league: league;
   --content-icon-glyph-double-elim: double_elim;
   --content-icon-glyph-gauntlet: gauntlet;

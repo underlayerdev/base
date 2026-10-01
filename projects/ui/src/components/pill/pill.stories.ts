@@ -107,7 +107,7 @@ export const WithIcons: Story = {
     props: args,
     template: `
       <ul-pill [variant]="variant" [size]="size" [theme]="theme" [disabled]="disabled">
-        <span class="ul-icon ul-icon-ultra_games"></span>
+        <span class="ul-icon ul-icon-games"></span>
         <span>Pill with Icons</span>
         <span class="ul-icon ul-icon-chevron_right"></span>
       </ul-pill>
