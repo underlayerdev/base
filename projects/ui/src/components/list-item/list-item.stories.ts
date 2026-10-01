@@ -67,7 +67,7 @@ export const WithBeforeAndAfterContent: Story = {
         <ng-container ul-list-item-label>Basic List Item</ng-container>
         <ng-container ul-list-item-after-label>
           <span>+80</span>
-          <ul-icon size="5" icon="ultra_marketplace" />
+          <ul-icon size="5" icon="store" />
           <ul-icon size="5" icon="placeholder" />
         </ng-container>
       </ul-list-item>

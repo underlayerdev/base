@@ -61,7 +61,7 @@ export const Default: Story = {
         </ul-accordion-item>
         <ul-accordion-item>
           <ng-container ul-accordion-icon>
-            <i class="ul-icon ul-icon-ultra_marketplace"></i>
+            <i class="ul-icon ul-icon-store"></i>
           </ng-container>
           <ng-container ul-accordion-label>Accordion Item 2</ng-container>
           <ng-container ul-accordion-content>

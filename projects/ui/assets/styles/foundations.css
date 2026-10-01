@@ -15253,9 +15253,6 @@ a:active {
 .ul-icon-swiss_franc::before {
   content: "swiss_franc";
 }
-.ul-icon-uos::before {
-  content: "uos";
-}
 .ul-icon-yen::before {
   content: "yen";
 }
@@ -15289,12 +15286,6 @@ a:active {
 .ul-icon-nft::before {
   content: "nft";
 }
-.ul-icon-nft_check::before {
-  content: "nft_check";
-}
-.ul-icon-receive_nft::before {
-  content: "receive_nft";
-}
 .ul-icon-refund::before {
   content: "refund";
 }
@@ -15310,26 +15301,11 @@ a:active {
 .ul-icon-resell_dashed::before {
   content: "resell_dashed";
 }
-.ul-icon-send_nft::before {
-  content: "send_nft";
-}
 .ul-icon-trade::before {
   content: "trade";
 }
 .ul-icon-trade_dashed::before {
   content: "trade_dashed";
-}
-.ul-icon-uos_add::before {
-  content: "uos_add";
-}
-.ul-icon-uos_receive::before {
-  content: "uos_receive";
-}
-.ul-icon-uos_to_dollar::before {
-  content: "uos_to_dollar";
-}
-.ul-icon-uos_transfer::before {
-  content: "uos_transfer";
 }
 .ul-icon-anchors::before {
   content: "anchors";
@@ -15940,29 +15916,11 @@ a:active {
 .ul-icon-folder::before {
   content: "folder";
 }
-.ul-icon-arena::before {
-  content: "arena";
-}
-.ul-icon-ultra_prime::before {
-  content: "ultra_prime";
-}
 .ul-icon-ultra_wallet::before {
   content: "ultra_wallet";
 }
-.ul-icon-ultra_marketplace::before {
-  content: "ultra_marketplace";
-}
-.ul-icon-first_hand_new_uniq::before {
-  content: "first_hand_new_uniq";
-}
-.ul-icon-second_hand_uniq::before {
-  content: "second_hand_uniq";
-}
 .ul-icon-ultra_games::before {
   content: "ultra_games";
-}
-.ul-icon-ultra_logo::before {
-  content: "ultra_logo";
 }
 .ul-icon-league::before {
   content: "league";
@@ -15988,12 +15946,6 @@ a:active {
 .ul-icon-bracket_group::before {
   content: "bracket_group";
 }
-.ul-icon-uniq_unit::before {
-  content: "uniq_unit";
-}
-.ul-icon-crypto_uos::before {
-  content: "crypto_uos";
-}
 .ul-icon-screen_wide::before {
   content: "screen_wide";
 }
@@ -16005,9 +15957,6 @@ a:active {
 }
 .ul-icon-arena_logo::before {
   content: "arena_logo";
-}
-.ul-icon-ultra_prime_logo::before {
-  content: "ultra_prime_logo";
 }
 .ul-icon-ultra_wallet_logo::before {
   content: "ultra_wallet_logo";

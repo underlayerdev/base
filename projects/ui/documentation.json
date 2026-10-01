@@ -2326,6 +2326,28 @@
                 "name": "AllSizes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button [size]=\"'sm'\" [theme]=\"theme\">\n          Small Button\n        </ul-button>\n        <ul-button [size]=\"'md'\" [theme]=\"theme\">\n          Medium Button\n        </ul-button>\n        <ul-button [size]=\"'lg'\" [theme]=\"theme\">\n          Large Button\n        </ul-button>\n        <ul-button [size]=\"'xl'\" [theme]=\"theme\">\n          Extra Large Button\n        </ul-button>\n      </div>\n    `,\n  }),\n}",
+                "rawdescription": "Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.",
+                "description": "<p>Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.</p>\n"
+            },
+            {
+                "name": "AllSizes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-calendar mode=\"date\" size=\"sm\" label=\"Small\" />\n        <ul-calendar mode=\"date\" size=\"md\" label=\"Medium\" />\n        <ul-calendar mode=\"date\" size=\"lg\" label=\"Large\" />\n        <ul-calendar mode=\"date\" size=\"xl\" label=\"Extra large\" />\n      </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "AllSizes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/avatar/avatar-group.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2345,28 +2367,6 @@
                 "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-avatar [size]=\"'sm'\" [initials]=\"'SM'\" />\n        <ul-avatar [size]=\"'md'\" [initials]=\"'MD'\" />\n        <ul-avatar [size]=\"'lg'\" [initials]=\"'LG'\" />\n        <ul-avatar [size]=\"'xl'\" [initials]=\"'XL'\" />\n        <ul-avatar [size]=\"'2xl'\" [initials]=\"'XXL'\" />\n      </div>\n    `,\n  }),\n}",
                 "rawdescription": "Demonstrates all available avatar sizes side by side.\nShows sm, md, lg, xl, and 2xl sizes for easy comparison.",
                 "description": "<p>Demonstrates all available avatar sizes side by side.\nShows sm, md, lg, xl, and 2xl sizes for easy comparison.</p>\n"
-            },
-            {
-                "name": "AllSizes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button [size]=\"'sm'\" [theme]=\"theme\">\n          Small Button\n        </ul-button>\n        <ul-button [size]=\"'md'\" [theme]=\"theme\">\n          Medium Button\n        </ul-button>\n        <ul-button [size]=\"'lg'\" [theme]=\"theme\">\n          Large Button\n        </ul-button>\n        <ul-button [size]=\"'xl'\" [theme]=\"theme\">\n          Extra Large Button\n        </ul-button>\n      </div>\n    `,\n  }),\n}",
-                "rawdescription": "Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.",
-                "description": "<p>Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.</p>\n"
-            },
-            {
-                "name": "AllSizes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-calendar mode=\"date\" size=\"sm\" label=\"Small\" />\n        <ul-calendar mode=\"date\" size=\"md\" label=\"Medium\" />\n        <ul-calendar mode=\"date\" size=\"lg\" label=\"Large\" />\n        <ul-calendar mode=\"date\" size=\"xl\" label=\"Extra large\" />\n      </div>\n    `,\n  }),\n}"
             },
             {
                 "name": "AllSizes",
@@ -2864,7 +2864,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-ultra_games\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 1</ng-container>\n          <ng-container ul-accordion-status>\n            <i class=\"ul-icon ul-icon-hourglass\"></i>\n            <i class=\"ul-icon ul-icon-history\"></i>\n          </ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 1 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-ultra_marketplace\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 2</ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 2 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item [disabled]=\"true\">\n          <ng-container ul-accordion-label>Disabled Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This accordion item is disabled.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-ultra_games\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 1</ng-container>\n          <ng-container ul-accordion-status>\n            <i class=\"ul-icon ul-icon-hourglass\"></i>\n            <i class=\"ul-icon ul-icon-history\"></i>\n          </ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 1 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-store\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 2</ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 2 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item [disabled]=\"true\">\n          <ng-container ul-accordion-label>Disabled Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This accordion item is disabled.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
             },
             {
                 "name": "Default",
@@ -2877,6 +2877,18 @@
                 "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-area-code\n        [content]=\"content\"\n        [showLineNumbers]=\"showLineNumbers\"\n        [maxHeight]=\"maxHeight\"\n      />\n    `,\n  }),\n}",
                 "rawdescription": "Default area code story that demonstrates the basic code display component.\nShows TypeScript code with line numbers.",
                 "description": "<p>Default area code story that demonstrates the basic code display component.\nShows TypeScript code with line numbers.</p>\n"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
+                "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
+                "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
             },
             {
                 "name": "Default",
@@ -2906,30 +2918,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
-                "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
-                "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" [maxItems]=\"maxItems\" />\n    `,\n  }),\n}",
-                "rawdescription": "Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.",
-                "description": "<p>Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.</p>\n"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2945,6 +2933,18 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    nodes: defaultNodes,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-category-picker\n        [size]=\"size\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [required]=\"required\"\n        [showRequiredIndicator]=\"showRequiredIndicator\"\n        [placeholder]=\"placeholder\"\n        [searchPlaceholder]=\"searchPlaceholder\"\n        [modalTitle]=\"modalTitle\"\n        [rootLabel]=\"rootLabel\"\n        [noResultsText]=\"noResultsText\"\n        [nodes]=\"nodes\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" [maxItems]=\"maxItems\" />\n    `,\n  }),\n}",
+                "rawdescription": "Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.",
+                "description": "<p>Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.</p>\n"
             },
             {
                 "name": "Default",
@@ -4088,6 +4088,26 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CalendarComponent>",
+                "defaultValue": "{\n  title: 'Components/Form Elements/Calendar',\n  component: CalendarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Date and/or time picker with popup calendar. Implements `FormValueControl<Date | null>` for Signal Forms `[formField]`. Use `[(value)]` for two-way binding. Modes: date, time, datetime. Supports min/max date and time, locale, sizes, and label/helper/error text.',\n      },\n    },\n  },\n  argTypes: {\n    mode: {\n      options: ['date', 'time', 'datetime'] as CalendarMode[],\n      control: { type: 'select' },\n    },\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'select' },\n    },\n    error: {\n      control: { type: 'boolean' },\n    },\n    disabled: {\n      control: { type: 'boolean' },\n    },\n    readOnly: {\n      control: { type: 'boolean' },\n    },\n    required: {\n      control: { type: 'boolean' },\n    },\n    showRequiredIndicator: {\n      control: { type: 'boolean' },\n      description:\n        'Whether the \"*\" shows when required — set false when every field on a form is required by convention and the asterisk would just be noise. The required styling/aria stays either way.',\n    },\n    placeholder: {\n      control: { type: 'text' },\n    },\n    label: {\n      control: { type: 'text' },\n    },\n    helperText: {\n      control: { type: 'text' },\n    },\n    errorText: {\n      control: { type: 'text' },\n    },\n    showCalendarIcon: {\n      control: { type: 'boolean' },\n    },\n  },\n  args: {\n    mode: 'date',\n    value: null,\n    size: 'md',\n    error: false,\n    disabled: false,\n    readOnly: false,\n    required: false,\n    showRequiredIndicator: true,\n    placeholder: '',\n    label: 'Date',\n    helperText: '',\n    errorText: 'Please select a date',\n    showCalendarIcon: true,\n    minDate: null,\n    maxDate: null,\n    minTime: null,\n    maxTime: null,\n    locale: 'en-US',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/avatar/avatar-group.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4108,36 +4128,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<BreadcrumbComponent>",
-                "defaultValue": "{\n  title: 'Components/Navigation/Breadcrumb',\n  component: BreadcrumbComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [RouterTestingModule],\n    }),\n  ],\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Navigation breadcrumb component for displaying page hierarchy. Supports responsive collapsing on mobile, customizable separators (chevron, slash, dot), and optional icons. Last item is not a link and uses aria-current=\"page\" for accessibility.',\n      },\n    },\n  },\n  argTypes: {\n    items: {\n      control: { type: 'object' },\n      description: 'Array of breadcrumb items to display',\n    },\n    separator: {\n      options: ['chevron_right', 'slash', 'dot'],\n      control: { type: 'radio' },\n      description: 'Separator type between breadcrumb items',\n    },\n    maxItems: {\n      control: { type: 'number' },\n      description: 'Maximum number of items to show before collapsing (for responsive behavior)',\n    },\n  },\n  args: {\n    items: [\n      { label: 'Home', href: '/' },\n      { label: 'Products', href: '/products' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page' },\n    ],\n    separator: 'chevron_right',\n    maxItems: undefined,\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<CalendarComponent>",
-                "defaultValue": "{\n  title: 'Components/Form Elements/Calendar',\n  component: CalendarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Date and/or time picker with popup calendar. Implements `FormValueControl<Date | null>` for Signal Forms `[formField]`. Use `[(value)]` for two-way binding. Modes: date, time, datetime. Supports min/max date and time, locale, sizes, and label/helper/error text.',\n      },\n    },\n  },\n  argTypes: {\n    mode: {\n      options: ['date', 'time', 'datetime'] as CalendarMode[],\n      control: { type: 'select' },\n    },\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'select' },\n    },\n    error: {\n      control: { type: 'boolean' },\n    },\n    disabled: {\n      control: { type: 'boolean' },\n    },\n    readOnly: {\n      control: { type: 'boolean' },\n    },\n    required: {\n      control: { type: 'boolean' },\n    },\n    showRequiredIndicator: {\n      control: { type: 'boolean' },\n      description:\n        'Whether the \"*\" shows when required — set false when every field on a form is required by convention and the asterisk would just be noise. The required styling/aria stays either way.',\n    },\n    placeholder: {\n      control: { type: 'text' },\n    },\n    label: {\n      control: { type: 'text' },\n    },\n    helperText: {\n      control: { type: 'text' },\n    },\n    errorText: {\n      control: { type: 'text' },\n    },\n    showCalendarIcon: {\n      control: { type: 'boolean' },\n    },\n  },\n  args: {\n    mode: 'date',\n    value: null,\n    size: 'md',\n    error: false,\n    disabled: false,\n    readOnly: false,\n    required: false,\n    showRequiredIndicator: true,\n    placeholder: '',\n    label: 'Date',\n    helperText: '',\n    errorText: 'Please select a date',\n    showCalendarIcon: true,\n    minDate: null,\n    maxDate: null,\n    minTime: null,\n    maxTime: null,\n    locale: 'en-US',\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4153,6 +4143,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<CategoryPickerComponent>",
                 "defaultValue": "{\n  title: 'Components/Form Elements/CategoryPicker',\n  component: CategoryPickerComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Picker for a hierarchical category tree of unbounded depth: a closed field that opens a drill-down + search modal (one level of children at a time, with a breadcrumb trail) and resolves to a single leaf node id. Implements `FormValueControl<string | null>` for Signal Forms. Use `[(value)]` for two-way binding.',\n      },\n    },\n    layout: 'centered',\n  },\n  decorators: [\n    (story) => ({\n      ...story(),\n      template: `<div style=\"min-height: 500px; min-width: 400px;\">${story().template}</div>`,\n    }),\n  ],\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    error: { control: { type: 'boolean' } },\n    disabled: { control: { type: 'boolean' } },\n    required: { control: { type: 'boolean' } },\n    showRequiredIndicator: { control: { type: 'boolean' } },\n    label: { control: { type: 'text' } },\n    helperText: { control: { type: 'text' } },\n    errorText: { control: { type: 'text' } },\n    placeholder: { control: { type: 'text' } },\n    searchPlaceholder: { control: { type: 'text' } },\n    modalTitle: { control: { type: 'text' } },\n    rootLabel: { control: { type: 'text' } },\n    noResultsText: { control: { type: 'text' } },\n  },\n  args: {\n    size: 'md',\n    error: false,\n    disabled: false,\n    required: false,\n    showRequiredIndicator: true,\n    label: 'Category',\n    helperText: 'Choose the most specific category that fits',\n    errorText: 'Please select a category',\n    placeholder: 'Select a category',\n    searchPlaceholder: 'Search categories',\n    modalTitle: 'Select a category',\n    rootLabel: 'All categories',\n    noResultsText: 'No results',\n    nodes: defaultNodes,\n    value: null,\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<BreadcrumbComponent>",
+                "defaultValue": "{\n  title: 'Components/Navigation/Breadcrumb',\n  component: BreadcrumbComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [RouterTestingModule],\n    }),\n  ],\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Navigation breadcrumb component for displaying page hierarchy. Supports responsive collapsing on mobile, customizable separators (chevron, slash, dot), and optional icons. Last item is not a link and uses aria-current=\"page\" for accessibility.',\n      },\n    },\n  },\n  argTypes: {\n    items: {\n      control: { type: 'object' },\n      description: 'Array of breadcrumb items to display',\n    },\n    separator: {\n      options: ['chevron_right', 'slash', 'dot'],\n      control: { type: 'radio' },\n      description: 'Separator type between breadcrumb items',\n    },\n    maxItems: {\n      control: { type: 'number' },\n      description: 'Maximum number of items to show before collapsing (for responsive behavior)',\n    },\n  },\n  args: {\n    items: [\n      { label: 'Home', href: '/' },\n      { label: 'Products', href: '/products' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page' },\n    ],\n    separator: 'chevron_right',\n    maxItems: undefined,\n  },\n}"
             },
             {
                 "name": "meta",
@@ -5500,7 +5500,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n    <div style=\"max-width: 400px\">\n      <ul-list-item>\n        <ng-container ul-list-item-before-label>\n          <ul-checkbox />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n          <ul-icon size=\"5\" icon=\"ultra_games\" />\n        </ng-container>\n        <ng-container ul-list-item-label>Basic List Item</ng-container>\n        <ng-container ul-list-item-after-label>\n          <span>+80</span>\n          <ul-icon size=\"5\" icon=\"ultra_marketplace\" />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n        </ng-container>\n      </ul-list-item>\n    </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\n  render: () => ({\n    template: `\n    <div style=\"max-width: 400px\">\n      <ul-list-item>\n        <ng-container ul-list-item-before-label>\n          <ul-checkbox />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n          <ul-icon size=\"5\" icon=\"ultra_games\" />\n        </ng-container>\n        <ng-container ul-list-item-label>Basic List Item</ng-container>\n        <ng-container ul-list-item-after-label>\n          <span>+80</span>\n          <ul-icon size=\"5\" icon=\"store\" />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n        </ng-container>\n      </ul-list-item>\n    </div>\n    `,\n  }),\n}"
             },
             {
                 "name": "WithConstraints",
@@ -6100,6 +6100,28 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CalendarComponent>",
+                "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<AvatarGroupComponent>",
                 "file": "projects/ui/src/components/avatar/avatar-group.stories.ts",
                 "deprecated": false,
@@ -6122,39 +6144,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<BreadcrumbComponent>",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<CalendarComponent>",
-                "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<CardComponent>",
                 "file": "projects/ui/src/components/card/card.stories.ts",
                 "deprecated": false,
@@ -6168,6 +6157,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<CategoryPickerComponent>",
                 "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<BreadcrumbComponent>",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6945,6 +6945,194 @@
                     "defaultValue": "{\n  title: 'Components/Media/Icon',\n  component: IconComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Icon from the design system icon set. Pass `icon` (glyph name), `size`, and optional `weight`. Uses design tokens for sizes and weights. Use for actions, status, or decorative icons.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      control: 'select',\n      options: Object.keys(variables.iconography.font.size),\n      description: 'Size of the icon',\n    },\n    weight: {\n      control: 'select',\n      options: Object.keys(variables.iconography.font.weight),\n      description: 'Weight/thickness of the icon',\n    },\n    icon: {\n      control: 'select',\n      options: Object.keys(variables.content['icon-glyph']),\n      description: 'Icon name/glyph to display',\n    },\n  },\n}"
                 }
             ],
+            "projects/ui/src/components/button/button.stories.ts": [
+                {
+                    "name": "AllSizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button [size]=\"'sm'\" [theme]=\"theme\">\n          Small Button\n        </ul-button>\n        <ul-button [size]=\"'md'\" [theme]=\"theme\">\n          Medium Button\n        </ul-button>\n        <ul-button [size]=\"'lg'\" [theme]=\"theme\">\n          Large Button\n        </ul-button>\n        <ul-button [size]=\"'xl'\" [theme]=\"theme\">\n          Extra Large Button\n        </ul-button>\n      </div>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.",
+                    "description": "<p>Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.</p>\n"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
+                    "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
+                    "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
+                },
+                {
+                    "name": "IconOnly",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    iconOnly: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\">\n        <i class=\"ul-icon ul-icon-cloud\"></i>\n      </ul-button>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates an icon-only button variant.\n- Sets iconOnly prop to true",
+                    "description": "<p>Demonstrates an icon-only button variant.</p>\n<ul>\n<li>Sets iconOnly prop to true</li>\n</ul>\n"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonComponent>",
+                    "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
+                },
+                {
+                    "name": "Outline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    theme: 'outline-white',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button theme=\"outline-white\">Outline White</ul-button>\n        <ul-button theme=\"outline-purple\">Outline Purple</ul-button>\n        <ul-button theme=\"outline-red\">Outline Red</ul-button>\n        <ul-button theme=\"outline-green\">Outline Green</ul-button>\n      </div>\n    `,\n  }),\n}",
+                    "rawdescription": "Outline theme: transparent background, 1px border, and semantic text color.\nUse outline-white, outline-purple, outline-red, or outline-green for secondary or tertiary actions.",
+                    "description": "<p>Outline theme: transparent background, 1px border, and semantic text color.\nUse outline-white, outline-purple, outline-red, or outline-green for secondary or tertiary actions.</p>\n"
+                },
+                {
+                    "name": "VerticalLarge",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size: 'lg',\n    vertical: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [vertical]=\"vertical\">\n        <i class=\"ul-icon ul-icon-cloud\"></i>\n        <span>Vertical Button</span>\n      </ul-button>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates a vertical layout button available only on large size.\n- Sets the props size to lg and vertical to true",
+                    "description": "<p>Demonstrates a vertical layout button available only on large size.</p>\n<ul>\n<li>Sets the props size to lg and vertical to true</li>\n</ul>\n"
+                },
+                {
+                    "name": "WithIcons",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\">\n        <i class=\"ul-icon ul-icon-store\"></i>\n        Button\n        <i class=\"ul-icon ul-icon-chevron_right\"></i>\n      </ul-button>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates a button with icons on both sides.",
+                    "description": "<p>Demonstrates a button with icons on both sides.</p>\n"
+                }
+            ],
+            "projects/ui/src/components/calendar/calendar.stories.ts": [
+                {
+                    "name": "AllSizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-calendar mode=\"date\" size=\"sm\" label=\"Small\" />\n        <ul-calendar mode=\"date\" size=\"md\" label=\"Medium\" />\n        <ul-calendar mode=\"date\" size=\"lg\" label=\"Large\" />\n        <ul-calendar mode=\"date\" size=\"xl\" label=\"Extra large\" />\n      </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "DateOnly",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    mode: 'date',\n    label: 'Select date',\n    helperText: 'Choose a date from the calendar',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [size]=\"size\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [readOnly]=\"readOnly\"\n        [required]=\"required\"\n        [placeholder]=\"placeholder\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [errorText]=\"errorText\"\n        [showCalendarIcon]=\"showCalendarIcon\"\n        [minDate]=\"minDate\"\n        [maxDate]=\"maxDate\"\n        [locale]=\"locale\"\n      />\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "DateTime",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    mode: 'datetime',\n    label: 'Select date and time',\n    helperText: 'Choose both date and time',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [size]=\"size\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [readOnly]=\"readOnly\"\n        [required]=\"required\"\n        [placeholder]=\"placeholder\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [errorText]=\"errorText\"\n        [showCalendarIcon]=\"showCalendarIcon\"\n        [minDate]=\"minDate\"\n        [maxDate]=\"maxDate\"\n        [minTime]=\"minTime\"\n        [maxTime]=\"maxTime\"\n        [locale]=\"locale\"\n      />\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    mode: 'date',\n    disabled: true,\n    label: 'Disabled calendar',\n    value: new Date(2025, 5, 15),\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [disabled]=\"disabled\"\n        [label]=\"label\"\n      />\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CalendarComponent>",
+                    "defaultValue": "{\n  title: 'Components/Form Elements/Calendar',\n  component: CalendarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Date and/or time picker with popup calendar. Implements `FormValueControl<Date | null>` for Signal Forms `[formField]`. Use `[(value)]` for two-way binding. Modes: date, time, datetime. Supports min/max date and time, locale, sizes, and label/helper/error text.',\n      },\n    },\n  },\n  argTypes: {\n    mode: {\n      options: ['date', 'time', 'datetime'] as CalendarMode[],\n      control: { type: 'select' },\n    },\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'select' },\n    },\n    error: {\n      control: { type: 'boolean' },\n    },\n    disabled: {\n      control: { type: 'boolean' },\n    },\n    readOnly: {\n      control: { type: 'boolean' },\n    },\n    required: {\n      control: { type: 'boolean' },\n    },\n    showRequiredIndicator: {\n      control: { type: 'boolean' },\n      description:\n        'Whether the \"*\" shows when required — set false when every field on a form is required by convention and the asterisk would just be noise. The required styling/aria stays either way.',\n    },\n    placeholder: {\n      control: { type: 'text' },\n    },\n    label: {\n      control: { type: 'text' },\n    },\n    helperText: {\n      control: { type: 'text' },\n    },\n    errorText: {\n      control: { type: 'text' },\n    },\n    showCalendarIcon: {\n      control: { type: 'boolean' },\n    },\n  },\n  args: {\n    mode: 'date',\n    value: null,\n    size: 'md',\n    error: false,\n    disabled: false,\n    readOnly: false,\n    required: false,\n    showRequiredIndicator: true,\n    placeholder: '',\n    label: 'Date',\n    helperText: '',\n    errorText: 'Please select a date',\n    showCalendarIcon: true,\n    minDate: null,\n    maxDate: null,\n    minTime: null,\n    maxTime: null,\n    locale: 'en-US',\n  },\n}"
+                },
+                {
+                    "name": "RequiredWithoutIndicator",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...WithError.args,\n    showRequiredIndicator: false,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [error]=\"error\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [errorText]=\"errorText\"\n        [required]=\"required\"\n        [showRequiredIndicator]=\"showRequiredIndicator\"\n      />\n    `,\n  }),\n}",
+                    "rawdescription": "When every field on a form is required by convention, a \"*\" on each one\nis just noise — showRequiredIndicator hides it while required's styling\nand aria-required stay intact.",
+                    "description": "<p>When every field on a form is required by convention, a &quot;*&quot; on each one\nis just noise — showRequiredIndicator hides it while required&#39;s styling\nand aria-required stay intact.</p>\n"
+                },
+                {
+                    "name": "TimeOnly",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    mode: 'time',\n    label: 'Select time',\n    helperText: 'Choose a time',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [size]=\"size\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [readOnly]=\"readOnly\"\n        [required]=\"required\"\n        [placeholder]=\"placeholder\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [errorText]=\"errorText\"\n        [showCalendarIcon]=\"showCalendarIcon\"\n        [minTime]=\"minTime\"\n        [maxTime]=\"maxTime\"\n        [locale]=\"locale\"\n      />\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "WithConstraints",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    mode: 'datetime',\n    label: 'Appointment date and time',\n    helperText: 'Select a date and time within the allowed range',\n    minDate: new Date(2025, 0, 1),\n    maxDate: new Date(2025, 11, 31),\n    minTime: new Date(2025, 0, 1, 9, 0),\n    maxTime: new Date(2025, 0, 1, 17, 0),\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [size]=\"size\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [minDate]=\"minDate\"\n        [maxDate]=\"maxDate\"\n        [minTime]=\"minTime\"\n        [maxTime]=\"maxTime\"\n      />\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "WithError",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    mode: 'date',\n    error: true,\n    label: 'Birth date',\n    helperText: 'Enter your date of birth',\n    errorText: 'This field is required',\n    required: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [error]=\"error\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [errorText]=\"errorText\"\n        [required]=\"required\"\n        [showRequiredIndicator]=\"showRequiredIndicator\"\n      />\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "WithoutIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    mode: 'date',\n    showCalendarIcon: false,\n    label: 'Date without icon',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [showCalendarIcon]=\"showCalendarIcon\"\n        [label]=\"label\"\n      />\n    `,\n  }),\n}"
+                }
+            ],
             "projects/ui/src/components/avatar/avatar-group.stories.ts": [
                 {
                     "name": "AllSizes",
@@ -7155,194 +7343,6 @@
                     "defaultValue": "{\n  args: {\n    initials: 'AB',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-avatar\n        [size]=\"size\"\n        [src]=\"src\"\n        [initials]=\"initials\"\n        [icon]=\"icon\"\n        [alt]=\"alt\"\n      />\n    `,\n  }),\n}",
                     "rawdescription": "Demonstrates an avatar with initials fallback.",
                     "description": "<p>Demonstrates an avatar with initials fallback.</p>\n"
-                }
-            ],
-            "projects/ui/src/components/button/button.stories.ts": [
-                {
-                    "name": "AllSizes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button [size]=\"'sm'\" [theme]=\"theme\">\n          Small Button\n        </ul-button>\n        <ul-button [size]=\"'md'\" [theme]=\"theme\">\n          Medium Button\n        </ul-button>\n        <ul-button [size]=\"'lg'\" [theme]=\"theme\">\n          Large Button\n        </ul-button>\n        <ul-button [size]=\"'xl'\" [theme]=\"theme\">\n          Extra Large Button\n        </ul-button>\n      </div>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.",
-                    "description": "<p>Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.</p>\n"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
-                    "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
-                    "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
-                },
-                {
-                    "name": "IconOnly",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    iconOnly: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\">\n        <i class=\"ul-icon ul-icon-cloud\"></i>\n      </ul-button>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates an icon-only button variant.\n- Sets iconOnly prop to true",
-                    "description": "<p>Demonstrates an icon-only button variant.</p>\n<ul>\n<li>Sets iconOnly prop to true</li>\n</ul>\n"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
-                },
-                {
-                    "name": "Outline",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    theme: 'outline-white',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button theme=\"outline-white\">Outline White</ul-button>\n        <ul-button theme=\"outline-purple\">Outline Purple</ul-button>\n        <ul-button theme=\"outline-red\">Outline Red</ul-button>\n        <ul-button theme=\"outline-green\">Outline Green</ul-button>\n      </div>\n    `,\n  }),\n}",
-                    "rawdescription": "Outline theme: transparent background, 1px border, and semantic text color.\nUse outline-white, outline-purple, outline-red, or outline-green for secondary or tertiary actions.",
-                    "description": "<p>Outline theme: transparent background, 1px border, and semantic text color.\nUse outline-white, outline-purple, outline-red, or outline-green for secondary or tertiary actions.</p>\n"
-                },
-                {
-                    "name": "VerticalLarge",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'lg',\n    vertical: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [vertical]=\"vertical\">\n        <i class=\"ul-icon ul-icon-cloud\"></i>\n        <span>Vertical Button</span>\n      </ul-button>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates a vertical layout button available only on large size.\n- Sets the props size to lg and vertical to true",
-                    "description": "<p>Demonstrates a vertical layout button available only on large size.</p>\n<ul>\n<li>Sets the props size to lg and vertical to true</li>\n</ul>\n"
-                },
-                {
-                    "name": "WithIcons",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\">\n        <i class=\"ul-icon ul-icon-store\"></i>\n        Button\n        <i class=\"ul-icon ul-icon-chevron_right\"></i>\n      </ul-button>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates a button with icons on both sides.",
-                    "description": "<p>Demonstrates a button with icons on both sides.</p>\n"
-                }
-            ],
-            "projects/ui/src/components/calendar/calendar.stories.ts": [
-                {
-                    "name": "AllSizes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-calendar mode=\"date\" size=\"sm\" label=\"Small\" />\n        <ul-calendar mode=\"date\" size=\"md\" label=\"Medium\" />\n        <ul-calendar mode=\"date\" size=\"lg\" label=\"Large\" />\n        <ul-calendar mode=\"date\" size=\"xl\" label=\"Extra large\" />\n      </div>\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "DateOnly",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    mode: 'date',\n    label: 'Select date',\n    helperText: 'Choose a date from the calendar',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [size]=\"size\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [readOnly]=\"readOnly\"\n        [required]=\"required\"\n        [placeholder]=\"placeholder\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [errorText]=\"errorText\"\n        [showCalendarIcon]=\"showCalendarIcon\"\n        [minDate]=\"minDate\"\n        [maxDate]=\"maxDate\"\n        [locale]=\"locale\"\n      />\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "DateTime",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    mode: 'datetime',\n    label: 'Select date and time',\n    helperText: 'Choose both date and time',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [size]=\"size\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [readOnly]=\"readOnly\"\n        [required]=\"required\"\n        [placeholder]=\"placeholder\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [errorText]=\"errorText\"\n        [showCalendarIcon]=\"showCalendarIcon\"\n        [minDate]=\"minDate\"\n        [maxDate]=\"maxDate\"\n        [minTime]=\"minTime\"\n        [maxTime]=\"maxTime\"\n        [locale]=\"locale\"\n      />\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "Disabled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    mode: 'date',\n    disabled: true,\n    label: 'Disabled calendar',\n    value: new Date(2025, 5, 15),\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [disabled]=\"disabled\"\n        [label]=\"label\"\n      />\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<CalendarComponent>",
-                    "defaultValue": "{\n  title: 'Components/Form Elements/Calendar',\n  component: CalendarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Date and/or time picker with popup calendar. Implements `FormValueControl<Date | null>` for Signal Forms `[formField]`. Use `[(value)]` for two-way binding. Modes: date, time, datetime. Supports min/max date and time, locale, sizes, and label/helper/error text.',\n      },\n    },\n  },\n  argTypes: {\n    mode: {\n      options: ['date', 'time', 'datetime'] as CalendarMode[],\n      control: { type: 'select' },\n    },\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'select' },\n    },\n    error: {\n      control: { type: 'boolean' },\n    },\n    disabled: {\n      control: { type: 'boolean' },\n    },\n    readOnly: {\n      control: { type: 'boolean' },\n    },\n    required: {\n      control: { type: 'boolean' },\n    },\n    showRequiredIndicator: {\n      control: { type: 'boolean' },\n      description:\n        'Whether the \"*\" shows when required — set false when every field on a form is required by convention and the asterisk would just be noise. The required styling/aria stays either way.',\n    },\n    placeholder: {\n      control: { type: 'text' },\n    },\n    label: {\n      control: { type: 'text' },\n    },\n    helperText: {\n      control: { type: 'text' },\n    },\n    errorText: {\n      control: { type: 'text' },\n    },\n    showCalendarIcon: {\n      control: { type: 'boolean' },\n    },\n  },\n  args: {\n    mode: 'date',\n    value: null,\n    size: 'md',\n    error: false,\n    disabled: false,\n    readOnly: false,\n    required: false,\n    showRequiredIndicator: true,\n    placeholder: '',\n    label: 'Date',\n    helperText: '',\n    errorText: 'Please select a date',\n    showCalendarIcon: true,\n    minDate: null,\n    maxDate: null,\n    minTime: null,\n    maxTime: null,\n    locale: 'en-US',\n  },\n}"
-                },
-                {
-                    "name": "RequiredWithoutIndicator",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...WithError.args,\n    showRequiredIndicator: false,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [error]=\"error\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [errorText]=\"errorText\"\n        [required]=\"required\"\n        [showRequiredIndicator]=\"showRequiredIndicator\"\n      />\n    `,\n  }),\n}",
-                    "rawdescription": "When every field on a form is required by convention, a \"*\" on each one\nis just noise — showRequiredIndicator hides it while required's styling\nand aria-required stay intact.",
-                    "description": "<p>When every field on a form is required by convention, a &quot;*&quot; on each one\nis just noise — showRequiredIndicator hides it while required&#39;s styling\nand aria-required stay intact.</p>\n"
-                },
-                {
-                    "name": "TimeOnly",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    mode: 'time',\n    label: 'Select time',\n    helperText: 'Choose a time',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [size]=\"size\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [readOnly]=\"readOnly\"\n        [required]=\"required\"\n        [placeholder]=\"placeholder\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [errorText]=\"errorText\"\n        [showCalendarIcon]=\"showCalendarIcon\"\n        [minTime]=\"minTime\"\n        [maxTime]=\"maxTime\"\n        [locale]=\"locale\"\n      />\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "WithConstraints",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    mode: 'datetime',\n    label: 'Appointment date and time',\n    helperText: 'Select a date and time within the allowed range',\n    minDate: new Date(2025, 0, 1),\n    maxDate: new Date(2025, 11, 31),\n    minTime: new Date(2025, 0, 1, 9, 0),\n    maxTime: new Date(2025, 0, 1, 17, 0),\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [size]=\"size\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [minDate]=\"minDate\"\n        [maxDate]=\"maxDate\"\n        [minTime]=\"minTime\"\n        [maxTime]=\"maxTime\"\n      />\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "WithError",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    mode: 'date',\n    error: true,\n    label: 'Birth date',\n    helperText: 'Enter your date of birth',\n    errorText: 'This field is required',\n    required: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [error]=\"error\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [errorText]=\"errorText\"\n        [required]=\"required\"\n        [showRequiredIndicator]=\"showRequiredIndicator\"\n      />\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "WithoutIcon",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    mode: 'date',\n    showCalendarIcon: false,\n    label: 'Date without icon',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [showCalendarIcon]=\"showCalendarIcon\"\n        [label]=\"label\"\n      />\n    `,\n  }),\n}"
                 }
             ],
             "projects/ui/src/components/file-input/file-input.stories.ts": [
@@ -8338,7 +8338,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: `\n    <div style=\"max-width: 400px\">\n      <ul-list-item>\n        <ng-container ul-list-item-before-label>\n          <ul-checkbox />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n          <ul-icon size=\"5\" icon=\"ultra_games\" />\n        </ng-container>\n        <ng-container ul-list-item-label>Basic List Item</ng-container>\n        <ng-container ul-list-item-after-label>\n          <span>+80</span>\n          <ul-icon size=\"5\" icon=\"ultra_marketplace\" />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n        </ng-container>\n      </ul-list-item>\n    </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n    <div style=\"max-width: 400px\">\n      <ul-list-item>\n        <ng-container ul-list-item-before-label>\n          <ul-checkbox />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n          <ul-icon size=\"5\" icon=\"ultra_games\" />\n        </ng-container>\n        <ng-container ul-list-item-label>Basic List Item</ng-container>\n        <ng-container ul-list-item-after-label>\n          <span>+80</span>\n          <ul-icon size=\"5\" icon=\"store\" />\n          <ul-icon size=\"5\" icon=\"placeholder\" />\n        </ng-container>\n      </ul-list-item>\n    </div>\n    `,\n  }),\n}"
                 }
             ],
             "projects/ui/src/components/stepper/stepper.stories.ts": [
@@ -9232,7 +9232,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-ultra_games\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 1</ng-container>\n          <ng-container ul-accordion-status>\n            <i class=\"ul-icon ul-icon-hourglass\"></i>\n            <i class=\"ul-icon ul-icon-history\"></i>\n          </ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 1 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-ultra_marketplace\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 2</ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 2 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item [disabled]=\"true\">\n          <ng-container ul-accordion-label>Disabled Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This accordion item is disabled.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
+                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-ultra_games\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 1</ng-container>\n          <ng-container ul-accordion-status>\n            <i class=\"ul-icon ul-icon-hourglass\"></i>\n            <i class=\"ul-icon ul-icon-history\"></i>\n          </ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 1 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-store\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 2</ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 2 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item [disabled]=\"true\">\n          <ng-container ul-accordion-label>Disabled Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This accordion item is disabled.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
                 },
                 {
                     "name": "meta",
@@ -9313,6 +9313,68 @@
                     "defaultValue": "{\n  args: {\n    showLineNumbers: false,\n    content: `const greeting = 'Hello, World!';\nconsole.log(greeting);`,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-area-code\n        [content]=\"content\"\n        [showLineNumbers]=\"showLineNumbers\"\n      />\n    `,\n  }),\n}",
                     "rawdescription": "Shows area code without line numbers.",
                     "description": "<p>Shows area code without line numbers.</p>\n"
+                }
+            ],
+            "projects/ui/src/components/category-picker/category-picker.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    nodes: defaultNodes,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-category-picker\n        [size]=\"size\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [required]=\"required\"\n        [showRequiredIndicator]=\"showRequiredIndicator\"\n        [placeholder]=\"placeholder\"\n        [searchPlaceholder]=\"searchPlaceholder\"\n        [modalTitle]=\"modalTitle\"\n        [rootLabel]=\"rootLabel\"\n        [noResultsText]=\"noResultsText\"\n        [nodes]=\"nodes\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "defaultNodes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "CategoryPickerNode[]",
+                    "defaultValue": "[\n  { id: 'electronics', parentId: null, label: 'Electronics', icon: 'computer', isLeaf: false },\n  { id: 'electronics-cameras', parentId: 'electronics', label: 'Cameras', isLeaf: false },\n  {\n    id: 'electronics-cameras-drones',\n    parentId: 'electronics-cameras',\n    label: 'Drones',\n    isLeaf: true,\n  },\n  {\n    id: 'electronics-cameras-lenses',\n    parentId: 'electronics-cameras',\n    label: 'Lenses & Filters',\n    isLeaf: true,\n  },\n  { id: 'electronics-phones', parentId: 'electronics', label: 'Cell Phones', isLeaf: false },\n  {\n    id: 'electronics-phones-smartphones',\n    parentId: 'electronics-phones',\n    label: 'Smartphones',\n    isLeaf: true,\n  },\n  { id: 'fashion', parentId: null, label: 'Fashion', icon: 'tag', isLeaf: false },\n  { id: 'fashion-clothing', parentId: 'fashion', label: 'Clothing & Accessories', isLeaf: true },\n  { id: 'other', parentId: null, label: 'Other', icon: 'external_link', isLeaf: true },\n]"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    nodes: defaultNodes,\n    disabled: true,\n    value: 'electronics-phones-smartphones',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-category-picker [label]=\"label\" [disabled]=\"disabled\" [nodes]=\"nodes\" [(value)]=\"value\" />\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CategoryPickerComponent>",
+                    "defaultValue": "{\n  title: 'Components/Form Elements/CategoryPicker',\n  component: CategoryPickerComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Picker for a hierarchical category tree of unbounded depth: a closed field that opens a drill-down + search modal (one level of children at a time, with a breadcrumb trail) and resolves to a single leaf node id. Implements `FormValueControl<string | null>` for Signal Forms. Use `[(value)]` for two-way binding.',\n      },\n    },\n    layout: 'centered',\n  },\n  decorators: [\n    (story) => ({\n      ...story(),\n      template: `<div style=\"min-height: 500px; min-width: 400px;\">${story().template}</div>`,\n    }),\n  ],\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    error: { control: { type: 'boolean' } },\n    disabled: { control: { type: 'boolean' } },\n    required: { control: { type: 'boolean' } },\n    showRequiredIndicator: { control: { type: 'boolean' } },\n    label: { control: { type: 'text' } },\n    helperText: { control: { type: 'text' } },\n    errorText: { control: { type: 'text' } },\n    placeholder: { control: { type: 'text' } },\n    searchPlaceholder: { control: { type: 'text' } },\n    modalTitle: { control: { type: 'text' } },\n    rootLabel: { control: { type: 'text' } },\n    noResultsText: { control: { type: 'text' } },\n  },\n  args: {\n    size: 'md',\n    error: false,\n    disabled: false,\n    required: false,\n    showRequiredIndicator: true,\n    label: 'Category',\n    helperText: 'Choose the most specific category that fits',\n    errorText: 'Please select a category',\n    placeholder: 'Select a category',\n    searchPlaceholder: 'Search categories',\n    modalTitle: 'Select a category',\n    rootLabel: 'All categories',\n    noResultsText: 'No results',\n    nodes: defaultNodes,\n    value: null,\n  },\n}"
+                },
+                {
+                    "name": "Preselected",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    nodes: defaultNodes,\n    value: 'electronics-cameras-drones',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-category-picker\n        [label]=\"label\"\n        [nodes]=\"nodes\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "WithError",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    nodes: defaultNodes,\n    error: true,\n    required: true,\n    value: null,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-category-picker\n        [label]=\"label\"\n        [errorText]=\"errorText\"\n        [error]=\"error\"\n        [required]=\"required\"\n        [nodes]=\"nodes\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
                 }
             ],
             "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts": [
@@ -9421,68 +9483,6 @@
                     "defaultValue": "{\n  args: {\n    items: [\n      { label: 'Home', routerLink: '/' },\n      { label: 'Products', routerLink: '/products' },\n      { label: 'Current Page' },\n    ],\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" />\n    `,\n  }),\n}",
                     "rawdescription": "Breadcrumb with router links (if RouterModule is available).\nNote: This requires RouterModule to be imported in the story context.",
                     "description": "<p>Breadcrumb with router links (if RouterModule is available).\nNote: This requires RouterModule to be imported in the story context.</p>\n"
-                }
-            ],
-            "projects/ui/src/components/category-picker/category-picker.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    nodes: defaultNodes,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-category-picker\n        [size]=\"size\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [required]=\"required\"\n        [showRequiredIndicator]=\"showRequiredIndicator\"\n        [placeholder]=\"placeholder\"\n        [searchPlaceholder]=\"searchPlaceholder\"\n        [modalTitle]=\"modalTitle\"\n        [rootLabel]=\"rootLabel\"\n        [noResultsText]=\"noResultsText\"\n        [nodes]=\"nodes\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "defaultNodes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "CategoryPickerNode[]",
-                    "defaultValue": "[\n  { id: 'electronics', parentId: null, label: 'Electronics', icon: 'computer', isLeaf: false },\n  { id: 'electronics-cameras', parentId: 'electronics', label: 'Cameras', isLeaf: false },\n  {\n    id: 'electronics-cameras-drones',\n    parentId: 'electronics-cameras',\n    label: 'Drones',\n    isLeaf: true,\n  },\n  {\n    id: 'electronics-cameras-lenses',\n    parentId: 'electronics-cameras',\n    label: 'Lenses & Filters',\n    isLeaf: true,\n  },\n  { id: 'electronics-phones', parentId: 'electronics', label: 'Cell Phones', isLeaf: false },\n  {\n    id: 'electronics-phones-smartphones',\n    parentId: 'electronics-phones',\n    label: 'Smartphones',\n    isLeaf: true,\n  },\n  { id: 'fashion', parentId: null, label: 'Fashion', icon: 'tag', isLeaf: false },\n  { id: 'fashion-clothing', parentId: 'fashion', label: 'Clothing & Accessories', isLeaf: true },\n  { id: 'other', parentId: null, label: 'Other', icon: 'external_link', isLeaf: true },\n]"
-                },
-                {
-                    "name": "Disabled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    nodes: defaultNodes,\n    disabled: true,\n    value: 'electronics-phones-smartphones',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-category-picker [label]=\"label\" [disabled]=\"disabled\" [nodes]=\"nodes\" [(value)]=\"value\" />\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<CategoryPickerComponent>",
-                    "defaultValue": "{\n  title: 'Components/Form Elements/CategoryPicker',\n  component: CategoryPickerComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Picker for a hierarchical category tree of unbounded depth: a closed field that opens a drill-down + search modal (one level of children at a time, with a breadcrumb trail) and resolves to a single leaf node id. Implements `FormValueControl<string | null>` for Signal Forms. Use `[(value)]` for two-way binding.',\n      },\n    },\n    layout: 'centered',\n  },\n  decorators: [\n    (story) => ({\n      ...story(),\n      template: `<div style=\"min-height: 500px; min-width: 400px;\">${story().template}</div>`,\n    }),\n  ],\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    error: { control: { type: 'boolean' } },\n    disabled: { control: { type: 'boolean' } },\n    required: { control: { type: 'boolean' } },\n    showRequiredIndicator: { control: { type: 'boolean' } },\n    label: { control: { type: 'text' } },\n    helperText: { control: { type: 'text' } },\n    errorText: { control: { type: 'text' } },\n    placeholder: { control: { type: 'text' } },\n    searchPlaceholder: { control: { type: 'text' } },\n    modalTitle: { control: { type: 'text' } },\n    rootLabel: { control: { type: 'text' } },\n    noResultsText: { control: { type: 'text' } },\n  },\n  args: {\n    size: 'md',\n    error: false,\n    disabled: false,\n    required: false,\n    showRequiredIndicator: true,\n    label: 'Category',\n    helperText: 'Choose the most specific category that fits',\n    errorText: 'Please select a category',\n    placeholder: 'Select a category',\n    searchPlaceholder: 'Search categories',\n    modalTitle: 'Select a category',\n    rootLabel: 'All categories',\n    noResultsText: 'No results',\n    nodes: defaultNodes,\n    value: null,\n  },\n}"
-                },
-                {
-                    "name": "Preselected",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    nodes: defaultNodes,\n    value: 'electronics-cameras-drones',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-category-picker\n        [label]=\"label\"\n        [nodes]=\"nodes\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "WithError",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    nodes: defaultNodes,\n    error: true,\n    required: true,\n    value: null,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-category-picker\n        [label]=\"label\"\n        [errorText]=\"errorText\"\n        [error]=\"error\"\n        [required]=\"required\"\n        [nodes]=\"nodes\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
                 }
             ],
             "projects/ui/src/components/collapse/collapse.stories.ts": [
@@ -10579,6 +10579,32 @@
                     "kind": 184
                 }
             ],
+            "projects/ui/src/components/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/components/calendar/calendar.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CalendarComponent>",
+                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "projects/ui/src/components/avatar/avatar-group.stories.ts": [
                 {
                     "name": "Story",
@@ -10605,45 +10631,6 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/button/button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
-            "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<BreadcrumbComponent>",
-                    "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
-            "projects/ui/src/components/calendar/calendar.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<CalendarComponent>",
-                    "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/ui/src/components/card/card.stories.ts": [
                 {
                     "name": "Story",
@@ -10664,6 +10651,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CategoryPickerComponent>",
                     "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<BreadcrumbComponent>",
+                    "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

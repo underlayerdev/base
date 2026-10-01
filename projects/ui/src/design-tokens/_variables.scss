@@ -615,7 +615,6 @@ $content-icon-glyph-new-zealand-dollar: new_zealand_dollar !default;
 $content-icon-glyph-pound-sterling: pound_sterling !default;
 $content-icon-glyph-swedish-krona: swedish_krona !default;
 $content-icon-glyph-swiss-franc: swiss_franc !default;
-$content-icon-glyph-uos: uos !default;
 $content-icon-glyph-yen: yen !default;
 $content-icon-glyph-yuan: yuan !default;
 $content-icon-glyph-currency-exchange: currency_exchange !default;
@@ -627,20 +626,13 @@ $content-icon-glyph-marketplace-cancel: marketplace_cancel !default;
 $content-icon-glyph-marketplace-fixed: marketplace_fixed !default;
 $content-icon-glyph-marketplace-inverted-auction: marketplace_inverted_auction !default;
 $content-icon-glyph-nft: nft !default;
-$content-icon-glyph-nft-check: nft_check !default;
-$content-icon-glyph-receive-nft: receive_nft !default;
 $content-icon-glyph-refund: refund !default;
 $content-icon-glyph-refund-hand: refund_hand !default;
 $content-icon-glyph-resell: resell !default;
 $content-icon-glyph-resell-cancel: resell_cancel !default;
 $content-icon-glyph-resell-dashed: resell_dashed !default;
-$content-icon-glyph-send-nft: send_nft !default;
 $content-icon-glyph-trade: trade !default;
 $content-icon-glyph-trade-dashed: trade_dashed !default;
-$content-icon-glyph-uos-add: uos_add !default;
-$content-icon-glyph-uos-receive: uos_receive !default;
-$content-icon-glyph-uos-to-dollar: uos_to_dollar !default;
-$content-icon-glyph-uos-transfer: uos_transfer !default;
 $content-icon-glyph-anchors: anchors !default;
 $content-icon-glyph-archive: archive !default;
 $content-icon-glyph-auction-hammer: auction_hammer !default;
@@ -844,14 +836,8 @@ $content-icon-glyph-file-encrypted: file_encrypted !default;
 $content-icon-glyph-file-text: file_text !default;
 $content-icon-glyph-file-text-double: file_text_double !default;
 $content-icon-glyph-folder: folder !default;
-$content-icon-glyph-arena: arena !default;
-$content-icon-glyph-ultra-prime: ultra_prime !default;
 $content-icon-glyph-ultra-wallet: ultra_wallet !default;
-$content-icon-glyph-ultra-marketplace: ultra_marketplace !default;
-$content-icon-glyph-first-hand-new-uniq: first_hand_new_uniq !default;
-$content-icon-glyph-second-hand-uniq: second_hand_uniq !default;
 $content-icon-glyph-ultra-games: ultra_games !default;
-$content-icon-glyph-ultra-logo: ultra_logo !default;
 $content-icon-glyph-league: league !default;
 $content-icon-glyph-double-elim: double_elim !default;
 $content-icon-glyph-gauntlet: gauntlet !default;
@@ -860,13 +846,10 @@ $content-icon-glyph-simple-stage: simple_stage !default;
 $content-icon-glyph-single-elim: single_elim !default;
 $content-icon-glyph-swiss-system: swiss_system !default;
 $content-icon-glyph-bracket-group: bracket_group !default;
-$content-icon-glyph-uniq-unit: uniq_unit !default;
-$content-icon-glyph-crypto-uos: crypto_uos !default;
 $content-icon-glyph-screen-wide: screen_wide !default;
 $content-icon-glyph-workshop: workshop !default;
 $content-icon-glyph-cpu: cpu !default;
 $content-icon-glyph-arena-logo: arena_logo !default;
-$content-icon-glyph-ultra-prime-logo: ultra_prime_logo !default;
 $content-icon-glyph-ultra-wallet-logo: ultra_wallet_logo !default;
 $content-icon-glyph-ultra-marketplace-logo: ultra_marketplace_logo !default;
 $content-icon-glyph-ultra-games-logo: ultra_games_logo !default;
@@ -1661,7 +1644,6 @@ $tokens: (
       'pound_sterling': $content-icon-glyph-pound-sterling,
       'swedish_krona': $content-icon-glyph-swedish-krona,
       'swiss_franc': $content-icon-glyph-swiss-franc,
-      'uos': $content-icon-glyph-uos,
       'yen': $content-icon-glyph-yen,
       'yuan': $content-icon-glyph-yuan,
       'currency_exchange': $content-icon-glyph-currency-exchange,
@@ -1673,20 +1655,13 @@ $tokens: (
       'marketplace_fixed': $content-icon-glyph-marketplace-fixed,
       'marketplace_inverted_auction': $content-icon-glyph-marketplace-inverted-auction,
       'nft': $content-icon-glyph-nft,
-      'nft_check': $content-icon-glyph-nft-check,
-      'receive_nft': $content-icon-glyph-receive-nft,
       'refund': $content-icon-glyph-refund,
       'refund_hand': $content-icon-glyph-refund-hand,
       'resell': $content-icon-glyph-resell,
       'resell_cancel': $content-icon-glyph-resell-cancel,
       'resell_dashed': $content-icon-glyph-resell-dashed,
-      'send_nft': $content-icon-glyph-send-nft,
       'trade': $content-icon-glyph-trade,
       'trade_dashed': $content-icon-glyph-trade-dashed,
-      'uos_add': $content-icon-glyph-uos-add,
-      'uos_receive': $content-icon-glyph-uos-receive,
-      'uos_to_dollar': $content-icon-glyph-uos-to-dollar,
-      'uos_transfer': $content-icon-glyph-uos-transfer,
       'anchors': $content-icon-glyph-anchors,
       'archive': $content-icon-glyph-archive,
       'auction_hammer': $content-icon-glyph-auction-hammer,
@@ -1890,14 +1865,8 @@ $tokens: (
       'file_text': $content-icon-glyph-file-text,
       'file_text_double': $content-icon-glyph-file-text-double,
       'folder': $content-icon-glyph-folder,
-      'arena': $content-icon-glyph-arena,
-      'ultra_prime': $content-icon-glyph-ultra-prime,
       'ultra_wallet': $content-icon-glyph-ultra-wallet,
-      'ultra_marketplace': $content-icon-glyph-ultra-marketplace,
-      'first_hand_new_uniq': $content-icon-glyph-first-hand-new-uniq,
-      'second_hand_uniq': $content-icon-glyph-second-hand-uniq,
       'ultra_games': $content-icon-glyph-ultra-games,
-      'ultra_logo': $content-icon-glyph-ultra-logo,
       'league': $content-icon-glyph-league,
       'double_elim': $content-icon-glyph-double-elim,
       'gauntlet': $content-icon-glyph-gauntlet,
@@ -1906,13 +1875,10 @@ $tokens: (
       'single_elim': $content-icon-glyph-single-elim,
       'swiss_system': $content-icon-glyph-swiss-system,
       'bracket_group': $content-icon-glyph-bracket-group,
-      'uniq_unit': $content-icon-glyph-uniq-unit,
-      'crypto_uos': $content-icon-glyph-crypto-uos,
       'screen_wide': $content-icon-glyph-screen-wide,
       'workshop': $content-icon-glyph-workshop,
       'cpu': $content-icon-glyph-cpu,
       'arena_logo': $content-icon-glyph-arena-logo,
-      'ultra_prime_logo': $content-icon-glyph-ultra-prime-logo,
       'ultra_wallet_logo': $content-icon-glyph-ultra-wallet-logo,
       'ultra_marketplace_logo': $content-icon-glyph-ultra-marketplace-logo,
       'ultra_games_logo': $content-icon-glyph-ultra-games-logo,
