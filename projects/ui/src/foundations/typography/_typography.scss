@@ -41,7 +41,7 @@
   letter-spacing: map.get($tokens, 'typography', 'font', 'letter-spacing', $font-family);
   font-weight: map.get($tokens, 'typography', 'font', 'weight', $font-weight);
 
-  @if '#{$font-family-value}' == 'Ultra Brand' {
+  @if '#{$font-family-value}' == 'Underlayer Brand' {
     text-transform: uppercase;
   }
 

@@ -369,12 +369,12 @@ class DemoProductPageComponent {
 
   copyrightText = `© ${new Date().getFullYear()} Player Eleven. All rights reserved.`;
   socialLinks = [
-    { url: 'https://www.facebook.com/ultra.platform', icon: 'facebook' },
-    { url: 'https://twitter.com/ultra_io', icon: 'twitter' },
+    { url: 'https://www.facebook.com/example', icon: 'facebook' },
+    { url: 'https://twitter.com/example', icon: 'twitter' },
     { url: 'https://discord.gg/kwm49BnAqN', icon: 'discord' },
-    { url: 'https://t.me/ultra_io', icon: 'telegram' },
+    { url: 'https://t.me/example', icon: 'telegram' },
   ];
-  footerLinks = [{ url: 'https://settings.app.ultra.io/en/profile/legal', text: 'Legal' }];
+  footerLinks = [{ url: 'https://example.com/legal', text: 'Legal' }];
 }
 
 @Component({
@@ -674,12 +674,12 @@ class DemoProductPageWithLayoutComponent {
 
   copyrightText = `© ${new Date().getFullYear()} Player Eleven. All rights reserved.`;
   socialLinks = [
-    { url: 'https://www.facebook.com/ultra.platform', icon: 'facebook' },
-    { url: 'https://twitter.com/ultra_io', icon: 'twitter' },
+    { url: 'https://www.facebook.com/example', icon: 'facebook' },
+    { url: 'https://twitter.com/example', icon: 'twitter' },
     { url: 'https://discord.gg/kwm49BnAqN', icon: 'discord' },
-    { url: 'https://t.me/ultra_io', icon: 'telegram' },
+    { url: 'https://t.me/example', icon: 'telegram' },
   ];
-  footerLinks = [{ url: 'https://settings.app.ultra.io/en/profile/legal', text: 'Legal' }];
+  footerLinks = [{ url: 'https://example.com/legal', text: 'Legal' }];
 }
 
 const meta: Meta<DemoProductPageComponent> = {

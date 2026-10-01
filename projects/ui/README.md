@@ -28,8 +28,8 @@ The library follows an **Industrial Arena Minimal** aesthetic:
 | Dimension               | Score | Notes                                                                 |
 |-------------------------|-------|----------------------------------------------------------------------|
 | Aesthetic impact        | 5     | Highly distinctive neon-on-carbon look with strong brand typography. |
-| Context fit             | 4     | Well-suited for Ultra-branded gaming, wallets, and marketplaces.   |
-| Implementation feasibility | 4  | Built on existing tokens (Ultra Brand, Ultra Nunito Sans, dark BG, neon). |
+| Context fit             | 4     | Well-suited for gaming, wallet, and marketplace products.   |
+| Implementation feasibility | 4  | Built on existing tokens (Underlayer Brand, Underlayer Nunito Sans, dark BG, neon). |
 | Performance safety      | 4     | Minimal shadows/blur; motion kept sharp and sparse.                  |
 | Consistency risk       | 2     | Rich token set; requires discipline on spacing, motion, naming.     |
 
@@ -37,7 +37,7 @@ The library follows an **Industrial Arena Minimal** aesthetic:
 
 ### System principles
 
-- **Typography**: `Ultra Nunito Sans` for functional text; `Ultra Brand` for loud, uppercase brand labels and key headlines.
+- **Typography**: `Underlayer Nunito Sans` for functional text; `Underlayer Brand` for loud, uppercase brand labels and key headlines.
 - **Color**: Dark grey/black surfaces as base; purple as primary brand; green/yellow/orange only as functional status accents.
 - **Spacing**: Tight baseline grid from tokenized spacing; no ad-hoc pixel values in components.
 - **Motion**: Snappy, low-latency transitions — responsive and “mechanical”, not soft or bouncy.

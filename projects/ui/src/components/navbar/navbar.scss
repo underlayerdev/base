@@ -62,7 +62,7 @@
       @include typography('brand-headline-m', 'extrablack');
       color: inherit;
 
-      // The name is consumer-supplied and unbounded, and 'Ultra Brand' at 28px
+      // The name is consumer-supplied and unbounded, and 'Underlayer Brand' at 28px
       // with 2.8px tracking is wide: an 11-character name needs ~370px of bar,
       // more than a 360px viewport. Truncate instead of forcing the whole bar
       // to overflow horizontally.

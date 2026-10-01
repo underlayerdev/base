@@ -7,7 +7,7 @@ const libTheme: ThemeVars = create({
   brandTitle: 'Base UI',
   brandUrl: '/',
   // Use the regular UI font for Storybook chrome (not the brand display font)
-  fontBase: '"Ultra Nunito Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+  fontBase: '"Underlayer Nunito Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
 
   // Lib backgrounds
   appBg: '#0a0a0a',
