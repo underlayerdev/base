@@ -2922,10 +2922,6 @@ export default {
         value: 'swiss_franc',
         name: 'content-icon-glyph-swiss-franc',
       },
-      uos: {
-        value: 'uos',
-        name: 'content-icon-glyph-uos',
-      },
       yen: {
         value: 'yen',
         name: 'content-icon-glyph-yen',
@@ -2970,14 +2966,6 @@ export default {
         value: 'nft',
         name: 'content-icon-glyph-nft',
       },
-      nft_check: {
-        value: 'nft_check',
-        name: 'content-icon-glyph-nft-check',
-      },
-      receive_nft: {
-        value: 'receive_nft',
-        name: 'content-icon-glyph-receive-nft',
-      },
       refund: {
         value: 'refund',
         name: 'content-icon-glyph-refund',
@@ -2998,10 +2986,6 @@ export default {
         value: 'resell_dashed',
         name: 'content-icon-glyph-resell-dashed',
       },
-      send_nft: {
-        value: 'send_nft',
-        name: 'content-icon-glyph-send-nft',
-      },
       trade: {
         value: 'trade',
         name: 'content-icon-glyph-trade',
@@ -3009,22 +2993,6 @@ export default {
       trade_dashed: {
         value: 'trade_dashed',
         name: 'content-icon-glyph-trade-dashed',
-      },
-      uos_add: {
-        value: 'uos_add',
-        name: 'content-icon-glyph-uos-add',
-      },
-      uos_receive: {
-        value: 'uos_receive',
-        name: 'content-icon-glyph-uos-receive',
-      },
-      uos_to_dollar: {
-        value: 'uos_to_dollar',
-        name: 'content-icon-glyph-uos-to-dollar',
-      },
-      uos_transfer: {
-        value: 'uos_transfer',
-        name: 'content-icon-glyph-uos-transfer',
       },
       anchors: {
         value: 'anchors',
@@ -3838,37 +3806,13 @@ export default {
         value: 'folder',
         name: 'content-icon-glyph-folder',
       },
-      arena: {
-        value: 'arena',
-        name: 'content-icon-glyph-arena',
-      },
-      ultra_prime: {
-        value: 'ultra_prime',
-        name: 'content-icon-glyph-ultra-prime',
-      },
       ultra_wallet: {
         value: 'ultra_wallet',
         name: 'content-icon-glyph-ultra-wallet',
       },
-      ultra_marketplace: {
-        value: 'ultra_marketplace',
-        name: 'content-icon-glyph-ultra-marketplace',
-      },
-      first_hand_new_uniq: {
-        value: 'first_hand_new_uniq',
-        name: 'content-icon-glyph-first-hand-new-uniq',
-      },
-      second_hand_uniq: {
-        value: 'second_hand_uniq',
-        name: 'content-icon-glyph-second-hand-uniq',
-      },
       ultra_games: {
         value: 'ultra_games',
         name: 'content-icon-glyph-ultra-games',
-      },
-      ultra_logo: {
-        value: 'ultra_logo',
-        name: 'content-icon-glyph-ultra-logo',
       },
       league: {
         value: 'league',
@@ -3902,14 +3846,6 @@ export default {
         value: 'bracket_group',
         name: 'content-icon-glyph-bracket-group',
       },
-      uniq_unit: {
-        value: 'uniq_unit',
-        name: 'content-icon-glyph-uniq-unit',
-      },
-      crypto_uos: {
-        value: 'crypto_uos',
-        name: 'content-icon-glyph-crypto-uos',
-      },
       screen_wide: {
         value: 'screen_wide',
         name: 'content-icon-glyph-screen-wide',
@@ -3925,10 +3861,6 @@ export default {
       arena_logo: {
         value: 'arena_logo',
         name: 'content-icon-glyph-arena-logo',
-      },
-      ultra_prime_logo: {
-        value: 'ultra_prime_logo',
-        name: 'content-icon-glyph-ultra-prime-logo',
       },
       ultra_wallet_logo: {
         value: 'ultra_wallet_logo',
