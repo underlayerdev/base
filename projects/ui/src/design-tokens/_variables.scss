@@ -620,7 +620,6 @@ $content-icon-glyph-yuan: yuan !default;
 $content-icon-glyph-currency-exchange: currency_exchange !default;
 $content-icon-glyph-currency-receive: currency_receive !default;
 $content-icon-glyph-currency-send: currency_send !default;
-$content-icon-glyph-dollar-to-uos: dollar_to_uos !default;
 $content-icon-glyph-marketplace-auction: marketplace_auction !default;
 $content-icon-glyph-marketplace-cancel: marketplace_cancel !default;
 $content-icon-glyph-marketplace-fixed: marketplace_fixed !default;
@@ -849,9 +848,6 @@ $content-icon-glyph-bracket-group: bracket_group !default;
 $content-icon-glyph-screen-wide: screen_wide !default;
 $content-icon-glyph-workshop: workshop !default;
 $content-icon-glyph-cpu: cpu !default;
-$content-icon-glyph-arena-logo: arena_logo !default;
-$content-icon-glyph-ultra-wallet-logo: ultra_wallet_logo !default;
-$content-icon-glyph-ultra-marketplace-logo: ultra_marketplace_logo !default;
 $content-icon-glyph-ultra-games-logo: ultra_games_logo !default;
 $content-icon-glyph-no-result: no_result !default;
 $content-icon-glyph-library: library !default;
@@ -1649,7 +1645,6 @@ $tokens: (
       'currency_exchange': $content-icon-glyph-currency-exchange,
       'currency_receive': $content-icon-glyph-currency-receive,
       'currency_send': $content-icon-glyph-currency-send,
-      'dollar_to_uos': $content-icon-glyph-dollar-to-uos,
       'marketplace_auction': $content-icon-glyph-marketplace-auction,
       'marketplace_cancel': $content-icon-glyph-marketplace-cancel,
       'marketplace_fixed': $content-icon-glyph-marketplace-fixed,
@@ -1878,9 +1873,6 @@ $tokens: (
       'screen_wide': $content-icon-glyph-screen-wide,
       'workshop': $content-icon-glyph-workshop,
       'cpu': $content-icon-glyph-cpu,
-      'arena_logo': $content-icon-glyph-arena-logo,
-      'ultra_wallet_logo': $content-icon-glyph-ultra-wallet-logo,
-      'ultra_marketplace_logo': $content-icon-glyph-ultra-marketplace-logo,
       'ultra_games_logo': $content-icon-glyph-ultra-games-logo,
       'no_result': $content-icon-glyph-no-result,
       'library': $content-icon-glyph-library,

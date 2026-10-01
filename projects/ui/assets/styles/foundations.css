@@ -15268,9 +15268,6 @@ a:active {
 .ul-icon-currency_send::before {
   content: "currency_send";
 }
-.ul-icon-dollar_to_uos::before {
-  content: "dollar_to_uos";
-}
 .ul-icon-marketplace_auction::before {
   content: "marketplace_auction";
 }
@@ -15954,15 +15951,6 @@ a:active {
 }
 .ul-icon-cpu::before {
   content: "cpu";
-}
-.ul-icon-arena_logo::before {
-  content: "arena_logo";
-}
-.ul-icon-ultra_wallet_logo::before {
-  content: "ultra_wallet_logo";
-}
-.ul-icon-ultra_marketplace_logo::before {
-  content: "ultra_marketplace_logo";
 }
 .ul-icon-ultra_games_logo::before {
   content: "ultra_games_logo";

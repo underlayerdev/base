@@ -735,7 +735,6 @@ declare const tokens: {
       currency_exchange: DesignToken;
       currency_receive: DesignToken;
       currency_send: DesignToken;
-      dollar_to_uos: DesignToken;
       marketplace_auction: DesignToken;
       marketplace_cancel: DesignToken;
       marketplace_fixed: DesignToken;
@@ -964,9 +963,6 @@ declare const tokens: {
       screen_wide: DesignToken;
       workshop: DesignToken;
       cpu: DesignToken;
-      arena_logo: DesignToken;
-      ultra_wallet_logo: DesignToken;
-      ultra_marketplace_logo: DesignToken;
       ultra_games_logo: DesignToken;
       no_result: DesignToken;
       library: DesignToken;

@@ -2942,10 +2942,6 @@ export default {
         value: 'currency_send',
         name: 'content-icon-glyph-currency-send',
       },
-      dollar_to_uos: {
-        value: 'dollar_to_uos',
-        name: 'content-icon-glyph-dollar-to-uos',
-      },
       marketplace_auction: {
         value: 'marketplace_auction',
         name: 'content-icon-glyph-marketplace-auction',
@@ -3857,18 +3853,6 @@ export default {
       cpu: {
         value: 'cpu',
         name: 'content-icon-glyph-cpu',
-      },
-      arena_logo: {
-        value: 'arena_logo',
-        name: 'content-icon-glyph-arena-logo',
-      },
-      ultra_wallet_logo: {
-        value: 'ultra_wallet_logo',
-        name: 'content-icon-glyph-ultra-wallet-logo',
-      },
-      ultra_marketplace_logo: {
-        value: 'ultra_marketplace_logo',
-        name: 'content-icon-glyph-ultra-marketplace-logo',
       },
       ultra_games_logo: {
         value: 'ultra_games_logo',

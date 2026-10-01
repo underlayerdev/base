@@ -2350,6 +2350,16 @@
                 "name": "AllSizes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-calendar mode=\"date\" size=\"sm\" label=\"Small\" />\n        <ul-calendar mode=\"date\" size=\"md\" label=\"Medium\" />\n        <ul-calendar mode=\"date\" size=\"lg\" label=\"Large\" />\n        <ul-calendar mode=\"date\" size=\"xl\" label=\"Extra large\" />\n      </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "AllSizes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2357,16 +2367,6 @@
                 "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button [size]=\"'sm'\" [theme]=\"theme\">\n          Small Button\n        </ul-button>\n        <ul-button [size]=\"'md'\" [theme]=\"theme\">\n          Medium Button\n        </ul-button>\n        <ul-button [size]=\"'lg'\" [theme]=\"theme\">\n          Large Button\n        </ul-button>\n        <ul-button [size]=\"'xl'\" [theme]=\"theme\">\n          Extra Large Button\n        </ul-button>\n      </div>\n    `,\n  }),\n}",
                 "rawdescription": "Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.",
                 "description": "<p>Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.</p>\n"
-            },
-            {
-                "name": "AllSizes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-calendar mode=\"date\" size=\"sm\" label=\"Small\" />\n        <ul-calendar mode=\"date\" size=\"md\" label=\"Medium\" />\n        <ul-calendar mode=\"date\" size=\"lg\" label=\"Large\" />\n        <ul-calendar mode=\"date\" size=\"xl\" label=\"Extra large\" />\n      </div>\n    `,\n  }),\n}"
             },
             {
                 "name": "AllSizes",
@@ -2860,16 +2860,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-ultra_games\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 1</ng-container>\n          <ng-container ul-accordion-status>\n            <i class=\"ul-icon ul-icon-hourglass\"></i>\n            <i class=\"ul-icon ul-icon-history\"></i>\n          </ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 1 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-store\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 2</ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 2 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item [disabled]=\"true\">\n          <ng-container ul-accordion-label>Disabled Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This accordion item is disabled.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/area-code/area-code.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2918,18 +2908,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
-                "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
-                "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2940,11 +2918,33 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-ultra_games\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 1</ng-container>\n          <ng-container ul-accordion-status>\n            <i class=\"ul-icon ul-icon-hourglass\"></i>\n            <i class=\"ul-icon ul-icon-history\"></i>\n          </ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 1 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-store\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 2</ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 2 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item [disabled]=\"true\">\n          <ng-container ul-accordion-label>Disabled Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This accordion item is disabled.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    nodes: defaultNodes,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-category-picker\n        [size]=\"size\"\n        [label]=\"label\"\n        [helperText]=\"helperText\"\n        [error]=\"error\"\n        [disabled]=\"disabled\"\n        [required]=\"required\"\n        [showRequiredIndicator]=\"showRequiredIndicator\"\n        [placeholder]=\"placeholder\"\n        [searchPlaceholder]=\"searchPlaceholder\"\n        [modalTitle]=\"modalTitle\"\n        [rootLabel]=\"rootLabel\"\n        [noResultsText]=\"noResultsText\"\n        [nodes]=\"nodes\"\n        [(value)]=\"value\"\n      />\n    `,\n  }),\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
+                "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
+                "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
             },
             {
                 "name": "Default",
@@ -4068,16 +4068,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<AccordionComponent>",
-                "defaultValue": "{\n  title: 'Components/Data Display/Accordion',\n  component: AccordionComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Vertical list of expandable panels. Use `ul-accordion-item` children with projected icon, label, status, and content. `multi` allows multiple panels open; `showDivider` adds separators between items.',\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [AccordionItemComponent],\n    }),\n  ],\n  argTypes: {\n    multi: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n    showDivider: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n  },\n  args: {\n    multi: false,\n    showDivider: false,\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/area-code/area-code.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4118,16 +4108,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/calendar/calendar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4148,11 +4128,31 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AccordionComponent>",
+                "defaultValue": "{\n  title: 'Components/Data Display/Accordion',\n  component: AccordionComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Vertical list of expandable panels. Use `ul-accordion-item` children with projected icon, label, status, and content. `multi` allows multiple panels open; `showDivider` adds separators between items.',\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [AccordionItemComponent],\n    }),\n  ],\n  argTypes: {\n    multi: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n    showDivider: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n  },\n  args: {\n    multi: false,\n    showDivider: false,\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<CategoryPickerComponent>",
                 "defaultValue": "{\n  title: 'Components/Form Elements/CategoryPicker',\n  component: CategoryPickerComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Picker for a hierarchical category tree of unbounded depth: a closed field that opens a drill-down + search modal (one level of children at a time, with a breadcrumb trail) and resolves to a single leaf node id. Implements `FormValueControl<string | null>` for Signal Forms. Use `[(value)]` for two-way binding.',\n      },\n    },\n    layout: 'centered',\n  },\n  decorators: [\n    (story) => ({\n      ...story(),\n      template: `<div style=\"min-height: 500px; min-width: 400px;\">${story().template}</div>`,\n    }),\n  ],\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    error: { control: { type: 'boolean' } },\n    disabled: { control: { type: 'boolean' } },\n    required: { control: { type: 'boolean' } },\n    showRequiredIndicator: { control: { type: 'boolean' } },\n    label: { control: { type: 'text' } },\n    helperText: { control: { type: 'text' } },\n    errorText: { control: { type: 'text' } },\n    placeholder: { control: { type: 'text' } },\n    searchPlaceholder: { control: { type: 'text' } },\n    modalTitle: { control: { type: 'text' } },\n    rootLabel: { control: { type: 'text' } },\n    noResultsText: { control: { type: 'text' } },\n  },\n  args: {\n    size: 'md',\n    error: false,\n    disabled: false,\n    required: false,\n    showRequiredIndicator: true,\n    label: 'Category',\n    helperText: 'Choose the most specific category that fits',\n    errorText: 'Please select a category',\n    placeholder: 'Select a category',\n    searchPlaceholder: 'Search categories',\n    modalTitle: 'Select a category',\n    rootLabel: 'All categories',\n    noResultsText: 'No results',\n    nodes: defaultNodes,\n    value: null,\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
             },
             {
                 "name": "meta",
@@ -6078,17 +6078,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AccordionComponent>",
-                "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<AreaCodeComponent>",
                 "file": "projects/ui/src/components/area-code/area-code.stories.ts",
                 "deprecated": false,
@@ -6133,17 +6122,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/ui/src/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<CalendarComponent>",
                 "file": "projects/ui/src/components/calendar/calendar.stories.ts",
                 "deprecated": false,
@@ -6166,8 +6144,30 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<AccordionComponent>",
+                "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<CategoryPickerComponent>",
                 "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -7157,90 +7157,6 @@
                     "description": "<p>Demonstrates an avatar with initials fallback.</p>\n"
                 }
             ],
-            "projects/ui/src/components/button/button.stories.ts": [
-                {
-                    "name": "AllSizes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button [size]=\"'sm'\" [theme]=\"theme\">\n          Small Button\n        </ul-button>\n        <ul-button [size]=\"'md'\" [theme]=\"theme\">\n          Medium Button\n        </ul-button>\n        <ul-button [size]=\"'lg'\" [theme]=\"theme\">\n          Large Button\n        </ul-button>\n        <ul-button [size]=\"'xl'\" [theme]=\"theme\">\n          Extra Large Button\n        </ul-button>\n      </div>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.",
-                    "description": "<p>Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.</p>\n"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
-                    "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
-                    "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
-                },
-                {
-                    "name": "IconOnly",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    iconOnly: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\">\n        <i class=\"ul-icon ul-icon-cloud\"></i>\n      </ul-button>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates an icon-only button variant.\n- Sets iconOnly prop to true",
-                    "description": "<p>Demonstrates an icon-only button variant.</p>\n<ul>\n<li>Sets iconOnly prop to true</li>\n</ul>\n"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
-                },
-                {
-                    "name": "Outline",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    theme: 'outline-white',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button theme=\"outline-white\">Outline White</ul-button>\n        <ul-button theme=\"outline-purple\">Outline Purple</ul-button>\n        <ul-button theme=\"outline-red\">Outline Red</ul-button>\n        <ul-button theme=\"outline-green\">Outline Green</ul-button>\n      </div>\n    `,\n  }),\n}",
-                    "rawdescription": "Outline theme: transparent background, 1px border, and semantic text color.\nUse outline-white, outline-purple, outline-red, or outline-green for secondary or tertiary actions.",
-                    "description": "<p>Outline theme: transparent background, 1px border, and semantic text color.\nUse outline-white, outline-purple, outline-red, or outline-green for secondary or tertiary actions.</p>\n"
-                },
-                {
-                    "name": "VerticalLarge",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'lg',\n    vertical: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [vertical]=\"vertical\">\n        <i class=\"ul-icon ul-icon-cloud\"></i>\n        <span>Vertical Button</span>\n      </ul-button>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates a vertical layout button available only on large size.\n- Sets the props size to lg and vertical to true",
-                    "description": "<p>Demonstrates a vertical layout button available only on large size.</p>\n<ul>\n<li>Sets the props size to lg and vertical to true</li>\n</ul>\n"
-                },
-                {
-                    "name": "WithIcons",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\">\n        <i class=\"ul-icon ul-icon-store\"></i>\n        Button\n        <i class=\"ul-icon ul-icon-chevron_right\"></i>\n      </ul-button>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates a button with icons on both sides.",
-                    "description": "<p>Demonstrates a button with icons on both sides.</p>\n"
-                }
-            ],
             "projects/ui/src/components/calendar/calendar.stories.ts": [
                 {
                     "name": "AllSizes",
@@ -7343,6 +7259,90 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    mode: 'date',\n    showCalendarIcon: false,\n    label: 'Date without icon',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [showCalendarIcon]=\"showCalendarIcon\"\n        [label]=\"label\"\n      />\n    `,\n  }),\n}"
+                }
+            ],
+            "projects/ui/src/components/button/button.stories.ts": [
+                {
+                    "name": "AllSizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button [size]=\"'sm'\" [theme]=\"theme\">\n          Small Button\n        </ul-button>\n        <ul-button [size]=\"'md'\" [theme]=\"theme\">\n          Medium Button\n        </ul-button>\n        <ul-button [size]=\"'lg'\" [theme]=\"theme\">\n          Large Button\n        </ul-button>\n        <ul-button [size]=\"'xl'\" [theme]=\"theme\">\n          Extra Large Button\n        </ul-button>\n      </div>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.",
+                    "description": "<p>Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.</p>\n"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
+                    "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
+                    "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
+                },
+                {
+                    "name": "IconOnly",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    iconOnly: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\">\n        <i class=\"ul-icon ul-icon-cloud\"></i>\n      </ul-button>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates an icon-only button variant.\n- Sets iconOnly prop to true",
+                    "description": "<p>Demonstrates an icon-only button variant.</p>\n<ul>\n<li>Sets iconOnly prop to true</li>\n</ul>\n"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonComponent>",
+                    "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
+                },
+                {
+                    "name": "Outline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    theme: 'outline-white',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button theme=\"outline-white\">Outline White</ul-button>\n        <ul-button theme=\"outline-purple\">Outline Purple</ul-button>\n        <ul-button theme=\"outline-red\">Outline Red</ul-button>\n        <ul-button theme=\"outline-green\">Outline Green</ul-button>\n      </div>\n    `,\n  }),\n}",
+                    "rawdescription": "Outline theme: transparent background, 1px border, and semantic text color.\nUse outline-white, outline-purple, outline-red, or outline-green for secondary or tertiary actions.",
+                    "description": "<p>Outline theme: transparent background, 1px border, and semantic text color.\nUse outline-white, outline-purple, outline-red, or outline-green for secondary or tertiary actions.</p>\n"
+                },
+                {
+                    "name": "VerticalLarge",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size: 'lg',\n    vertical: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [vertical]=\"vertical\">\n        <i class=\"ul-icon ul-icon-cloud\"></i>\n        <span>Vertical Button</span>\n      </ul-button>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates a vertical layout button available only on large size.\n- Sets the props size to lg and vertical to true",
+                    "description": "<p>Demonstrates a vertical layout button available only on large size.</p>\n<ul>\n<li>Sets the props size to lg and vertical to true</li>\n</ul>\n"
+                },
+                {
+                    "name": "WithIcons",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\">\n        <i class=\"ul-icon ul-icon-store\"></i>\n        Button\n        <i class=\"ul-icon ul-icon-chevron_right\"></i>\n      </ul-button>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates a button with icons on both sides.",
+                    "description": "<p>Demonstrates a button with icons on both sides.</p>\n"
                 }
             ],
             "projects/ui/src/components/file-input/file-input.stories.ts": [
@@ -9223,38 +9223,6 @@
                     "defaultValue": "[\n  { label: '1', value: '1' },\n  { label: '2', value: '2' },\n  { label: '3', value: '3' },\n]"
                 }
             ],
-            "projects/ui/src/components/accordion/accordion.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-ultra_games\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 1</ng-container>\n          <ng-container ul-accordion-status>\n            <i class=\"ul-icon ul-icon-hourglass\"></i>\n            <i class=\"ul-icon ul-icon-history\"></i>\n          </ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 1 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-store\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 2</ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 2 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item [disabled]=\"true\">\n          <ng-container ul-accordion-label>Disabled Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This accordion item is disabled.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<AccordionComponent>",
-                    "defaultValue": "{\n  title: 'Components/Data Display/Accordion',\n  component: AccordionComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Vertical list of expandable panels. Use `ul-accordion-item` children with projected icon, label, status, and content. `multi` allows multiple panels open; `showDivider` adds separators between items.',\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [AccordionItemComponent],\n    }),\n  ],\n  argTypes: {\n    multi: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n    showDivider: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n  },\n  args: {\n    multi: false,\n    showDivider: false,\n  },\n}"
-                },
-                {
-                    "name": "MultiExpand",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    multi: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>First Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>You can expand multiple items at once in multi mode.</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>Second Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This item can be expanded alongside the first one.</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>Third Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>All items can be expanded simultaneously.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
-                }
-            ],
             "projects/ui/src/components/area-code/area-code.stories.ts": [
                 {
                     "name": "Default",
@@ -9421,6 +9389,38 @@
                     "defaultValue": "{\n  args: {\n    items: [\n      { label: 'Home', routerLink: '/' },\n      { label: 'Products', routerLink: '/products' },\n      { label: 'Current Page' },\n    ],\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" />\n    `,\n  }),\n}",
                     "rawdescription": "Breadcrumb with router links (if RouterModule is available).\nNote: This requires RouterModule to be imported in the story context.",
                     "description": "<p>Breadcrumb with router links (if RouterModule is available).\nNote: This requires RouterModule to be imported in the story context.</p>\n"
+                }
+            ],
+            "projects/ui/src/components/accordion/accordion.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-ultra_games\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 1</ng-container>\n          <ng-container ul-accordion-status>\n            <i class=\"ul-icon ul-icon-hourglass\"></i>\n            <i class=\"ul-icon ul-icon-history\"></i>\n          </ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 1 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-icon>\n            <i class=\"ul-icon ul-icon-store\"></i>\n          </ng-container>\n          <ng-container ul-accordion-label>Accordion Item 2</ng-container>\n          <ng-container ul-accordion-content>\n            <p>Accordion Item 2 Content</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item [disabled]=\"true\">\n          <ng-container ul-accordion-label>Disabled Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This accordion item is disabled.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AccordionComponent>",
+                    "defaultValue": "{\n  title: 'Components/Data Display/Accordion',\n  component: AccordionComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Vertical list of expandable panels. Use `ul-accordion-item` children with projected icon, label, status, and content. `multi` allows multiple panels open; `showDivider` adds separators between items.',\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [AccordionItemComponent],\n    }),\n  ],\n  argTypes: {\n    multi: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n    showDivider: {\n      control: 'boolean',\n      defaultValue: false,\n    },\n  },\n  args: {\n    multi: false,\n    showDivider: false,\n  },\n}"
+                },
+                {
+                    "name": "MultiExpand",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    multi: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-accordion [multi]=\"multi\" [showDivider]=\"showDivider\">\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>First Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>You can expand multiple items at once in multi mode.</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>Second Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>This item can be expanded alongside the first one.</p>\n          </ng-container>\n        </ul-accordion-item>\n        <ul-accordion-item>\n          <ng-container ul-accordion-label>Third Item</ng-container>\n          <ng-container ul-accordion-content>\n            <p>All items can be expanded simultaneously.</p>\n          </ng-container>\n        </ul-accordion-item>\n      </ul-accordion>\n    `,\n  }),\n}"
                 }
             ],
             "projects/ui/src/components/category-picker/category-picker.stories.ts": [
@@ -10553,19 +10553,6 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/accordion/accordion.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<AccordionComponent>",
-                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/ui/src/components/area-code/area-code.stories.ts": [
                 {
                     "name": "Story",
@@ -10618,19 +10605,6 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/button/button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/ui/src/components/calendar/calendar.stories.ts": [
                 {
                     "name": "Story",
@@ -10657,6 +10631,19 @@
                     "kind": 184
                 }
             ],
+            "projects/ui/src/components/accordion/accordion.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AccordionComponent>",
+                    "file": "projects/ui/src/components/accordion/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "projects/ui/src/components/category-picker/category-picker.stories.ts": [
                 {
                     "name": "Story",
@@ -10664,6 +10651,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CategoryPickerComponent>",
                     "file": "projects/ui/src/components/category-picker/category-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/components/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
