@@ -5,10 +5,10 @@ import { describe, expect, it } from 'vitest';
 import { CategoryPickerComponent, type CategoryPickerNode } from './category-picker';
 
 const nodes: CategoryPickerNode[] = [
-  { id: 'electronics', parentId: null, label: 'Electronics', isLeaf: false },
-  { id: 'computing', parentId: 'electronics', label: 'Computing', isLeaf: false },
+  { id: 'electronics', parentId: null, label: 'Electronics', icon: 'computer', isLeaf: false },
+  { id: 'computing', parentId: 'electronics', label: 'Computing', icon: 'computer', isLeaf: false },
   { id: 'laptops', parentId: 'computing', label: 'Laptops', isLeaf: true },
-  { id: 'phones', parentId: 'computing', label: 'Phones', isLeaf: true },
+  { id: 'phones', parentId: 'computing', label: 'Phones', icon: 'smartphone', isLeaf: true },
   { id: 'other', parentId: null, label: 'Other', isLeaf: true },
 ];
 
@@ -66,6 +66,40 @@ describe('CategoryPickerComponent', () => {
     expect(rowByText(fixture, 'Other')).toBeTruthy();
   });
 
+  it("shows a node's icon regardless of its depth in the tree", () => {
+    const fixture = setup();
+    openPicker(fixture);
+
+    expect(
+      rowByText(fixture, 'Electronics').querySelector('.ul-list-item__before-label ul-icon'),
+    ).toBeTruthy();
+
+    rowByText(fixture, 'Electronics').click();
+    fixture.detectChanges();
+
+    expect(
+      rowByText(fixture, 'Computing').querySelector('.ul-list-item__before-label ul-icon'),
+    ).toBeTruthy();
+  });
+
+  it('shows no icon for a node that has none, at any depth', () => {
+    const fixture = setup();
+    openPicker(fixture);
+
+    expect(
+      rowByText(fixture, 'Other').querySelector('.ul-list-item__before-label ul-icon'),
+    ).toBeFalsy();
+
+    rowByText(fixture, 'Electronics').click();
+    fixture.detectChanges();
+    rowByText(fixture, 'Computing').click();
+    fixture.detectChanges();
+
+    expect(
+      rowByText(fixture, 'Laptops').querySelector('.ul-list-item__before-label ul-icon'),
+    ).toBeFalsy();
+  });
+
   it('drills into a non-leaf node and shows its children with a breadcrumb', () => {
     const fixture = setup();
     openPicker(fixture);
@@ -120,6 +154,9 @@ describe('CategoryPickerComponent', () => {
     const row = rowByText(fixture, 'Phones');
     expect(row.textContent).toContain('Electronics › Computing');
     expect(fixture.nativeElement.querySelector('.ul-category-picker__breadcrumb')).toBeFalsy();
+    // Search results show a matched leaf's own icon too, same as browsing —
+    // there's no root-only restriction.
+    expect(row.querySelector('.ul-list-item__before-label ul-icon')).toBeTruthy();
   });
 
   it('shows a no-results state when the search matches nothing', () => {
