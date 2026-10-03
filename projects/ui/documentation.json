@@ -2350,16 +2350,6 @@
                 "name": "AllSizes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/calendar/calendar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-calendar mode=\"date\" size=\"sm\" label=\"Small\" />\n        <ul-calendar mode=\"date\" size=\"md\" label=\"Medium\" />\n        <ul-calendar mode=\"date\" size=\"lg\" label=\"Large\" />\n        <ul-calendar mode=\"date\" size=\"xl\" label=\"Extra large\" />\n      </div>\n    `,\n  }),\n}"
-            },
-            {
-                "name": "AllSizes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2367,6 +2357,16 @@
                 "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button [size]=\"'sm'\" [theme]=\"theme\">\n          Small Button\n        </ul-button>\n        <ul-button [size]=\"'md'\" [theme]=\"theme\">\n          Medium Button\n        </ul-button>\n        <ul-button [size]=\"'lg'\" [theme]=\"theme\">\n          Large Button\n        </ul-button>\n        <ul-button [size]=\"'xl'\" [theme]=\"theme\">\n          Extra Large Button\n        </ul-button>\n      </div>\n    `,\n  }),\n}",
                 "rawdescription": "Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.",
                 "description": "<p>Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.</p>\n"
+            },
+            {
+                "name": "AllSizes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n        <ul-calendar mode=\"date\" size=\"sm\" label=\"Small\" />\n        <ul-calendar mode=\"date\" size=\"md\" label=\"Medium\" />\n        <ul-calendar mode=\"date\" size=\"lg\" label=\"Large\" />\n        <ul-calendar mode=\"date\" size=\"xl\" label=\"Extra large\" />\n      </div>\n    `,\n  }),\n}"
             },
             {
                 "name": "AllSizes",
@@ -2906,18 +2906,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" [maxItems]=\"maxItems\" />\n    `,\n  }),\n}",
-                "rawdescription": "Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.",
-                "description": "<p>Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.</p>\n"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2925,6 +2913,18 @@
                 "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
                 "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
                 "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" [maxItems]=\"maxItems\" />\n    `,\n  }),\n}",
+                "rawdescription": "Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.",
+                "description": "<p>Default breadcrumb story with 4 items.\nShows the basic breadcrumb navigation pattern.</p>\n"
             },
             {
                 "name": "Default",
@@ -4108,11 +4108,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<BreadcrumbComponent>",
-                "defaultValue": "{\n  title: 'Components/Navigation/Breadcrumb',\n  component: BreadcrumbComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [RouterTestingModule],\n    }),\n  ],\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Navigation breadcrumb component for displaying page hierarchy. Supports responsive collapsing on mobile, customizable separators (chevron, slash, dot), and optional icons. Last item is not a link and uses aria-current=\"page\" for accessibility.',\n      },\n    },\n  },\n  argTypes: {\n    items: {\n      control: { type: 'object' },\n      description: 'Array of breadcrumb items to display',\n    },\n    separator: {\n      options: ['chevron_right', 'slash', 'dot'],\n      control: { type: 'radio' },\n      description: 'Separator type between breadcrumb items',\n    },\n    maxItems: {\n      control: { type: 'number' },\n      description: 'Maximum number of items to show before collapsing (for responsive behavior)',\n    },\n  },\n  args: {\n    items: [\n      { label: 'Home', href: '/' },\n      { label: 'Products', href: '/products' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page' },\n    ],\n    separator: 'chevron_right',\n    maxItems: undefined,\n  },\n}"
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
             },
             {
                 "name": "meta",
@@ -4128,11 +4128,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/button/button.stories.ts",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
+                "type": "Meta<BreadcrumbComponent>",
+                "defaultValue": "{\n  title: 'Components/Navigation/Breadcrumb',\n  component: BreadcrumbComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [RouterTestingModule],\n    }),\n  ],\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Navigation breadcrumb component for displaying page hierarchy. Supports responsive collapsing on mobile, customizable separators (chevron, slash, dot), and optional icons. Last item is not a link and uses aria-current=\"page\" for accessibility.',\n      },\n    },\n  },\n  argTypes: {\n    items: {\n      control: { type: 'object' },\n      description: 'Array of breadcrumb items to display',\n    },\n    separator: {\n      options: ['chevron_right', 'slash', 'dot'],\n      control: { type: 'radio' },\n      description: 'Separator type between breadcrumb items',\n    },\n    maxItems: {\n      control: { type: 'number' },\n      description: 'Maximum number of items to show before collapsing (for responsive behavior)',\n    },\n  },\n  args: {\n    items: [\n      { label: 'Home', href: '/' },\n      { label: 'Products', href: '/products' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page' },\n    ],\n    separator: 'chevron_right',\n    maxItems: undefined,\n  },\n}"
             },
             {
                 "name": "meta",
@@ -4178,21 +4178,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/dock/dock.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<DockComponent>",
-                "defaultValue": "{\n  title: 'Components/Navigation/Dock',\n  component: DockComponent,\n  tags: ['autodocs'],\n  parameters: {\n    layout: 'fullscreen',\n    docs: {\n      description: {\n        component:\n          \"Mobile-only bottom navigation bar (app-style tab bar). Hidden above the 'md' breakpoint (1024px) by the component's own CSS — no wrapper class or media query needed in the consuming app. Project ul-dock-item elements directly (icon + label + active state); there is no data-driven items input, since each item typically needs its own routerLink. Each item supports a badge (unread counts, etc.) and a variant ('default' | 'accent') for a raised/highlighted look, and can fully replace its icon+label with projected content via [ul-dock-item-content] for bespoke tabs. Resize the Storybook viewport below 1024px to see it render.\",\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [DockDemoComponent],\n    }),\n  ],\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/dropdown/dropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<DropdownComponent>",
                 "defaultValue": "{\n  title: 'Components/Actions/Dropdown',\n  component: DropdownComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Trigger-based dropdown menu. Pass `items` (label, value, optional leftIcons, rightIcons, disabled) and bind `[(selectedIndex)]` for the chosen item. Themes: ghost-white, transparent-white. Used by ul-select; can be used standalone for custom menus.',\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [ListItemComponent, IconComponent],\n    }),\n  ],\n  argTypes: {\n    theme: {\n      options: ['ghost-white', 'transparent-white','outline-white'],\n      control: 'select',\n    },\n    menuTriggerIcons: {\n      control: 'object',\n    },\n    disabled: {\n      control: 'boolean',\n    },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/dock/dock.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<DockComponent>",
+                "defaultValue": "{\n  title: 'Components/Navigation/Dock',\n  component: DockComponent,\n  tags: ['autodocs'],\n  parameters: {\n    layout: 'fullscreen',\n    docs: {\n      description: {\n        component:\n          \"Mobile-only bottom navigation bar (app-style tab bar). Hidden above the 'md' breakpoint (1024px) by the component's own CSS — no wrapper class or media query needed in the consuming app. Project ul-dock-item elements directly (icon + label + active state); there is no data-driven items input, since each item typically needs its own routerLink. Each item supports a badge (unread counts, etc.) and a variant ('default' | 'accent') for a raised/highlighted look, and can fully replace its icon+label with projected content via [ul-dock-item-content] for bespoke tabs. Resize the Storybook viewport below 1024px to see it render.\",\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [DockDemoComponent],\n    }),\n  ],\n}"
             },
             {
                 "name": "meta",
@@ -5708,18 +5708,6 @@
                 "name": "WithIcons",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    items: [\n      { label: 'Home', href: '/', icon: 'home' },\n      { label: 'Products', href: '/products', icon: 'store' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page', icon: 'chevron_right' },\n    ],\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" />\n    `,\n  }),\n}",
-                "rawdescription": "Breadcrumb with icons on some items.\nDemonstrates how icons can be added to breadcrumb items.",
-                "description": "<p>Breadcrumb with icons on some items.\nDemonstrates how icons can be added to breadcrumb items.</p>\n"
-            },
-            {
-                "name": "WithIcons",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -5727,6 +5715,18 @@
                 "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\">\n        <i class=\"ul-icon ul-icon-store\"></i>\n        Button\n        <i class=\"ul-icon ul-icon-chevron_right\"></i>\n      </ul-button>\n    `,\n  }),\n}",
                 "rawdescription": "Demonstrates a button with icons on both sides.",
                 "description": "<p>Demonstrates a button with icons on both sides.</p>\n"
+            },
+            {
+                "name": "WithIcons",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    items: [\n      { label: 'Home', href: '/', icon: 'home' },\n      { label: 'Products', href: '/products', icon: 'store' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page', icon: 'chevron_right' },\n    ],\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-breadcrumb [items]=\"items\" [separator]=\"separator\" />\n    `,\n  }),\n}",
+                "rawdescription": "Breadcrumb with icons on some items.\nDemonstrates how icons can be added to breadcrumb items.",
+                "description": "<p>Breadcrumb with icons on some items.\nDemonstrates how icons can be added to breadcrumb items.</p>\n"
             },
             {
                 "name": "WithIcons",
@@ -6122,8 +6122,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<BreadcrumbComponent>",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/ui/src/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6144,8 +6144,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/ui/src/components/button/button.stories.ts",
+                "rawtype": "StoryObj<BreadcrumbComponent>",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6199,8 +6199,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<DockComponent>",
-                "file": "projects/ui/src/components/dock/dock.stories.ts",
+                "rawtype": "StoryObj<DropdownComponent>",
+                "file": "projects/ui/src/components/dropdown/dropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6210,8 +6210,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<DropdownComponent>",
-                "file": "projects/ui/src/components/dropdown/dropdown.stories.ts",
+                "rawtype": "StoryObj<DockComponent>",
+                "file": "projects/ui/src/components/dock/dock.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -7157,6 +7157,90 @@
                     "description": "<p>Demonstrates an avatar with initials fallback.</p>\n"
                 }
             ],
+            "projects/ui/src/components/button/button.stories.ts": [
+                {
+                    "name": "AllSizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button [size]=\"'sm'\" [theme]=\"theme\">\n          Small Button\n        </ul-button>\n        <ul-button [size]=\"'md'\" [theme]=\"theme\">\n          Medium Button\n        </ul-button>\n        <ul-button [size]=\"'lg'\" [theme]=\"theme\">\n          Large Button\n        </ul-button>\n        <ul-button [size]=\"'xl'\" [theme]=\"theme\">\n          Extra Large Button\n        </ul-button>\n      </div>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.",
+                    "description": "<p>Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.</p>\n"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
+                    "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
+                    "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
+                },
+                {
+                    "name": "IconOnly",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    iconOnly: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\">\n        <i class=\"ul-icon ul-icon-cloud\"></i>\n      </ul-button>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates an icon-only button variant.\n- Sets iconOnly prop to true",
+                    "description": "<p>Demonstrates an icon-only button variant.</p>\n<ul>\n<li>Sets iconOnly prop to true</li>\n</ul>\n"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonComponent>",
+                    "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
+                },
+                {
+                    "name": "Outline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    theme: 'outline-white',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button theme=\"outline-white\">Outline White</ul-button>\n        <ul-button theme=\"outline-purple\">Outline Purple</ul-button>\n        <ul-button theme=\"outline-red\">Outline Red</ul-button>\n        <ul-button theme=\"outline-green\">Outline Green</ul-button>\n      </div>\n    `,\n  }),\n}",
+                    "rawdescription": "Outline theme: transparent background, 1px border, and semantic text color.\nUse outline-white, outline-purple, outline-red, or outline-green for secondary or tertiary actions.",
+                    "description": "<p>Outline theme: transparent background, 1px border, and semantic text color.\nUse outline-white, outline-purple, outline-red, or outline-green for secondary or tertiary actions.</p>\n"
+                },
+                {
+                    "name": "VerticalLarge",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size: 'lg',\n    vertical: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [vertical]=\"vertical\">\n        <i class=\"ul-icon ul-icon-cloud\"></i>\n        <span>Vertical Button</span>\n      </ul-button>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates a vertical layout button available only on large size.\n- Sets the props size to lg and vertical to true",
+                    "description": "<p>Demonstrates a vertical layout button available only on large size.</p>\n<ul>\n<li>Sets the props size to lg and vertical to true</li>\n</ul>\n"
+                },
+                {
+                    "name": "WithIcons",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\">\n        <i class=\"ul-icon ul-icon-store\"></i>\n        Button\n        <i class=\"ul-icon ul-icon-chevron_right\"></i>\n      </ul-button>\n    `,\n  }),\n}",
+                    "rawdescription": "Demonstrates a button with icons on both sides.",
+                    "description": "<p>Demonstrates a button with icons on both sides.</p>\n"
+                }
+            ],
             "projects/ui/src/components/calendar/calendar.stories.ts": [
                 {
                     "name": "AllSizes",
@@ -7259,90 +7343,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    mode: 'date',\n    showCalendarIcon: false,\n    label: 'Date without icon',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-calendar\n        [(value)]=\"value\"\n        [mode]=\"mode\"\n        [showCalendarIcon]=\"showCalendarIcon\"\n        [label]=\"label\"\n      />\n    `,\n  }),\n}"
-                }
-            ],
-            "projects/ui/src/components/button/button.stories.ts": [
-                {
-                    "name": "AllSizes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button [size]=\"'sm'\" [theme]=\"theme\">\n          Small Button\n        </ul-button>\n        <ul-button [size]=\"'md'\" [theme]=\"theme\">\n          Medium Button\n        </ul-button>\n        <ul-button [size]=\"'lg'\" [theme]=\"theme\">\n          Large Button\n        </ul-button>\n        <ul-button [size]=\"'xl'\" [theme]=\"theme\">\n          Extra Large Button\n        </ul-button>\n      </div>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.",
-                    "description": "<p>Demonstrates all available button sizes side by side.\nShows sm, md, lg, and xl sizes for easy comparison.</p>\n"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\" [disabled]=\"disabled\">\n        Button\n      </ul-button>\n    `,\n  }),\n}",
-                    "rawdescription": "Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.",
-                    "description": "<p>Default button story that demonstrates the basic button component.\nShows a simple button with configurable size and theme.</p>\n"
-                },
-                {
-                    "name": "IconOnly",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    iconOnly: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [iconOnly]=\"iconOnly\">\n        <i class=\"ul-icon ul-icon-cloud\"></i>\n      </ul-button>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates an icon-only button variant.\n- Sets iconOnly prop to true",
-                    "description": "<p>Demonstrates an icon-only button variant.</p>\n<ul>\n<li>Sets iconOnly prop to true</li>\n</ul>\n"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Components/Actions/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Primary action button with multiple themes (fill, transparent, ghost, outline), sizes (sm–xl), and optional icon-only or vertical layout. Outline themes use a transparent background with a 1px border and semantic text color. Content is projected; use icons or text. Supports disabled state.',\n      },\n    },\n  },\n  argTypes: {\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'radio' },\n    },\n    theme: {\n      options: [\n        'fill-purple',\n        'fill-white',\n        'fill-yellow',\n        'fill-red',\n        'fill-green',\n        'transparent-purple',\n        'transparent-white',\n        'transparent-red',\n        'transparent-black',\n        'ghost-purple',\n        'ghost-white',\n        'ghost-red',\n        'ghost-green',\n        'outline-white',\n        'outline-purple',\n        'outline-red',\n        'outline-green',\n      ],\n      control: { type: 'select' },\n      description: 'Visual theme (fill, transparent, ghost, outline variants).',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'When true, button shows only icon content with no label.',\n    },\n    vertical: {\n      control: { type: 'boolean' },\n      description: 'Stack icon and label vertically (e.g. for large buttons).',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Disables the button.',\n    },\n  },\n  args: {\n    size: 'md',\n    theme: 'fill-purple',\n    iconOnly: false,\n    vertical: false,\n    disabled: false,\n  },\n}"
-                },
-                {
-                    "name": "Outline",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    theme: 'outline-white',\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 16px; align-items: center; flex-wrap: wrap;\">\n        <ul-button theme=\"outline-white\">Outline White</ul-button>\n        <ul-button theme=\"outline-purple\">Outline Purple</ul-button>\n        <ul-button theme=\"outline-red\">Outline Red</ul-button>\n        <ul-button theme=\"outline-green\">Outline Green</ul-button>\n      </div>\n    `,\n  }),\n}",
-                    "rawdescription": "Outline theme: transparent background, 1px border, and semantic text color.\nUse outline-white, outline-purple, outline-red, or outline-green for secondary or tertiary actions.",
-                    "description": "<p>Outline theme: transparent background, 1px border, and semantic text color.\nUse outline-white, outline-purple, outline-red, or outline-green for secondary or tertiary actions.</p>\n"
-                },
-                {
-                    "name": "VerticalLarge",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'lg',\n    vertical: true,\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\" [vertical]=\"vertical\">\n        <i class=\"ul-icon ul-icon-cloud\"></i>\n        <span>Vertical Button</span>\n      </ul-button>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates a vertical layout button available only on large size.\n- Sets the props size to lg and vertical to true",
-                    "description": "<p>Demonstrates a vertical layout button available only on large size.</p>\n<ul>\n<li>Sets the props size to lg and vertical to true</li>\n</ul>\n"
-                },
-                {
-                    "name": "WithIcons",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  render: (args) => ({\n    props: args,\n    template: `\n      <ul-button [size]=\"size\" [theme]=\"theme\">\n        <i class=\"ul-icon ul-icon-store\"></i>\n        Button\n        <i class=\"ul-icon ul-icon-chevron_right\"></i>\n      </ul-button>\n    `,\n  }),\n}",
-                    "rawdescription": "Demonstrates a button with icons on both sides.",
-                    "description": "<p>Demonstrates a button with icons on both sides.</p>\n"
                 }
             ],
             "projects/ui/src/components/file-input/file-input.stories.ts": [
@@ -10605,13 +10605,13 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts": [
+            "projects/ui/src/components/button/button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<BreadcrumbComponent>",
-                    "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/ui/src/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -10631,13 +10631,13 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/button/button.stories.ts": [
+            "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/ui/src/components/button/button.stories.ts",
+                    "rawtype": "StoryObj<BreadcrumbComponent>",
+                    "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -10696,19 +10696,6 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/dock/dock.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<DockComponent>",
-                    "file": "projects/ui/src/components/dock/dock.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/ui/src/components/dropdown/dropdown.stories.ts": [
                 {
                     "name": "Story",
@@ -10716,6 +10703,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<DropdownComponent>",
                     "file": "projects/ui/src/components/dropdown/dropdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/components/dock/dock.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<DockComponent>",
+                    "file": "projects/ui/src/components/dock/dock.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

@@ -1,22 +1,23 @@
 <nav class="ul-navbar" role="navigation">
   <div class="ul-navbar__bar">
+    @if (showToggle()) {
+      <!-- Default 'md' size, matching the search toggle below and the
+      sidebar's own close button: `sm` capped the icon at 20px (the
+      `.ul-btn--sm .ul-icon` rule outranks `.ul-icon-size-*`, so the icon's
+      own size input cannot raise it) and gave a 32px tap target. -->
+      <ul-button
+        theme="ghost-white"
+        [iconOnly]="true"
+        class="ul-navbar__sidebar_toggle"
+        ariaLabel="Open menu"
+        [attr.aria-expanded]="sidebarOpen()"
+        (buttonClick)="toggleSidebar()"
+      >
+        <ul-icon icon="menu" size="6" />
+      </ul-button>
+    }
+
     <div class="ul-navbar__logo">
-      @if (showToggle()) {
-        <!-- Default 'md' size, matching the search toggle below and the
-        sidebar's own close button: `sm` capped the icon at 20px (the
-        `.ul-btn--sm .ul-icon` rule outranks `.ul-icon-size-*`, so the icon's
-        own size input cannot raise it) and gave a 32px tap target. -->
-        <ul-button
-          theme="ghost-white"
-          [iconOnly]="true"
-          class="ul-navbar__sidebar_toggle"
-          ariaLabel="Open menu"
-          [attr.aria-expanded]="sidebarOpen()"
-          (buttonClick)="toggleSidebar()"
-        >
-          <ul-icon icon="menu" size="6" />
-        </ul-button>
-      }
       @if (hasLogoSlot()) {
         <ng-content select="[ul-navbar-logo]" />
       } @else {
@@ -30,37 +31,39 @@
     </div>
 
     @if (!isMinimal()) {
-      @if (showSearchToggle()) {
-        <ul-button
-          theme="ghost-white"
-          [iconOnly]="true"
-          class="ul-navbar__search-toggle"
-          ariaLabel="Toggle search"
-          [attr.aria-expanded]="searchExpanded()"
-          (buttonClick)="toggleSearch()"
-        >
-          <ul-icon icon="search" size="6" />
-        </ul-button>
-      }
-
-      <div
-        class="ul-navbar__search-wrapper"
-        [class.ul-navbar__search-wrapper--expanded]="searchExpanded() || !searchCollapsible()"
-      >
-        <ng-content select="[ul-navbar-search]" />
-      </div>
-
-      <div class="ul-navbar__avatar">
-        @if (hasAvatarSlot()) {
-          <ng-content select="[ul-navbar-avatar]" />
-        } @else if (avatarSrc() || avatarInitials()) {
-          <ul-avatar
-            [src]="avatarSrc()"
-            [initials]="avatarInitials()"
-            [alt]="avatarAlt()"
-            size="md"
-          />
+      <div class="ul-navbar__actions">
+        @if (showSearchToggle()) {
+          <ul-button
+            theme="ghost-white"
+            [iconOnly]="true"
+            class="ul-navbar__search-toggle"
+            ariaLabel="Toggle search"
+            [attr.aria-expanded]="searchExpanded()"
+            (buttonClick)="toggleSearch()"
+          >
+            <ul-icon icon="search" size="6" />
+          </ul-button>
         }
+
+        <div
+          class="ul-navbar__search-wrapper"
+          [class.ul-navbar__search-wrapper--expanded]="searchExpanded() || !searchCollapsible()"
+        >
+          <ng-content select="[ul-navbar-search]" />
+        </div>
+
+        <div class="ul-navbar__avatar">
+          @if (hasAvatarSlot()) {
+            <ng-content select="[ul-navbar-avatar]" />
+          } @else if (avatarSrc() || avatarInitials()) {
+            <ul-avatar
+              [src]="avatarSrc()"
+              [initials]="avatarInitials()"
+              [alt]="avatarAlt()"
+              size="md"
+            />
+          }
+        </div>
       </div>
     }
   </div>

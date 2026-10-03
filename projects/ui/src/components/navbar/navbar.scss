@@ -40,7 +40,6 @@
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    margin-right: auto;
     gap: $spacing-spacing-2;
     // A flex item's default min-width: auto refuses to shrink below its
     // content, so a long app name would push the bar wider than the viewport
@@ -48,15 +47,32 @@
     // container as well as the text for the shrink to propagate.
     min-width: 0;
 
-    // Below md there's no room to read a left-aligned mark next to the
-    // sidebar toggle as "the brand" — grow to fill the row (search-wrapper
-    // below md is pushed to its own wrapped line via order: 10, so nothing
-    // else competes for this space) and center the toggle+mark/text as a
-    // unit within it, instead of hugging the left edge.
+    // At md+, &__actions' own flex: 1 is what pushes it to the bar's end —
+    // this just keeps its own natural (shrink-to-fit) size next to the
+    // toggle, same as always.
+    //
+    // Below md it's centered on the bar instead, independent of the
+    // sidebar toggle and &__actions (both still flow normally to either
+    // side of it) — lifted out of the flex row entirely rather than just
+    // left-aligned next to the toggle.
     @include below('md') {
-      flex: 1;
-      justify-content: center;
-      margin-right: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      // Leaves room on both sides for the toggle/action icons at narrow
+      // widths instead of overlapping them — same intent as &__logo-text's
+      // own ellipsis handling below, just measured from the bar's center.
+      max-width: calc(100% - #{$spacing-spacing-20} * 2);
+      // The box above is sized to make room for the content, not to be
+      // clicked itself — without this, its invisible slack at narrow
+      // widths/short logos could sit on top of (and swallow clicks meant
+      // for) the toggle or &__actions.
+      pointer-events: none;
+
+      > * {
+        pointer-events: auto;
+      }
     }
 
     &-link {
@@ -96,6 +112,27 @@
       display: block;
       width: auto;
       object-fit: contain;
+    }
+  }
+
+  // Groups search-toggle/search-wrapper/avatar so they can be pushed to the
+  // bar's end as a unit, now that &__logo (previously doing this via
+  // margin-right: auto) is lifted out of the flex row below md. flex: 1
+  // fills whatever's left after the sidebar toggle regardless of whether
+  // the toggle is even rendered (showToggle() can be false — see navbar.ts),
+  // and justify-content: flex-end is what actually keeps the icons/avatar
+  // pinned to that end rather than stretched across the gained width.
+  &__actions {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    min-width: 0;
+    gap: $spacing-spacing-4;
+
+    @include up('md') {
+      gap: $spacing-spacing-6;
     }
   }
 
