@@ -48,6 +48,17 @@
     // container as well as the text for the shrink to propagate.
     min-width: 0;
 
+    // Below md there's no room to read a left-aligned mark next to the
+    // sidebar toggle as "the brand" — grow to fill the row (search-wrapper
+    // below md is pushed to its own wrapped line via order: 10, so nothing
+    // else competes for this space) and center the toggle+mark/text as a
+    // unit within it, instead of hugging the left edge.
+    @include below('md') {
+      flex: 1;
+      justify-content: center;
+      margin-right: 0;
+    }
+
     &-link {
       display: flex;
       align-items: center;
