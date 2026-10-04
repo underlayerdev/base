@@ -129,10 +129,18 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     min-width: 0;
-    gap: $spacing-spacing-4;
+    // column-gap only, deliberately not the gap shorthand: &__search-wrapper
+    // below md keeps flex-basis: 100% even while collapsed (so it still
+    // forces a second line), and gap's row-gap component would add vertical
+    // space before that line regardless of its height — inflating this
+    // container below its one visible line's own height and pushing that
+    // line to the top instead of center. &__search-wrapper--expanded's own
+    // margin-top (below) adds breathing room only once there's actually a
+    // second line worth separating from.
+    column-gap: $spacing-spacing-4;
 
     @include up('md') {
-      gap: $spacing-spacing-6;
+      column-gap: $spacing-spacing-6;
     }
   }
 
@@ -163,6 +171,7 @@
       &--expanded {
         max-height: $spacing-spacing-20;
         opacity: 1;
+        margin-top: $spacing-spacing-4;
       }
     }
 
