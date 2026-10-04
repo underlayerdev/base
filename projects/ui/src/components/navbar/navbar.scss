@@ -134,9 +134,14 @@
     // forces a second line), and gap's row-gap component would add vertical
     // space before that line regardless of its height — inflating this
     // container below its one visible line's own height and pushing that
-    // line to the top instead of center. &__search-wrapper--expanded's own
-    // margin-top (below) adds breathing room only once there's actually a
-    // second line worth separating from.
+    // line to the top instead of center. Don't reach for row-gap (or a
+    // margin-top on &__search-wrapper--expanded) to separate an actually-
+    // visible second line from the first instead — a consumer whose
+    // projected [ul-navbar-search] content stays empty/hidden at some
+    // breakpoint (e.g. via their own display: none) would inherit that
+    // spacing with nothing to separate, same bug as this one just moved.
+    // Space belongs on the projected content itself, which collapses to
+    // nothing right along with it.
     column-gap: $spacing-spacing-4;
 
     @include up('md') {
@@ -171,7 +176,6 @@
       &--expanded {
         max-height: $spacing-spacing-20;
         opacity: 1;
-        margin-top: $spacing-spacing-4;
       }
     }
 
