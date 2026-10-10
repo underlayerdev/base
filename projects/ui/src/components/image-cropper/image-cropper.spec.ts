@@ -157,6 +157,59 @@ describe('ImageCropperComponent', () => {
       expect(cropper.cropperStaticHeight).toBe(180);
     });
 
+    it('shrinks the frame to fit inside a photo shorter than it, keeping the ratio', () => {
+      const fixture = setupLocked();
+      const cropper = queryCropper(fixture);
+
+      // A landscape photo in a narrow dialog: wider than the frame, shorter than it.
+      cropper.cropperReady.emit({ width: 400, height: 225 });
+      fixture.detectChanges();
+
+      expect(cropper.cropperStaticWidth).toBe(225);
+      expect(cropper.cropperStaticHeight).toBe(225);
+    });
+
+    it('shrinks the frame to fit inside a photo narrower than it', () => {
+      const fixture = setupLocked();
+      const cropper = queryCropper(fixture);
+
+      cropper.cropperReady.emit({ width: 180, height: 600 });
+      fixture.detectChanges();
+
+      expect(cropper.cropperStaticWidth).toBe(180);
+      expect(cropper.cropperStaticHeight).toBe(180);
+    });
+
+    it('keeps a non-square locked ratio while fitting the frame', () => {
+      const fixture = setup();
+      fixture.componentInstance.aspectRatio.set(4 / 3);
+      fixture.detectChanges();
+      const cropper = queryCropper(fixture);
+
+      cropper.cropperReady.emit({ width: 300, height: 150 });
+      fixture.detectChanges();
+
+      expect(cropper.cropperStaticWidth).toBeCloseTo(200);
+      expect(cropper.cropperStaticHeight).toBeCloseTo(150);
+    });
+
+    it('leaves the frame at full size when the photo is larger than it', () => {
+      const fixture = setupLocked();
+      const cropper = queryCropper(fixture);
+
+      cropper.cropperReady.emit({ width: 500, height: 400 });
+      fixture.detectChanges();
+
+      expect(cropper.cropperStaticWidth).toBe(240);
+      expect(cropper.cropperStaticHeight).toBe(240);
+    });
+
+    it('never upscales a crop smaller than the output size', () => {
+      const fixture = setupLocked();
+
+      expect(queryCropper(fixture).onlyScaleDown).toBe(true);
+    });
+
     it('forwards the zoom slider value to the cropper as a scale transform', () => {
       const fixture = setupLocked();
       const cropper = queryCropper(fixture);

@@ -129,16 +129,40 @@ export class ImageCropperComponent {
   // Longer side stays at FRAME_MAX_DIMENSION; the other side is derived from
   // the ratio, so non-square locked ratios (e.g. 4:3) get a proportional
   // frame instead of a squashed 240x240 one.
-  protected readonly frameWidth = computed(() => {
+  private readonly fullFrameWidth = computed(() => {
     if (!this.isLocked()) return undefined;
     const ratio = this.effectiveAspectRatio();
     return ratio >= 1 ? FRAME_MAX_DIMENSION : FRAME_MAX_DIMENSION * ratio;
   });
 
-  protected readonly frameHeight = computed(() => {
+  private readonly fullFrameHeight = computed(() => {
     if (!this.isLocked()) return undefined;
     const ratio = this.effectiveAspectRatio();
     return ratio >= 1 ? FRAME_MAX_DIMENSION / ratio : FRAME_MAX_DIMENSION;
+  });
+
+  // ngx-image-cropper clamps a static frame to the displayed photo one axis at
+  // a time and never re-applies the ratio, so a photo displayed shorter or
+  // narrower than the frame (a landscape photo in a narrow dialog) got a
+  // frame of the wrong shape — which the output step then stretched to the
+  // locked ratio. Shrinking the whole frame to fit inside the photo, ratio
+  // intact, keeps the exported crop undistorted.
+  private readonly frameScale = computed(() => {
+    const base = this.baseImageSize();
+    const width = this.fullFrameWidth();
+    const height = this.fullFrameHeight();
+    if (!base || !width || !height || base.width <= 0 || base.height <= 0) return 1;
+    return Math.min(1, base.width / width, base.height / height);
+  });
+
+  protected readonly frameWidth = computed(() => {
+    const width = this.fullFrameWidth();
+    return width === undefined ? undefined : width * this.frameScale();
+  });
+
+  protected readonly frameHeight = computed(() => {
+    const height = this.fullFrameHeight();
+    return height === undefined ? undefined : height * this.frameScale();
   });
 
   protected readonly minZoom = MIN_ZOOM;
