@@ -6,12 +6,12 @@ import type { UiSize } from '../shared/ui-types';
 type IconSize = '5' | '6' | '7' | '8' | '16';
 
 /**
- * Avatar-only size scale: the shared UiSize sizes, plus a larger '2xl' for
+ * Avatar-only size scale: the shared UiSize sizes, plus larger '2xl'/'3xl' for
  * contexts where the avatar itself is the focal point (e.g. an onboarding
  * photo step) rather than one control among many. Deliberately not folded
  * into UiSize — a giant size doesn't make sense on a button or input.
  */
-export type AvatarSize = UiSize | '2xl';
+export type AvatarSize = UiSize | '2xl' | '3xl';
 
 /**
  * A reusable avatar component that displays user images, initials, or icons.
@@ -93,6 +93,7 @@ export class AvatarComponent {
       lg: '7',
       xl: '8',
       '2xl': '16',
+      '3xl': '16',
     };
     return sizeMap[this.size()];
   });

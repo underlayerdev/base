@@ -34,6 +34,17 @@ describe('AvatarComponent', () => {
     expect(fixture.nativeElement.querySelector('.ul-avatar__initials')?.textContent).toBe('JD');
   });
 
+  it('renders the 3xl size for the largest hero avatars', () => {
+    const fixture = setup();
+    fixture.componentRef.setInput('size', '3xl');
+    fixture.componentRef.setInput('initials', 'JD');
+    fixture.detectChanges();
+
+    const el: HTMLElement = fixture.nativeElement.querySelector('.ul-avatar');
+    expect(el.classList.contains('ul-avatar--3xl')).toBe(true);
+    expect(fixture.nativeElement.querySelector('.ul-avatar__initials')?.textContent).toBe('JD');
+  });
+
   it('falls back from image to initials on load error', () => {
     const fixture = setup();
     fixture.componentRef.setInput('src', 'https://example.com/broken.jpg');

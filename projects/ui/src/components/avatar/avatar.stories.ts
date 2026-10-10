@@ -10,13 +10,13 @@ const meta: Meta<AvatarComponent> = {
     docs: {
       description: {
         component:
-          'User or entity avatar showing an image, or fallback to initials or icon when no image. Sizes: sm, md, lg, xl, 2xl. 2xl is avatar-only (not part of the shared UiSize scale) — use it where the avatar itself is the focal point, e.g. an onboarding photo step, rather than one control among many.',
+          'User or entity avatar showing an image, or fallback to initials or icon when no image. Sizes: sm, md, lg, xl, 2xl, 3xl. 2xl and 3xl are avatar-only (not part of the shared UiSize scale) — use it where the avatar itself is the focal point, e.g. an onboarding photo step, rather than one control among many.',
       },
     },
   },
   argTypes: {
     size: {
-      options: ['sm', 'md', 'lg', 'xl', '2xl'],
+      options: ['sm', 'md', 'lg', 'xl', '2xl', '3xl'],
       control: { type: 'radio' },
       description: 'The size of the avatar',
     },
@@ -149,7 +149,7 @@ export const WithIcon: Story = {
 
 /**
  * Demonstrates all available avatar sizes side by side.
- * Shows sm, md, lg, xl, and 2xl sizes for easy comparison.
+ * Shows sm, md, lg, xl, 2xl, and 3xl sizes for easy comparison.
  */
 export const AllSizes: Story = {
   args: {},
@@ -162,6 +162,7 @@ export const AllSizes: Story = {
         <ul-avatar [size]="'lg'" [initials]="'LG'" />
         <ul-avatar [size]="'xl'" [initials]="'XL'" />
         <ul-avatar [size]="'2xl'" [initials]="'XXL'" />
+        <ul-avatar [size]="'3xl'" [initials]="'3XL'" />
       </div>
     `,
   }),
