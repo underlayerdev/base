@@ -1,4 +1,7 @@
+import { moduleMetadata } from '@storybook/angular';
+
 import { Meta, StoryObj } from '../../../.storybook/types';
+import { IconComponent } from '../icon/icon';
 
 import { InputComponent, type InputAppearance } from './input';
 
@@ -333,6 +336,48 @@ export const WithElements: Story = {
           <i class="ul-icon ul-icon-search"></i>
         </ng-container>
       </ul-input>
+    `,
+  }),
+};
+
+/**
+ * A slotted ul-icon with no `size` follows the input's size; one with an
+ * explicit `size` keeps it.
+ */
+export const IconSizes: Story = {
+  decorators: [moduleMetadata({ imports: [IconComponent] })],
+  render: () => ({
+    template: `
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <ul-input label="No icon size (matches the input)" value="lukitas">
+          <ul-icon icon="at_sign" ul-input-left-elements />
+        </ul-input>
+        <ul-input label="Explicit size 4" value="lukitas">
+          <ul-icon icon="at_sign" size="4" ul-input-left-elements />
+        </ul-input>
+        <ul-input size="lg" label="Large input, no icon size" value="lukitas">
+          <ul-icon icon="at_sign" ul-input-left-elements />
+        </ul-input>
+      </div>
+    `,
+  }),
+};
+
+/**
+ * Icons projected into the left/right slots dim together with the text when
+ * the input is disabled.
+ */
+export const DisabledWithElements: Story = {
+  render: () => ({
+    template: `
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <ul-input label="Enabled" value="lukitas">
+          <i class="ul-icon ul-icon-size-6 ul-icon-at_sign" ul-input-left-elements></i>
+        </ul-input>
+        <ul-input label="Disabled" value="lukitas" [disabled]="true">
+          <i class="ul-icon ul-icon-size-6 ul-icon-at_sign" ul-input-left-elements></i>
+        </ul-input>
+      </div>
     `,
   }),
 };

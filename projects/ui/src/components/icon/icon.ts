@@ -3,6 +3,8 @@ import { Component, computed, input, ViewEncapsulation } from '@angular/core';
 /** Icon size keys from design tokens (iconography.font.size). */
 export type IconSize = '4' | '5' | '6' | '7' | '8' | '10' | '12' | '16' | '24' | '32';
 
+const DEFAULT_SIZE: IconSize = '8';
+
 /** Icon weight keys from design tokens (iconography.font.weight). */
 export type IconWeight = 'medium' | 'bold';
 
@@ -20,7 +22,12 @@ export type IconName = string;
   },
 })
 export class IconComponent {
-  size = input<IconSize>('8');
+  /**
+   * Glyph size. Left unset it renders at '8' on its own, and a container that
+   * sizes its icons (e.g. ul-input) may resize it to fit; set it to keep that
+   * exact size even there.
+   */
+  size = input<IconSize | undefined>(undefined);
   /**
    * Stroke weight of the glyph. Pass `null` to leave it out entirely, so the
    * icon takes the surrounding `font-weight` (e.g. inside bold text) instead
@@ -30,8 +37,12 @@ export class IconComponent {
   icon = input.required<IconName>();
 
   readonly hostClasses = computed(() => {
+    const size = this.size();
+    const sizeClasses = size
+      ? `ul-icon-size-${size}`
+      : `ul-icon-size-${DEFAULT_SIZE} ul-icon--default-size`;
     const weight = this.weight();
     const weightClass = weight ? ` ul-icon-weight-${weight}` : '';
-    return `ul-icon ul-icon-size-${this.size()}${weightClass} ul-icon-${this.icon()}`;
+    return `ul-icon ${sizeClasses}${weightClass} ul-icon-${this.icon()}`;
   });
 }

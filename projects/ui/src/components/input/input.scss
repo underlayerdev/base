@@ -60,13 +60,20 @@
   }
 
   // Left elements container
+  //
+  // Slotted icons are sized to the input (sm 5, md 6, lg 7, xl 8) unless they
+  // carry a size of their own: ul-icon marks a size it picked itself with
+  // `--default-size`, and a bare `<i class="ul-icon …">` has no size class at
+  // all. An icon given an explicit `size` keeps it. `:where()` keeps the extra
+  // selector from adding specificity, so these still beat the default class.
   &__left-elements,
   &__right-elements {
     display: flex;
     align-items: center;
     gap: $spacing-spacing-2;
 
-    ::ng-deep .#{$prefix}icon {
+    ::ng-deep
+      .#{$prefix}icon:where(.#{$prefix}icon--default-size, :not([class*='#{$prefix}icon-size-'])) {
       @include icon-size('6');
     }
   }
@@ -100,8 +107,12 @@
     .#{$prefix}input__left-elements,
     .#{$prefix}input__right-elements {
       gap: $spacing-spacing-1;
-      ::ng-deep .#{$prefix}icon {
-        @include icon-size('5');
+      ::ng-deep
+        .#{$prefix}icon:where(
+          .#{$prefix}icon--default-size,
+          :not([class*='#{$prefix}icon-size-'])
+        ) {
+        @include icon-size('4');
       }
     }
   }
@@ -115,9 +126,7 @@
 
     .#{$prefix}input__left-elements,
     .#{$prefix}input__right-elements {
-      ::ng-deep .#{$prefix}icon {
-        @include icon-size('6');
-      }
+        @include icon-size('4');
     }
   }
 
@@ -130,8 +139,12 @@
 
     .#{$prefix}input__left-elements,
     .#{$prefix}input__right-elements {
-      ::ng-deep .#{$prefix}icon {
-        @include icon-size('7');
+      ::ng-deep
+        .#{$prefix}icon:where(
+          .#{$prefix}icon--default-size,
+          :not([class*='#{$prefix}icon-size-'])
+        ) {
+        @include icon-size('4');
       }
     }
   }
@@ -145,7 +158,11 @@
 
     .#{$prefix}input__left-elements,
     .#{$prefix}input__right-elements {
-      ::ng-deep .#{$prefix}icon {
+      ::ng-deep
+        .#{$prefix}icon:where(
+          .#{$prefix}icon--default-size,
+          :not([class*='#{$prefix}icon-size-'])
+        ) {
         @include icon-size('8');
       }
     }
@@ -168,6 +185,17 @@
     .#{$prefix}input__field {
       &,
       &:disabled::placeholder {
+        color: $color-text-disabled;
+      }
+    }
+
+    // Adornments projected into the field (an "@" prefix, a trailing icon)
+    // belong to the parent's view, so they only pick up the disabled look
+    // through ::ng-deep — like the icon sizing above.
+    .#{$prefix}input__left-elements,
+    .#{$prefix}input__right-elements {
+      &,
+      ::ng-deep .#{$prefix}icon {
         color: $color-text-disabled;
       }
     }

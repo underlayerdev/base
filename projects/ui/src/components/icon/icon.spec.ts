@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { describe, expect, it } from 'vitest';
 
-import { IconComponent, type IconWeight } from './icon';
+import { IconComponent, type IconSize, type IconWeight } from './icon';
 
 function render(weight?: IconWeight | null): HTMLElement {
   const fixture = TestBed.createComponent(IconComponent);
@@ -29,5 +29,30 @@ describe('IconComponent weight', () => {
     expect(Array.from(el.classList).some((name) => name.startsWith('ul-icon-weight-'))).toBe(false);
     expect(el.classList.contains('ul-icon')).toBe(true);
     expect(el.classList.contains('ul-icon-user')).toBe(true);
+  });
+});
+
+describe('IconComponent size', () => {
+  function renderSize(size?: IconSize): HTMLElement {
+    const fixture = TestBed.createComponent(IconComponent);
+    fixture.componentRef.setInput('icon', 'user');
+    if (size !== undefined) fixture.componentRef.setInput('size', size);
+    fixture.detectChanges();
+    return fixture.nativeElement;
+  }
+
+  it('renders at the default size and marks it as one a container may resize', () => {
+    const el = renderSize();
+
+    expect(el.classList.contains('ul-icon-size-8')).toBe(true);
+    expect(el.classList.contains('ul-icon--default-size')).toBe(true);
+  });
+
+  it('applies an explicit size without the default marker, so containers keep it', () => {
+    const el = renderSize('4');
+
+    expect(el.classList.contains('ul-icon-size-4')).toBe(true);
+    expect(el.classList.contains('ul-icon-size-8')).toBe(false);
+    expect(el.classList.contains('ul-icon--default-size')).toBe(false);
   });
 });
