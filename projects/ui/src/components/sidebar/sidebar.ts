@@ -1,8 +1,11 @@
-import { Component, HostListener, input, model, output, ViewEncapsulation } from '@angular/core';
+import { Component, input, model, output, ViewEncapsulation } from '@angular/core';
 
 import { ButtonComponent } from '../button/button';
 import { IconComponent, IconName } from '../icon/icon';
 import { ListItemComponent, ListItemTheme } from '../list-item/list-item';
+
+/** 'bordered' draws a divider on the drawer's right edge; 'borderless' leaves it off. */
+export type SidebarAppearance = 'bordered' | 'borderless';
 
 export type SidebarItem = {
   label: string;
@@ -20,6 +23,7 @@ export type SidebarItem = {
   encapsulation: ViewEncapsulation.None,
   host: {
     '[attr.aria-hidden]': '!open()',
+    '(document:keydown.escape)': 'onEscape()',
   },
 })
 export class SidebarComponent {
@@ -29,6 +33,8 @@ export class SidebarComponent {
   open = model<boolean>(false);
   closeOnBackdropClick = input<boolean>(true);
   hideItemFocusOutline = input<boolean>(true);
+  /** Look of the drawer's edge. Use 'borderless' where the sidebar sits beside content that already has its own edge (e.g. a settings page). */
+  appearance = input<SidebarAppearance>('bordered');
 
   itemSelected = output<SidebarItem>();
 
@@ -50,7 +56,6 @@ export class SidebarComponent {
     this.itemSelected.emit(item);
   }
 
-  @HostListener('document:keydown.escape')
   onEscape(): void {
     if (this.open()) {
       this.close();

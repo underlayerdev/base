@@ -55,6 +55,10 @@
       }
     }
 
+    &--borderless {
+      border-right: none;
+    }
+
     @include up('md') {
       position: relative;
       transform: none;
@@ -68,6 +72,23 @@
     height: 100%;
     padding: $spacing-spacing-4;
     gap: $spacing-spacing-4;
+
+    // As an in-flow rail beside page content (md+) the sidebar's edge belongs
+    // flush with the content's top and left edges, so a title or panel next to
+    // it lines up with the list instead of starting 16px past it. The items
+    // keep their own padding, so labels stay inset inside their hover/selected
+    // background. Only the side facing the divider keeps room. The slide-in
+    // drawer below md is a floating panel and keeps all its padding.
+    @include up('md') {
+      padding: 0 $spacing-spacing-4 0 0;
+    }
+  }
+
+  // No divider, so nothing to keep clear of on the right either.
+  &__drawer--borderless &__inner {
+    @include up('md') {
+      padding-right: 0;
+    }
   }
 
   &__header {

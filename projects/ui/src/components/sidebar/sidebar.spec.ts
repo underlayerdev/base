@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { describe, expect, it } from 'vitest';
 
-import { SidebarComponent } from './sidebar';
+import { SidebarComponent, type SidebarAppearance } from './sidebar';
 
 @Component({
   imports: [SidebarComponent],
@@ -38,5 +38,71 @@ describe('SidebarComponent footer', () => {
     const footer: HTMLElement = fixture.nativeElement.querySelector('.ul-sidebar__footer');
     expect(footer.matches(':empty')).toBe(false);
     expect(footer.textContent).toContain('Sign out');
+  });
+});
+
+@Component({
+  imports: [SidebarComponent],
+  template: `<ul-sidebar
+    [items]="[{ label: 'Account' }]"
+    [(open)]="open"
+    [appearance]="appearance"
+  />`,
+})
+class StateHostComponent {
+  open = true;
+  appearance: SidebarAppearance = 'bordered';
+}
+
+describe('SidebarComponent escape key', () => {
+  function setup(open: boolean) {
+    const fixture = TestBed.createComponent(StateHostComponent);
+    fixture.componentInstance.open = open;
+    fixture.detectChanges();
+    return fixture;
+  }
+
+  it('should close an open sidebar on Escape', () => {
+    const fixture = setup(true);
+
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance.open).toBe(false);
+  });
+
+  it('should leave a closed sidebar alone on Escape', () => {
+    const fixture = setup(false);
+
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance.open).toBe(false);
+  });
+
+  it('should ignore other keys', () => {
+    const fixture = setup(true);
+
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance.open).toBe(true);
+  });
+});
+
+describe('SidebarComponent appearance', () => {
+  function drawer(appearance: SidebarAppearance): HTMLElement {
+    const fixture = TestBed.createComponent(StateHostComponent);
+    fixture.componentInstance.appearance = appearance;
+    fixture.detectChanges();
+    return fixture.nativeElement.querySelector('.ul-sidebar__drawer');
+  }
+
+  it('should keep the right border when bordered', () => {
+    expect(drawer('bordered').classList.contains('ul-sidebar__drawer--borderless')).toBe(false);
+  });
+
+  it('should drop the right border when borderless', () => {
+    expect(drawer('borderless').classList.contains('ul-sidebar__drawer--borderless')).toBe(true);
   });
 });

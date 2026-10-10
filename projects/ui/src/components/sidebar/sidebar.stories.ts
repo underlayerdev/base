@@ -56,6 +56,11 @@ const meta: Meta<SidebarComponent> = {
     closeOnBackdropClick: {
       control: 'boolean',
     },
+    appearance: {
+      control: 'radio',
+      options: ['bordered', 'borderless'],
+      description: "Look of the drawer's edge: with or without the right divider.",
+    },
   },
 };
 
@@ -68,6 +73,7 @@ export const Default: Story = {
     theme: 'ghost-white',
     selectedIndex: 2,
     closeOnBackdropClick: true,
+    appearance: 'bordered',
   },
   render: (args) => ({
     props: {
@@ -80,6 +86,7 @@ export const Default: Story = {
         [theme]="theme"
         [selectedIndex]="selectedIndex"
         [closeOnBackdropClick]="closeOnBackdropClick"
+        [appearance]="appearance"
         (itemSelected)="onItemSelected($event)">
       </ul-sidebar>
     `,

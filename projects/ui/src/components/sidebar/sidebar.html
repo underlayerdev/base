@@ -9,6 +9,7 @@
   <aside
     class="ul-sidebar__drawer"
     [class.ul-sidebar__drawer--open]="open()"
+    [class.ul-sidebar__drawer--borderless]="appearance() === 'borderless'"
     role="navigation"
     [attr.aria-hidden]="!open()"
   >
