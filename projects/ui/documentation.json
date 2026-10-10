@@ -3136,7 +3136,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    items: defaultItems,\n    theme: 'ghost-white',\n    selectedIndex: 2,\n    closeOnBackdropClick: true,\n  },\n  render: (args) => ({\n    props: {\n      ...args,\n      onItemSelected: (item: SidebarItem) => console.log('Selected', item),\n    },\n    template: `\n      <ul-sidebar\n        [items]=\"items\"\n        [theme]=\"theme\"\n        [selectedIndex]=\"selectedIndex\"\n        [closeOnBackdropClick]=\"closeOnBackdropClick\"\n        (itemSelected)=\"onItemSelected($event)\">\n      </ul-sidebar>\n    `,\n  }),\n}"
+                "defaultValue": "{\n  args: {\n    items: defaultItems,\n    theme: 'ghost-white',\n    selectedIndex: 2,\n    closeOnBackdropClick: true,\n    appearance: 'bordered',\n  },\n  render: (args) => ({\n    props: {\n      ...args,\n      onItemSelected: (item: SidebarItem) => console.log('Selected', item),\n    },\n    template: `\n      <ul-sidebar\n        [items]=\"items\"\n        [theme]=\"theme\"\n        [selectedIndex]=\"selectedIndex\"\n        [closeOnBackdropClick]=\"closeOnBackdropClick\"\n        [appearance]=\"appearance\"\n        (itemSelected)=\"onItemSelected($event)\">\n      </ul-sidebar>\n    `,\n  }),\n}"
             },
             {
                 "name": "Default",
@@ -4154,21 +4154,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<BreadcrumbComponent>",
-                "defaultValue": "{\n  title: 'Components/Navigation/Breadcrumb',\n  component: BreadcrumbComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [RouterTestingModule],\n    }),\n  ],\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Navigation breadcrumb component for displaying page hierarchy. Supports responsive collapsing on mobile, customizable separators (chevron, slash, dot), and optional icons. Last item is not a link and uses aria-current=\"page\" for accessibility.',\n      },\n    },\n  },\n  argTypes: {\n    items: {\n      control: { type: 'object' },\n      description: 'Array of breadcrumb items to display',\n    },\n    separator: {\n      options: ['chevron_right', 'slash', 'dot'],\n      control: { type: 'radio' },\n      description: 'Separator type between breadcrumb items',\n    },\n    maxItems: {\n      control: { type: 'number' },\n      description: 'Maximum number of items to show before collapsing (for responsive behavior)',\n    },\n  },\n  args: {\n    items: [\n      { label: 'Home', href: '/' },\n      { label: 'Products', href: '/products' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page' },\n    ],\n    separator: 'chevron_right',\n    maxItems: undefined,\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/calendar/calendar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<CalendarComponent>",
                 "defaultValue": "{\n  title: 'Components/Form Elements/Calendar',\n  component: CalendarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Date and/or time picker with popup calendar. Implements `FormValueControl<Date | null>` for Signal Forms `[formField]`. Use `[(value)]` for two-way binding. Modes: date, time, datetime. Supports min/max date and time, locale, sizes, and label/helper/error text.',\n      },\n    },\n  },\n  argTypes: {\n    mode: {\n      options: ['date', 'time', 'datetime'] as CalendarMode[],\n      control: { type: 'select' },\n    },\n    size: {\n      options: ['sm', 'md', 'lg', 'xl'],\n      control: { type: 'select' },\n    },\n    error: {\n      control: { type: 'boolean' },\n    },\n    disabled: {\n      control: { type: 'boolean' },\n    },\n    readOnly: {\n      control: { type: 'boolean' },\n    },\n    required: {\n      control: { type: 'boolean' },\n    },\n    showRequiredIndicator: {\n      control: { type: 'boolean' },\n      description:\n        'Whether the \"*\" shows when required — set false when every field on a form is required by convention and the asterisk would just be noise. The required styling/aria stays either way.',\n    },\n    placeholder: {\n      control: { type: 'text' },\n    },\n    label: {\n      control: { type: 'text' },\n    },\n    helperText: {\n      control: { type: 'text' },\n    },\n    errorText: {\n      control: { type: 'text' },\n    },\n    showCalendarIcon: {\n      control: { type: 'boolean' },\n    },\n  },\n  args: {\n    mode: 'date',\n    value: null,\n    size: 'md',\n    error: false,\n    disabled: false,\n    readOnly: false,\n    required: false,\n    showRequiredIndicator: true,\n    placeholder: '',\n    label: 'Date',\n    helperText: '',\n    errorText: 'Please select a date',\n    showCalendarIcon: true,\n    minDate: null,\n    maxDate: null,\n    minTime: null,\n    maxTime: null,\n    locale: 'en-US',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<BreadcrumbComponent>",
+                "defaultValue": "{\n  title: 'Components/Navigation/Breadcrumb',\n  component: BreadcrumbComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [RouterTestingModule],\n    }),\n  ],\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Navigation breadcrumb component for displaying page hierarchy. Supports responsive collapsing on mobile, customizable separators (chevron, slash, dot), and optional icons. Last item is not a link and uses aria-current=\"page\" for accessibility.',\n      },\n    },\n  },\n  argTypes: {\n    items: {\n      control: { type: 'object' },\n      description: 'Array of breadcrumb items to display',\n    },\n    separator: {\n      options: ['chevron_right', 'slash', 'dot'],\n      control: { type: 'radio' },\n      description: 'Separator type between breadcrumb items',\n    },\n    maxItems: {\n      control: { type: 'number' },\n      description: 'Maximum number of items to show before collapsing (for responsive behavior)',\n    },\n  },\n  args: {\n    items: [\n      { label: 'Home', href: '/' },\n      { label: 'Products', href: '/products' },\n      { label: 'Electronics', href: '/products/electronics' },\n      { label: 'Current Page' },\n    ],\n    separator: 'chevron_right',\n    maxItems: undefined,\n  },\n}"
             },
             {
                 "name": "meta",
@@ -4214,21 +4214,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/components/dropdown/dropdown.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<DropdownComponent>",
-                "defaultValue": "{\n  title: 'Components/Actions/Dropdown',\n  component: DropdownComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Trigger-based dropdown menu. Pass `items` (label, value, optional leftIcons, rightIcons, disabled) and bind `[(selectedIndex)]` for the chosen item. Themes: ghost-white, transparent-white. Used by ul-select; can be used standalone for custom menus.',\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [ListItemComponent, IconComponent],\n    }),\n  ],\n  argTypes: {\n    theme: {\n      options: ['ghost-white', 'transparent-white','outline-white'],\n      control: 'select',\n    },\n    menuTriggerIcons: {\n      control: 'object',\n    },\n    disabled: {\n      control: 'boolean',\n    },\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/components/dock/dock.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<DockComponent>",
                 "defaultValue": "{\n  title: 'Components/Navigation/Dock',\n  component: DockComponent,\n  tags: ['autodocs'],\n  parameters: {\n    layout: 'fullscreen',\n    docs: {\n      description: {\n        component:\n          \"Mobile-only bottom navigation bar (app-style tab bar). Hidden above the 'md' breakpoint (1024px) by the component's own CSS — no wrapper class or media query needed in the consuming app. Project ul-dock-item elements directly (icon + label + active state); there is no data-driven items input, since each item typically needs its own routerLink. Each item supports a badge (unread counts, etc.) and a variant ('default' | 'accent') for a raised/highlighted look, and can fully replace its icon+label with projected content via [ul-dock-item-content] for bespoke tabs. Resize the Storybook viewport below 1024px to see it render.\",\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [DockDemoComponent],\n    }),\n  ],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/components/dropdown/dropdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<DropdownComponent>",
+                "defaultValue": "{\n  title: 'Components/Actions/Dropdown',\n  component: DropdownComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Trigger-based dropdown menu. Pass `items` (label, value, optional leftIcons, rightIcons, disabled) and bind `[(selectedIndex)]` for the chosen item. Themes: ghost-white, transparent-white. Used by ul-select; can be used standalone for custom menus.',\n      },\n    },\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [ListItemComponent, IconComponent],\n    }),\n  ],\n  argTypes: {\n    theme: {\n      options: ['ghost-white', 'transparent-white','outline-white'],\n      control: 'select',\n    },\n    menuTriggerIcons: {\n      control: 'object',\n    },\n    disabled: {\n      control: 'boolean',\n    },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -4428,7 +4428,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SidebarComponent>",
-                "defaultValue": "{\n  title: 'Components/Layout/Sidebar',\n  component: SidebarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Responsive sidebar for app navigation. On desktop it stays visible with the current selection highlighted; on mobile it becomes a drawer with overlay and a toggle button. Use `items` for nav options (same shape as dropdown items) or project custom content via slots. Bind [(selectedIndex)] for the active item; supports theme, [(open)] for mobile drawer, and itemSelected output.',\n      },\n    },\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [ListItemComponent, IconComponent, ButtonComponent],\n    }),\n    (story) => ({\n      ...story(),\n      template: `\n        <div style=\"display: flex; min-height: 100vh;\">\n          ${story().template}\n          <main style=\"flex: 1; padding: 1.5rem; background: var(--color-background-main, #0a0a0a);\">\n            <p style=\"color: rgba(255,255,255,0.7);\">Main content area. Resize to see sidebar as drawer on small viewports.</p>\n          </main>\n        </div>\n      `,\n    }),\n  ],\n  argTypes: {\n    theme: {\n      control: 'select',\n      options: ['ghost-white', 'transparent-white', 'outline-white', 'outline-purple'],\n    },\n    selectedIndex: {\n      control: { type: 'number', min: 0, max: 4 },\n      description: 'Index of the selected nav item (visible on desktop)',\n    },\n    closeOnBackdropClick: {\n      control: 'boolean',\n    },\n  },\n}"
+                "defaultValue": "{\n  title: 'Components/Layout/Sidebar',\n  component: SidebarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Responsive sidebar for app navigation. On desktop it stays visible with the current selection highlighted; on mobile it becomes a drawer with overlay and a toggle button. Use `items` for nav options (same shape as dropdown items) or project custom content via slots. Bind [(selectedIndex)] for the active item; supports theme, [(open)] for mobile drawer, and itemSelected output.',\n      },\n    },\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [ListItemComponent, IconComponent, ButtonComponent],\n    }),\n    (story) => ({\n      ...story(),\n      template: `\n        <div style=\"display: flex; min-height: 100vh;\">\n          ${story().template}\n          <main style=\"flex: 1; padding: 1.5rem; background: var(--color-background-main, #0a0a0a);\">\n            <p style=\"color: rgba(255,255,255,0.7);\">Main content area. Resize to see sidebar as drawer on small viewports.</p>\n          </main>\n        </div>\n      `,\n    }),\n  ],\n  argTypes: {\n    theme: {\n      control: 'select',\n      options: ['ghost-white', 'transparent-white', 'outline-white', 'outline-purple'],\n    },\n    selectedIndex: {\n      control: { type: 'number', min: 0, max: 4 },\n      description: 'Index of the selected nav item (visible on desktop)',\n    },\n    closeOnBackdropClick: {\n      control: 'boolean',\n    },\n    appearance: {\n      control: 'radio',\n      options: ['bordered', 'borderless'],\n      description: \"Look of the drawer's edge: with or without the right divider.\",\n    },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -6169,8 +6169,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<BreadcrumbComponent>",
-                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
+                "rawtype": "StoryObj<CalendarComponent>",
+                "file": "projects/ui/src/components/calendar/calendar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6180,8 +6180,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<CalendarComponent>",
-                "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                "rawtype": "StoryObj<BreadcrumbComponent>",
+                "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6235,8 +6235,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<DropdownComponent>",
-                "file": "projects/ui/src/components/dropdown/dropdown.stories.ts",
+                "rawtype": "StoryObj<DockComponent>",
+                "file": "projects/ui/src/components/dock/dock.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6246,8 +6246,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<DockComponent>",
-                "file": "projects/ui/src/components/dock/dock.stories.ts",
+                "rawtype": "StoryObj<DropdownComponent>",
+                "file": "projects/ui/src/components/dropdown/dropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -10008,7 +10008,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    items: defaultItems,\n    theme: 'ghost-white',\n    selectedIndex: 2,\n    closeOnBackdropClick: true,\n  },\n  render: (args) => ({\n    props: {\n      ...args,\n      onItemSelected: (item: SidebarItem) => console.log('Selected', item),\n    },\n    template: `\n      <ul-sidebar\n        [items]=\"items\"\n        [theme]=\"theme\"\n        [selectedIndex]=\"selectedIndex\"\n        [closeOnBackdropClick]=\"closeOnBackdropClick\"\n        (itemSelected)=\"onItemSelected($event)\">\n      </ul-sidebar>\n    `,\n  }),\n}"
+                    "defaultValue": "{\n  args: {\n    items: defaultItems,\n    theme: 'ghost-white',\n    selectedIndex: 2,\n    closeOnBackdropClick: true,\n    appearance: 'bordered',\n  },\n  render: (args) => ({\n    props: {\n      ...args,\n      onItemSelected: (item: SidebarItem) => console.log('Selected', item),\n    },\n    template: `\n      <ul-sidebar\n        [items]=\"items\"\n        [theme]=\"theme\"\n        [selectedIndex]=\"selectedIndex\"\n        [closeOnBackdropClick]=\"closeOnBackdropClick\"\n        [appearance]=\"appearance\"\n        (itemSelected)=\"onItemSelected($event)\">\n      </ul-sidebar>\n    `,\n  }),\n}"
                 },
                 {
                     "name": "defaultItems",
@@ -10028,7 +10028,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<SidebarComponent>",
-                    "defaultValue": "{\n  title: 'Components/Layout/Sidebar',\n  component: SidebarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Responsive sidebar for app navigation. On desktop it stays visible with the current selection highlighted; on mobile it becomes a drawer with overlay and a toggle button. Use `items` for nav options (same shape as dropdown items) or project custom content via slots. Bind [(selectedIndex)] for the active item; supports theme, [(open)] for mobile drawer, and itemSelected output.',\n      },\n    },\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [ListItemComponent, IconComponent, ButtonComponent],\n    }),\n    (story) => ({\n      ...story(),\n      template: `\n        <div style=\"display: flex; min-height: 100vh;\">\n          ${story().template}\n          <main style=\"flex: 1; padding: 1.5rem; background: var(--color-background-main, #0a0a0a);\">\n            <p style=\"color: rgba(255,255,255,0.7);\">Main content area. Resize to see sidebar as drawer on small viewports.</p>\n          </main>\n        </div>\n      `,\n    }),\n  ],\n  argTypes: {\n    theme: {\n      control: 'select',\n      options: ['ghost-white', 'transparent-white', 'outline-white', 'outline-purple'],\n    },\n    selectedIndex: {\n      control: { type: 'number', min: 0, max: 4 },\n      description: 'Index of the selected nav item (visible on desktop)',\n    },\n    closeOnBackdropClick: {\n      control: 'boolean',\n    },\n  },\n}"
+                    "defaultValue": "{\n  title: 'Components/Layout/Sidebar',\n  component: SidebarComponent,\n  tags: ['autodocs'],\n  parameters: {\n    docs: {\n      description: {\n        component:\n          'Responsive sidebar for app navigation. On desktop it stays visible with the current selection highlighted; on mobile it becomes a drawer with overlay and a toggle button. Use `items` for nav options (same shape as dropdown items) or project custom content via slots. Bind [(selectedIndex)] for the active item; supports theme, [(open)] for mobile drawer, and itemSelected output.',\n      },\n    },\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      imports: [ListItemComponent, IconComponent, ButtonComponent],\n    }),\n    (story) => ({\n      ...story(),\n      template: `\n        <div style=\"display: flex; min-height: 100vh;\">\n          ${story().template}\n          <main style=\"flex: 1; padding: 1.5rem; background: var(--color-background-main, #0a0a0a);\">\n            <p style=\"color: rgba(255,255,255,0.7);\">Main content area. Resize to see sidebar as drawer on small viewports.</p>\n          </main>\n        </div>\n      `,\n    }),\n  ],\n  argTypes: {\n    theme: {\n      control: 'select',\n      options: ['ghost-white', 'transparent-white', 'outline-white', 'outline-purple'],\n    },\n    selectedIndex: {\n      control: { type: 'number', min: 0, max: 4 },\n      description: 'Index of the selected nav item (visible on desktop)',\n    },\n    closeOnBackdropClick: {\n      control: 'boolean',\n    },\n    appearance: {\n      control: 'radio',\n      options: ['bordered', 'borderless'],\n      description: \"Look of the drawer's edge: with or without the right divider.\",\n    },\n  },\n}"
                 },
                 {
                     "name": "MobileViewport",
@@ -10690,19 +10690,6 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<BreadcrumbComponent>",
-                    "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/ui/src/components/calendar/calendar.stories.ts": [
                 {
                     "name": "Story",
@@ -10710,6 +10697,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CalendarComponent>",
                     "file": "projects/ui/src/components/calendar/calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<BreadcrumbComponent>",
+                    "file": "projects/ui/src/components/breadcrumb/breadcrumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -10768,19 +10768,6 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/components/dropdown/dropdown.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<DropdownComponent>",
-                    "file": "projects/ui/src/components/dropdown/dropdown.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/ui/src/components/dock/dock.stories.ts": [
                 {
                     "name": "Story",
@@ -10788,6 +10775,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<DockComponent>",
                     "file": "projects/ui/src/components/dock/dock.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/components/dropdown/dropdown.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<DropdownComponent>",
+                    "file": "projects/ui/src/components/dropdown/dropdown.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
