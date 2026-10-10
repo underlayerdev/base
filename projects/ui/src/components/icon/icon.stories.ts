@@ -24,7 +24,8 @@ const meta: Meta<IconComponent> = {
     weight: {
       control: 'select',
       options: Object.keys(variables.iconography.font.weight),
-      description: 'Weight/thickness of the icon',
+      description:
+        'Weight/thickness of the icon. Pass null to omit it and inherit the surrounding font-weight.',
     },
     icon: {
       control: 'select',
@@ -111,8 +112,25 @@ export const AllSizes: Story = {
     template: `
       <div style="display: flex; min-height: 100vh; gap: 16px; align-items: center; flex-wrap: wrap;">
         ${Object.keys(variables.iconography.font.size)
-          .map((size) => `<ul-icon [size]="'${size}'" [weight]="'medium'" [icon]="'games'"></ul-icon>`)
+          .map(
+            (size) => `<ul-icon [size]="'${size}'" [weight]="'medium'" [icon]="'games'"></ul-icon>`,
+          )
           .join('\n')}
+      </div>
+    `,
+  }),
+};
+
+/**
+ * With `weight` set to null no weight class is applied, so the icon follows
+ * the font-weight of whatever it sits in.
+ */
+export const InheritedWeight: Story = {
+  render: () => ({
+    template: `
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <span style="font-weight: 300"><ul-icon [size]="'8'" [weight]="null" [icon]="'games'"></ul-icon></span>
+        <span style="font-weight: 700"><ul-icon [size]="'8'" [weight]="null" [icon]="'games'"></ul-icon></span>
       </div>
     `,
   }),
@@ -123,7 +141,9 @@ export const AllWeights: Story = {
     template: `
       <div style="display: flex; gap: 16px; align-items: center;">
         ${Object.keys(variables.iconography.font.weight)
-          .map((weight) => `<ul-icon [size]="'8'" [weight]="'${weight}'" [icon]="'games'"></ul-icon>`)
+          .map(
+            (weight) => `<ul-icon [size]="'8'" [weight]="'${weight}'" [icon]="'games'"></ul-icon>`,
+          )
           .join('\n')}
       </div>
     `,

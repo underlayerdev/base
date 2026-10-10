@@ -10,6 +10,7 @@ export type IconWeight = 'medium' | 'bold';
 export type IconName = string;
 
 // <ul-icon class="ul-icon ul-icon-size-${size} ul-icon-weight-${weight} ul-icon-${icon}" />
+// (no ul-icon-weight-* class when weight is null)
 @Component({
   selector: 'ul-icon',
   template: ``,
@@ -20,10 +21,17 @@ export type IconName = string;
 })
 export class IconComponent {
   size = input<IconSize>('8');
-  weight = input<IconWeight>('medium');
+  /**
+   * Stroke weight of the glyph. Pass `null` to leave it out entirely, so the
+   * icon takes the surrounding `font-weight` (e.g. inside bold text) instead
+   * of always forcing `medium`.
+   */
+  weight = input<IconWeight | null>('medium');
   icon = input.required<IconName>();
 
   readonly hostClasses = computed(() => {
-    return `ul-icon ul-icon-size-${this.size()} ul-icon-weight-${this.weight()} ul-icon-${this.icon()}`;
+    const weight = this.weight();
+    const weightClass = weight ? ` ul-icon-weight-${weight}` : '';
+    return `ul-icon ul-icon-size-${this.size()}${weightClass} ul-icon-${this.icon()}`;
   });
 }
