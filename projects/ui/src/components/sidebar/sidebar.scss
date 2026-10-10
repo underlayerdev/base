@@ -36,13 +36,16 @@
     height: 100%;
     background-color: $color-background-main;
     border-right: 1px solid $color-border-white-light;
-    z-index: $elevation-drawer;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     @include transition-property(transform, $transition-duration-normal);
 
+    // Only the fixed slide-in drawer needs to layer above the page. At md+ it
+    // is an in-flow rail, and carrying the drawer's z-index there made it
+    // paint over the sticky navbar (elevation-navbar) once the page scrolled.
     @include below('md') {
+      z-index: $elevation-drawer;
       transform: translateX(-100%);
     }
 
@@ -98,6 +101,12 @@
     flex-shrink: 0;
     border-top: 1px solid $color-border-white-light;
     padding-top: $spacing-spacing-4;
+
+    // Nothing projected into [ul-sidebar-footer]: drop the whole footer, or
+    // its top border would draw a stray divider at the bottom of the nav.
+    &:empty {
+      display: none;
+    }
   }
 
   // ul-list-item is sized for dense lists (caption-l, 14px). That reads as
